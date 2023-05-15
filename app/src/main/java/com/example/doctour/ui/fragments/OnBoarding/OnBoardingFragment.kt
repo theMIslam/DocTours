@@ -1,4 +1,4 @@
-package com.example.issuedproject.OnBoarding
+package com.example.doctour.ui.fragments.OnBoarding
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.doctour.ui.fragments.OnBoarding.adapter.OnBoardingAdapter
-import com.example.issuedproject.databinding.FragmentOnBoardingBinding
+import com.example.doctour.databinding.FragmentOnBoardingBinding
 
 class OnBoardingFragment : Fragment() {
     private lateinit var binding: FragmentOnBoardingBinding

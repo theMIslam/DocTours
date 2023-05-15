@@ -16,7 +16,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            style="@style/text_view2"
             android:layout_width="@dimen/_96dp"
             android:layout_height="@dimen/_26dp"
             android:layout_marginStart="@dimen/_8dp"

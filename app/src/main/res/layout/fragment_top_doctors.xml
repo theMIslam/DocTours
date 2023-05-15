@@ -36,7 +36,6 @@
 
     <TextView
         android:id="@+id/tv_all"
-        style="@style/text_view1"
         android:layout_width="@dimen/_64dp"
         android:layout_height="@dimen/_26dp"
         android:layout_marginStart="@dimen/_8dp"
