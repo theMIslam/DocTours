@@ -1,10 +1,11 @@
-package com.example.doctour
+package com.example.doctour.ui.login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.doctour.R
 import com.example.doctour.databinding.FragmentMoreBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 

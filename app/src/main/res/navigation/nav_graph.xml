@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/homeFragment2"
-        android:name="com.example.doctour.HomeFragment"
+        android:name="com.example.doctour.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/categoryFragment2"
-        android:name="com.example.doctour.CategoryFragment"
+        android:name="com.example.doctour.ui.home.CategoryFragment"
         android:label="fragment_category"
         tools:layout="@layout/fragment_category" />
 
@@ -29,17 +29,17 @@
 
     <fragment
         android:id="@+id/fragment_review_success"
-        android:name="com.example.doctour.ReviewSuccessFragment"
+        android:name="com.example.doctour.ui.review.ReviewSuccessFragment"
         android:label="fragment_failed"
         tools:layout="@layout/fragment_review_success" />
     <fragment
         android:id="@+id/fragment_review_failed"
-        android:name="com.example.doctour.ReviewFailedFragment"
+        android:name="com.example.doctour.ui.review.ReviewFailedFragment"
         android:label="fragment_success"
         tools:layout="@layout/fragment_review_failed" />
     <fragment
         android:id="@+id/splashScreenFragment"
-        android:name="com.example.doctour.SplashScreenFragment"
+        android:name="com.example.doctour.ui.splash.SplashScreenFragment"
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen" >
         <action

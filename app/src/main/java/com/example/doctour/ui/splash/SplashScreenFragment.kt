@@ -1,13 +1,16 @@
-package com.example.doctour
+package com.example.doctour.ui.splash
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.doctour.R
 import com.example.doctour.databinding.FragmentSplashScreenBinding
 
+@SuppressLint("CustomSplashScreen")
 class SplashScreenFragment : Fragment() {
     private lateinit var binding: FragmentSplashScreenBinding
 

@@ -1,4 +1,4 @@
-package com.example.doctour
+package com.example.doctour.ui.password
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
