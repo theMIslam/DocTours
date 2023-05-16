@@ -1,4 +1,4 @@
-package com.example.model
+package com.example.doctour.data.model
 
 data class OnBoard(
     var title: String? = null,

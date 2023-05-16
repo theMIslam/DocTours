@@ -1,4 +1,4 @@
-package com.example.doctour.ui.ext
+package com.example.doctour.utils
 
 import android.widget.ImageView
 import com.bumptech.glide.Glide
