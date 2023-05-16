@@ -1,4 +1,4 @@
-package com.example.doctour.ui.splash
+package com.example.doctour.ui.fragments.splash
 
 import android.annotation.SuppressLint
 import android.os.Bundle

@@ -6,6 +6,12 @@
     app:startDestination="@id/splashScreenFragment">
 
     <fragment
+        android:id="@+id/onBoarding"
+        android:name="com.example.doctour.ui.fragments.onboarding.OnBoardingFragment"
+        android:label="fragment_onBoarding"
+        tools:layout="@layout/fragment_on_boarding" />
+
+    <fragment
         android:id="@+id/homeFragment2"
         android:name="com.example.doctour.ui.home.HomeFragment"
         android:label="fragment_home"
@@ -39,7 +45,7 @@
         tools:layout="@layout/fragment_review_failed" />
     <fragment
         android:id="@+id/splashScreenFragment"
-        android:name="com.example.doctour.ui.splash.SplashScreenFragment"
+        android:name="com.example.doctour.ui.fragments.splash.SplashScreenFragment"
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen" >
         <action
