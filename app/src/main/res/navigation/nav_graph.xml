@@ -53,6 +53,26 @@
             app:destination="@id/homeFragment2"
             app:exitAnim="@android:anim/fade_out" />
     </fragment>
+    <fragment
+        android:id="@+id/appoimentCancelledFragment"
+        android:name="com.example.doctour.ui.fragments.appoiment.AppoimentCancelledFragment"
+        android:label="fragment_appoiment_cancelled"
+        tools:layout="@layout/fragment_appoiment_cancelled" />
+    <fragment
+        android:id="@+id/appoimentCompletedBFragment"
+        android:name="com.example.doctour.ui.fragments.appoiment.AppoimentCompletedBFragment"
+        android:label="fragment_appoiment_completed_b"
+        tools:layout="@layout/fragment_appoiment_completed_b" />
+    <fragment
+        android:id="@+id/appoimentCancelledBFragment"
+        android:name="com.example.doctour.ui.fragments.appoiment.AppoimentCancelledBFragment"
+        android:label="fragment_appoiment_cancelled_b"
+        tools:layout="@layout/fragment_appoiment_cancelled_b" />
+    <fragment
+        android:id="@+id/moreFragment"
+        android:name="com.example.doctour.ui.login.MoreFragment"
+        android:label="fragment_more"
+        tools:layout="@layout/fragment_more" />
 
 
 </navigation>

@@ -74,4 +74,9 @@
     <string name="Services">Услуги</string>
     <string name="My_Favorite">Мои Избранные</string>
     <string name="Далее">Далее</string>
+    <string name="my_appoiments">Мои записи</string>
+    <string name="upcoming">Предстоящий</string>
+    <string name="cancelled">Отмененный</string>
+    <string name="completed">Завершенный</string>
+    <string name="position_not_found">"Position not found"</string>
 </resources>

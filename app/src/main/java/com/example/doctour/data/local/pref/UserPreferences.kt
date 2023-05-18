@@ -5,6 +5,7 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 import javax.inject.Inject
 
+
 class UserPreferences @Inject constructor(
     private val sharedPreferences: SharedPreferences
 ) {

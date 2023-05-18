@@ -8,11 +8,13 @@ import androidx.paging.map
 import com.example.doctour.core.result.Resource
 import com.example.doctour.state.UIState
 import com.example.doctour.utils.Either
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 abstract class BaseViewModel : ViewModel() {
 
