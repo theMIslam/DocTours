@@ -45,7 +45,7 @@ class SplashScreenFragment :
                 }
             }
             .start()
-        avd?.start()
+         avd?.start()
     }
 
     private fun transparentStatusBar() {

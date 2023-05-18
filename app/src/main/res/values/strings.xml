@@ -79,4 +79,7 @@
     <string name="cancelled">Отмененный</string>
     <string name="completed">Завершенный</string>
     <string name="position_not_found">"Position not found"</string>
+    <string name="off">Off</string>
+    <string name="on">On</string>
+    <string name="Biometric_Login">Вход по биометрии</string>
 </resources>
