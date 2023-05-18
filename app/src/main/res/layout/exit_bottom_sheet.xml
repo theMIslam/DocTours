@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="28dp"
-        android:text="Выйти"
+        android:text="@string/exit"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold" />
@@ -43,7 +43,7 @@
         android:layout_gravity="center"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="Вы уверены что хотите выйти из приложения?"
+        android:text="@string/are_you_sure_you_want_to_exit"
         android:textColor="@color/black"
         android:textSize="16sp" />
 
@@ -62,7 +62,7 @@
             android:layout_marginTop="60dp"
             android:layout_marginBottom="32dp"
             android:backgroundTint="@color/light_blue"
-            android:text="Назад"
+            android:text="@string/back"
             android:textColor="@color/blue"
             android:textStyle="bold"
             app:cornerRadius="8dp" />
@@ -75,7 +75,7 @@
             android:layout_marginTop="60dp"
             android:layout_marginBottom="32dp"
             android:backgroundTint="@color/blue"
-            android:text="Да, выйти"
+            android:text="@string/yes_exit"
             android:textColor="@color/white"
             android:textStyle="bold"
             app:cornerRadius="8dp" />
