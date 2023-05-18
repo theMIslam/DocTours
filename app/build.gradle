@@ -1,0 +1,107 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+}
+
+android {
+    namespace 'com.example.doctour'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.doctour"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+
+    dependencies {
+
+        implementation 'androidx.core:core-ktx:1.7.0'
+        implementation 'androidx.appcompat:appcompat:1.6.1'
+        implementation 'com.google.android.material:material:1.9.0'
+        implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+        testImplementation 'junit:junit:4.13.2'
+        androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+        androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+        // CardView
+        implementation "androidx.cardview:cardview:1.0.0"
+
+        // Nav component
+        def nav_version = "2.5.3"
+        implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+        implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+        // Circle Indicator
+        implementation 'me.relex:circleindicator:2.1.6'
+
+        // Circle Image View
+        implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+        // Glide
+        implementation 'com.github.bumptech.glide:glide:4.15.0'
+        annotationProcessor 'com.github.bumptech.glide:compiler:4.15.0'
+
+        // Fragment
+        implementation "androidx.fragment:fragment-ktx:1.5.7"
+
+        // Hilt
+        def hilt_version = "2.44.2"
+        implementation "com.google.dagger:hilt-android:$hilt_version"
+        kapt "com.google.dagger:hilt-compiler:$hilt_version"
+
+        // Lottie animation
+        def lottieVersion = "5.2.0"
+        implementation "com.airbnb.android:lottie:$lottieVersion"
+
+        // Dots indicator
+        implementation "androidx.viewpager2:viewpager2:1.0.0"
+        implementation 'com.tbuonomo:dotsindicator:4.3'
+
+        // Lifecycle
+        implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
+        implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
+
+        // Retrofit & OkHTTP
+        def retrofit_version = "2.9.0"
+        implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+        implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+        def okhttp_version = "5.0.0-alpha.10"
+        implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+        implementation "com.squareup.okhttp3:okhttp-bom:$okhttp_version"
+        implementation "com.squareup.okhttp3:logging-interceptor"
+
+        // Paging 3
+        implementation "androidx.paging:paging-common-ktx:3.1.1"
+        implementation "androidx.paging:paging-runtime:3.1.1"
+
+        // Material design
+        implementation "com.google.android.material:material:1.8.0"
+
+        // library error dublicate
+        implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
+    }
+}

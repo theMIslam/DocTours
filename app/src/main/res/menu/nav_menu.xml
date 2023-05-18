@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_bottom_home"
+        android:title="Главная" />
+
+    <item
+        android:id="@+id/categoryFragment"
+        android:icon="@drawable/ic__bottom_category"
+        android:title="Категория"
+        />
+
+
+    <item
+        android:id="@+id/notificationFragment"
+        android:icon="@drawable/ic_bottom_calendar"
+        android:title="Запись" />
+
+    <item
+        android:id="@+id/createFragment"
+        android:icon="@drawable/ic_bottom_square"
+        android:title="Еще" />
+
+
+
+</menu>

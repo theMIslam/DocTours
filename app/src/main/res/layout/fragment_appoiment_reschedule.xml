@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/arrow_back"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="Перезаписаться    "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="580dp"
+        android:text="Выберите дату"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CalendarView
+        android:id="@+id/calendar"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="180dp"
+        android:background="@drawable/calendar_corner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_times"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="190dp"
+        android:text="Выберите время"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calendar" />
+
+    <com.google.android.material.chip.Chip
+        android:layout_width="84dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="180dp"
+        android:background="@drawable/button"
+        android:text="   9:00"
+        android:textColor="@color/blue"
+        app:chipCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_times" />
+
+
+    <com.google.android.material.chip.Chip
+        android:layout_width="84dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="122dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="180dp"
+        android:background="@drawable/button"
+        android:text="  10:00"
+        android:textColor="@color/blue"
+        app:chipCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_times" />
+
+    <com.google.android.material.chip.Chip
+        android:layout_width="84dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="222dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="180dp"
+        android:background="@drawable/button"
+        android:text="  11:00"
+        android:textColor="@color/blue"
+        app:chipCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_times" />
+
+
+    <com.google.android.material.chip.Chip
+        android:layout_width="84dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="322dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="180dp"
+        android:background="@drawable/button"
+        android:text="   12:00"
+        android:textColor="@color/blue"
+        app:chipCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_times" />
+
+    <com.google.android.material.chip.Chip
+        android:layout_width="84dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="110dp"
+        android:background="@drawable/button"
+        android:text="  13:00"
+        android:textColor="@color/blue"
+        app:chipCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_times" />
+
+
+    <com.google.android.material.chip.Chip
+        android:layout_width="84dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="122dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="110dp"
+        android:background="@drawable/button"
+        android:text="  14:00"
+        android:textColor="@color/blue"
+        app:chipCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_times" />
+
+    <com.google.android.material.chip.Chip
+        android:layout_width="84dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="222dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="110dp"
+        android:background="@drawable/button"
+        android:text="  15:00"
+        android:textColor="@color/blue"
+        app:chipCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_times" />
+
+
+    <com.google.android.material.chip.Chip
+        android:layout_width="84dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="322dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="110dp"
+        android:background="@drawable/button"
+        android:text="   16:00"
+        android:textColor="@color/blue"
+        app:chipCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_times" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_next"
+        android:layout_width="380dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/blue"
+        android:text="Далее"
+        android:textSize="15sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

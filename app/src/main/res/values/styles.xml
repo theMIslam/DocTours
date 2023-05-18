@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="rounded_corners" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+    <style name="rounded_corners2" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">200dp</item>
+    </style>
+    <style name="slash">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="simple_black_text">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="simple_parl_text">
+        <item name="android:textColor">@color/parlament</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="simple_white_text">
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="simple_parl_txt_without_font">
+        <item name="android:textColor">@color/parlament</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="medium_white_text">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="medium_parl_text">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textColor">@color/parlament</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="medium_black_text">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="small_black_text">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="small_parl_text">
+        <item name="android:textColor">@color/parlament</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="small_white_text">
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="open_simple_white_text">
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="et_black">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/grey</item>
+    </style>
+
+
+
+    <style name="CornerRadius">
+        <item name="cornerSize">8dp</item>
+    </style>
+
+
+    <style name="notification_img">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:layout_width">64dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+
+    </style>
+
+    <style name="notification_text">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+
+    </style>
+
+    <style name="notification_text_date">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textSize">18sp</item>
+
+    </style>
+
+    <style name="notification_text_failed_success">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textSize">18sp</item>
+
+    </style>
+
+
+    <style name="home_fragment_all">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:layout_width">@dimen/_28dp</item>
+        <item name="android:layout_height">@dimen/_24dp</item>
+        <item name="android:layout_marginTop">@dimen/_10dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/blue</item>
+
+    </style>
+
+    <style name="home_fragment_speciality_doctors">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:layout_width">@dimen/_288dp</item>
+        <item name="android:layout_height">@dimen/_24dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/home_text_color</item>
+
+    </style>
+
+
+    <style name="category_fragment_all">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:layout_width">@dimen/_28dp</item>
+        <item name="android:layout_height">@dimen/_24dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/blue</item>
+
+    </style>
+
+    <style name="ic_back">
+
+        <item name="android:layout_width">@dimen/_18dp</item>
+        <item name="android:layout_height">@dimen/_12dp</item>
+        <item name="android:layout_marginTop">@dimen/_18dp</item>
+        <item name="android:layout_marginStart">@dimen/_12dp</item>
+
+    </style>
+
+</resources>

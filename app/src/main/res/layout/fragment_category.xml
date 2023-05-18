@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.home.CategoryFragment">
+
+    <TextView
+        android:id="@+id/tv_speciality"
+        style="@style/home_fragment_speciality_doctors"
+        android:text="@string/doctors"
+        android:fontFamily="@font/roboto_regular"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_18dp"
+
+        />
+
+    <ImageView
+        android:id="@+id/img_heart"
+        android:layout_width="@dimen/_20dp"
+        android:layout_height="@dimen/_18dp"
+        app:layout_constraintStart_toEndOf="@id/tv_speciality"
+        app:layout_constraintBottom_toBottomOf="@id/tv_speciality"
+        android:src="@drawable/ic_heart"
+        android:layout_marginStart="@dimen/_58dp"
+
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_doctors_specs_category"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_0dp"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/_12dp"
+        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+        app:layout_constraintStart_toStartOf="@id/tv_speciality"
+        app:layout_constraintTop_toBottomOf="@id/img_heart"
+        app:layout_constraintEnd_toEndOf="@id/img_heart"
+        tools:listitem="@layout/item_home"
+        app:spanCount="4"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_clinic"
+        style="@style/home_fragment_speciality_doctors"
+        android:text="@string/clinic"
+        app:layout_constraintTop_toBottomOf="@+id/rv_doctors_specs_category"
+        app:layout_constraintStart_toStartOf="@id/tv_speciality"
+
+        />
+
+    <TextView
+        android:id="@+id/tv_best_clinic_all"
+        style="@style/category_fragment_all"
+        android:text="@string/all"
+        app:layout_constraintTop_toBottomOf="@+id/rv_doctors_specs_category"
+        app:layout_constraintEnd_toEndOf="@id/img_heart"
+
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_clinic_category"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="@id/tv_clinic"
+        app:layout_constraintTop_toBottomOf="@id/tv_clinic"
+        tools:listitem="@layout/item_clinic"
+
+        />
+
+
+
+    <TextView
+        android:id="@+id/tv_services"
+        android:layout_width="288dp"
+        android:layout_height="24dp"
+        android:text="@string/Services"
+        android:textColor="#023246"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="18sp"
+        android:gravity="top"
+        app:layout_constraintTop_toBottomOf="@+id/rv_clinic_category"
+        app:layout_constraintStart_toStartOf="@id/tv_speciality"
+
+        />
+
+    <TextView
+        android:id="@+id/tv_best_services_all"
+        style="@style/category_fragment_all"
+        android:text="@string/all"
+        app:layout_constraintTop_toBottomOf="@+id/rv_clinic_category"
+        app:layout_constraintEnd_toEndOf="@id/img_heart"
+
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_clinic_services"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="@id/tv_services"
+        app:layout_constraintTop_toBottomOf="@id/tv_services"
+        tools:listitem="@layout/item_clinic"
+
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
