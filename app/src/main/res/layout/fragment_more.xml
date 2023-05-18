@@ -101,7 +101,9 @@
             android:textSize="22sp"
             android:textStyle="bold"
             app:thumbTint="@drawable/switch_color"
-            app:trackTint="@drawable/switch_bg" />
+            app:trackTint="@drawable/switch_bg"
+            android:textOn="On"
+            android:textOff="Off"/>
 
     </androidx.cardview.widget.CardView>
 
@@ -126,7 +128,9 @@
             android:textSize="22sp"
             android:textStyle="bold"
             app:thumbTint="@drawable/switch_color"
-            app:trackTint="@drawable/switch_bg" />
+            app:trackTint="@drawable/switch_bg"
+            android:textOn="On"
+            android:textOff="Off"/>
 
     </androidx.cardview.widget.CardView>
 
