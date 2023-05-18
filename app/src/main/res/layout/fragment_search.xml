@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/tv_search"
+        android:id="@+id/et_search"
         style="@style/et_black"
         android:layout_width="@dimen/_293dp"
         android:layout_height="@dimen/_48dp"
@@ -26,12 +26,12 @@
 
     <TextView
         android:id="@+id/tv_arrow_back"
-        android:layout_width="@dimen/_28dp"
-        android:layout_height="@dimen/_21dp"
+        android:layout_width="@dimen/_18dp"
+        android:layout_height="@dimen/_11dp"
         android:layout_marginStart="@dimen/_20dp"
-        android:layout_marginTop="@dimen/_36dp"
-        android:background="@drawable/arrow_back"
-        app:layout_constraintEnd_toStartOf="@id/tv_search"
+        android:layout_marginTop="@dimen/_38dp"
+        android:background="@drawable/img_14"
+        app:layout_constraintEnd_toStartOf="@id/et_search"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:scrollbars="none"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_search">
+        app:layout_constraintTop_toBottomOf="@id/et_search">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -50,6 +50,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/tv_all"
                 style="@style/medium_white_text"
                 android:layout_width="@dimen/_64dp"
                 android:layout_height="@dimen/_26dp"
@@ -59,6 +60,7 @@
                 android:text="@string/all" />
 
             <TextView
+                android:id="@+id/tv_dentist"
                 style="@style/medium_parl_text"
                 android:layout_width="@dimen/_96dp"
                 android:layout_height="@dimen/_26dp"
@@ -68,6 +70,7 @@
                 android:text="@string/dentist" />
 
             <TextView
+                android:id="@+id/tv_eye_doc"
                 style="@style/medium_parl_text"
                 android:layout_width="@dimen/_96dp"
                 android:layout_height="@dimen/_26dp"
@@ -77,6 +80,7 @@
                 android:text="@string/eye_doctor" />
 
             <TextView
+                android:id="@+id/tv_pediatric"
                 style="@style/medium_parl_text"
                 android:layout_width="@dimen/_96dp"
                 android:layout_height="@dimen/_26dp"
@@ -107,5 +111,23 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintTop_toBottomOf="@id/tv_found"
         tools:listitem="@layout/item_found_vecancies" />
+
+    <ProgressBar
+        android:layout_width="@dimen/_60dp"
+        android:layout_height="@dimen/_60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/progressBar"
+        android:indeterminateDrawable="@drawable/progress_bar_b"
+        />
+    <include
+        android:id="@+id/include_not_found"
+        layout="@layout/not_found"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
