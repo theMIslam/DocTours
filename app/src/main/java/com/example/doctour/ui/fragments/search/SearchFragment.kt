@@ -44,6 +44,18 @@ class SearchFragment : Fragment() {
         binding.tvArrowBack.setOnClickListener {
             //findNavController().navigateUp()
         }
+        binding.tvAll.setOnClickListener {
+            //action
+        }
+        binding.tvDentist.setOnClickListener {
+            //action
+        }
+        binding.tvPediatric.setOnClickListener {
+            //action
+        }
+        binding.tvEyeDoc.setOnClickListener {
+            //action
+        }
     }
 
     private fun showBottomDialog() {

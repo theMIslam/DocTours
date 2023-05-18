@@ -2,24 +2,24 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/homeFragment"
+        android:id="@+id/homeFragment2"
         android:icon="@drawable/ic_bottom_home"
         android:title="Главная" />
 
     <item
-        android:id="@+id/categoryFragment"
+        android:id="@+id/categoryFragment2"
         android:icon="@drawable/ic__bottom_category"
         android:title="Категория"
         />
 
 
     <item
-        android:id="@+id/notificationFragment"
+        android:id="@+id/appoimentCancelledFragment"
         android:icon="@drawable/ic_bottom_calendar"
         android:title="Запись" />
 
     <item
-        android:id="@+id/createFragment"
+        android:id="@+id/moreFragment"
         android:icon="@drawable/ic_bottom_square"
         android:title="Еще" />
 

@@ -30,7 +30,9 @@
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        app:tabTextColor="@color/black"
         app:tabIndicatorColor="@color/parlament"/>
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpager2"
         android:layout_width="match_parent"
