@@ -96,10 +96,12 @@
             android:checked="true"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:text="Вход по биометрии"
+            android:text="@string/Biometric_Login"
             android:textColor="@color/black"
             android:textSize="22sp"
             android:textStyle="bold"
+            android:textOn="@string/on"
+            android:textOff="@string/off"
             app:thumbTint="@drawable/switch_color"
             app:trackTint="@drawable/switch_bg" />
 

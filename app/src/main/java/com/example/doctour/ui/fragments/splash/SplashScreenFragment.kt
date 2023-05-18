@@ -20,6 +20,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class SplashScreenFragment :
     BaseFragment<FragmentSplashScreenBinding, SplashScreenViewModel>(R.layout.fragment_splash_screen) {
+
     override val binding: FragmentSplashScreenBinding by viewBinding(FragmentSplashScreenBinding::bind)
     override val viewModel by viewModels<SplashScreenViewModel>()
 
@@ -44,7 +45,7 @@ class SplashScreenFragment :
                 }
             }
             .start()
-        avd?.start()
+         avd?.start()
     }
 
     private fun transparentStatusBar() {
