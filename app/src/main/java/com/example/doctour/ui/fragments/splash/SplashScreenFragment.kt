@@ -28,6 +28,8 @@ class SplashScreenFragment : Fragment() {
         binding.imageLogo.alpha = 0f
         binding.imageLogo.animate().setDuration(1000).alpha(1f).withEndAction {
             findNavController().navigate(R.id.homeFragment2)
+
+
         }
     }
 }
