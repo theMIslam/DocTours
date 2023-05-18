@@ -22,11 +22,7 @@ class AppoimentCancelledFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentAppoimentCancelledBinding.inflate(
-            LayoutInflater.from(context),
-            container,
-            false
-        )
+        binding = FragmentAppoimentCancelledBinding.inflate(LayoutInflater.from(context), container, false)
         return binding.root
     }
 

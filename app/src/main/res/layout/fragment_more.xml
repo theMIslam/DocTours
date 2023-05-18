@@ -21,8 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:backgroundTint="@color/white"
-            android:drawableLeft="@drawable/google"
-            android:drawableRight="@drawable/ic_next"
+            android:drawableStart="@drawable/google"
+            android:drawableEnd="@drawable/ic_next"
             android:text="Асанова\nАйзада"
             android:textAlignment="textStart"
             android:textColor="@color/black"
@@ -101,7 +101,9 @@
             android:textSize="22sp"
             android:textStyle="bold"
             app:thumbTint="@drawable/switch_color"
-            app:trackTint="@drawable/switch_bg" />
+            app:trackTint="@drawable/switch_bg"
+            android:textOn="On"
+            android:textOff="Off"/>
 
     </androidx.cardview.widget.CardView>
 
@@ -126,7 +128,9 @@
             android:textSize="22sp"
             android:textStyle="bold"
             app:thumbTint="@drawable/switch_color"
-            app:trackTint="@drawable/switch_bg" />
+            app:trackTint="@drawable/switch_bg"
+            android:textOn="On"
+            android:textOff="Off"/>
 
     </androidx.cardview.widget.CardView>
 

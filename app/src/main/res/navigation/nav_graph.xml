@@ -73,7 +73,5 @@
         android:name="com.example.doctour.ui.login.MoreFragment"
         android:label="fragment_more"
         tools:layout="@layout/fragment_more" />
-
-
 </navigation>
 
