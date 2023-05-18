@@ -8,5 +8,5 @@ object PreferencesKeys {
     const val USERNAME = "username"
     const val PASSWORD = "password"
     const val USER_EMAIL = "userEmail"
-    const val ULUL_TRIP_SHARED_PREFERENCES = "DoctourSharedPreferences"
+    const val DOCTOUR_SHARED_PREFERENCES = "DoctourSharedPreferences"
 }
