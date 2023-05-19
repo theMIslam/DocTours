@@ -106,4 +106,7 @@
     <string name="your_rating_is_very_dear_to_us">Ваша оценка очень важна для нас</string>
     <string name="leave_feedback">Оставить отзыв</string>
     <string name="name">Асанова\nАйзада</string>
+    <string name="choose_language">Выберите язык</string>
+    <string name="kyrgyz">Кыргызча</string>
+    <string name="russian">Русский</string>
 </resources>
