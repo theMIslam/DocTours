@@ -1,4 +1,4 @@
-package com.example.doctour.utils
+package com.example.doctour.domain.utils
 
 sealed class Either<out A, out B> {
     class Left<out A>(val value: A) : Either<A, Nothing>()

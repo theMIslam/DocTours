@@ -7,7 +7,7 @@ import androidx.paging.cachedIn
 import androidx.paging.map
 import com.example.doctour.network.result.Resource
 import com.example.doctour.state.UIState
-import com.example.doctour.utils.Either
+import com.example.doctour.domain.utils.Either
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
