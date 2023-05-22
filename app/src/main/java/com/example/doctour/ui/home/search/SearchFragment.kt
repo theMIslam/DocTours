@@ -1,4 +1,4 @@
-package com.example.doctour.ui.fragments.search
+package com.example.doctour.ui.home.search
 
 import android.annotation.SuppressLint
 import android.app.Dialog
