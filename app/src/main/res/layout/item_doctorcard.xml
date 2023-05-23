@@ -5,6 +5,17 @@
     android:layout_height="@dimen/_214dp"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/tv_time_of_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:text="@string/_01_02_2023"
+        style="@style/simple_black_text"
+        android:layout_marginTop="@dimen/_16dp"
+        android:visibility="gone"
+        />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint"
         android:layout_width="match_parent"
@@ -22,7 +33,7 @@
             app:shapeAppearanceOverlay="@style/rounded_corners" />
 
         <TextView
-            android:id="@id/name"
+            android:id="@id/tv_name"
             style="@style/simple_black_text"
             android:layout_width="@dimen/_170dp"
             android:layout_height="wrap_content"
@@ -33,7 +44,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/status"
+            android:id="@+id/tv_status"
             style="@style/small_black_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,7 +52,7 @@
             android:layout_marginTop="@dimen/_20dp"
             android:text="@string/status"
             app:layout_constraintStart_toEndOf="@id/image"
-            app:layout_constraintTop_toBottomOf="@id/name" />
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
 
         <TextView
             android:id="@+id/tv_pred"
@@ -53,11 +64,11 @@
             android:background="@drawable/blue_circle_bg"
             android:gravity="center"
             android:text="@string/yet_to_be"
-            app:layout_constraintStart_toEndOf="@id/status"
-            app:layout_constraintTop_toBottomOf="@id/name" />
+            app:layout_constraintStart_toEndOf="@id/tv_status"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
 
         <TextView
-            android:id="@+id/date"
+            android:id="@+id/tv_date"
             style="@style/small_black_text"
             android:layout_width="@dimen/_61dp"
             android:layout_height="@dimen/_28dp"
@@ -65,7 +76,7 @@
             android:layout_marginTop="22dp"
             android:text="@string/_01_03_2023"
             app:layout_constraintStart_toEndOf="@id/image"
-            app:layout_constraintTop_toBottomOf="@id/status" />
+            app:layout_constraintTop_toBottomOf="@id/tv_status" />
 
         <TextView
             android:id="@+id/slash"
@@ -76,10 +87,11 @@
             android:text="@string/slash"
             android:textColor="@color/black"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/date"
+            app:layout_constraintStart_toEndOf="@id/tv_date"
             app:layout_constraintTop_toBottomOf="@id/tv_pred" />
 
         <TextView
+            android:id="@+id/tv_time"
             style="@style/small_black_text"
             android:layout_width="@dimen/_36dp"
             android:layout_height="@dimen/_18dp"
@@ -105,6 +117,7 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/btn_cancel"
             style="@style/simple_parl_text"
             android:layout_width="@dimen/_142dp"
             android:layout_height="@dimen/_40dp"
@@ -114,6 +127,7 @@
             android:text="@string/cancel" />
 
         <TextView
+            android:id="@+id/btn_re_shedule"
             style="@style/simple_white_text"
             android:layout_width="@dimen/_142dp"
             android:layout_height="@dimen/_40dp"

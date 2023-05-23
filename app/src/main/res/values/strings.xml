@@ -79,4 +79,10 @@
     <string name="cancelled">Отмененный</string>
     <string name="completed">Завершенный</string>
     <string name="position_not_found">"Position not found"</string>
+    <string name="Main">Главная</string>
+    <string name="Category">Категория</string>
+    <string name="Appoiment">Запись</string>
+    <string name="More">Еще</string>
+    <string name="Change">Изменить</string>
+    <string name="_01_02_2023">01.02.2023</string>
 </resources>

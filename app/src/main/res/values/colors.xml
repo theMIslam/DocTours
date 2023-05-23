@@ -18,4 +18,7 @@
     <color name="search_view_color">#828383</color>
     <color name="home_fragment_color">#CEE1EC</color>
     <color name="light_grey">#F6F6F6</color>
+    <color name="red">#CD2323</color>
+    <color name="red_back">#1EF75555</color>
+    <color name="green_back">#1F4ADE80</color>
 </resources>

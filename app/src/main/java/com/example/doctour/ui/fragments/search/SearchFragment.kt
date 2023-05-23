@@ -6,32 +6,50 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.Gravity
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.TextView
+import androidx.fragment.app.viewModels
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
+import com.example.doctour.core.base.BaseFragment
 import com.example.doctour.databinding.FragmentSearchBinding
 
 @SuppressLint("ClickableViewAccessibility")
-class SearchFragment : Fragment() {
-    private lateinit var binding: FragmentSearchBinding
+class SearchFragment :
+    BaseFragment<FragmentSearchBinding,SearchViewModel>
+        (R.layout.fragment_search) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentSearchBinding.inflate(LayoutInflater.from(context), container, false)
-        return binding.root
-    }
+    override val binding: FragmentSearchBinding by  viewBinding(FragmentSearchBinding::bind)
+    override val viewModel: SearchViewModel by viewModels<SearchViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+    }
+
+    override fun initialize() {
+        super.initialize()
+    }
+
+    override fun assembleViews() {
+        super.assembleViews()
+    }
+
+    override fun initListeners() {
+        super.initListeners()
         onClickListeners()
     }
+
+    override fun initRequest() {
+        super.initRequest()
+    }
+
+    override fun initSubscribers() {
+        super.initSubscribers()
+    }
+
     private fun onClickListeners() {
         binding.etSearch.setOnTouchListener { _, event ->
             if (event.action == MotionEvent.ACTION_UP) {

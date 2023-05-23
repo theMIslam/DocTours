@@ -1,17 +1,29 @@
 package com.example.doctour.ui.fragments.appoiment
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
-class AppoimentCompletedBFragment : Fragment() {
+import com.example.doctour.core.base.BaseFragment
+import com.example.doctour.databinding.FragmentAppoimentCompletedBBinding
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_appoiment_completed_b, container, false)
+class AppoimentCompletedBFragment :
+    BaseFragment<FragmentAppoimentCompletedBBinding, AppoimentViewModel>
+        (R.layout.fragment_appoiment_completed_b) {
+
+    override val binding: FragmentAppoimentCompletedBBinding by viewBinding(
+        FragmentAppoimentCompletedBBinding::bind
+    )
+    override val viewModel: AppoimentViewModel by viewModels<AppoimentViewModel>()
+
+    private val adapter: CompletedBAdapter by lazy {
+        CompletedBAdapter(this::btnSchedule, this::btnLeaveFeedBack)
+    }
+
+    private fun btnLeaveFeedBack() {
+
+    }
+
+    private fun btnSchedule() {
+
     }
 }
