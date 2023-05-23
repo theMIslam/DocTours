@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.review.WriteReviewFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:text="Оставить отзыв"
+            android:text="@string/leave_feedback"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -38,51 +39,43 @@
         android:id="@+id/civ_avatar"
         android:layout_width="160dp"
         android:layout_height="160dp"
+        android:layout_gravity="center"
         android:layout_marginTop="24dp"
         android:scaleType="centerCrop"
-        android:src="@color/blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/constraint" />
+        android:src="@color/blue" />
 
     <TextView
         android:id="@+id/tv_your_rating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="24dp"
-        android:text="Ваша оценка очень важна для нас"
+        android:text="@string/your_rating_is_very_dear_to_us"
         android:textColor="@color/black"
         android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/civ_avatar" />
+        android:textStyle="bold" />
 
     <RatingBar
         android:id="@+id/rtbRating"
         style="?android:attr/ratingBarStyleIndicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:isIndicator="false"
         android:max="5"
-        android:rating="0"
         android:progressTint="@color/blue"
-        android:secondaryProgressTint="@color/blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_your_rating" />
+        android:rating="0"
+        android:secondaryProgressTint="@color/blue" />
 
     <View
+        android:id="@+id/v_line"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rtbRating"
-        android:background="@color/light_grey"
-        android:layout_marginTop="24dp"
+        android:layout_gravity="center"
         android:layout_marginHorizontal="16dp"
-        android:id="@+id/v_line"/>
+        android:layout_marginTop="24dp"
+        android:background="@color/light_grey" />
 
     <TextView
         android:id="@+id/tv_write_review"
@@ -90,34 +83,43 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="Напишите свой отзыв"
+        android:text="@string/write_your_review"
         android:textColor="@color/black"
         android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/v_line" />
+        android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/et_your_review"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_your_review"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/circle_edit"
-        android:maxLines="1"
-        android:scrollHorizontally="true"
-        android:hint="Ваш отзыв"
-        android:inputType="text"
-        android:paddingStart="16dp"
-        android:paddingTop="16dp"
-        android:paddingBottom="92dp"
-        android:textColor="@color/blue"
+        android:hint="@string/your_review"
         android:textColorHint="@color/grey"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_write_review" />
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxStrokeColor="@color/blue"
+        app:placeholderTextColor="@color/blue">
+
+        <EditText
+            android:id="@+id/et_your_review"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:textColor="@color/blue"
+            android:paddingBottom="92dp"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/tv_recommend"
@@ -125,14 +127,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="Будете ли вы рекомендовать\nврача?"
         android:lineSpacingExtra="4dp"
+        android:text="@string/would_you_recommend_the_doctor"
         android:textColor="@color/black"
         android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_your_review" />
-
+        android:textStyle="bold" />
 
     <LinearLayout
         android:id="@+id/ll_radio_buttons"
@@ -148,7 +147,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:buttonTint="@color/blue"
-            android:text="Да"
+            android:text="@string/yes"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -160,40 +159,46 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
             android:buttonTint="@color/blue"
-            android:text="Нет"
+            android:text="@string/no"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold" />
 
     </LinearLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_back"
-        android:layout_width="152dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="24dp"
-        android:backgroundTint="@color/light_blue"
-        android:text="Назад"
-        android:textColor="@color/blue"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:cornerRadius="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ll_radio_buttons" />
+    <LinearLayout
+        android:id="@+id/ll_buttons"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_send"
-        android:layout_width="152dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="24dp"
-        android:backgroundTint="@color/blue"
-        android:text="Отправить"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:cornerRadius="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btn_back"
-        app:layout_constraintTop_toBottomOf="@id/ll_radio_buttons" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_back"
+            android:layout_width="152dp"
+            android:layout_height="48dp"
+            android:backgroundTint="@color/light_blue"
+            android:text="@string/back"
+            android:textAllCaps="false"
+            android:textColor="@color/blue"
+            android:layout_marginEnd="32dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="8dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_send"
+            android:layout_width="152dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="24dp"
+            android:backgroundTint="@color/blue"
+            android:text="@string/send"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="8dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

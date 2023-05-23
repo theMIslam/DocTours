@@ -9,7 +9,11 @@
         android:id="@+id/onBoarding"
         android:name="com.example.doctour.ui.fragments.onboarding.OnBoardingFragment"
         android:label="fragment_onBoarding"
-        tools:layout="@layout/fragment_on_boarding" />
+        tools:layout="@layout/item_onboarding" >
+        <action
+            android:id="@+id/action_onBoarding_to_fragment_login"
+            app:destination="@id/fragment_login" />
+    </fragment>
 
     <fragment
         android:id="@+id/homeFragment2"
@@ -49,9 +53,15 @@
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen" >
         <action
-            android:id="@+id/action_splashScreenFragment_to_homeFragment2"
-            app:destination="@id/homeFragment2"
-            app:exitAnim="@android:anim/fade_out" />
+            android:id="@+id/action_splashScreenFragment_to_onBoarding"
+            app:destination="@id/onBoarding" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_login"
+        android:name="com.example.doctour.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
     </fragment>
     <fragment
         android:id="@+id/appoimentCancelledFragment"

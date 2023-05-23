@@ -92,6 +92,7 @@
     <dimen name="_252dp">252dp</dimen>
     <dimen name="_14sp">14sp</dimen>
     <dimen name="_248dp">248dp</dimen>
+<<<<<<< HEAD
     <dimen name="_210dp">210dp</dimen>
     <dimen name="_22sp">22sp</dimen>
     <dimen name="_100dp">100dp</dimen>
@@ -102,4 +103,7 @@
     <dimen name="_84dp">84dp</dimen>
     <dimen name="_370dp">370dp</dimen>
     <dimen name="_294dp">294dp</dimen>
+=======
+    <dimen name="_20_sp">20sp</dimen>
+>>>>>>> ebada01d91cb148056dfcd044d59754fe9487f7e
 </resources>

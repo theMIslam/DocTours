@@ -45,27 +45,16 @@ android {
         testImplementation 'junit:junit:4.13.2'
         androidTestImplementation 'androidx.test.ext:junit:1.1.5'
         androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-
-        // CardView
-        implementation "androidx.cardview:cardview:1.0.0"
-
+        
         // Nav component
         def nav_version = "2.5.3"
         implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
         implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
-        // Circle Indicator
-        implementation 'me.relex:circleindicator:2.1.6'
-
-        // Circle Image View
-        implementation 'de.hdodenhof:circleimageview:3.1.0'
-
         // Glide
-        implementation 'com.github.bumptech.glide:glide:4.15.0'
-        annotationProcessor 'com.github.bumptech.glide:compiler:4.15.0'
-
-        // Fragment
-        implementation "androidx.fragment:fragment-ktx:1.5.7"
+        def glide_version = "4.15.0"
+        implementation "com.github.bumptech.glide:glide:$glide_version"
+        annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
 
         // Hilt
         def hilt_version = "2.44.2"
@@ -76,13 +65,10 @@ android {
         def lottieVersion = "5.2.0"
         implementation "com.airbnb.android:lottie:$lottieVersion"
 
-        // Dots indicator
-        implementation "androidx.viewpager2:viewpager2:1.0.0"
-        implementation 'com.tbuonomo:dotsindicator:4.3'
-
         // Lifecycle
-        implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
-        implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
+        def lifecycle_version = "2.6.1"
+        implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+        implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
 
         // Retrofit & OkHTTP
         def retrofit_version = "2.9.0"
@@ -94,9 +80,15 @@ android {
         implementation "com.squareup.okhttp3:okhttp-bom:$okhttp_version"
         implementation "com.squareup.okhttp3:logging-interceptor"
 
-        // Paging 3
-        implementation "androidx.paging:paging-common-ktx:3.1.1"
-        implementation "androidx.paging:paging-runtime:3.1.1"
+        def paging3_version = "3.1.1"
+        implementation "androidx.paging:paging-common-ktx:$paging3_version"
+        implementation "androidx.paging:paging-runtime:$paging3_version"
+
+        // Room
+        def room_version = "2.5.1"
+        implementation "androidx.room:room-ktx:$room_version"
+        implementation "androidx.room:room-runtime:$room_version"
+        annotationProcessor "androidx.room:room-compiler:$room_version"
 
         // Material design
         implementation "com.google.android.material:material:1.9.0"
@@ -106,5 +98,21 @@ android {
 
         // library error dublicate
         implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
+
+        // Dots indicator
+        implementation "androidx.viewpager2:viewpager2:1.0.0"
+        implementation 'com.tbuonomo:dotsindicator:4.3'
+
+        // Fragment
+        implementation "androidx.fragment:fragment-ktx:1.5.7"
+
+        // Circle Indicator
+        implementation 'me.relex:circleindicator:2.1.6'
+
+        // Circle Image View
+        implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+        // CardView
+        implementation "androidx.cardview:cardview:1.0.0"
     }
 }

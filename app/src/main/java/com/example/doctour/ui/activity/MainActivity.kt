@@ -1,4 +1,4 @@
-package com.example.doctour.ui
+package com.example.doctour.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

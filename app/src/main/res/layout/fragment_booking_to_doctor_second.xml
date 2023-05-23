@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.fragments.booking.BookingToDoctorSecondFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:text="Записаться"
+            android:text="@string/register"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -40,28 +41,36 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="ФИО"
+        android:text="@string/fio"
         android:textColor="@color/blue"
         android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/constraint" />
+        android:textStyle="bold" />
 
-    <EditText
-        android:textStyle="bold"
-        android:singleLine="true"
-        android:inputType="textPersonName"
-        android:id="@+id/et_fio"
-        android:layout_marginTop="8dp"
-        android:layout_marginHorizontal="16dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_fio"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_fio"
-        android:hint="Асанова Диана"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/name_profile"
         android:textColorHint="@color/grey"
-        android:background="@drawable/circle_edit"
-        android:padding="16dp"/>
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxStrokeColor="@color/blue"
+        app:placeholderTextColor="@color/blue">
+
+        <EditText
+            android:id="@+id/et_fio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:singleLine="true"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/tv_gender"
@@ -69,27 +78,34 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="Пол"
+        android:text="@string/gender"
         android:textColor="@color/blue"
         android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_fio" />
+        android:textStyle="bold" />
 
-    <EditText
-        android:inputType="text"
-        android:textStyle="bold"
-        android:id="@+id/et_gender"
-        android:layout_marginTop="8dp"
-        android:layout_marginHorizontal="16dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_gender"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_gender"
-        android:hint="Женский"
-        android:textColorHint="@color/grey"
-        android:background="@drawable/circle_edit"
-        android:padding="16dp"/>
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/autv_gender"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="none"
+            android:text="@string/female"
+            android:textColor="@color/grey"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/tv_age"
@@ -97,28 +113,36 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="Возраст"
+        android:text="@string/age"
         android:textColor="@color/blue"
         android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_gender" />
+        android:textStyle="bold" />
 
-    <EditText
-        android:textStyle="bold"
-        android:singleLine="true"
-        android:inputType="number"
-        android:id="@+id/et_age"
-        android:layout_marginTop="8dp"
-        android:layout_marginHorizontal="16dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_age"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_age"
-        android:hint="25"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/_25"
         android:textColorHint="@color/grey"
-        android:background="@drawable/circle_edit"
-        android:padding="16dp"/>
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxStrokeColor="@color/blue"
+        app:placeholderTextColor="@color/blue">
+
+        <EditText
+            android:id="@+id/et_age"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/tv_describe_your_problem"
@@ -126,40 +150,52 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="Опишите Вашу проблему"
+        android:text="@string/describe_your_problem"
         android:textColor="@color/blue"
         android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_age" />
+        android:textStyle="bold" />
 
-    <EditText
-        android:textStyle="bold"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_description"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:id="@+id/et_description"
-        app:layout_constraintTop_toBottomOf="@id/tv_describe_your_problem"
-        android:background="@drawable/circle_edit"
-        android:hint="Описание"
-        android:paddingStart="16dp"
-        android:paddingTop="16dp"
-        android:paddingBottom="108dp"
         android:layout_marginTop="8dp"
-        android:inputType="text"
-        />
+        android:hint="@string/description"
+        android:textColorHint="@color/grey"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxStrokeColor="@color/blue"
+        app:placeholderTextColor="@color/blue">
+
+        <EditText
+            android:id="@+id/et_description"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="108dp"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_make_an_appointment"
         android:layout_width="380dp"
         android:layout_height="60dp"
-        app:cornerRadius="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="Записаться"
-        android:id="@+id/btn_make_an_appointment"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="@color/blue"
+        android:text="@string/register"
+        android:textAllCaps="false"
         android:textSize="16sp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/blue"/>
+        app:cornerRadius="8dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.doctour.databinding.ItemOnboardingBinding
-import com.example.doctour.data.model.OnBoard
-import com.example.doctour.utils.loadImage
+import com.example.doctour.ui.fragments.onboarding.model.OnBoard
+import com.example.doctour.domain.utils.loadImage
 
 class OnBoardingAdapter : Adapter<OnBoardingAdapter.OnBoardingViewHolder>() {
 

@@ -79,6 +79,7 @@
     <string name="cancelled">Отмененный</string>
     <string name="completed">Завершенный</string>
     <string name="position_not_found">"Position not found"</string>
+<<<<<<< HEAD
     <string name="Main">Главная</string>
     <string name="Category">Категория</string>
     <string name="Appoiment">Запись</string>
@@ -94,4 +95,36 @@
     <string name="Re_schedule">Перезаписаться</string>
     <string name="Select_the_date">Выберите дату</string>
     <string name="Select_the_time">Выберите время</string>
+=======
+    <string name="off">Off</string>
+    <string name="on">On</string>
+    <string name="Biometric_Login">Вход по биометрии</string>
+    <string name="language">Язык</string>
+    <string name="password">Пароль</string>
+    <string name="biometric_entry">Вход по биометрии</string>
+    <string name="push_notifications">Push-уведомления</string>
+    <string name="exit">Выйти</string>
+    <string name="fio">ФИО</string>
+    <string name="gender">Пол</string>
+    <string name="female">Женский</string>
+    <string name="age">Возраст</string>
+    <string name="_25">25</string>
+    <string name="describe_your_problem">Опишите Вашу проблему</string>
+    <string name="description">Описание</string>
+    <string name="are_you_sure_you_want_to_exit">Вы уверены что хотите выйти из приложения?</string>
+    <string name="back">Назад</string>
+    <string name="yes_exit">Да, выйти</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="send">Отправить</string>
+    <string name="would_you_recommend_the_doctor">Будете ли вы рекомендовать\nврача?</string>
+    <string name="your_review">Ваш отзыв</string>
+    <string name="write_your_review">Напишите свой отзыв</string>
+    <string name="your_rating_is_very_dear_to_us">Ваша оценка очень важна для нас</string>
+    <string name="leave_feedback">Оставить отзыв</string>
+    <string name="name">Асанова\nАйзада</string>
+    <string name="choose_language">Выберите язык</string>
+    <string name="kyrgyz">Кыргызча</string>
+    <string name="russian">Русский</string>
+>>>>>>> ebada01d91cb148056dfcd044d59754fe9487f7e
 </resources>

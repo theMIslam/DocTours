@@ -1,4 +1,4 @@
-package com.example.doctour.core.result
+package com.example.doctour.network.result
 
 sealed class Resource<T>(val data: T? = null, val message: String? = null) {
     class Loading<T> : Resource<T>()
