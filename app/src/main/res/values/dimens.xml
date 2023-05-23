@@ -92,4 +92,14 @@
     <dimen name="_252dp">252dp</dimen>
     <dimen name="_14sp">14sp</dimen>
     <dimen name="_248dp">248dp</dimen>
+    <dimen name="_210dp">210dp</dimen>
+    <dimen name="_22sp">22sp</dimen>
+    <dimen name="_100dp">100dp</dimen>
+    <dimen name="_120dp">120dp</dimen>
+    <dimen name="_15sp">15sp</dimen>
+    <dimen name="_380dp">380dp</dimen>
+    <dimen name="_322dp">322dp</dimen>
+    <dimen name="_84dp">84dp</dimen>
+    <dimen name="_370dp">370dp</dimen>
+    <dimen name="_294dp">294dp</dimen>
 </resources>

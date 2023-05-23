@@ -25,31 +25,10 @@ class SearchFragment :
     override val binding: FragmentSearchBinding by  viewBinding(FragmentSearchBinding::bind)
     override val viewModel: SearchViewModel by viewModels<SearchViewModel>()
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
-
-    override fun initialize() {
-        super.initialize()
-    }
-
-    override fun assembleViews() {
-        super.assembleViews()
-    }
-
     override fun initListeners() {
         super.initListeners()
         onClickListeners()
     }
-
-    override fun initRequest() {
-        super.initRequest()
-    }
-
-    override fun initSubscribers() {
-        super.initSubscribers()
-    }
-
     private fun onClickListeners() {
         binding.etSearch.setOnTouchListener { _, event ->
             if (event.action == MotionEvent.ACTION_UP) {

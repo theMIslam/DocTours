@@ -85,4 +85,13 @@
     <string name="More">Еще</string>
     <string name="Change">Изменить</string>
     <string name="_01_02_2023">01.02.2023</string>
+    <string name="Oops_failed_">Упс, не получилось!</string>
+    <string name="Please_check_your_internet_connection">Пожалуйста, проверьте ваше подключение к</string>
+    <string name="Then_try_again">Интернету, затем повторите попытку</string>
+    <string name="Ready">Готово</string>
+    <string name="Successfully">Успешно</string>
+    <string name="Your_appoiment_has_been_changed">Ваша запись была изменена</string>
+    <string name="Re_schedule">Перезаписаться</string>
+    <string name="Select_the_date">Выберите дату</string>
+    <string name="Select_the_time">Выберите время</string>
 </resources>
