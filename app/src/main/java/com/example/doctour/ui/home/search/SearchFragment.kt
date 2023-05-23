@@ -4,22 +4,21 @@ import android.annotation.SuppressLint
 import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.os.Bundle
 import android.view.Gravity
 import android.view.MotionEvent
-import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.TextView
 import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
-import com.example.doctour.core.base.BaseFragment
 import com.example.doctour.databinding.FragmentSearchBinding
+import com.example.doctour.presentation.core.base.BaseFragment
+import com.example.doctour.ui.fragments.search.SearchViewModel
 
 @SuppressLint("ClickableViewAccessibility")
 class SearchFragment :
-    BaseFragment<FragmentSearchBinding,SearchViewModel>
+    BaseFragment<FragmentSearchBinding, SearchViewModel>
         (R.layout.fragment_search) {
 
     override val binding: FragmentSearchBinding by  viewBinding(FragmentSearchBinding::bind)
