@@ -78,6 +78,7 @@
         app:layout_constraintTop_toBottomOf="@id/calendar" />
 
     <com.google.android.material.chip.Chip
+        android:id="@+id/chipTime1"
         android:layout_width="84dp"
         android:layout_height="48dp"
         android:layout_marginStart="12dp"
@@ -93,6 +94,7 @@
 
 
     <com.google.android.material.chip.Chip
+        android:id="@+id/chipTime2"
         android:layout_width="84dp"
         android:layout_height="48dp"
         android:layout_marginStart="122dp"
@@ -107,6 +109,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_times" />
 
     <com.google.android.material.chip.Chip
+        android:id="@+id/chipTime3"
         android:layout_width="84dp"
         android:layout_height="48dp"
         android:layout_marginStart="222dp"
@@ -122,6 +125,7 @@
 
 
     <com.google.android.material.chip.Chip
+        android:id="@+id/chipTime4"
         android:layout_width="84dp"
         android:layout_height="48dp"
         android:layout_marginStart="322dp"
@@ -136,6 +140,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_times" />
 
     <com.google.android.material.chip.Chip
+        android:id="@+id/chipTime5"
         android:layout_width="84dp"
         android:layout_height="48dp"
         android:layout_marginStart="12dp"
@@ -151,6 +156,7 @@
 
 
     <com.google.android.material.chip.Chip
+        android:id="@+id/chipTime6"
         android:layout_width="84dp"
         android:layout_height="48dp"
         android:layout_marginStart="122dp"
@@ -165,6 +171,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_times" />
 
     <com.google.android.material.chip.Chip
+        android:id="@+id/chipTime7"
         android:layout_width="84dp"
         android:layout_height="48dp"
         android:layout_marginStart="222dp"
@@ -180,6 +187,7 @@
 
 
     <com.google.android.material.chip.Chip
+        android:id="@+id/chipTime8"
         android:layout_width="84dp"
         android:layout_height="48dp"
         android:layout_marginStart="322dp"
