@@ -9,8 +9,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
-import com.example.doctour.core.base.BaseFragment
-import com.example.doctour.core.extension.navigateSafely
+import com.example.doctour.presentation.core.base.BaseFragment
+import com.example.doctour.presentation.core.extension.navigateSafely
 import com.example.doctour.data.local.pref.UserPreferences
 import com.example.doctour.databinding.FragmentSplashScreenBinding
 import dagger.hilt.android.AndroidEntryPoint
