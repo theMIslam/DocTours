@@ -1,4 +1,4 @@
-package com.example.doctour.ui.home.category_doctors
+package com.example.doctour.ui.home.category
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -9,7 +9,7 @@
         android:id="@+id/onBoarding"
         android:name="com.example.doctour.ui.fragments.onboarding.OnBoardingFragment"
         android:label="fragment_onBoarding"
-        tools:layout="@layout/item_onboarding" >
+        tools:layout="@layout/item_onboarding">
         <action
             android:id="@+id/action_onBoarding_to_fragment_login"
             app:destination="@id/fragment_login" />
@@ -17,12 +17,13 @@
 
     <fragment
         android:id="@+id/homeFragment2"
-        android:name="com.example.doctour.ui.home.HomeFragment"
+        android:name="com.example.doctour.ui.home.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+
     <fragment
         android:id="@+id/categoryFragment2"
-        android:name="com.example.doctour.ui.home.CategoryFragment"
+        android:name="com.example.doctour.ui.home.category.CategoryFragment"
         android:label="fragment_category"
         tools:layout="@layout/fragment_category" />
 
@@ -31,6 +32,7 @@
         android:name="com.example.doctour.ui.fragments.booking.BookingFailedFragment"
         android:label="fragment_failed"
         tools:layout="@layout/fragment_booking_failed" />
+
     <fragment
         android:id="@+id/fragment_booking_success"
         android:name="com.example.doctour.ui.fragments.booking.BookingSuccessFragment"
@@ -42,16 +44,18 @@
         android:name="com.example.doctour.ui.review.ReviewSuccessFragment"
         android:label="fragment_failed"
         tools:layout="@layout/fragment_review_success" />
+
     <fragment
         android:id="@+id/fragment_review_failed"
         android:name="com.example.doctour.ui.review.ReviewFailedFragment"
         android:label="fragment_success"
         tools:layout="@layout/fragment_review_failed" />
+
     <fragment
         android:id="@+id/splashScreenFragment"
         android:name="com.example.doctour.ui.fragments.splash.SplashScreenFragment"
         android:label="fragment_splash_screen"
-        tools:layout="@layout/fragment_splash_screen" >
+        tools:layout="@layout/fragment_splash_screen">
         <action
             android:id="@+id/action_splashScreenFragment_to_onBoarding"
             app:destination="@id/onBoarding" />
@@ -61,27 +65,49 @@
         android:id="@+id/fragment_login"
         android:name="com.example.doctour.ui.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-    </fragment>
+        tools:layout="@layout/fragment_login"/>
+
     <fragment
         android:id="@+id/appoimentCancelledFragment"
         android:name="com.example.doctour.ui.fragments.appoiment.AppoimentCancelledFragment"
         android:label="fragment_appoiment_cancelled"
         tools:layout="@layout/fragment_appoiment_cancelled" />
+
     <fragment
         android:id="@+id/appoimentCompletedBFragment"
         android:name="com.example.doctour.ui.fragments.appoiment.AppoimentCompletedBFragment"
         android:label="fragment_appoiment_completed_b"
         tools:layout="@layout/fragment_appoiment_completed_b" />
+
     <fragment
         android:id="@+id/appoimentCancelledBFragment"
         android:name="com.example.doctour.ui.fragments.appoiment.AppoimentCancelledBFragment"
         android:label="fragment_appoiment_cancelled_b"
         tools:layout="@layout/fragment_appoiment_cancelled_b" />
+
     <fragment
         android:id="@+id/moreFragment"
         android:name="com.example.doctour.ui.login.MoreFragment"
         android:label="fragment_more"
         tools:layout="@layout/fragment_more" />
+
+    <fragment
+        android:id="@+id/CreatePinFragment"
+        android:name="com.example.doctour.ui.login.MoreFragment"
+        android:label="fragment_more"
+        tools:layout="@layout/fragment_create_pin" />
+
+    <fragment
+        android:id="@+id/FillProfileFragment"
+        android:name="com.example.doctour.ui.login.FillProfileFragment"
+        android:label="fragment_profile_fill"
+        tools:layout="@layout/fragment_profile_fill" />
+
+    <fragment
+        android:id="@+id/NotificationFragment"
+        android:name="com.example.doctour.ui.home.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
+
 </navigation>
 

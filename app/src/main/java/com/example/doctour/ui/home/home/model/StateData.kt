@@ -1,4 +1,4 @@
-package com.example.doctour.ui.home
+package com.example.doctour.ui.home.home.model
 
 data class Notification(
     val title: String,

@@ -14,7 +14,7 @@ class DoctourRepositoryImpl @Inject constructor(
     BaseRepository() {
 
     override fun createDoctour(doctour: Doctour) = doRequest {
-        doctourDao.createNote(doctour.toEntity())
+        doctourDao.createDoctour(doctour.toEntity())
     }
 
     override fun getAllDoctour() = doRequest {

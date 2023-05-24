@@ -1,11 +1,12 @@
-package com.example.doctour.ui.home
+package com.example.doctour.ui.home.home
 
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.doctour.core.base.BaseViewModel
+import com.example.doctour.presentation.core.base.BaseViewModel
+import com.example.doctour.ui.home.home.model.Notification
 
-class ViewModel :BaseViewModel() {
+class HomeViewModel : BaseViewModel() {
 
     private val _notification = MutableLiveData<List<Notification>>()
     val notification: LiveData<List<Notification>> get() = _notification

@@ -1,4 +1,4 @@
-package com.example.doctour.ui.home.adapter.home_adapter
+package com.example.doctour.ui.home.adapter
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.databinding.ItemHomeBinding
-import com.example.doctour.ui.home.model.modelHome.HomeModel
+import com.example.doctour.ui.home.home.model.HomeModel
 
 class AdapterHomeDoctorSpecs (private val onClick: () -> Unit
 ): ListAdapter<HomeModel, AdapterHomeDoctorSpecs.ViewHolder>(Comparator()) {
@@ -32,7 +32,7 @@ class AdapterHomeDoctorSpecs (private val onClick: () -> Unit
     @SuppressLint("DiffUtilEquals")
     class Comparator : DiffUtil.ItemCallback<HomeModel>() {
         override fun areItemsTheSame(oldItem: HomeModel, newItem: HomeModel): Boolean {
-            return oldItem.id == newItem.id
+             return oldItem == newItem
         }
 
         override fun areContentsTheSame(oldItem: HomeModel, newItem: HomeModel): Boolean {

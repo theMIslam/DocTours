@@ -5,8 +5,8 @@ import androidx.room.RoomDatabase
 import com.example.doctour.data.model.DoctourEntity
 
 @Database(entities = [DoctourEntity::class], version = 1,)
-abstract class NoteDatabase: RoomDatabase() {
+abstract class DoctourDatabase: RoomDatabase() {
 
-    abstract fun noteDao(): DoctourDao
+    abstract fun doctourDao(): DoctourDao
 
 }
