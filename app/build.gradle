@@ -100,7 +100,7 @@ android {
         def view_binding = "1.5.9"
         implementation "com.github.kirich1409:viewbindingpropertydelegate-noreflection:$view_binding"
 
-        // library error dublicate
+        // Library error dublicate
         def library_error = "1.8.0"
         implementation(platform("org.jetbrains.kotlin:kotlin-bom:$library_error"))
 
