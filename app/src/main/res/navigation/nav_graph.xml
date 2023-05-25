@@ -103,11 +103,5 @@
         android:label="fragment_profile_fill"
         tools:layout="@layout/fragment_profile_fill" />
 
-    <fragment
-        android:id="@+id/NotificationFragment"
-        android:name="com.example.doctour.ui.home.NotificationFragment"
-        android:label="fragment_notification"
-        tools:layout="@layout/fragment_notification" />
-
 </navigation>
 
