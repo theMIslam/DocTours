@@ -8,5 +8,11 @@ data class BermetModel(
     val time:String,
     val pred :String,
     val image :String,
-    val timeOfCancel:String
+    val timeOfCancel:String,
+    val experience:String,
+    val profession :String,
+    val clinic:String,
+    val rating:String,
+    val recomendation:String,
+    val price:String
 )

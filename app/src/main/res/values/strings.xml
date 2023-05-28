@@ -18,7 +18,7 @@
     <string name="des_splash_screen">Splash screen with logo picture</string>
     <string name="image">image</string>
     <string name="not_found_this_request">По Вашему запросу ничего не найдено</string>
-    <string name="experience">Стаж работы 16 лет</string>
+    <string name="experience">Стаж работы </string>
     <string name="surgeon">Хирург</string>
     <string name="slash">|</string>
     <string name="nova_clinic">Nova clinic</string>
@@ -124,4 +124,5 @@
     <string name="choose_language">Выберите язык</string>
     <string name="kyrgyz">Кыргызча</string>
     <string name="russian">Русский</string>
+    <string name="_16_years">16 лет</string>
 </resources>
