@@ -9,9 +9,7 @@
     <item
         android:id="@+id/categoryFragment2"
         android:icon="@drawable/ic__bottom_category"
-        android:title="Категория"
-        />
-
+        android:title="Категория" />
 
     <item
         android:id="@+id/appoimentCancelledFragment"
