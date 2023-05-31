@@ -3,7 +3,7 @@ package com.example.doctour.presentation.ui.home.search
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.doctour.core.extension.glide
+import com.example.doctour.presentation.core.extension.glide
 import com.example.doctour.data.model.BermetModel
 import com.example.doctour.databinding.ItemFoundVecanciesBinding
 
