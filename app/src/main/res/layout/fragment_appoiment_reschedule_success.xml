@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragments.appoiment.AppoimentRescheduleSuccessFragment">
+    tools:context=".presentation.ui.fragments.appoiment.AppoimentRescheduleSuccessFragment">
 
     <ImageView
         android:id="@+id/image_success"

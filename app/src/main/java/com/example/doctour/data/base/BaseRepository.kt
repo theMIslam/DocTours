@@ -4,9 +4,9 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.example.doctour.data.util.Either
-import com.example.doctour.network.paging.BasePagingSource
-import com.example.doctour.network.paging.DataMapper
-import com.example.doctour.network.result.Resource
+import com.example.doctour.data.network.paging.BasePagingSource
+import com.example.doctour.data.network.paging.DataMapper
+import com.example.doctour.data.network.result.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch

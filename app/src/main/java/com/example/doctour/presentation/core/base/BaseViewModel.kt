@@ -5,8 +5,8 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import androidx.paging.map
-import com.example.doctour.network.result.Resource
-import com.example.doctour.state.UIState
+import com.example.doctour.data.network.result.Resource
+import com.example.doctour.presentation.ui.state.UIState
 import com.example.doctour.domain.utils.Either
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
