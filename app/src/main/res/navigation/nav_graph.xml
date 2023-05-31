@@ -17,12 +17,12 @@
 
     <fragment
         android:id="@+id/homeFragment2"
-        android:name="com.example.doctour.ui.home.HomeFragment"
+        android:name="com.example.doctour.ui.home.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/categoryFragment2"
-        android:name="com.example.doctour.ui.home.CategoryFragment"
+        android:name="com.example.doctour.ui.home.category.CategoryFragment"
         android:label="fragment_category"
         tools:layout="@layout/fragment_category" />
 
@@ -145,7 +145,7 @@
         tools:layout="@layout/fragment_failed_password" />
     <fragment
         android:id="@+id/favoriteDoctorsFragment"
-        android:name="com.example.doctour.ui.home.FavoriteDoctorsFragment"
+        android:name="com.example.doctour.ui.home.category.FavoriteDoctorsFragment"
         android:label="fragment_favorite_doctors"
         tools:layout="@layout/fragment_favorite_doctors" />
     <fragment
@@ -175,7 +175,7 @@
         tools:layout="@layout/fragment_success_password" />
     <fragment
         android:id="@+id/topDoctorsFragment"
-        android:name="com.example.doctour.ui.home.TopDoctorsFragment"
+        android:name="com.example.doctour.ui.home.category.TopDoctorsFragment"
         android:label="fragment_top_doctors"
         tools:layout="@layout/fragment_top_doctors" />
     <fragment
@@ -185,7 +185,7 @@
         tools:layout="@layout/fragment_appoiment_reschedule" />
     <fragment
         android:id="@+id/searchFragment2"
-        android:name="com.example.doctour.ui.fragments.search.SearchFragment"
+        android:name="com.example.doctour.ui.home.search.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
 </navigation>

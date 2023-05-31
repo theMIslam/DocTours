@@ -12,9 +12,9 @@ interface DoctourDao {
     // D - delete
 
     @Insert
-    suspend fun createNote(doctourEntity: DoctourEntity)
+    suspend fun createDoctour(doctourEntity: DoctourEntity)
 
-    @Query("SELECT * FROM notes")
+    @Query("SELECT * FROM doctour")
     suspend fun getAllDoctour(): List<DoctourEntity>
 
     @Update

@@ -2,11 +2,8 @@ package com.example.doctour.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.doctour.R
 import com.example.doctour.databinding.ActivityMainBinding
@@ -28,7 +25,13 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-
+            when (destination.id) {
+                R.id.splashScreenFragment -> {
+                    navView.visibility = View.GONE
+                }
+                else -> {navView.visibility = View.VISIBLE
+                }
+            }
         }
     }
 }

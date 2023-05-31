@@ -103,5 +103,6 @@
     <dimen name="_370dp">370dp</dimen>
     <dimen name="_294dp">294dp</dimen>
     <dimen name="_20_sp">20sp</dimen>
+    <dimen name="_150dp">150dp</dimen>
 
 </resources>
