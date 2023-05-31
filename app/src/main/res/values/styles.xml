@@ -157,5 +157,17 @@
         <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
         <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
     </style>
+    <style name="btn_simple_bold">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+    </style>
+    <style name="mega_black_text">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">@dimen/_22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
 </resources>

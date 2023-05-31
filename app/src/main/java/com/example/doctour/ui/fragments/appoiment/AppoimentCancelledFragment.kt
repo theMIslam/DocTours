@@ -1,40 +1,35 @@
 package com.example.doctour.ui.fragments.appoiment
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentAppoimentCancelledBinding
+import com.example.doctour.presentation.core.base.BaseFragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-class AppoimentCancelledFragment : Fragment() {
-    private lateinit var binding: FragmentAppoimentCancelledBinding
+class AppoimentCancelledFragment :
+    BaseFragment<FragmentAppoimentCancelledBinding, AppoimentViewModel>
+        (R.layout.fragment_appoiment_cancelled) {
+
+    override val binding: FragmentAppoimentCancelledBinding by viewBinding(FragmentAppoimentCancelledBinding::bind)
+    override val viewModel: AppoimentViewModel by viewModels<AppoimentViewModel>()
+
     private lateinit var appoimentCancelledAdapter: AppoimentCancelledAdapter
     private lateinit var viewPager2: ViewPager2
     private lateinit var tabLayout: TabLayout
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentAppoimentCancelledBinding.inflate(LayoutInflater.from(context), container, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun initListeners() {
+        super.initListeners()
         showTabs()
         onClickListeners()
     }
 
     private fun onClickListeners() {
         binding.tvArrowBack.setOnClickListener {
-            // findNavController().navigateUp()
+            findNavController().navigateUp()
         }
     }
 

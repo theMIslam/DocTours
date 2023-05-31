@@ -1,20 +1,23 @@
 package com.example.doctour.ui.fragments.appoiment
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.core.view.isVisible
+import androidx.fragment.app.viewModels
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
+import com.example.doctour.databinding.FragmentAppoimentRescheduleBinding
+import com.example.doctour.presentation.core.base.BaseFragment
 
-class AppoimentRescheduleFragment : Fragment() {
+class AppoimentRescheduleFragment :
+    BaseFragment<FragmentAppoimentRescheduleBinding, AppoimentViewModel>
+        (R.layout.fragment_appoiment_reschedule) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_appoiment_reschedule, container, false)
+    override val binding: FragmentAppoimentRescheduleBinding by viewBinding(FragmentAppoimentRescheduleBinding::bind)
+    override val viewModel: AppoimentViewModel by viewModels<AppoimentViewModel>()
+
+    override fun initListeners() {
+        super.initListeners()
+        binding.btnChange.setOnClickListener {
+         binding.includeAppoimentRescheduleSuccess.root.isVisible=true
+        }
     }
-
 }

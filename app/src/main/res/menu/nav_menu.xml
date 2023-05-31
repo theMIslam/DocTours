@@ -4,23 +4,23 @@
     <item
         android:id="@+id/homeFragment2"
         android:icon="@drawable/ic_bottom_home"
-        android:title="Главная" />
+        android:title="@string/Main" />
 
     <item
         android:id="@+id/categoryFragment2"
         android:icon="@drawable/ic__bottom_category"
-        android:title="Категория" />
+        android:title="@string/Category"
+        />
+
 
     <item
         android:id="@+id/appoimentCancelledFragment"
         android:icon="@drawable/ic_bottom_calendar"
-        android:title="Запись" />
+        android:title="@string/Appoiment" />
 
     <item
         android:id="@+id/moreFragment"
         android:icon="@drawable/ic_bottom_square"
-        android:title="Еще" />
-
-
+        android:title="@string/More" />
 
 </menu>
