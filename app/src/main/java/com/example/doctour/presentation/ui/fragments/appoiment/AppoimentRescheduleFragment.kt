@@ -5,7 +5,7 @@ import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentAppoimentRescheduleBinding
-import com.example.doctour.presentation.core.base.BaseFragment
+import com.example.doctour.data.base.BaseFragment
 
 class AppoimentRescheduleFragment :
     BaseFragment<FragmentAppoimentRescheduleBinding, AppoimentViewModel>

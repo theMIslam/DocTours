@@ -1,4 +1,4 @@
-package com.example.doctour.presentation.core.base
+package com.example.doctour.data.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,13 +8,11 @@ import androidx.paging.map
 import com.example.doctour.data.network.result.Resource
 import com.example.doctour.presentation.ui.state.UIState
 import com.example.doctour.domain.utils.Either
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 abstract class BaseViewModel : ViewModel() {
 

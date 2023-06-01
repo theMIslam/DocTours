@@ -1,4 +1,4 @@
-package com.example.doctour.presentation.core.extension
+package com.example.doctour.data.core.extension
 
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment

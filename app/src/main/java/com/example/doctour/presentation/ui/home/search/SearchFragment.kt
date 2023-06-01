@@ -16,7 +16,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.data.model.BermetModel
 import com.example.doctour.databinding.FragmentSearchBinding
-import com.example.doctour.presentation.core.base.BaseFragment
+import com.example.doctour.data.base.BaseFragment
 
 @SuppressLint("ClickableViewAccessibility")
 class SearchFragment :

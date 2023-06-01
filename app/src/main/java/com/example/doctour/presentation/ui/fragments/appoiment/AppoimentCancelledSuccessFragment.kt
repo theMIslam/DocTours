@@ -4,10 +4,10 @@ import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentAppoimentCancelledSuccessBinding
-import com.example.doctour.presentation.core.base.BaseFragment
+import com.example.doctour.data.base.BaseFragment
 
 class AppoimentCancelledSuccessFragment
-    :BaseFragment<FragmentAppoimentCancelledSuccessBinding, AppoimentViewModel>(
+    : BaseFragment<FragmentAppoimentCancelledSuccessBinding, AppoimentViewModel>(
     R.layout.fragment_appoiment_cancelled_success
     ) {
 

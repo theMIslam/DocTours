@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.doctour.presentation.core.extension.glide
+import com.example.doctour.data.core.extension.glide
 import com.example.doctour.data.model.BermetModel
 import com.example.doctour.databinding.ItemDoctorcardBinding
 
