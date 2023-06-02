@@ -74,7 +74,6 @@ dependencies {
 
     // Glide
     implementation(Deps.Glide.glide)
-    implementation(Deps.Glide.glideCompiler)
 
     // Retrofit2
     implementation(Deps.Retrofit.retrofit)

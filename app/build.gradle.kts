@@ -74,7 +74,6 @@ android {
 
         // Glide (data)
         implementation(Deps.Glide.glide)
-        implementation(Deps.Glide.glideCompiler)
 
         // Nav component
         implementation(Deps.NavComponent.fragment)
