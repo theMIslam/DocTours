@@ -2,7 +2,6 @@ plugins {
     id(Plugins.AGP.library)
     id(Plugins.Kotlin.android)
     id(Plugins.Kotlin.kapt)
-    id(Plugins.Kotlin.hilt)
 }
 
 android {
@@ -78,8 +77,4 @@ dependencies {
     // Retrofit2
     implementation(Deps.Retrofit.retrofit)
     implementation(Deps.Retrofit.retrofitConverterGson)
-
-    // Hilt
-    implementation(Deps.DaggerHilt.hilt)
-    kapt(Deps.DaggerHilt.compiler)
 }

@@ -122,7 +122,6 @@ object Plugins {
         const val android = "org.jetbrains.kotlin.android"
         const val kapt = "kotlin-kapt"
         const val jvm = "org.jetbrains.kotlin.jvm"
-        const val hilt = "com.google.dagger.hilt.android"
     }
 
     object DaggerHilt {
