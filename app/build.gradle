@@ -120,13 +120,5 @@ android {
         // Circle Indicator
         def circleindicator = "2.1.6"
         implementation "me.relex:circleindicator:$circleindicator"
-
-        // Circle Image View
-        def circleimageview = "3.1.0"
-        implementation "de.hdodenhof:circleimageview:$circleimageview"
-
-        // CardView
-        def cardview = "1.0.0"
-        implementation "androidx.cardview:cardview:$cardview"
     }
 }
