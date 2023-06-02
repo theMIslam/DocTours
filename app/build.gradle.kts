@@ -113,5 +113,10 @@ android {
 
         // ViewPager2
         implementation(Deps.ViewPager2.viewpager2)
+
+        // Okhttp & Interceptor
+        implementation(Deps.Interceptor.interceptor)
+        implementation(Deps.Interceptor.okhttp)
+        implementation(Deps.Interceptor.okhttpBom)
     }
 }

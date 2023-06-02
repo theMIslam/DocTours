@@ -1,7 +1,7 @@
 package com.example.doctour.domain.repository
 
 import com.example.doctour.domain.model.Doctour
-import com.example.doctour.data.network.result.Resource
+import com.example.doctour.domain.utils.Resource
 import kotlinx.coroutines.flow.Flow
 
 interface DoctourRepository {
