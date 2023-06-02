@@ -18,7 +18,7 @@ object Versions {
     const val glide = "4.13.2"
     const val lottieanimation = "5.2.0"
     const val retrofit = "2.9.0"
-    const val paging3 = "3.1.1"
+    const val paging3 = "3.1.0"
     const val dublicate = "1.8.0"
     const val dotsindicator = "4.3"
     const val circleindicator = "2.1.6"
