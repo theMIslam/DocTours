@@ -18,7 +18,6 @@ object Versions {
     const val glide = "4.15.0"
     const val lottieanimation = "5.2.0"
     const val retrofit = "2.9.0"
-    const val interceptor = "5.0.0-alpha.10"
     const val paging3 = "3.1.1"
     const val dublicate = "1.8.0"
     const val dotsindicator = "4.3"
@@ -45,16 +44,9 @@ object Deps {
         const val compiler = "androidx.room:room-compiler:${Versions.room}"
     }
 
-    object Interceptor {
-        const val okhttp = "com.squareup.okhttp3:okhttp:${Versions.interceptor}"
-        const val okhttpBom = "com.squareup.okhttp3:okhttp-bom:${Versions.interceptor}"
-        const val interceptor = "com.squareup.okhttp3:logging-interceptor${Versions.interceptor}"
-    }
-
     object Paging3 {
         const val paging3 = "androidx.paging:paging-common-ktx${Versions.paging3}"
         const val paging3Runtime = "androidx.paging:paging-runtime${Versions.paging3}"
-        const val paging3Common = "androidx.paging:paging-common-ktx:${Versions.paging3}"
     }
 
     object Retrofit {

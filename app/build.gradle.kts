@@ -72,7 +72,6 @@ android {
         // Paging3 (data)
         implementation(Deps.Paging3.paging3)
         implementation(Deps.Paging3.paging3Runtime)
-        implementation(Deps.Paging3.paging3Common)
 
         // Retrofit2 (data)
         implementation(Deps.Retrofit.retrofit)
@@ -113,10 +112,8 @@ android {
 
         // ViewPager2
         implementation(Deps.ViewPager2.viewpager2)
-
-        // Okhttp & Interceptor
-        implementation(Deps.Interceptor.interceptor)
-        implementation(Deps.Interceptor.okhttp)
-        implementation(Deps.Interceptor.okhttpBom)
     }
+}
+dependencies {
+    implementation(project(mapOf("path" to ":data")))
 }

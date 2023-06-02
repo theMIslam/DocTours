@@ -68,7 +68,6 @@ dependencies {
     // Paging3 (data)
     implementation(Deps.Paging3.paging3)
     implementation(Deps.Paging3.paging3Runtime)
-    implementation(Deps.Paging3.paging3Common)
 
     // Glide (data)
     implementation(Deps.Glide.glide)
