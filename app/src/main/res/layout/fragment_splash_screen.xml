@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layoutDescription="@xml/fragment_splash_screen_scene"
-    tools:context=".ui.fragments.splash.SplashScreenFragment">
+    tools:context=".presentation.ui.fragments.splash.SplashScreenFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/background_layout"
