@@ -1,5 +1,5 @@
 object Versions {
-    const val AGP = "7.3.0"
+    const val AGP = "7.3.1"
     const val kotlin = "1.7.0"
     const val coroutines = "1.6.4"
     const val appCompat = "1.6.1"
@@ -15,10 +15,10 @@ object Versions {
     const val fragment = "1.5.7"
     const val viewBindingDelegate = "1.5.9"
     const val lifecycle = "2.6.1"
-    const val glide = "4.15.0"
+    const val glide = "4.13.2"
     const val lottieanimation = "5.2.0"
     const val retrofit = "2.9.0"
-    const val paging3 = "3.1.1"
+    const val paging3 = "3.1.0"
     const val dublicate = "1.8.0"
     const val dotsindicator = "4.3"
     const val circleindicator = "2.1.6"
@@ -65,7 +65,7 @@ object Deps {
     }
 
     object Glide {
-        const val glide = "implementation 'com.github.bumptech.glide:glide:${Versions.glide}"
+        const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
     }
 
     object NavComponent {
