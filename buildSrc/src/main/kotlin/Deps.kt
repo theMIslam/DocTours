@@ -45,8 +45,8 @@ object Deps {
     }
 
     object Paging3 {
-        const val paging3 = "androidx.paging:paging-common-ktx${Versions.paging3}"
-        const val paging3Runtime = "androidx.paging:paging-runtime${Versions.paging3}"
+        const val paging3 = "androidx.paging:paging-common-ktx:${Versions.paging3}"
+        const val paging3Runtime = "androidx.paging:paging-runtime:${Versions.paging3}"
     }
 
     object Retrofit {
@@ -123,6 +123,7 @@ object Plugins {
         const val android = "org.jetbrains.kotlin.android"
         const val kapt = "kotlin-kapt"
         const val jvm = "org.jetbrains.kotlin.jvm"
+        const val hilt = "com.google.dagger.hilt.android"
     }
 
     object DaggerHilt {

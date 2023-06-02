@@ -6,7 +6,7 @@ import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import androidx.paging.map
 import com.example.doctour.data.network.result.Resource
-import com.example.doctour.presentation.ui.state.UIState
+import com.example.doctour.data.state.UIState
 import com.example.doctour.domain.utils.Either
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow

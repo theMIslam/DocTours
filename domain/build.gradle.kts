@@ -15,4 +15,7 @@ dependencies {
 
     // Javax
     implementation(Deps.JavaX.inject)
+
+    // Dublicate
+    implementation(Deps.Dublicate.dublicate)
 }

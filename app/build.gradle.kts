@@ -41,6 +41,10 @@ android {
 
     dependencies {
 
+        // Module
+        implementation(project(":data"))
+        implementation(project(":domain"))
+
         // Android
         implementation(Deps.UI.androidCore)
         implementation(Deps.UI.appcompat)
@@ -60,18 +64,9 @@ android {
         // Fragment
         implementation(Deps.UI.fragment)
 
-        // Room
-        implementation(Deps.Room.room)
-        implementation(Deps.Room.roomRuntime)
-        kapt(Deps.Room.compiler)
-
         // Hilt
         implementation(Deps.DaggerHilt.hilt)
         kapt(Deps.DaggerHilt.compiler)
-
-        // Paging3 (data)
-        implementation(Deps.Paging3.paging3)
-        implementation(Deps.Paging3.paging3Runtime)
 
         // Retrofit2 (data)
         implementation(Deps.Retrofit.retrofit)
@@ -92,9 +87,6 @@ android {
         implementation(Deps.Lifecycle.lifecycle)
         implementation(Deps.Lifecycle.lifecycleViewModel)
 
-        // Coroutines
-        implementation(Deps.Coroutines.android)
-
         // Dublicate
         implementation(Deps.Dublicate.dublicate)
 
@@ -113,7 +105,4 @@ android {
         // ViewPager2
         implementation(Deps.ViewPager2.viewpager2)
     }
-}
-dependencies {
-    implementation(project(mapOf("path" to ":data")))
 }

@@ -2,6 +2,7 @@ plugins {
     id(Plugins.AGP.library)
     id(Plugins.Kotlin.android)
     id(Plugins.Kotlin.kapt)
+    id(Plugins.Kotlin.hilt)
 }
 
 android {
@@ -40,7 +41,6 @@ android {
 dependencies {
 
     // Module
-    implementation(project(mapOf("path" to ":app")))
     implementation(project(":domain"))
 
     // Android
@@ -49,6 +49,9 @@ dependencies {
     // Test
     testImplementation(Deps.UI.junit)
     androidTestImplementation(Deps.UI.extJunit)
+
+    // Dublicate
+    implementation(Deps.Dublicate.dublicate)
 
     // Room
     implementation(Deps.Room.room)
@@ -65,15 +68,19 @@ dependencies {
     // Coroutines
     implementation(Deps.Coroutines.android)
 
-    // Paging3 (data)
+    // Paging3
     implementation(Deps.Paging3.paging3)
     implementation(Deps.Paging3.paging3Runtime)
 
-    // Glide (data)
+    // Glide
     implementation(Deps.Glide.glide)
     implementation(Deps.Glide.glideCompiler)
 
-    // Retrofit2 (data)
+    // Retrofit2
     implementation(Deps.Retrofit.retrofit)
     implementation(Deps.Retrofit.retrofitConverterGson)
+
+    // Hilt
+    implementation(Deps.DaggerHilt.hilt)
+    kapt(Deps.DaggerHilt.compiler)
 }
