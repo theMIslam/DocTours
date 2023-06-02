@@ -54,6 +54,7 @@ object Deps {
     object Paging3 {
         const val paging3 = "androidx.paging:paging-common-ktx${Versions.paging3}"
         const val paging3Runtime = "androidx.paging:paging-runtime${Versions.paging3}"
+        const val paging3Common = "androidx.paging:paging-common-ktx:${Versions.paging3}"
     }
 
     object Retrofit {
@@ -95,7 +96,7 @@ object Deps {
     }
 
     object CircleIndicator {
-        const val circleindicator = "me.relex:circleindicator:${Versions.circleindicator}"
+        const val circleIndicator = "me.relex:circleindicator:${Versions.circleindicator}"
     }
 
     object CircleImageView {

@@ -69,17 +69,49 @@ android {
         implementation(Deps.DaggerHilt.hilt)
         kapt(Deps.DaggerHilt.compiler)
 
-        // Coroutines
-        implementation(Deps.Coroutines.android)
+        // Paging3 (data)
+        implementation(Deps.Paging3.paging3)
+        implementation(Deps.Paging3.paging3Runtime)
+        implementation(Deps.Paging3.paging3Common)
+
+        // Retrofit2 (data)
+        implementation(Deps.Retrofit.retrofit)
+        implementation(Deps.Retrofit.retrofitConverterGson)
+
+        // Glide (data)
+        implementation(Deps.Glide.glide)
+        implementation(Deps.Glide.glideCompiler)
 
         // Nav component
         implementation(Deps.NavComponent.fragment)
         implementation(Deps.NavComponent.ui)
 
-        // View Binding property delegate (reflection-free flavor)
+        // View Binding property delegate (reflection-free flavor) (data)
         implementation(Deps.ViewBindingDelegate.viewBindingDelegate)
 
         // Lifecycle
         implementation(Deps.Lifecycle.lifecycle)
+        implementation(Deps.Lifecycle.lifecycleViewModel)
+
+        // Coroutines
+        implementation(Deps.Coroutines.android)
+
+        // Dublicate
+        implementation(Deps.Dublicate.dublicate)
+
+        // DotsIndicator
+        implementation(Deps.DotsIndicator.dotsIndicator)
+
+        // CircleIndicator
+        implementation(Deps.CircleIndicator.circleIndicator)
+
+        // CircleImageView
+        implementation(Deps.CircleImageView.circleImageView)
+
+        // Lottie Animation
+        implementation(Deps.LottieAnimation.lottieanimation)
+
+        // ViewPager2
+        implementation(Deps.ViewPager2.viewpager2)
     }
 }
