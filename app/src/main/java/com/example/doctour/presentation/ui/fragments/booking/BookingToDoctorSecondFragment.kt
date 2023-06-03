@@ -11,14 +11,14 @@ import com.example.doctour.databinding.FragmentBookingToDoctorSecondBinding
 
 class BookingToDoctorSecondFragment : Fragment() {
 
-    private lateinit var bindind: FragmentBookingToDoctorSecondBinding
+    private lateinit var binding: FragmentBookingToDoctorSecondBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        bindind = FragmentBookingToDoctorSecondBinding.inflate(inflater, container, false)
-        return bindind.root
+        binding = FragmentBookingToDoctorSecondBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -29,6 +29,6 @@ class BookingToDoctorSecondFragment : Fragment() {
     private fun setDropDownMenu() {
         val gender = arrayOf("Женский", "Мужской")
         val arrayAdapter = ArrayAdapter(requireActivity(), R.layout.item_dropdown, gender)
-        bindind.autvGender.setAdapter(arrayAdapter)
+        binding.autvGender.setAdapter(arrayAdapter)
     }
 }

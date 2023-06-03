@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.doctour.databinding.ItemOnboardingBinding
 import com.example.doctour.presentation.ui.fragments.onboarding.model.OnBoard
-import com.example.doctour.domain.utils.loadImage
+import com.example.doctour.utils.loadImage
 
 class OnBoardingAdapter : Adapter<OnBoardingAdapter.OnBoardingViewHolder>() {
 
