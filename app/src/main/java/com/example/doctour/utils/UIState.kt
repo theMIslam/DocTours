@@ -1,4 +1,4 @@
-package com.example.doctour.data.state
+package com.example.doctour.utils
 
 sealed class UIState<T> {
     class Idle<T> : UIState<T>()

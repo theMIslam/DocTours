@@ -1,13 +1,11 @@
-package com.example.doctour.data.core.extension
+package com.example.doctour.utils
 
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
-import com.example.data.R
 
-// fun Fragment.activityNavController() = requireActivity().findNavController(R.id.nav_host_fragment)
 
 fun Fragment.flowNavController(@IdRes navHostFragmentId: Int) =
     requireActivity().findNavController(navHostFragmentId)

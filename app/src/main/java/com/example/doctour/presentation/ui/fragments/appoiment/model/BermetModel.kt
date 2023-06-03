@@ -1,4 +1,4 @@
-package com.example.doctour.data.model
+package com.example.doctour.presentation.ui.fragments.appoiment.model
 
 data class BermetModel(
     val id :Int,

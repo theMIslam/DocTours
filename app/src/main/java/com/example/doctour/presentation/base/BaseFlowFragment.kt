@@ -1,4 +1,4 @@
-package com.example.doctour.data.base
+package com.example.doctour.presentation.base
 
 import android.os.Bundle
 import android.view.View

@@ -6,10 +6,10 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
-import com.example.doctour.data.base.BaseFragment
-import com.example.doctour.data.core.extension.navigateSafely
 import com.example.doctour.data.local.pref.UserPreferences
 import com.example.doctour.databinding.FragmentSplashScreenBinding
+import com.example.doctour.presentation.base.BaseFragment
+import com.example.doctour.utils.navigateSafely
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
