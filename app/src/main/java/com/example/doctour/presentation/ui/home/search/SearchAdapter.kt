@@ -3,9 +3,9 @@ package com.example.doctour.presentation.ui.home.search
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.doctour.data.core.extension.glide
-import com.example.doctour.data.model.BermetModel
 import com.example.doctour.databinding.ItemFoundVecanciesBinding
+import com.example.doctour.presentation.ui.fragments.appoiment.model.BermetModel
+import com.example.doctour.utils.loadImage
 
 class SearchAdapter (private var userList: ArrayList<BermetModel>): RecyclerView.Adapter<SearchAdapter.SearchViewHolder>(){
 
@@ -30,7 +30,7 @@ class SearchAdapter (private var userList: ArrayList<BermetModel>): RecyclerView
 
     inner class SearchViewHolder(private var binding:ItemFoundVecanciesBinding) : RecyclerView.ViewHolder(binding.root)  {
         fun bind(bermetModel: BermetModel) {
-            binding.image.glide(bermetModel.image)
+            binding.image.loadImage(bermetModel.image)
             binding.name.text = bermetModel.name
             binding.tvExperience.text = bermetModel.experience
             binding.profession.text=bermetModel.profession

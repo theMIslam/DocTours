@@ -1,4 +1,4 @@
-package com.example.doctour.data.base
+package com.example.doctour.presentation.base
 
 import android.os.Bundle
 import android.view.View
@@ -12,8 +12,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.paging.PagingData
 import androidx.viewbinding.ViewBinding
-import com.example.doctour.data.state.UIState
-import com.example.doctour.domain.utils.Either
+import com.example.doctour.data.util.Either
+import com.example.doctour.utils.UIState
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest

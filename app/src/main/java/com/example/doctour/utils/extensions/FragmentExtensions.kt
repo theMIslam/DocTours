@@ -1,4 +1,4 @@
-package com.example.doctour.data.core.extension
+package com.example.doctour.utils
 
 import android.content.Context
 import android.view.inputmethod.InputMethodManager

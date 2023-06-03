@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.R
-import com.example.doctour.data.core.extension.glide
-import com.example.doctour.data.model.BermetModel
 import com.example.doctour.databinding.ItemDoctorcardBinding
+import com.example.doctour.presentation.ui.fragments.appoiment.model.BermetModel
+import com.example.doctour.utils.loadImage
 
 class CompletedBAdapter(
     private val btnScheduleClick:()->Unit,
@@ -30,7 +30,7 @@ class CompletedBAdapter(
     inner class CompletedViewHolder(private val binding:ItemDoctorcardBinding):RecyclerView.ViewHolder (binding.root){
         fun bind(item: BermetModel) {
             binding.tvTimeOfCancel.isVisible=false
-            binding.image.glide(item.image)
+            binding.image.loadImage(item.image)
             binding.tvName.text = item.name
             binding.tvDate.text=item.date
             binding.tvTime.text=item.time

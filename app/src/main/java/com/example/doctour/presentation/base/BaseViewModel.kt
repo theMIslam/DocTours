@@ -1,4 +1,4 @@
-package com.example.doctour.data.base
+package com.example.doctour.presentation.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -6,8 +6,8 @@ import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import androidx.paging.map
 import com.example.doctour.data.network.result.Resource
-import com.example.doctour.data.state.UIState
 import com.example.doctour.domain.utils.Either
+import com.example.doctour.utils.UIState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -65,7 +65,7 @@ abstract class BaseViewModel : ViewModel() {
                 when (res) {
                     is Resource.Error -> {
                         if (res.message != null) {
-                            _state.value = UIState.Error(res.message)
+                            _state.value = UIState.Error(res.message!!)
                         }
                     }
                     is Resource.Loading -> {
@@ -73,7 +73,7 @@ abstract class BaseViewModel : ViewModel() {
                     }
                     is Resource.Success -> {
                         if (res.data != null) {
-                            _state.value = UIState.Success(res.data)
+                            _state.value = UIState.Success(res.data!!)
                         }
                     }
                 }
