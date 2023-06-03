@@ -103,6 +103,7 @@ android {
 
         // ViewPager2
         implementation(Deps.ViewPager2.viewpager2)
+
         // Paging3
         implementation(Deps.Paging3.paging3)
         implementation(Deps.Paging3.paging3Runtime)
