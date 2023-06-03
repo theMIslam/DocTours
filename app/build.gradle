@@ -96,7 +96,7 @@ android {
         def material_version = "1.9.0"
         implementation "com.google.android.material:material:$material_version"
 
-        // View Binding property delegate (reflection-free flavor)
+        //binding delegate
         def view_binding = "1.5.9"
         implementation "com.github.kirich1409:viewbindingpropertydelegate-noreflection:$view_binding"
 
