@@ -7,7 +7,10 @@ import com.example.doctour.databinding.ItemFoundVecanciesBinding
 import com.example.doctour.presentation.ui.fragments.appoiment.model.BermetModel
 import com.example.doctour.utils.loadImage
 
-class SearchAdapter (private var userList: ArrayList<BermetModel>): RecyclerView.Adapter<SearchAdapter.SearchViewHolder>(){
+class SearchAdapter (
+    private var userList: ArrayList<BermetModel>,
+    private var onClickListener :(BermetModel)->Unit
+): RecyclerView.Adapter<SearchAdapter.SearchViewHolder>(){
 
     private var list :ArrayList<BermetModel> =ArrayList()
 
@@ -38,6 +41,10 @@ class SearchAdapter (private var userList: ArrayList<BermetModel>): RecyclerView
             binding.rating.text =bermetModel.rating
             binding.recommendation.text =bermetModel.recomendation
             binding.tvPrice.text=bermetModel.price
+
+            itemView.setOnClickListener {
+                onClickListener(bermetModel)
+            }
         }
 
     }

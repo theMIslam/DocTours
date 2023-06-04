@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.doctour.databinding.FragmentAboutDoctorReviewBinding
 
-class AboutDoctorReviewFragment : Fragment() {
+class AboutDoctorReviewFragment:Fragment(){
 
     private lateinit var binding: FragmentAboutDoctorReviewBinding
 
@@ -19,4 +19,6 @@ class AboutDoctorReviewFragment : Fragment() {
             FragmentAboutDoctorReviewBinding.inflate(LayoutInflater.from(context), container, false)
         return binding.root
     }
+
+
 }

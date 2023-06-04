@@ -40,6 +40,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/btnAll_bottom"
                 style="@style/medium_white_text"
                 android:layout_width="@dimen/_64dp"
                 android:layout_height="@dimen/_26dp"
@@ -49,6 +50,7 @@
                 android:text="@string/all" />
 
             <TextView
+                android:id="@+id/btnDentist_bottom"
                 style="@style/medium_parl_text"
                 android:layout_width="@dimen/_96dp"
                 android:layout_height="@dimen/_26dp"
@@ -58,6 +60,7 @@
                 android:text="@string/dentist" />
 
             <TextView
+                android:id="@+id/btnEyeDoctor_bottom"
                 style="@style/medium_parl_text"
                 android:layout_width="@dimen/_96dp"
                 android:layout_height="@dimen/_26dp"
@@ -67,6 +70,7 @@
                 android:text="@string/eye_doctor" />
 
             <TextView
+                android:id="@+id/btnPediatrik_bottom"
                 style="@style/medium_parl_text"
                 android:layout_width="@dimen/_96dp"
                 android:layout_height="@dimen/_26dp"
@@ -98,6 +102,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/btnBishkek_bottom"
                 style="@style/medium_white_text"
                 android:layout_width="@dimen/_64dp"
                 android:layout_height="@dimen/_26dp"
@@ -107,6 +112,7 @@
                 android:text="@string/bishkek" />
 
             <TextView
+                android:id="@+id/btnOsh_bottom"
                 style="@style/medium_parl_text"
                 android:layout_width="@dimen/_96dp"
                 android:layout_height="@dimen/_26dp"

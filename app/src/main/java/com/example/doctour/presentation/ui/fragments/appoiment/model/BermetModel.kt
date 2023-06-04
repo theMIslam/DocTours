@@ -14,5 +14,14 @@ data class BermetModel(
     val clinic:String,
     val rating:String,
     val recomendation:String,
-    val price:String
+    val price:String,
+    val numberOfFeedbacks:Int,
+    val infoAboutDoctor :String
+)
+data class BermetFeedbacks(
+    val name:String,
+    val image:String,
+    val feedback:String,
+    val date:Int,
+    val numberOfLikes:Int
 )
