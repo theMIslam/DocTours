@@ -31,7 +31,7 @@ class SearchAdapter (
         return  list.size
     }
 
-    inner class SearchViewHolder(private var binding:ItemFoundVecanciesBinding) : RecyclerView.ViewHolder(binding.root)  {
+    inner class SearchViewHolder(private var binding: ItemFoundVecanciesBinding) : RecyclerView.ViewHolder(binding.root)  {
         fun bind(bermetModel: BermetModel) {
             binding.image.loadImage(bermetModel.image)
             binding.name.text = bermetModel.name

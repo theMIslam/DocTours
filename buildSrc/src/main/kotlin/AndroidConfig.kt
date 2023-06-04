@@ -1,9 +1,15 @@
 object AndroidConfig {
-    const val compileSdk = 33
-    const val targetSdk = 33
-    const val minSdk = 21
-    const val versionCode = 1
-    const val versionName = "1.0"
 
-    const val androidTestInstrumentation = "androidx.test.runner.AndroidJUnitRunner"
+    const val compileSdk = 33
+    const val minSdk = 29
+    const val targetSdk = 33
+
+    const val release = "release"
+    const val debug = "debug"
+}
+
+object Namespaces {
+
+    const val app = "com.example.doctour"
+    const val data = "com.example.doctour.data"
 }

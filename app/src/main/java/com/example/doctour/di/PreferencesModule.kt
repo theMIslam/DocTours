@@ -2,8 +2,7 @@ package com.example.doctour.di
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.example.doctour.data.local.pref.PreferencesKeys.DOCTOUR_SHARED_PREFERENCES
-import com.example.doctour.data.local.pref.UserPreferences
+import com.example.doctour.data.local.preferences.PreferencesHelper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,14 +16,14 @@ object PreferencesModule {
 
     @Singleton
     @Provides
-    fun generateSharedPreferences(@ApplicationContext context: Context): SharedPreferences =
-        context.getSharedPreferences(
-            DOCTOUR_SHARED_PREFERENCES,
-            Context.MODE_PRIVATE
-        )
+    fun providePreferencesHelper(
+        @ApplicationContext context: Context
+    ) = PreferencesHelper(context)
 
     @Singleton
     @Provides
-    fun generateUserPreferences(sharedPreferences: SharedPreferences) =
-        UserPreferences(sharedPreferences)
+    fun provideUserPreferences(
+        @ApplicationContext context: Context
+    ) = UserPreferences(context)
+
 }

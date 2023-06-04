@@ -1,80 +1,67 @@
 plugins {
     id(Plugins.AGP.library)
-    id(Plugins.Kotlin.android)
-    id(Plugins.Kotlin.kapt)
+    kotlin(Plugins.Kotlin.android)
+
+    // Kotlin Symbol Processing
+    id(Plugins.KSP.ksp) version Versions.KSP
 }
 
 android {
-    namespace = "com.example.data"
+    namespace = Namespaces.data
+
     compileSdk = AndroidConfig.compileSdk
 
     defaultConfig {
         minSdk = AndroidConfig.minSdk
-        targetSdk = AndroidConfig.targetSdk
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
-        release {
-            isMinifyEnabled = false
+        getByName(AndroidConfig.release) {
+            isMinifyEnabled = true
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
+            buildConfigField("String", "BASE_URL", "\"https://boilerplate.com/\"")
+        }
+
+        getByName(AndroidConfig.debug) {
+            buildConfigField("String", "BASE_URL", "\"https://dev.boilerplate.com/\"")
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = Options.compileOptions
+        targetCompatibility = Options.compileOptions
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = Options.kotlinOptions
     }
     buildFeatures {
-        viewBinding = true
+        buildConfig = true
     }
 }
 
 dependencies {
 
-    // Module
     implementation(project(":domain"))
 
-    // Android
-    implementation(Deps.UI.androidCore)
+    // Retrofit
+    implementation(Libraries.Retrofit.retrofit)
+    implementation(Libraries.Retrofit.converterMoshi)
 
-    // Test
-    testImplementation(Deps.UI.junit)
-    androidTestImplementation(Deps.UI.extJunit)
+    // Moshi
+    implementation(Libraries.Moshi.moshi)
+    implementation(Libraries.Moshi.kotlin)
 
-    // Dublicate
-    implementation(Deps.Dublicate.dublicate)
+    // OkHttp
+    implementation(Libraries.OkHttp.bom)
+    implementation(Libraries.OkHttp.okHttp)
+    implementation(Libraries.OkHttp.loggingInterceptor)
 
     // Room
-    implementation(Deps.Room.room)
-    implementation(Deps.Room.roomRuntime)
-    kapt(Deps.Room.compiler)
+    api(Libraries.Room.runtime)
+    ksp(Libraries.Room.compiler)
+    implementation(Libraries.Room.ktx)
 
-    // Nav Component
-    implementation(Deps.NavComponent.fragment)
-    implementation(Deps.NavComponent.ui)
-
-    // Javax
-    implementation(Deps.JavaX.inject)
-
-    // Coroutines
-    implementation(Deps.Coroutines.android)
-
-    // Paging3
-    implementation(Deps.Paging3.paging3)
-    implementation(Deps.Paging3.paging3Runtime)
-
-    // Glide
-    implementation(Deps.Glide.glide)
-
-    // Retrofit2
-    implementation(Deps.Retrofit.retrofit)
-    implementation(Deps.Retrofit.retrofitConverterGson)
+    // Paging
+    api(Libraries.Paging.runtime)
 }
