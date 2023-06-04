@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.databinding.ItemFoundVecanciesBinding
 import com.example.doctour.presentation.ui.fragments.appoiment.model.BermetModel
-import com.example.doctour.utils.extensions.loadImage
+import com.example.doctour.utils.loadImage
 
 class SearchAdapter (private var userList: ArrayList<BermetModel>): RecyclerView.Adapter<SearchAdapter.SearchViewHolder>(){
 
@@ -28,7 +28,7 @@ class SearchAdapter (private var userList: ArrayList<BermetModel>): RecyclerView
         return  list.size
     }
 
-    inner class SearchViewHolder(private var binding:ItemFoundVecanciesBinding) : RecyclerView.ViewHolder(binding.root)  {
+    inner class SearchViewHolder(private var binding: ItemFoundVecanciesBinding) : RecyclerView.ViewHolder(binding.root)  {
         fun bind(bermetModel: BermetModel) {
             binding.image.loadImage(bermetModel.image)
             binding.name.text = bermetModel.name

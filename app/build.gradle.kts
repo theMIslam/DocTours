@@ -1,111 +1,109 @@
 plugins {
     id(Plugins.AGP.application)
-    id(Plugins.Kotlin.android)
-    id(Plugins.Kotlin.kapt)
-    id(Plugins.DaggerHilt.hilt)
+    kotlin(Plugins.Kotlin.android)
+    kotlin(Plugins.Kotlin.kapt)
+
+    // Navigation Safe Args
+    id(Plugins.Navigation.safeArgs)
+
+    // Hilt
+    id(Plugins.Hilt.android)
 }
 
 android {
-    namespace = "com.example.doctour"
+    namespace = Namespaces.app
+
     compileSdk = AndroidConfig.compileSdk
 
     defaultConfig {
         applicationId = "com.example.doctour"
         minSdk = AndroidConfig.minSdk
         targetSdk = AndroidConfig.targetSdk
-        versionCode = AndroidConfig.versionCode
-        versionName = AndroidConfig.versionName
-
-        testInstrumentationRunner = AndroidConfig.androidTestInstrumentation
+        versionCode = 1
+        versionName = "1.0"
     }
 
     buildTypes {
-        release {
-            isMinifyEnabled = false
+        getByName(AndroidConfig.release) {
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
+        }
+
+        getByName(AndroidConfig.debug) {
+            applicationIdSuffix = ".${AndroidConfig.debug}"
+            isDebuggable = true
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = Options.compileOptions
+        targetCompatibility = Options.compileOptions
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = Options.kotlinOptions
     }
     buildFeatures {
+        buildConfig = true
         viewBinding = true
     }
+}
 
-    dependencies {
+dependencies {
 
-        // Module
-        implementation(project(":data"))
-        implementation(project(":domain"))
+    implementation(project(":data"))
+    implementation(project(":domain"))
 
-        // Android
-        implementation(Deps.UI.androidCore)
-        implementation(Deps.UI.appcompat)
-        implementation(Deps.UI.material)
+    // Kotlin
+    implementation(Libraries.Coroutines.android)
 
-        // Container layout
-        implementation(Deps.UI.constraint)
-        implementation(Deps.UI.appcompat)
-        implementation(Deps.UI.material)
-        implementation(Deps.UI.constraint)
+    // UI Components
+    implementation(Libraries.UIComponents.material)
+    implementation(Libraries.UIComponents.constraintLayout)
+    implementation(Libraries.UIComponents.vbpd)
 
-        // Test
-        testImplementation(Deps.UI.junit)
-        androidTestImplementation(Deps.UI.extJunit)
-        androidTestImplementation(Deps.UI.espresso)
+    // Core
+    implementation(Libraries.Core.core)
+    implementation(Libraries.Core.splashscreen)
 
-        // Fragment
-        implementation(Deps.UI.fragment)
+    // Activity
+    implementation(Libraries.Activity.activity)
 
-        // Hilt
-        implementation(Deps.DaggerHilt.hilt)
-        kapt(Deps.DaggerHilt.compiler)
+    // Fragment
+    implementation(Libraries.Fragment.fragment)
 
-        // Retrofit2 (data)
-        implementation(Deps.Retrofit.retrofit)
-        implementation(Deps.Retrofit.retrofitConverterGson)
+    // Lifecycle
+    implementation(Libraries.Lifecycle.viewModel)
+    implementation(Libraries.Lifecycle.runtime)
 
-        // Glide (data)
-        implementation(Deps.Glide.glide)
+    // Navigation
+    implementation(Libraries.Navigation.fragment)
+    implementation(Libraries.Navigation.ui)
 
-        // Nav component
-        implementation(Deps.NavComponent.fragment)
-        implementation(Deps.NavComponent.ui)
+    // Hilt
+    implementation(Libraries.Hilt.android)
+    kapt(Libraries.Hilt.compiler)
 
-        // View Binding property delegate (reflection-free flavor) (data)
-        implementation(Deps.ViewBindingDelegate.viewBindingDelegate)
+    // Glide
+    implementation(Libraries.Glide.glide)
 
-        // Lifecycle
-        implementation(Deps.Lifecycle.lifecycle)
-        implementation(Deps.Lifecycle.lifecycleViewModel)
+    // Dublicate
+    implementation(Libraries.Dublicate.dublicate)
 
-        // Dublicate
-        implementation(Deps.Dublicate.dublicate)
+    // DotsIndicator
+    implementation(Libraries.DotsIndicator.dotsIndicator)
 
-        // DotsIndicator
-        implementation(Deps.DotsIndicator.dotsIndicator)
+    // CircleIndicator
+    implementation(Libraries.CircleIndicator.circleIndicator)
 
-        // CircleIndicator
-        implementation(Deps.CircleIndicator.circleIndicator)
+    // CircleImageView
+    implementation(Libraries.CircleImageView.circleImageView)
 
-        // CircleImageView
-        implementation(Deps.CircleImageView.circleImageView)
+    // Lottie Animation
+    implementation(Libraries.LottieAnimation.lottieanimation)
 
-        // Lottie Animation
-        implementation(Deps.LottieAnimation.lottieanimation)
+    // ViewPager2
+    implementation(Libraries.ViewPager2.viewpager2)
 
-        // ViewPager2
-        implementation(Deps.ViewPager2.viewpager2)
-
-        // Paging3
-        implementation(Deps.Paging3.paging3)
-        implementation(Deps.Paging3.paging3Runtime)
-    }
 }

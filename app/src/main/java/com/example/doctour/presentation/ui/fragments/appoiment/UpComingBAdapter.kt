@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.databinding.ItemDoctorcardBinding
 import com.example.doctour.presentation.ui.fragments.appoiment.model.BermetModel
-import com.example.doctour.utils.extensions.loadImage
+import com.example.doctour.utils.loadImage
 
 class UpComingBAdapter (
     private val btnCancelClick :() ->Unit,

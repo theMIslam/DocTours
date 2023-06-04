@@ -9,7 +9,7 @@ import com.example.doctour.R
 import com.example.doctour.data.local.pref.UserPreferences
 import com.example.doctour.databinding.FragmentSplashScreenBinding
 import com.example.doctour.presentation.base.BaseFragment
-import com.example.doctour.utils.extensions.navigateSafely
+import com.example.doctour.state.extensions.navigateSafely
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

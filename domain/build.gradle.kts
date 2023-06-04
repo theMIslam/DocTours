@@ -1,21 +1,20 @@
 plugins {
-    id(Plugins.Java.library)
-    id(Plugins.Kotlin.jvm)
+    kotlin(Plugins.Kotlin.jvm)
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    sourceCompatibility = Options.compileOptions
+    targetCompatibility = Options.compileOptions
 }
 
 dependencies {
 
-    // Coroutines
-    implementation(Deps.Coroutines.core)
+    // Javax Inject
+    api(Libraries.Javax.inject)
 
-    // Javax
-    implementation(Deps.JavaX.inject)
+    // Kotlin
+    api(Libraries.Coroutines.core)
 
-    // Dublicate
-    implementation(Deps.Dublicate.dublicate)
+    // Paging
+    implementation(Libraries.Paging.common)
 }
