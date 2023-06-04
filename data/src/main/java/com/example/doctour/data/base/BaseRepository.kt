@@ -7,7 +7,7 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.example.doctour.data.utils.DataMapper
 import com.example.doctour.data.utils.fromJson
-import com.example.data.BuildConfig
+import com.example.doctour.data.BuildConfig
 import com.example.doctour.domain.core.Either
 import com.example.doctour.domain.core.NetworkError
 import kotlinx.coroutines.Dispatchers

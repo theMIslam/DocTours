@@ -1,6 +1,6 @@
 package com.example.doctour.data.remote.client
 
-import com.example.data.BuildConfig
+import com.example.doctour.data.BuildConfig
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.*
