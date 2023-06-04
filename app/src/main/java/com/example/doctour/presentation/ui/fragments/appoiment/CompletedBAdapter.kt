@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.R
 import com.example.doctour.databinding.ItemDoctorcardBinding
 import com.example.doctour.presentation.ui.fragments.appoiment.model.BermetModel
-import com.example.doctour.utils.loadImage
+import com.example.doctour.utils.extensions.loadImage
 
 class CompletedBAdapter(
     private val btnScheduleClick:()->Unit,
