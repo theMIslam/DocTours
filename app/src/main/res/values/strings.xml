@@ -128,4 +128,5 @@
     <string name="write_your_review_toast">Напишите ваш отзыв</string>
     <string name="line_">Заполните поле</string>
     <string name="change_password">Новый пароль не должен совпадать с предыдущим</string>
+    <string name="fio_">Введите ваше ФИО</string>
 </resources>
