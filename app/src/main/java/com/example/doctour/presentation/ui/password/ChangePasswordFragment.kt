@@ -30,11 +30,11 @@ class ChangePasswordFragment : Fragment() {
         with(binding) {
             btnNext.setOnClickListener {
                 if (etCurrentPassword.text.isEmpty() || etNewPassword.text.isEmpty() || etRepeatNewPassword.text.isEmpty()) {
-                    Toast.makeText(this, getString(R.string.line_), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), getString(R.string.line_), Toast.LENGTH_SHORT).show()
                 }
                 if (etCurrentPassword.text != etNewPassword.text) {
-                     Toast.makeText(
-                        this,
+                    Toast.makeText(
+                        requireContext(),
                         getString(R.string.change_password),
                         Toast.LENGTH_SHORT
                     ).show()

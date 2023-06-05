@@ -1,13 +1,9 @@
 buildscript {
     dependencies {
-        classpath("com.google.gms:google-services:4.3.10")
+        classpath(Libraries.GoogleServices.google)
     }
-        repositories {
-            google()
-            mavenCentral()
-            jcenter()
-        }
 }
+
 
 plugins {
     id(Plugins.AGP.application) version Versions.AGP apply false
