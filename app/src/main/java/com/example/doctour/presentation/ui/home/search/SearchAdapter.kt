@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.databinding.ItemFoundVecanciesBinding
+import com.example.doctour.presentation.extensions.loadImage
 import com.example.doctour.presentation.ui.fragments.appoiment.model.BermetModel
-import com.example.doctour.utils.loadImage
 
 class SearchAdapter (private var userList: ArrayList<BermetModel>): RecyclerView.Adapter<SearchAdapter.SearchViewHolder>(){
 
