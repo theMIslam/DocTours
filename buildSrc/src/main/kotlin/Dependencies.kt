@@ -144,14 +144,6 @@ object Libraries {
         const val viewpager2 = "androidx.viewpager2:viewpager2:${Versions.viewpager2}"
     }
 
-    object Toasty {
-        const val toasty = "com.github.GrenderG:Toasty:1.5.2:${Versions.toasty}"
-    }
-
-    object Faqs_rv {
-        const val faqs_rv = "com.github.hakobast:dropdown-textview:0.3.1${Versions.faqs_rv}"
-    }
-
     object GoogleServices {
         const val google = "com.google.android.gms:play-services-auth:${Versions.google}"
     }

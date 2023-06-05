@@ -17,7 +17,7 @@ import kotlinx.coroutines.launch
 /**
  * Base class for all [ViewModel]s
  *
- * @author Alish
+ * @author London
  */
 abstract class BaseViewModel : ViewModel() {
 
