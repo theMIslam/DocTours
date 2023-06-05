@@ -27,8 +27,6 @@ object Versions {
     const val viewpager2 = "1.0.0"
     const val glide = "4.13.2"
     const val lottieanimation = "5.2.0"
-    const val toasty = "1.5.2"
-    const val faqs_rv = "0.3.1"
     const val google = "20.4.1"
     const val legacy = "1.0.0"
 
