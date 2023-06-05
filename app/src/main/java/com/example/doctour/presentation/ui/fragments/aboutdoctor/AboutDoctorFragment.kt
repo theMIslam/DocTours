@@ -6,8 +6,8 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentAboutDoctorBinding
 import com.example.doctour.presentation.base.BaseFragment
+import com.example.doctour.presentation.extensions.loadImage
 import com.example.doctour.presentation.ui.fragments.appoiment.model.BermetModel
-import com.example.doctour.utils.loadImage
 
 class AboutDoctorFragment
     : BaseFragment<FragmentAboutDoctorBinding, AboutDoctorViewModel>(

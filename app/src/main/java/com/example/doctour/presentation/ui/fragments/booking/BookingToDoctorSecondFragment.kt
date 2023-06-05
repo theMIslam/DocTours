@@ -10,7 +10,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentBookingToDoctorSecondBinding
 import com.example.doctour.presentation.base.BaseFragment
-import com.example.doctour.utils.showToast
+import com.example.doctour.presentation.extensions.showToast
 
 class BookingToDoctorSecondFragment :BaseFragment<FragmentBookingToDoctorSecondBinding,BookingToDoctorViewModel>(
     R.layout.fragment_booking_to_doctor_second

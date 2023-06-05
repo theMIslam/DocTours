@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.databinding.ItemFeedbacksBinding
+import com.example.doctour.presentation.extensions.loadImage
 import com.example.doctour.presentation.ui.fragments.appoiment.model.BermetFeedbacks
-import com.example.doctour.utils.loadImage
 
 class AdapterFeedbacks: RecyclerView.Adapter< AdapterFeedbacks.FeedBacksViewHolder>(){
 
