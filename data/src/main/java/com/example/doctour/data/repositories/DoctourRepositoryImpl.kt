@@ -13,13 +13,13 @@ abstract class DoctourRepositoryImpl @Inject constructor(
     private val dao: DoctourDao
 ) : BaseRepository(), DoctourRepository {
 
-    fun fetchFoo() = doNetworkRequestWithMapping {
+    override fun fetchDoctour() = doNetworkRequestWithMapping {
         service.fetchDoctour().onSuccess { data ->
             dao.insertDoctour(data.toEntity())
         }
     }
 
-    fun getFoo() = doLocalRequestForList { dao.getAllDoctour() }
+    override fun getDoctour() = doLocalRequestForList { dao.getAllDoctour() }
 
-    fun fetchFooPaging() = doPagingRequest({ DoctourPagingSource(service) })
+    override fun fetchDoctourPaging() = doPagingRequest({ DoctourPagingSource(service) })
 }
