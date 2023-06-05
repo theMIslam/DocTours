@@ -105,12 +105,6 @@ android {
         // ViewPager2
         implementation(Libraries.ViewPager2.viewpager2)
 
-        // Toasty
-        implementation(Libraries.Toasty.toasty)
-
-        // Faqs_rv
-        implementation(Libraries.Faqs_rv.faqs_rv)
-
         // Google gms services
         implementation(Libraries.GoogleServices.google)
 
