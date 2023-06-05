@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.login.MoreFragment">
+    tools:context=".presentation.ui.login.MoreFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_profile"
