@@ -19,4 +19,13 @@ class AboutDoctorReviewFragment : Fragment() {
             FragmentAboutDoctorReviewBinding.inflate(LayoutInflater.from(context), container, false)
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        clickers()
+    }
+
+    private fun clickers() {
+
+    }
 }

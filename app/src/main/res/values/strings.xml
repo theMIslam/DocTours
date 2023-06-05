@@ -126,4 +126,6 @@
     <string name="russian">Русский</string>
     <string name="_16_years">16 лет</string>
     <string name="write_your_review_toast">Напишите ваш отзыв</string>
+    <string name="line_">Заполните поле</string>
+    <string name="change_password">Новый пароль не должен совпадать с предыдущим</string>
 </resources>

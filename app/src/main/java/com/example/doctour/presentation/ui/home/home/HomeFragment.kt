@@ -1,16 +1,14 @@
-package com.example.doctour.ui.home.home
+package com.example.doctour.presentation.ui.home.home
 
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.doctour.R
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.example.doctour.R
 import com.example.doctour.databinding.FragmentHomeBinding
-import com.example.doctour.presentation.core.base.BaseFragment
-import com.example.doctour.presentation.core.extension.navigateSafely
-import com.example.doctour.ui.home.adapter.AdapterHomeDoctorSpecs
-import dagger.hilt.android.AndroidEntryPoint
+import com.example.doctour.presentation.base.BaseFragment
+import com.example.doctour.presentation.ui.home.adapter.AdapterHomeDoctorSpecs
+import com.example.doctour.utils.navigateSafely
 
-@AndroidEntryPoint
 class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home) {
     override val binding by viewBinding(FragmentHomeBinding::bind)
     override val viewModel by viewModels<HomeViewModel>()
