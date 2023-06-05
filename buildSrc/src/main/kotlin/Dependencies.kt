@@ -27,6 +27,10 @@ object Versions {
     const val viewpager2 = "1.0.0"
     const val glide = "4.13.2"
     const val lottieanimation = "5.2.0"
+    const val toasty = "1.5.2"
+    const val faqs_rv = "0.3.1"
+    const val google = "20.4.1"
+    const val legacy = "1.0.0"
 
 }
 
@@ -138,6 +142,22 @@ object Libraries {
 
     object ViewPager2 {
         const val viewpager2 = "androidx.viewpager2:viewpager2:${Versions.viewpager2}"
+    }
+
+    object Toasty {
+        const val toasty = "com.github.GrenderG:Toasty:1.5.2:${Versions.toasty}"
+    }
+
+    object Faqs_rv {
+        const val faqs_rv = "com.github.hakobast:dropdown-textview:0.3.1${Versions.faqs_rv}"
+    }
+
+    object GoogleServices {
+        const val google = "com.google.android.gms:play-services-auth:${Versions.google}"
+    }
+
+    object Legacy {
+        const val legacy = "androidx.legacy:legacy-support-v4:${Versions.legacy}"
     }
 
 }
