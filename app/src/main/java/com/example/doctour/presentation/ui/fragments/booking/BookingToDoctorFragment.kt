@@ -1,33 +1,35 @@
 package com.example.doctour.presentation.ui.fragments.booking
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
+import com.example.doctour.R
 import com.example.doctour.databinding.FragmentBookingToDoctorBinding
+import com.example.doctour.presentation.base.BaseFragment
 import com.google.android.material.chip.Chip
 import java.text.SimpleDateFormat
 import java.util.*
 
-class BookingToDoctorFragment : Fragment() {
-    private lateinit var binding: FragmentBookingToDoctorBinding
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentBookingToDoctorBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
+class BookingToDoctorFragment : BaseFragment<FragmentBookingToDoctorBinding,BookingToDoctorViewModel>(
+    R.layout.fragment_booking_to_doctor
+){
+    override val binding: FragmentBookingToDoctorBinding by viewBinding(FragmentBookingToDoctorBinding::bind)
+    override val viewModel: BookingToDoctorViewModel by viewModels<BookingToDoctorViewModel>()
+    override fun initListeners() {
+        super.initListeners()
         setupCalendar()
         setupChipTimes()
         setupNextButton()
+        click()
+    }
+
+    private fun click() {
+        binding.arrowBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
+        binding.btnNext.setOnClickListener {
+            findNavController().navigate(R.id.bookingToDoctorSecondFragment)
+        }
     }
 
     private fun setupCalendar() {

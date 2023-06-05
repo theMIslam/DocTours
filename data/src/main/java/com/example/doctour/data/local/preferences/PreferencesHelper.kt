@@ -2,8 +2,9 @@ package com.example.doctour.data.local.preferences
 
 import android.content.Context
 import android.content.SharedPreferences
+import javax.inject.Inject
 
-class PreferencesHelper(context: Context) {
+class PreferencesHelper @Inject constructor(context: Context) {
 
     private val preferences: SharedPreferences =
         context.getSharedPreferences("doctour.preferences", Context.MODE_PRIVATE)

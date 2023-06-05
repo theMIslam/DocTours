@@ -125,4 +125,10 @@
     <string name="kyrgyz">Кыргызча</string>
     <string name="russian">Русский</string>
     <string name="_16_years">16 лет</string>
+    <string name="Enroll">Записаться</string>
+    <string name="Select_a_date">Выберите дату</string>
+    <string name="Select_a_time">Выберите время</string>
+    <string name="Next">Далее</string>
+    <string name="Ops_failed">Упс, не получилось!</string>
+    <string name="You_have_an_appoiment">Вы записались к хирургу Асанов Асан</string>
 </resources>

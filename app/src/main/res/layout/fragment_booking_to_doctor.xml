@@ -6,212 +6,195 @@
     android:layout_height="match_parent"
     tools:context=".presentation.ui.fragments.booking.BookingToDoctorFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraint"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/arrow_back"
+        style="@style/simple_black_text"
+        android:layout_width="@dimen/_18dp"
+        android:layout_height="@dimen/_11dp"
+        android:layout_marginStart="@dimen/_20dp"
+        android:layout_marginTop="@dimen/_26dp"
+        android:background="@drawable/img_14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_enroll"
+        style="@style/simple_black_text"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-        <ImageView
-            android:id="@+id/arrow_back"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:src="@drawable/baseline_arrow_back_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:text="Записаться"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_20dp"
+        android:text="@string/Enroll"
+        app:layout_constraintStart_toEndOf="@id/arrow_back"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_data"
+        style="@style/simple_black_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginBottom="580dp"
-        android:text="Выберите дату"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_24dp"
+        android:text="@string/Select_a_date"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tv_enroll" />
 
     <CalendarView
         android:id="@+id/calendar"
-        android:layout_width="370dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_16dp"
         android:layout_marginBottom="180dp"
         android:background="@drawable/calendar_corner"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tv_data" />
 
 
     <TextView
         android:id="@+id/tv_times"
+        style="@style/simple_black_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginBottom="190dp"
-        android:text="Выберите время"
-        android:textSize="24sp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_16dp"
+        android:text="@string/Select_a_time"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/calendar" />
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chipTime1"
-        android:layout_width="84dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="180dp"
-        android:background="@drawable/button"
-        android:text="   9:00"
-        android:textColor="@color/blue"
-        app:chipCornerRadius="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <HorizontalScrollView
+        android:id="@+id/scrollview1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_times" />
+        app:layout_constraintTop_toBottomOf="@id/tv_times"
+        android:layout_marginTop="@dimen/_8dp"
+        android:layout_marginHorizontal="@dimen/_16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipTime1"
+                android:layout_width="84dp"
+                android:layout_height="48dp"
+                android:background="@drawable/button"
+                android:text="   9:00"
+                android:textColor="@color/blue"
+                app:chipCornerRadius="16dp" />
 
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chipTime2"
-        android:layout_width="84dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="122dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="180dp"
-        android:background="@drawable/button"
-        android:text="  10:00"
-        android:textColor="@color/blue"
-        app:chipCornerRadius="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipTime2"
+                android:layout_width="84dp"
+                android:layout_height="48dp"
+                android:background="@drawable/button"
+                android:text="  10:00"
+                android:textColor="@color/blue"
+                app:chipCornerRadius="16dp"
+                android:layout_marginStart="@dimen/_8dp"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipTime3"
+                android:layout_width="84dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="@dimen/_8dp"
+                android:background="@drawable/button"
+                android:text="  11:00"
+                android:textColor="@color/blue"
+                app:chipCornerRadius="16dp" />
+
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipTime4"
+                android:layout_width="84dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="@dimen/_8dp"
+                android:background="@drawable/button"
+                android:text="   12:00"
+                android:textColor="@color/blue"
+                app:chipCornerRadius="16dp" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_times" />
+        app:layout_constraintTop_toBottomOf="@id/scrollview1"
+        android:layout_marginTop="@dimen/_8dp"
+        android:layout_marginHorizontal="@dimen/_16dp"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chipTime3"
-        android:layout_width="84dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="222dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="180dp"
-        android:background="@drawable/button"
-        android:text="  11:00"
-        android:textColor="@color/blue"
-        app:chipCornerRadius="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_times" />
-
-
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chipTime4"
-        android:layout_width="84dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="322dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="180dp"
-        android:background="@drawable/button"
-        android:text="   12:00"
-        android:textColor="@color/blue"
-        app:chipCornerRadius="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_times" />
-
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chipTime5"
-        android:layout_width="84dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="110dp"
-        android:background="@drawable/button"
-        android:text="  13:00"
-        android:textColor="@color/blue"
-        app:chipCornerRadius="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_times" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipTime5"
+                android:layout_width="84dp"
+                android:layout_height="48dp"
+                android:background="@drawable/button"
+                android:text="  13:00"
+                android:textColor="@color/blue"
+                app:chipCornerRadius="16dp" />
 
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chipTime6"
-        android:layout_width="84dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="122dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="110dp"
-        android:background="@drawable/button"
-        android:text="  14:00"
-        android:textColor="@color/blue"
-        app:chipCornerRadius="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_times" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipTime6"
+                android:layout_width="84dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="@dimen/_8dp"
+                android:background="@drawable/button"
+                android:text="  14:00"
+                android:textColor="@color/blue"
+                app:chipCornerRadius="16dp" />
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chipTime7"
-        android:layout_width="84dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="222dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="110dp"
-        android:background="@drawable/button"
-        android:text="  15:00"
-        android:textColor="@color/blue"
-        app:chipCornerRadius="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_times" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipTime7"
+                android:layout_width="84dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="@dimen/_8dp"
+                android:background="@drawable/button"
+                android:text="  15:00"
+                android:textColor="@color/blue"
+                app:chipCornerRadius="16dp" />
 
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chipTime8"
-        android:layout_width="84dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="322dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="110dp"
-        android:background="@drawable/button"
-        android:text="   16:00"
-        android:textColor="@color/blue"
-        app:chipCornerRadius="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_times" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipTime8"
+                android:layout_width="84dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="@dimen/_8dp"
+                android:background="@drawable/button"
+                android:text="   16:00"
+                android:textColor="@color/blue"
+                app:chipCornerRadius="16dp"/>
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+
+
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_next"
-        android:layout_width="380dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_48dp"
         android:backgroundTint="@color/blue"
-        android:text="Далее"
+        android:text="@string/Next"
         android:textSize="15sp"
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginBottom="@dimen/_32dp"
+        android:layout_marginHorizontal="@dimen/_16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

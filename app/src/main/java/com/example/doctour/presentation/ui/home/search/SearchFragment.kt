@@ -12,11 +12,13 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.TextView
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentSearchBinding
 import com.example.doctour.presentation.base.BaseFragment
 import com.example.doctour.presentation.ui.fragments.appoiment.model.BermetModel
+import com.example.doctour.utils.showToast
 
 @SuppressLint("ClickableViewAccessibility")
 class SearchFragment :
@@ -31,10 +33,15 @@ class SearchFragment :
 
     override fun initListeners() {
         super.initListeners()
-        myAdapter = SearchAdapter(users)
+        myAdapter = SearchAdapter(users,this::onItemClick)
         binding.rv.adapter = myAdapter
         onClickListeners()
     }
+
+    private fun onItemClick(bermetModel: BermetModel) {
+      findNavController().navigate(R.id.aboutDoctorFragment)
+    }
+
     private fun onClickListeners() {
 
         binding.etSearch.setOnTouchListener { _, event ->
@@ -59,19 +66,19 @@ class SearchFragment :
         })
 
         binding.tvArrowBack.setOnClickListener {
-            //findNavController().navigateUp()
+            findNavController().navigateUp()
         }
         binding.tvAll.setOnClickListener {
-            //action
+            showToast("Все")
         }
         binding.tvDentist.setOnClickListener {
-            //action
+            showToast("Дантист")
         }
         binding.tvPediatric.setOnClickListener {
-            //action
+            showToast("Педиатр")
         }
         binding.tvEyeDoc.setOnClickListener {
-            //action
+            showToast("Окулист")
         }
     }
 
@@ -89,12 +96,38 @@ class SearchFragment :
         dialog.setContentView(R.layout.bottom_sheet_dialog)
         val btnRelease = dialog.findViewById<TextView>(R.id.btn_release)
         val btnApply = dialog.findViewById<TextView>(R.id.btn_apply)
+        val btnAll = dialog.findViewById<TextView>(R.id.btnAll_bottom)
+        val btnPediatrik = dialog.findViewById<TextView>(R.id.btnPediatrik_bottom)
+        val btnDentist = dialog.findViewById<TextView>(R.id.btnDentist_bottom)
+        val btnEyeDoctor = dialog.findViewById<TextView>(R.id.btnEyeDoctor_bottom)
+        val btnBishkek = dialog.findViewById<TextView>(R.id.btnBishkek_bottom)
+        val btnOsh = dialog.findViewById<TextView>(R.id.btnOsh_bottom)
+
         btnRelease.setOnClickListener {
-            //action
+            showToast("Release")
         }
         btnApply.setOnClickListener {
-            //action
+           showToast("Apply")
         }
+        btnAll.setOnClickListener {
+            showToast("All")
+        }
+        btnPediatrik.setOnClickListener {
+            showToast("Pediatrik")
+        }
+        btnDentist.setOnClickListener {
+            showToast("Dentis")
+        }
+        btnEyeDoctor.setOnClickListener {
+            showToast("Eye")
+        }
+        btnBishkek.setOnClickListener {
+            showToast("Bishkek")
+        }
+        btnOsh.setOnClickListener {
+            showToast("Osh")
+        }
+
         dialog.show()
         dialog.window?.apply {
             setLayout(

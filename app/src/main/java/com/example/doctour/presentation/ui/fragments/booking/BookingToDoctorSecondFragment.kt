@@ -1,29 +1,47 @@
 package com.example.doctour.presentation.ui.fragments.booking
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
+
 import android.view.View
-import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.core.view.isVisible
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentBookingToDoctorSecondBinding
+import com.example.doctour.presentation.base.BaseFragment
+import com.example.doctour.utils.showToast
 
-class BookingToDoctorSecondFragment : Fragment() {
+class BookingToDoctorSecondFragment :BaseFragment<FragmentBookingToDoctorSecondBinding,BookingToDoctorViewModel>(
+    R.layout.fragment_booking_to_doctor_second
+){
 
-    private lateinit var binding: FragmentBookingToDoctorSecondBinding
+    override val binding: FragmentBookingToDoctorSecondBinding by viewBinding(FragmentBookingToDoctorSecondBinding::bind)
+    override val viewModel: BookingToDoctorViewModel by viewModels<BookingToDoctorViewModel>()
+    private val isSuccess :Boolean = false
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentBookingToDoctorSecondBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun initListeners() {
+        super.initListeners()
+        setDropDownMenu()
+        onClick()
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        setDropDownMenu()
+    private fun onClick() {
+        binding.arrowBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
+        binding.btnMakeAnAppointment.setOnClickListener {
+                binding.includeSuccessBooking.root.visibility = View.VISIBLE
+        }
+        binding.includeSuccessBooking.btnDone.setOnClickListener {
+            //action
+            showToast("Success_appoiment")
+        }
+        binding.includeFailedBooking.btnDone.setOnClickListener {
+            //action
+            showToast("Failed_appoiment")
+        }
+
     }
 
     private fun setDropDownMenu() {
