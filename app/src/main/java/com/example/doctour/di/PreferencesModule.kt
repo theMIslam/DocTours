@@ -1,6 +1,7 @@
 package com.example.doctour.di
 
 import android.content.Context
+import android.content.SharedPreferences
 import com.example.doctour.data.local.preferences.PreferencesHelper
 import dagger.Module
 import dagger.Provides
@@ -18,4 +19,11 @@ object PreferencesModule {
     fun providePreferencesHelper(
         @ApplicationContext context: Context
     ) = PreferencesHelper(context)
+
+    @Singleton
+    @Provides
+    fun provideUserPreferences(
+        @ApplicationContext context: Context
+    ) = UserPreferences(context)
+
 }

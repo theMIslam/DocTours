@@ -29,6 +29,12 @@ class MainActivity : AppCompatActivity() {
                 R.id.splashScreenFragment -> {
                     navView.visibility = View.GONE
                 }
+                R.id.bookingToDoctorFragment ->{
+                    navView.visibility = View.GONE
+                }
+                R.id.bookingToDoctorSecondFragment ->{
+                    navView.visibility = View.GONE
+                }
                 else -> {navView.visibility = View.VISIBLE
                 }
             }

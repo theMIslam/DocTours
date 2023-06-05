@@ -1,5 +1,6 @@
 package com.example.doctour.di
 
+import android.content.Context
 import android.content.SharedPreferences
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
@@ -7,8 +8,11 @@ import javax.inject.Inject
 
 
 class UserPreferences @Inject constructor(
-    private val sharedPreferences: SharedPreferences
+    context: Context
 ) {
+    private  val sharedPreferences:SharedPreferences = context.getSharedPreferences("preference",
+        Context.MODE_PRIVATE
+    )
     var isAuthenticated: Boolean
         get() = sharedPreferences.getBoolean(PreferencesKeys.IS_AUTHENTICATED, false)
         set(value) = sharedPreferences.put(PreferencesKeys.IS_AUTHENTICATED, value)

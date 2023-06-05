@@ -48,7 +48,81 @@ android {
         buildConfig = true
         viewBinding = true
     }
-}
+//<<<<<<< HEAD
+//
+//    dependencies {
+//
+//        // Module
+//        implementation(project(":data"))
+//        implementation(project(":domain"))
+//
+//        // Android
+//        implementation(Deps.UI.androidCore)
+//        implementation(Deps.UI.appcompat)
+//        implementation(Deps.UI.material)
+//
+//        // Container layout
+//        implementation(Deps.UI.constraint)
+//        implementation(Deps.UI.appcompat)
+//        implementation(Deps.UI.material)
+//        implementation(Deps.UI.constraint)
+//
+//        // Test
+//        testImplementation(Deps.UI.junit)
+//        androidTestImplementation(Deps.UI.extJunit)
+//        androidTestImplementation(Deps.UI.espresso)
+//
+//        // Fragment
+//        implementation(Deps.UI.fragment)
+//
+//        // Hilt
+//        implementation(Deps.DaggerHilt.hilt)
+//        kapt(Deps.DaggerHilt.compiler)
+//
+//        // Retrofit2 (data)
+//        implementation(Deps.Retrofit.retrofit)
+//        implementation(Deps.Retrofit.retrofitConverterGson)
+//
+//        // Glide (data)
+//        implementation(Deps.Glide.glide)
+//
+//        // Nav component
+//        implementation(Deps.NavComponent.fragment)
+//        implementation(Deps.NavComponent.ui)
+//
+//        // View Binding property delegate (reflection-free flavor) (data)
+//        implementation(Deps.ViewBindingDelegate.viewBindingDelegate)
+//
+//        // Lifecycle
+//        implementation(Deps.Lifecycle.lifecycle)
+//        implementation(Deps.Lifecycle.lifecycleViewModel)
+//
+//        // Dublicate
+//        implementation(Deps.Dublicate.dublicate)
+//
+//        // DotsIndicator
+//        implementation(Deps.DotsIndicator.dotsIndicator)
+//
+//        // CircleIndicator
+//        implementation(Deps.CircleIndicator.circleIndicator)
+//
+//        // CircleImageView
+//        implementation(Deps.CircleImageView.circleImageView)
+//
+//        // Lottie Animation
+//        implementation(Deps.LottieAnimation.lottieanimation)
+//
+//        // ViewPager2
+//        implementation(Deps.ViewPager2.viewpager2)
+//
+//        // Paging3
+//        implementation(Deps.Paging3.paging3)
+//        implementation(Deps.Paging3.paging3Runtime)
+//
+//    }
+//=======
+//>>>>>>> 9421fba5a8f4aa3a39f17ddd281911f14bfa8dcd
+//}
 
 dependencies {
 
@@ -106,4 +180,5 @@ dependencies {
     // ViewPager2
     implementation(Libraries.ViewPager2.viewpager2)
 
+}
 }
