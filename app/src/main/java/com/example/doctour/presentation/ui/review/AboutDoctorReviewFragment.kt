@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.doctour.databinding.FragmentAboutDoctorReviewBinding
 
-class AboutDoctorReviewFragment:Fragment(){
+class AboutDoctorReviewFragment : Fragment() {
 
     private lateinit var binding: FragmentAboutDoctorReviewBinding
 
@@ -18,6 +18,15 @@ class AboutDoctorReviewFragment:Fragment(){
         binding =
             FragmentAboutDoctorReviewBinding.inflate(LayoutInflater.from(context), container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        clickers()
+    }
+
+    private fun clickers() {
+
     }
 
 
