@@ -1,31 +1,25 @@
 package com.example.doctour.presentation.ui.fragments.review
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentWriteReviewBinding
+import com.example.doctour.presentation.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 
-class WriteReviewFragment : Fragment() {
+class WriteReviewFragment : BaseFragment<FragmentWriteReviewBinding,ReviewViewModel>(
+    R.layout.fragment_write_review
+) {
 
-    private lateinit var binding: FragmentWriteReviewBinding
+    override val binding: FragmentWriteReviewBinding by viewBinding(FragmentWriteReviewBinding::bind)
+    override val viewModel: ReviewViewModel by viewModels<ReviewViewModel>()
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentWriteReviewBinding.inflate(layoutInflater)
-        return binding.root
-    }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun initListeners() {
+        super.initListeners()
         clickers()
     }
 

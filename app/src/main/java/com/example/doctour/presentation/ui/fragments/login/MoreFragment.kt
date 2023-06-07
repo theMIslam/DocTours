@@ -1,32 +1,26 @@
 package com.example.doctour.presentation.ui.fragments.login
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentMoreBinding
+import com.example.doctour.presentation.base.BaseFragment
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 
-class MoreFragment : Fragment() {
+class MoreFragment : BaseFragment<FragmentMoreBinding,LoginViewModel>(
+    R.layout.fragment_more
+) {
 
-    private lateinit var binding: FragmentMoreBinding
+    override val binding: FragmentMoreBinding by viewBinding(FragmentMoreBinding::bind)
+    override val viewModel: LoginViewModel by viewModels<LoginViewModel>()
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentMoreBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun initListeners() {
+        super.initListeners()
         setBottomSheet()
         clickers()
     }

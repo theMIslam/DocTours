@@ -1,22 +1,18 @@
 package com.example.doctour.presentation.ui.fragments.home.category
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
+import com.example.doctour.databinding.FragmentTopDoctorsBinding
+import com.example.doctour.presentation.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class TopDoctorsFragment : Fragment() {
+class TopDoctorsFragment : BaseFragment<FragmentTopDoctorsBinding,CategoryViewModel>(
+    R.layout.fragment_top_doctors
+) {
 
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_top_doctors, container, false)
-    }
-
+    override val binding: FragmentTopDoctorsBinding by viewBinding(FragmentTopDoctorsBinding::bind)
+    override val viewModel: CategoryViewModel by viewModels<CategoryViewModel>()
 }

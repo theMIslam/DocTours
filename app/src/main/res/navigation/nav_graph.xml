@@ -163,12 +163,8 @@
             android:id="@+id/action_bookingToDoctorFragment_to_bookingToDoctorSecondFragment"
             app:destination="@id/bookingToDoctorSecondFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/bookingToDoctorEnrollFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.booking.BookingToDoctorEnrollFragment"
-        android:label="fragment_booking_to_doctor_enroll"
-        tools:layout="@layout/fragment_booking_to_doctor_enroll" />
-    <fragment
+
+<fragment
         android:id="@+id/bookingToDoctorSecondFragment"
         android:name="com.example.doctour.presentation.ui.fragments.booking.BookingToDoctorSecondFragment"
         android:label="fragment_booking_to_doctor_second"

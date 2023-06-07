@@ -1,29 +1,23 @@
 package com.example.doctour.presentation.ui.fragments.password
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
+import com.example.doctour.R
 import com.example.doctour.databinding.FragmentSuccessPasswordBinding
+import com.example.doctour.presentation.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 
-class SuccessPasswordFragment : Fragment() {
+class SuccessPasswordFragment :BaseFragment<FragmentSuccessPasswordBinding,PasswordViewModel>(
+    R.layout.fragment_success_password
+){
+    override val binding: FragmentSuccessPasswordBinding by viewBinding(FragmentSuccessPasswordBinding::bind)
+    override val viewModel: PasswordViewModel by viewModels<PasswordViewModel>()
 
-    private lateinit var binding : FragmentSuccessPasswordBinding
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentSuccessPasswordBinding.inflate(layoutInflater)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun initListeners() {
+        super.initListeners()
         clickers()
     }
 
