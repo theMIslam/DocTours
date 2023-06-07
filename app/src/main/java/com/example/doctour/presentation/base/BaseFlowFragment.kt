@@ -27,10 +27,6 @@ abstract class BaseFlowFragment(
     protected open fun setupNavigation(navController: NavController) {
     }
 
-    protected open fun setupStatusBar() {
-
-    }
-
     protected open fun defineActionBar() {
 
     }

@@ -15,7 +15,7 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
     override val binding by viewBinding(FragmentHomeBinding::bind)
     override val viewModel by viewModels<HomeViewModel>()
     private val adapterHome =
-        _root_ide_package_.com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeDoctorSpecs(
+        AdapterHomeDoctorSpecs(
             this::onClick
         )
 

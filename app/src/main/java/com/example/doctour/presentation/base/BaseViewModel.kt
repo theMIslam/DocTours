@@ -14,16 +14,9 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
-/**
- * Base class for all [ViewModel]s
- *
- * @author London
- */
+
 abstract class BaseViewModel : ViewModel() {
 
-    /**
-     * Creates a [MutableStateFlow] with [UIState] and the given initial value [UIState.Idle]
-     */
     @Suppress("FunctionName")
     protected fun <T> MutableUIStateFlow() = MutableStateFlow<UIState<T>>(UIState.Idle())
 

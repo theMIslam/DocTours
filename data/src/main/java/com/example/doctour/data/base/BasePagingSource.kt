@@ -11,13 +11,6 @@ import java.io.InterruptedIOException
 
 private const val BASE_STARTING_PAGE_INDEX = 1
 
-/**
- * Base class for create [PagingSource]
- *
- * @author London
- *
- * @see DataMapper
- */
 abstract class BasePagingSource<ValueDto : DataMapper<Value>, Value : Any>(
     private val request: suspend (position: Int) -> Response<DoctourPagingResponse<ValueDto>>,
 ) : PagingSource<Int, Value>() {

@@ -7,14 +7,14 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.databinding.ItemHomeBinding
-import com.example.doctour.presentation.ui.home.home.model.HomeModel
+import com.example.doctour.presentation.ui.fragments.home.home.model.HomeModel
 
 class AdapterHomeDoctorSpecs (private val onClick: () -> Unit
-): ListAdapter<HomeModel, com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeDoctorSpecs.ViewHolder>(
-    _root_ide_package_.com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeDoctorSpecs.Comparator()
+): ListAdapter<HomeModel, AdapterHomeDoctorSpecs.ViewHolder>(
+    AdapterHomeDoctorSpecs.Comparator()
 ) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): _root_ide_package_.com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeDoctorSpecs.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterHomeDoctorSpecs.ViewHolder {
         return ViewHolder(
             ItemHomeBinding.inflate(
                 LayoutInflater.from(parent.context
@@ -29,7 +29,7 @@ class AdapterHomeDoctorSpecs (private val onClick: () -> Unit
             }
         }
     }
-    override fun onBindViewHolder(holder: _root_ide_package_.com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeDoctorSpecs.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: AdapterHomeDoctorSpecs.ViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
     @SuppressLint("DiffUtilEquals")

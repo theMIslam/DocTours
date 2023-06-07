@@ -8,7 +8,9 @@ import com.example.doctour.databinding.FragmentAboutDoctorBinding
 import com.example.doctour.presentation.base.BaseFragment
 import com.example.doctour.presentation.extensions.loadImage
 import com.example.doctour.presentation.ui.fragments.appoiment.model.BermetModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AboutDoctorFragment
     : BaseFragment<FragmentAboutDoctorBinding, AboutDoctorViewModel>(
     R.layout.fragment_about_doctor
