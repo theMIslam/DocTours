@@ -1,4 +1,4 @@
-package com.example.doctour.presentation.ui.fragments.home.search
+package com.example.doctour.presentation.ui.fragments.home.search.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -19,6 +19,7 @@ import com.example.doctour.databinding.FragmentSearchBinding
 import com.example.doctour.presentation.base.BaseFragment
 import com.example.doctour.presentation.extensions.showToast
 import com.example.doctour.presentation.ui.fragments.appoiment.model.BermetModel
+import com.example.doctour.presentation.ui.fragments.home.search.adapter.SearchAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

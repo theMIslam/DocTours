@@ -5,8 +5,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentAppoimentCancelledBBinding
 import com.example.doctour.presentation.base.BaseFragment
-import com.example.doctour.presentation.ui.fragments.appoiment.AppoimentViewModel
-import com.example.doctour.presentation.ui.fragments.appoiment.CancelledBAdapter
+import com.example.doctour.presentation.ui.fragments.appoiment.adapter.CancelledBAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

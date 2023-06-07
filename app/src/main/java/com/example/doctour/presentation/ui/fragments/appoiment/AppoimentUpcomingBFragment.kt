@@ -14,6 +14,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentAppoimentUpcomingBBinding
 import com.example.doctour.presentation.base.BaseFragment
+import com.example.doctour.presentation.ui.fragments.appoiment.adapter.UpComingBAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
