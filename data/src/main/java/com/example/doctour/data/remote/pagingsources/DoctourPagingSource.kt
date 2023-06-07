@@ -8,5 +8,5 @@ import com.example.doctour.domain.model.Doctour
 class DoctourPagingSource(
     private val service: DoctourApiService
 ) : BasePagingSource<DoctourDto, Doctour>(
-    { service.fetchDoctourPaging(it) }
+    { service.fetchDoctourPaging(it)}
 )

@@ -4,7 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.doctour.R
 import com.example.doctour.presentation.base.BaseViewModel
-import com.example.doctour.presentation.ui.home.home.model.Notification
+import com.example.doctour.presentation.ui.fragments.home.home.model.Notification
+
 
 class ViewModelNotification : BaseViewModel() {
 
