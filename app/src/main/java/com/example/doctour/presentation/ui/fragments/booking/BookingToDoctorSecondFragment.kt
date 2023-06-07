@@ -36,11 +36,11 @@ class BookingToDoctorSecondFragment :BaseFragment<FragmentBookingToDoctorSecondB
                 binding.includeSuccessBooking.root.visibility = View.VISIBLE
         }
         binding.includeSuccessBooking.btnDone.setOnClickListener {
-            //action
+            // TODO: action
             showToast("Success_appoiment")
         }
         binding.includeFailedBooking.btnDone.setOnClickListener {
-            //action
+            // TODO: action
             showToast("Failed_appoiment")
         }
 

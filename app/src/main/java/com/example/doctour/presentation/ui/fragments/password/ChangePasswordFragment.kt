@@ -44,7 +44,7 @@ class ChangePasswordFragment : Fragment() {
                 }
                 when (etNewPassword.text) {
                     etRepeatNewPassword -> {
-                        //change password in server
+                        // TODO:  change password in server
                     }
                 }
             }

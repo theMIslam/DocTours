@@ -10,7 +10,6 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 
 internal fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
-        // по факту тут должно быть BASE_URL
     .baseUrl(BuildConfig.BUILD_TYPE)
     .client(okHttpClient)
     .addConverterFactory(

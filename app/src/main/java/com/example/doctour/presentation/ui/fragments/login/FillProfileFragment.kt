@@ -29,7 +29,7 @@ class FillProfileFragment : Fragment() {
     }
 
     private fun checking() {
-        //отправка данных на сервер
+        // TODO: отправка данных на сервер
         if (binding.etFio.text.isEmpty()) {
             Toast.makeText(requireContext(), getString(R.string.fio_), Toast.LENGTH_SHORT).show()
         }

@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 interface DoctourApiService {
 
-    @GET("/api/foo")
+    @GET("/api/doctour")
     suspend fun fetchDoctour(): Response<DoctourDto>
 
     @GET("/api/foo")

@@ -5,7 +5,6 @@ sealed class NetworkError {
 
     class Api(val error: String?) : NetworkError()
 
-
     class ApiInputs(val error: MutableMap<String, List<String>>?) : NetworkError()
 
 
