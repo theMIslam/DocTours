@@ -1,4 +1,4 @@
-package com.example.doctour.presentation.ui.fragments.booking
+package com.example.doctour.presentation.ui.fragments.home.notification
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,14 +9,15 @@ import com.example.doctour.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class BookingToDoctorEnrollFragment : Fragment() {
+class NotificationFragment : Fragment() {
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_booking_to_doctor_enroll, container, false)
+        return inflater.inflate(R.layout.fragment_notification, container, false)
     }
 
 }

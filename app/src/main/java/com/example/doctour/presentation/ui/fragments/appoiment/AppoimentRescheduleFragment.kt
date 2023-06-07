@@ -6,7 +6,9 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentAppoimentRescheduleBinding
 import com.example.doctour.presentation.base.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AppoimentRescheduleFragment :
     BaseFragment<FragmentAppoimentRescheduleBinding, AppoimentViewModel>
         (R.layout.fragment_appoiment_reschedule) {

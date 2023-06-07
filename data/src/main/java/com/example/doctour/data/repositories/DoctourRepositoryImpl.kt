@@ -8,7 +8,7 @@ import com.example.doctour.data.local.db.entities.doctour.toEntity
 import com.example.doctour.domain.repositories.DoctourRepository
 import javax.inject.Inject
 
-abstract class DoctourRepositoryImpl @Inject constructor(
+class DoctourRepositoryImpl @Inject constructor(
     private val service: DoctourApiService,
     private val dao: DoctourDao
 ) : BaseRepository(), DoctourRepository {

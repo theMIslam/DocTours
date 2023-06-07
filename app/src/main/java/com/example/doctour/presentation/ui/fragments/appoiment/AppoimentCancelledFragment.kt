@@ -9,7 +9,9 @@ import com.example.doctour.databinding.FragmentAppoimentCancelledBinding
 import com.example.doctour.presentation.base.BaseFragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AppoimentCancelledFragment :
     BaseFragment<FragmentAppoimentCancelledBinding, AppoimentViewModel>
         (R.layout.fragment_appoiment_cancelled) {

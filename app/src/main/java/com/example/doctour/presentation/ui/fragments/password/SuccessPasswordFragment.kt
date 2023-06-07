@@ -1,32 +1,35 @@
-package com.example.doctour.presentation.ui.fragments.onboarding
+package com.example.doctour.presentation.ui.fragments.password
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.doctour.databinding.FragmentOnBoardingBinding
-import com.example.doctour.presentation.ui.fragments.onboarding.adapter.OnBoardingAdapter
+import androidx.navigation.fragment.findNavController
+import com.example.doctour.databinding.FragmentSuccessPasswordBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 
-class OnBoardingFragment : Fragment() {
-    private lateinit var binding: FragmentOnBoardingBinding
+class SuccessPasswordFragment : Fragment() {
+
+    private lateinit var binding : FragmentSuccessPasswordBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding=FragmentOnBoardingBinding.inflate(inflater, container, false)
+        binding = FragmentSuccessPasswordBinding.inflate(layoutInflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter= OnBoardingAdapter()
-        binding.viewpager2.adapter = adapter
-
-
+        clickers()
     }
 
+    private fun clickers() {
+        binding.btnDone.setOnClickListener {
+            findNavController().navigateUp()
+        }
+    }
 }
