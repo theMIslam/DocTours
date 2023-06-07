@@ -34,7 +34,7 @@ class AboutDoctorFragment
             findNavController().navigate(R.id.bookingToDoctorFragment)
         }
         binding.ivHeart.setOnClickListener {
-            findNavController().navigate(R.id.bookingToDoctorFragment)
+
         }
     }
 
