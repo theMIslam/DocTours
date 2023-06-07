@@ -18,7 +18,7 @@ class NetworkClient @Inject constructor(
         }.build()
     )
 
-    fun provideFooApiService(): DoctourApiService = provideRetrofit.create(
+    fun provideDoctourApiService(): DoctourApiService = provideRetrofit.create(
         DoctourApiService::class.java
     )
 

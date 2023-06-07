@@ -49,61 +49,66 @@ android {
         viewBinding = true
     }
 
-dependencies {
+    dependencies {
 
-    implementation(project(":data"))
-    implementation(project(":domain"))
+        implementation(project(":data"))
+        implementation(project(":domain"))
 
-    // Kotlin
-    implementation(Libraries.Coroutines.android)
+        // Kotlin
+        implementation(Libraries.Coroutines.android)
 
-    // UI Components
-    implementation(Libraries.UIComponents.material)
-    implementation(Libraries.UIComponents.constraintLayout)
-    implementation(Libraries.UIComponents.vbpd)
+        // UI Components
+        implementation(Libraries.UIComponents.material)
+        implementation(Libraries.UIComponents.constraintLayout)
+        implementation(Libraries.UIComponents.vbpd)
 
-    // Core
-    implementation(Libraries.Core.core)
-    implementation(Libraries.Core.splashscreen)
+        // Core
+        implementation(Libraries.Core.core)
+        implementation(Libraries.Core.splashscreen)
 
-    // Activity
-    implementation(Libraries.Activity.activity)
+        // Activity
+        implementation(Libraries.Activity.activity)
 
-    // Fragment
-    implementation(Libraries.Fragment.fragment)
+        // Fragment
+        implementation(Libraries.Fragment.fragment)
 
-    // Lifecycle
-    implementation(Libraries.Lifecycle.viewModel)
-    implementation(Libraries.Lifecycle.runtime)
+        // Lifecycle
+        implementation(Libraries.Lifecycle.viewModel)
+        implementation(Libraries.Lifecycle.runtime)
 
-    // Navigation
-    implementation(Libraries.Navigation.fragment)
-    implementation(Libraries.Navigation.ui)
+        // Navigation
+        implementation(Libraries.Navigation.fragment)
+        implementation(Libraries.Navigation.ui)
 
-    // Hilt
-    implementation(Libraries.Hilt.android)
-    kapt(Libraries.Hilt.compiler)
+        // Hilt
+        implementation(Libraries.Hilt.android)
+        kapt(Libraries.Hilt.compiler)
 
-    // Glide
-    implementation(Libraries.Glide.glide)
+        // Glide
+        implementation(Libraries.Glide.glide)
 
-    // Dublicate
-    implementation(Libraries.Dublicate.dublicate)
+        // Dublicate
+        implementation(Libraries.Dublicate.dublicate)
 
-    // DotsIndicator
-    implementation(Libraries.DotsIndicator.dotsIndicator)
+        // DotsIndicator
+        implementation(Libraries.DotsIndicator.dotsIndicator)
 
-    // CircleIndicator
-    implementation(Libraries.CircleIndicator.circleIndicator)
+        // CircleIndicator
+        implementation(Libraries.CircleIndicator.circleIndicator)
 
-    // CircleImageView
-    implementation(Libraries.CircleImageView.circleImageView)
+        // CircleImageView
+        implementation(Libraries.CircleImageView.circleImageView)
 
-    // Lottie Animation
-    implementation(Libraries.LottieAnimation.lottieanimation)
+        // Lottie Animation
+        implementation(Libraries.LottieAnimation.lottieanimation)
 
-    // ViewPager2
-    implementation(Libraries.ViewPager2.viewpager2)
+        // ViewPager2
+        implementation(Libraries.ViewPager2.viewpager2)
 
-}
+        // Google gms services
+        implementation(Libraries.GoogleServices.google)
+
+        // Legacy
+        implementation(Libraries.Legacy.legacy)
+    }
 }

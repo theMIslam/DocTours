@@ -7,9 +7,11 @@ import com.example.doctour.R
 import com.example.doctour.databinding.FragmentBookingToDoctorBinding
 import com.example.doctour.presentation.base.BaseFragment
 import com.google.android.material.chip.Chip
+import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.*
 
+@AndroidEntryPoint
 class BookingToDoctorFragment : BaseFragment<FragmentBookingToDoctorBinding,BookingToDoctorViewModel>(
     R.layout.fragment_booking_to_doctor
 ){

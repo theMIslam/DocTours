@@ -13,7 +13,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.paging.PagingData
 import androidx.viewbinding.ViewBinding
 import com.example.doctour.domain.core.Either
-import com.example.doctour.state.UIState
+import com.example.doctour.presentation.ui.state.UIState
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
@@ -127,7 +127,7 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(
 
     protected fun <T> StateFlow<UIState<T>>.collectUIState(
         uiState: ((UIState<T>) -> Unit)? = null,
-        onLoading: (() -> Unit?)? = null,
+            onLoading: (() -> Unit?)? = null,
         onSuccess: (data: T) -> Unit,
     ) {
         viewLifecycleOwner.lifecycleScope.launch {

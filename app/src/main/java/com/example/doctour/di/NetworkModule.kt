@@ -24,7 +24,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideFooApiService(
+    fun provideDoctourApiService(
         networkClient: NetworkClient
-    ) = networkClient.provideFooApiService()
+    ) = networkClient.provideDoctourApiService()
 }

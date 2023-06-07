@@ -1,3 +1,10 @@
+buildscript {
+    dependencies {
+        classpath(Libraries.GoogleServices.google)
+    }
+}
+
+
 plugins {
     id(Plugins.AGP.application) version Versions.AGP apply false
     id(Plugins.AGP.library) version Versions.AGP apply false

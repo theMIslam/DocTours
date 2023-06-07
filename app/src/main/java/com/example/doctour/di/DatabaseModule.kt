@@ -26,7 +26,7 @@ object DatabaseModule {
 
     @Singleton
     @Provides
-    fun provideFooDao(
+    fun provideDoctourDao(
         appDatabase: AppDatabase
     ): DoctourDao = roomClient.provideFooDao(appDatabase)
 }

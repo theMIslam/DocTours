@@ -7,6 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.doctour.databinding.FragmentOnBoardingBinding
 import com.example.doctour.presentation.ui.fragments.onboarding.adapter.OnBoardingAdapter
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
 
 class OnBoardingFragment : Fragment() {
     private lateinit var binding: FragmentOnBoardingBinding

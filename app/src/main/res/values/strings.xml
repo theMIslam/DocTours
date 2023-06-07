@@ -131,4 +131,8 @@
     <string name="Next">Далее</string>
     <string name="Ops_failed">Упс, не получилось!</string>
     <string name="You_have_an_appoiment">Вы записались к хирургу Асанов Асан</string>
+    <string name="write_your_review_toast">Напишите ваш отзыв</string>
+    <string name="line_">Заполните поле</string>
+    <string name="change_password">Новый пароль не должен совпадать с предыдущим</string>
+    <string name="fio_">Введите ваше ФИО</string>
 </resources>
