@@ -5,12 +5,15 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentAppoimentCancelledBBinding
 import com.example.doctour.presentation.base.BaseFragment
+import com.example.doctour.presentation.ui.fragments.appoiment.AppoimentViewModel
+import com.example.doctour.presentation.ui.fragments.appoiment.CancelledBAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class AppoimentCancelledBFragment :
-    BaseFragment<FragmentAppoimentCancelledBBinding, AppoimentViewModel>
-        (R.layout.fragment_appoiment_cancelled_b) {
+    BaseFragment<FragmentAppoimentCancelledBBinding, AppoimentViewModel>(
+        R.layout.fragment_appoiment_cancelled_b
+    ) {
 
     override val binding: FragmentAppoimentCancelledBBinding by viewBinding(FragmentAppoimentCancelledBBinding::bind)
     override val viewModel: AppoimentViewModel by viewModels<AppoimentViewModel>()

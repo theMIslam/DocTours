@@ -1,21 +1,18 @@
 package com.example.doctour.presentation.ui.fragments.home.category
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+
+import androidx.fragment.app.viewModels
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
+import com.example.doctour.databinding.FragmentFavoriteDoctorsBinding
+import com.example.doctour.presentation.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class FavoriteDoctorsFragment : Fragment() {
+class FavoriteDoctorsFragment : BaseFragment<FragmentFavoriteDoctorsBinding,CategoryViewModel>(
+    R.layout.fragment_favorite_doctors
+) {
 
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favorite_doctors, container, false)
-    }
-
+    override val binding: FragmentFavoriteDoctorsBinding by viewBinding(FragmentFavoriteDoctorsBinding::bind)
+    override val viewModel: CategoryViewModel by viewModels<CategoryViewModel>()
 }

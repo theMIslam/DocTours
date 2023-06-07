@@ -1,32 +1,25 @@
 package com.example.doctour.presentation.ui.fragments.password
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
+import com.example.doctour.R
 import com.example.doctour.databinding.FragmentNewPasswordBinding
+import com.example.doctour.presentation.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 
-class NewPasswordFragment : Fragment() {
-    private lateinit var binding: FragmentNewPasswordBinding
+class NewPasswordFragment : BaseFragment <FragmentNewPasswordBinding,PasswordViewModel>(
+    R.layout.fragment_new_password
+        ) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentNewPasswordBinding.inflate(layoutInflater)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override val binding: FragmentNewPasswordBinding by viewBinding(FragmentNewPasswordBinding::bind)
+    override val viewModel: PasswordViewModel by viewModels<PasswordViewModel>()
+    override fun initListeners() {
+        super.initListeners()
         onClick()
     }
-
     private fun onClick() {
         binding.btnNext.setOnClickListener {
             findNavController().navigateUp()

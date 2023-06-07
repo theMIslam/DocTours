@@ -1,22 +1,17 @@
 package com.example.doctour.presentation.ui.fragments.password
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
+import com.example.doctour.databinding.FragmentFailedPasswordBinding
+import com.example.doctour.presentation.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 
-class FailedPasswordFragment : Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_failed_password, container, false)
-    }
-
+class FailedPasswordFragment :BaseFragment<FragmentFailedPasswordBinding,PasswordViewModel>(
+    R.layout.fragment_failed_password
+) {
+    override val binding: FragmentFailedPasswordBinding by viewBinding(FragmentFailedPasswordBinding::bind)
+    override val viewModel: PasswordViewModel by viewModels<PasswordViewModel>()
 }
