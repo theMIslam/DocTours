@@ -1,4 +1,4 @@
-package com.example.doctour.presentation.ui.fragments.home.home
+package com.example.doctour.presentation.ui.fragments.home.notification
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
