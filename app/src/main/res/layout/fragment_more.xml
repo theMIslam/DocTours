@@ -21,36 +21,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:backgroundTint="@color/white"
+            android:paddingStart="6dp"
+            android:paddingEnd="@dimen/_6dp"
             android:drawableLeft="@drawable/google"
             android:drawableRight="@drawable/ic_next"
             android:text="@string/name"
             android:textAlignment="textStart"
             android:textColor="@color/black"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            app:cornerRadius="16dp" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cv_language"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="24dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="8dp">
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_language"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:backgroundTint="@color/white"
-            android:drawableEnd="@drawable/ic_next"
-            android:text="@string/language"
-            android:textAlignment="textStart"
-            android:textColor="@color/black"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:cornerRadius="16dp" />
 
@@ -61,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="8dp">
 
@@ -71,10 +49,10 @@
             android:layout_height="match_parent"
             android:backgroundTint="@color/white"
             android:drawableEnd="@drawable/ic_next"
-            android:text="@string/password"
+            android:text="@string/change_passwordd"
             android:textAlignment="textStart"
             android:textColor="@color/black"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:cornerRadius="16dp" />
 
@@ -93,39 +71,12 @@
             android:id="@+id/ms_biometric_entry"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:checked="true"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:text="@string/biometric_entry"
-            android:textColor="@color/black"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            app:thumbTint="@drawable/switch_color"
-            app:trackTint="@drawable/switch_bg"
-            android:textOn="On"
-            android:textOff="Off"/>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cv_push_notification"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="16dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="8dp">
-
-        <com.google.android.material.materialswitch.MaterialSwitch
-            android:id="@+id/ms_push_notification"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
             android:checked="false"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:text="@string/push_notifications"
+            android:text="@string/definition_of_geolocation"
             android:textColor="@color/black"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:thumbTint="@drawable/switch_color"
             app:trackTint="@drawable/switch_bg"
@@ -152,7 +103,29 @@
             android:text="@string/exit"
             android:textAlignment="textStart"
             android:textColor="@color/black"
-            android:textSize="22sp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:cornerRadius="16dp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_delete_account"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_delete_account"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/white"
+            android:text="@string/delete_account"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:cornerRadius="16dp" />
     </androidx.cardview.widget.CardView>
