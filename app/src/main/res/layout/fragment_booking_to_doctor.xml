@@ -194,7 +194,7 @@
         android:textSize="15sp"
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="@dimen/_32dp"
+        android:layout_marginBottom="@dimen/_16dp"
         android:layout_marginHorizontal="@dimen/_16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
