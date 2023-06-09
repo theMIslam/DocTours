@@ -85,7 +85,7 @@ object Libraries {
     object Hilt {
         const val android = "com.google.dagger:hilt-android:${Versions.dagger}"
         const val compiler = "com.google.dagger:hilt-compiler:${Versions.dagger}"
-    }
+}
 
     object Moshi {
         const val moshi = "com.squareup.moshi:moshi:${Versions.moshi}"
