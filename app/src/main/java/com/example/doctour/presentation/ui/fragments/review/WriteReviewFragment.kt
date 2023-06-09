@@ -24,19 +24,6 @@ class WriteReviewFragment : BaseFragment<FragmentWriteReviewBinding,ReviewViewMo
     }
 
     private fun clickers() {
-        binding.btnBack.setOnClickListener {
-            findNavController().navigate(R.id.appoimentUpcomingBFragment)
-        }
-        binding.btnSend.setOnClickListener {
-            // TODO: нужно получить ответ с сервера и показать состояние
-            findNavController().navigate(R.id.fragment_review_success)
-        }
-        binding.rbtnYes.setOnClickListener {
-            // TODO: change color
-        }
-        binding.rbtnNo.setOnClickListener {
-            // TODO: change color
-        }
         if (binding.etYourReview.text.isEmpty()) {
             // TODO: Toast.makeText(this@WriteReviewFragment, getString(R.string.write_your_review_toast), Toast.LENGTH_SHORT).show()
         }

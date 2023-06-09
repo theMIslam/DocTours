@@ -1,5 +1,6 @@
 package com.example.doctour.presentation.ui.fragments.login
 
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -19,6 +20,17 @@ class FillProfileFragment : BaseFragment<FragmentProfileFillBinding,LoginViewMod
     override fun initialize() {
         super.initialize()
         checking()
+    }
+
+    override fun initListeners() {
+        super.initListeners()
+        setDropDownMenu()
+    }
+
+    private fun setDropDownMenu() {
+        val gender = arrayOf("Женский", "Мужской")
+        val arrayAdapter = ArrayAdapter(requireActivity(), R.layout.item_dropdown, gender)
+        binding.actvGender.setAdapter(arrayAdapter)
     }
 
     private fun checking() {

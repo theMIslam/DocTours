@@ -43,11 +43,5 @@ class MoreFragment : BaseFragment<FragmentMoreBinding,LoginViewModel>(
             dialog.setContentView(view)
             dialog.show()
         }
-        binding.btnLanguage.setOnClickListener {
-            val view: View = layoutInflater.inflate(R.layout.bottom_language, null)
-            val dialog = BottomSheetDialog(requireActivity())
-            dialog.setContentView(view)
-            dialog.show()
-        }
     }
 }

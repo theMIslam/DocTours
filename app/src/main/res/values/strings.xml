@@ -135,4 +135,10 @@
     <string name="line_">Заполните поле</string>
     <string name="change_password">Новый пароль не должен совпадать с предыдущим</string>
     <string name="fio_">Введите ваше ФИО</string>
+    <string name="change_passwordd">Изменить пароль</string>
+    <string name="delete_account">Удалить аккаунт</string>
+    <string name="definition_of_geolocation">Определение геолокации</string>
+    <string name="write_comment">Написать комментарий</string>
+    <string name="categories">Категории</string>
+    <string name="doctor">Врачи</string>
 </resources>
