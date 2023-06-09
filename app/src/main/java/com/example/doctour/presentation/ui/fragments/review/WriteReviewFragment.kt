@@ -28,17 +28,17 @@ class WriteReviewFragment : BaseFragment<FragmentWriteReviewBinding,ReviewViewMo
             findNavController().navigate(R.id.appoimentUpcomingBFragment)
         }
         binding.btnSend.setOnClickListener {
-            //нужно получить ответ с сервера и показать состояние
+            // TODO: нужно получить ответ с сервера и показать состояние
             findNavController().navigate(R.id.fragment_review_success)
         }
         binding.rbtnYes.setOnClickListener {
-            //change color
+            // TODO: change color
         }
         binding.rbtnNo.setOnClickListener {
-            //change color
+            // TODO: change color
         }
         if (binding.etYourReview.text.isEmpty()) {
-           // Toast.makeText(this@WriteReviewFragment, getString(R.string.write_your_review_toast), Toast.LENGTH_SHORT).show()
+            // TODO: Toast.makeText(this@WriteReviewFragment, getString(R.string.write_your_review_toast), Toast.LENGTH_SHORT).show()
         }
     }
 }

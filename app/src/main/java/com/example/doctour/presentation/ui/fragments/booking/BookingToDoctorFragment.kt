@@ -42,8 +42,8 @@ class BookingToDoctorFragment : BaseFragment<FragmentBookingToDoctorBinding,Book
                 set(Calendar.DAY_OF_MONTH, dayOfMonth)
             }
 
-            // Do something with the selected date
-            // For example, you can format the date and display it in a TextView
+            // TODO: Do something with the selected date
+            // TODO:  For example, you can format the date and display it in a TextView
             val formattedDate =
                 SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(selectedDate.time)
             binding.tvData.text = formattedDate
@@ -64,21 +64,21 @@ class BookingToDoctorFragment : BaseFragment<FragmentBookingToDoctorBinding,Book
 
         for (chip in chipTimes) {
             chip.setOnClickListener {
-                // Clear the selection state of all chips
+                // TODO:  Clear the selection state of all chips
                 for (otherChip in chipTimes) {
                     otherChip.isChecked = false
                 }
-                // Set the current chip as selected
+                // TODO: Set the current chip as selected
                 chip.isChecked = true
 
-                // Do something with the selected time slot
+                // TODO: Do something with the selected time slot
             }
         }
     }
 
     private fun setupNextButton() {
         binding.btnNext.setOnClickListener {
-            // Perform the next step in the booking process
+            // TODO:  Perform the next step in the booking process
         }
     }
 }
