@@ -28,8 +28,6 @@ class AdapterFeedbacks: RecyclerView.Adapter< AdapterFeedbacks.FeedBacksViewHold
             binding.ivImage.loadImage(bermetFeedbacks.image)
             binding.tvName.text=bermetFeedbacks.name
             binding.tvFeedback.text=bermetFeedbacks.feedback
-            binding.tvLikes.text=bermetFeedbacks.numberOfLikes.toString()
-            binding.tvDateOfFeedback.text=bermetFeedbacks.numberOfLikes.toString()
         }
 
     }

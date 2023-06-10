@@ -37,7 +37,7 @@ class ChangePasswordFragment : BaseFragment<FragmentChangePasswordBinding,Passwo
                 }
                 when (etNewPassword.text) {
                     etRepeatNewPassword -> {
-                        // TODO:  change password in server
+                        // TODO: change password in server
                     }
                 }
             }
