@@ -141,4 +141,14 @@
     <string name="write_comment">Написать комментарий</string>
     <string name="categories">Категории</string>
     <string name="doctor">Врачи</string>
+    <string name="whatsapp">Записаться через WhatsApp</string>
+    <string name="date">06 мая 2023</string>
+    <string name="feedback_32">(32 отзыва)</string>
+    <string name="profile">Профиль</string>
+    <string name="save">Сохранить</string>
+    <string name="number">Номер телефона</string>
+    <string name="new_password">Новый пароль</string>
+    <string name="repeat_password">Повторите пароль</string>
+    <string name="current_password">Текущий пароль</string>
+    <string name="popular_doctors">Популярные специалисты</string>
 </resources>
