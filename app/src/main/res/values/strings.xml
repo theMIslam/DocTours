@@ -151,4 +151,11 @@
     <string name="repeat_password">Повторите пароль</string>
     <string name="current_password">Текущий пароль</string>
     <string name="popular_doctors">Популярные специалисты</string>
+    <string name="delete_from_favorites">Удалить из избранного?</string>
+    <string name="yes_delete">Да, удалить</string>
+    <string name="choose_city">Выбрать город</string>
+    <string name="on_clinic">On Clinic</string>
+    <string name="network_of_clinics">Сеть клиник</string>
+    <string name="create">Создать</string>
+    <string name="password_has_been_reset">Ваш пароль был сброшен</string>
 </resources>
