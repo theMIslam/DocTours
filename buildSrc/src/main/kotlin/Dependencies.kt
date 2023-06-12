@@ -29,6 +29,7 @@ object Versions {
     const val lottieanimation = "5.2.0"
     const val google = "20.4.1"
     const val legacy = "1.0.0"
+    const val smsconfiguration = "1.7.1"
 
 }
 
@@ -148,6 +149,10 @@ object Libraries {
 
     object Legacy {
         const val legacy = "androidx.legacy:legacy-support-v4:${Versions.legacy}"
+    }
+
+    object SmsConfigutation {
+        const val smsconfiguration = "com.github.fraggjkee:sms-confirmation-view:${Versions.smsconfiguration}"
     }
 
 }
