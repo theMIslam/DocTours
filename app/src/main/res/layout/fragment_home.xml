@@ -39,7 +39,7 @@
         app:layout_constraintStart_toEndOf="@id/card_view_home_fragment" />
 
     <ImageView
-        android:id="@+id/img_notification"
+        android:id="@+id/iv_heart"
         android:layout_width="@dimen/_18dp"
         android:layout_height="@dimen/_16dp"
         android:layout_marginStart="@dimen/_80dp"
@@ -49,14 +49,14 @@
         app:layout_constraintStart_toEndOf="@id/tv_name" />
 
     <ImageView
-        android:id="@+id/img_heart"
+        android:id="@+id/iv_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_30dp"
         android:layout_marginTop="@dimen/_34dp"
         android:src="@drawable/search"
-        app:layout_constraintBottom_toBottomOf="@id/img_notification"
-        app:layout_constraintStart_toEndOf="@id/img_notification"
+        app:layout_constraintBottom_toBottomOf="@id/iv_heart"
+        app:layout_constraintStart_toEndOf="@id/iv_heart"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/black" />
 
