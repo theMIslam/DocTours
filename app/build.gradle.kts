@@ -111,5 +111,8 @@ android {
 
         // Legacy
         implementation(Libraries.Legacy.legacy)
+
+        // SMS configuration
+        implementation(Libraries.SmsConfigutation.smsconfiguration)
     }
 }

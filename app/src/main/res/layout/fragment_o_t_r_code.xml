@@ -56,46 +56,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_code_was_sent" />
 
-    <EditText
-        android:id="@+id/et_number_1"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/et_code_bg"
+    <com.fraggjkee.smsconfirmationview.SmsConfirmationView
+        android:id="@+id/sms_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_60dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_number" />
-
-
-    <EditText
-        android:id="@+id/et_number_2"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="130dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/et_code_bg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_number" />
-
-    <EditText
-        android:id="@+id/et_number_3"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="220dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/et_code_bg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_number" />
-
-    <EditText
-        android:id="@+id/et_number_4"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="310dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/et_code_bg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_number" />
+        app:layout_constraintTop_toBottomOf="@id/tv_number"
+        app:scv_symbolBackgroundColor="@color/white"
+        app:scv_symbolBorderColor="@color/grey"
+        app:scv_symbolBorderCornerRadius="@dimen/_16dp"
+        app:scv_symbolBorderWidth="@dimen/_1dp"
+        app:scv_symbolHeight="@dimen/_61dp"
+        app:scv_symbolWidth="@dimen/_70dp"
+        app:scv_symbolsSpacing="@dimen/_16dp" />
 
     <TextView
         android:id="@+id/tv_repeat_send"
@@ -106,7 +81,7 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_number_3" />
+        app:layout_constraintTop_toBottomOf="@id/sms_view" />
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="380dp"
