@@ -29,10 +29,10 @@ class SplashScreenFragment :
 
         when{
             userPreferences.isAuthenticated ->{
-                findNavController().navigateSafely(R.id.action_splashScreenFragment_to_onBoarding)
+               // findNavController().navigateSafely(R.id.action_splashScreenFragment_to_onBoarding)
             }
             !userPreferences.isAuthenticated ->{
-                findNavController().navigateSafely(R.id.action_onBoarding_to_fragment_login)
+               // findNavController().navigateSafely(R.id.action_onBoarding_to_fragment_login)
             }
         }
     }

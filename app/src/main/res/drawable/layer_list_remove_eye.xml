@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/baseline_remove_red_eye_24"
+        android:width="@dimen/_18dp"
+        android:height="@dimen/_17dp"
+        android:gravity="center"
+        />
+</layer-list>

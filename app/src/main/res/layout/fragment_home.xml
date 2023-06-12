@@ -20,7 +20,7 @@
             android:id="@+id/img_avatar"
             android:layout_width="@dimen/_48dp"
             android:layout_height="@dimen/_48dp"
-            android:src="@drawable/img" />
+            android:src="@drawable/image_doctors_avatar" />
 
     </androidx.cardview.widget.CardView>
 
