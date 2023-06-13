@@ -29,10 +29,19 @@ class MainActivity : AppCompatActivity() {
                 R.id.splashScreenFragment -> {
                     navView.visibility = View.GONE
                 }
-                R.id.bookingToDoctorFragment ->{
+                R.id.fillProfileFragment ->{
+                    navView.visibility = View.GONE
+                }
+                R.id.aboutDoctorFragment ->{
+                    navView.visibility = View.GONE
+                }
+                R.id.aboutDoctorReviewFragment ->{
                     navView.visibility = View.GONE
                 }
                 R.id.bookingToDoctorSecondFragment ->{
+                    navView.visibility = View.GONE
+                }
+                R.id.loginAndSignUpFragment ->{
                     navView.visibility = View.GONE
                 }
                 else -> {navView.visibility = View.VISIBLE

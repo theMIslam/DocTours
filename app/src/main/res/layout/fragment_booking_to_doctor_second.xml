@@ -71,53 +71,17 @@
                android:layout_height="wrap_content"
                android:inputType="textPersonName"
                android:singleLine="true"
+               android:textColor="@color/black"
                android:textStyle="bold" />
 
        </com.google.android.material.textfield.TextInputLayout>
 
        <TextView
-           android:id="@+id/tv_gender"
+           android:id="@+id/tv_numberPhone"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_marginTop="@dimen/_24dp"
-           android:text="@string/gender"
-           style="@style/simple_bold_parl_text"
-           />
-
-       <com.google.android.material.textfield.TextInputLayout
-           android:id="@+id/til_gender"
-           style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="@dimen/_8dp"
-           app:boxCornerRadiusBottomEnd="@dimen/_10dp"
-           app:boxCornerRadiusBottomStart="@dimen/_10dp"
-           app:boxCornerRadiusTopEnd="@dimen/_10dp"
-           app:boxCornerRadiusTopStart="@dimen/_10dp"
-           app:boxStrokeColor="@color/blue"
-           app:placeholderTextColor="@color/blue"
-           app:hintTextColor="@color/parlament">
-
-           <AutoCompleteTextView
-               android:labelFor="@id/autv_gender"
-               android:id="@+id/autv_gender"
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:layout_weight="1"
-               android:inputType="none"
-               android:text="@string/female"
-               android:textColor="@color/grey"
-               android:textStyle="bold"
-               />
-
-       </com.google.android.material.textfield.TextInputLayout>
-
-       <TextView
-           android:id="@+id/tv_age"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="@dimen/_24dp"
-           android:text="@string/age"
+           android:text="Номер телефона"
            style="@style/simple_bold_parl_text"/>
 
        <com.google.android.material.textfield.TextInputLayout
@@ -126,7 +90,7 @@
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:layout_marginTop="@dimen/_8dp"
-           android:hint="@string/_25"
+           android:hint="+996 (550) 55 - 55 - 55"
            android:textColorHint="@color/grey"
            app:boxCornerRadiusBottomEnd="@dimen/_10dp"
            app:boxCornerRadiusBottomStart="@dimen/_10dp"
@@ -141,8 +105,9 @@
                android:id="@+id/et_age"
                android:layout_width="match_parent"
                android:layout_height="match_parent"
-               android:inputType="number"
+               android:inputType="phone"
                android:singleLine="true"
+               android:textColor="@color/black"
                android:textStyle="bold" />
 
        </com.google.android.material.textfield.TextInputLayout>
@@ -152,17 +117,16 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_marginTop="@dimen/_24dp"
-           android:text="@string/describe_your_problem"
+           android:text="Дата рождения"
            style="@style/simple_bold_parl_text"
            />
-
        <com.google.android.material.textfield.TextInputLayout
-           android:id="@+id/til_description"
+           android:id="@+id/til_dateOfBirthday"
            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:layout_marginTop="@dimen/_8dp"
-           android:hint="@string/description"
+           android:hint="01.01.2000"
            android:textColorHint="@color/grey"
            app:boxCornerRadiusBottomEnd="@dimen/_10dp"
            app:boxCornerRadiusBottomStart="@dimen/_10dp"
@@ -170,25 +134,55 @@
            app:boxCornerRadiusTopStart="@dimen/_10dp"
            app:boxStrokeColor="@color/blue"
            app:placeholderTextColor="@color/blue"
-           app:hintTextColor="@color/parlament">
+           app:hintTextColor="@color/parlament"
+           >
 
            <com.google.android.material.textfield.TextInputEditText
-               android:id="@+id/et_description"
+               android:id="@+id/et_dateOfBirthday"
                android:layout_width="match_parent"
                android:layout_height="match_parent"
                android:inputType="text"
-               android:maxLines="1"
-               android:paddingStart="@dimen/_16dp"
-               android:paddingTop="@dimen/_16dp"
-               android:paddingBottom="@dimen/_108dp"
-               android:scrollHorizontally="true"
                android:singleLine="true"
-               android:textStyle="bold" />
+               android:textStyle="bold"
+               android:textColor="@color/black"
+               android:paddingHorizontal="@dimen/_20dp"
+               android:drawableEnd="@drawable/layer_list_calendar"/>
 
        </com.google.android.material.textfield.TextInputLayout>
 
-   </LinearLayout>
+       <TextView
+           android:id="@+id/tv_gender"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="@dimen/_24dp"
+           android:text="@string/gender"
+           style="@style/simple_bold_parl_text"
+           />
 
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_8dp">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_male"
+                    android:text="Мужской"
+                    app:buttonTint="@color/parlament"
+                    android:textAppearance="@style/simple_black_text"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_female"
+                    android:text="Женский"
+                    android:layout_marginStart="@dimen/_30dp"
+                    app:buttonTint="@color/parlament"
+                    android:textAppearance="@style/simple_black_text"/>
+            </RadioGroup>
+
+       </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_make_an_appointment"

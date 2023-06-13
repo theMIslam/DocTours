@@ -1,7 +1,7 @@
 package com.example.doctour.presentation.ui.fragments.review
 
+import android.graphics.Color
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentWriteReviewBinding
@@ -24,8 +24,18 @@ class WriteReviewFragment : BaseFragment<FragmentWriteReviewBinding,ReviewViewMo
     }
 
     private fun clickers() {
-        if (binding.etYourReview.text.isEmpty()) {
-            // TODO: Toast.makeText(this@WriteReviewFragment, getString(R.string.write_your_review_toast), Toast.LENGTH_SHORT).show()
+        if (binding.etYourReview.text.isNotEmpty()) {
+            binding.btnLeaveFeedback.background.setTint(Color.parseColor("#1B6B93"))
+        }else {
+//            showToast("Напишите отзыв")
         }
+
+        binding.btnLeaveFeedback.setOnClickListener {
+            sendReview()
+        }
+    }
+
+    private fun sendReview() {
+
     }
 }
