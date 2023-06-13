@@ -2,8 +2,6 @@ package com.example.doctour.presentation.ui.fragments.booking
 
 
 import android.view.View
-import android.widget.ArrayAdapter
-import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -20,11 +18,9 @@ class BookingToDoctorSecondFragment :BaseFragment<FragmentBookingToDoctorSecondB
 
     override val binding: FragmentBookingToDoctorSecondBinding by viewBinding(FragmentBookingToDoctorSecondBinding::bind)
     override val viewModel: BookingToDoctorViewModel by viewModels<BookingToDoctorViewModel>()
-    private val isSuccess :Boolean = false
 
     override fun initListeners() {
         super.initListeners()
-        setDropDownMenu()
         onClick()
     }
 
@@ -33,6 +29,7 @@ class BookingToDoctorSecondFragment :BaseFragment<FragmentBookingToDoctorSecondB
             findNavController().navigateUp()
         }
         binding.btnMakeAnAppointment.setOnClickListener {
+            // TODO: make appoiment
                 binding.includeSuccessBooking.root.visibility = View.VISIBLE
         }
         binding.includeSuccessBooking.btnDone.setOnClickListener {
@@ -44,11 +41,5 @@ class BookingToDoctorSecondFragment :BaseFragment<FragmentBookingToDoctorSecondB
             showToast("Failed_appoiment")
         }
 
-    }
-
-    private fun setDropDownMenu() {
-        val gender = arrayOf("Женский", "Мужской")
-        val arrayAdapter = ArrayAdapter(requireActivity(), R.layout.item_dropdown, gender)
-        binding.autvGender.setAdapter(arrayAdapter)
     }
 }

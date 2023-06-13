@@ -1,6 +1,7 @@
 package com.example.doctour.presentation.ui.fragments.review
 
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentAboutDoctorReviewBinding
@@ -18,12 +19,16 @@ class AboutDoctorReviewFragment :BaseFragment<FragmentAboutDoctorReviewBinding,A
     override val viewModel: AboutDoctorViewModel by viewModels<AboutDoctorViewModel>()
     override fun initListeners() {
         super.initListeners()
-        clickers()
+
+        binding.btnWriteFb.setOnClickListener {
+           findNavController().navigate(R.id.writeReviewFragment)
+        }
+
+        binding.tvArrowBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
     }
 
-    private fun clickers() {
-
-    }
 
 
 }

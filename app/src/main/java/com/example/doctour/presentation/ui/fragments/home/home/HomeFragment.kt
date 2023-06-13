@@ -25,13 +25,8 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
         binding.tvBestDoctor.setOnClickListener {
             findNavController().navigateSafely(R.id.homeFragment2)
         }
+        binding.imgAvatar.setOnClickListener {
 
-        binding.imgNotification.setOnClickListener {
-            findNavController().navigateSafely(R.id.homeFragment2)
-
-        }
-        binding.imgHeart.setOnClickListener {
-            findNavController().navigateSafely(R.id.homeFragment2)
         }
 
     }

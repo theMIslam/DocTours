@@ -22,9 +22,13 @@ class AboutDoctorFragment
         AdapterFeedbacks()
     }
 
+    override fun initialize() {
+        super.initialize()
+        binding.rvFeedbacks.adapter = adapterFeedback
+    }
+
     override fun initListeners() {
         super.initListeners()
-        binding.rvFeedbacks.adapter = adapterFeedback
 
         binding.tvArrowBack.setOnClickListener {
             findNavController().navigateUp()
@@ -33,7 +37,7 @@ class AboutDoctorFragment
             findNavController().navigate(R.id.aboutDoctorReviewFragment)
         }
         binding.btnRegister.setOnClickListener {
-            findNavController().navigate(R.id.bookingToDoctorFragment)
+            findNavController().navigate(R.id.bookingToDoctorSecondFragment)
         }
         binding.ivHeart.setOnClickListener {
 

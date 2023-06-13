@@ -106,5 +106,9 @@
     <dimen name="_150dp">150dp</dimen>
     <dimen name="_108dp">108dp</dimen>
     <dimen name="_18sp">18sp</dimen>
+    <dimen name="_112dp">112dp</dimen>
+    <dimen name="_62dp">62dp</dimen>
+    <dimen name="_272dp">272dp</dimen>
+    <dimen name="_304dp">304dp</dimen>
 
 </resources>

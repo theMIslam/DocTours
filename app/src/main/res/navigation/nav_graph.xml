@@ -52,6 +52,9 @@
         android:name="com.example.doctour.presentation.ui.fragments.splash.SplashScreenFragment"
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_loginAndSignUpFragment"
+            app:destination="@id/loginAndSignUpFragment" />
     </fragment>
 
     <fragment
@@ -59,9 +62,6 @@
         android:name="com.example.doctour.presentation.ui.fragments.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/action_fragment_login_to_registerFragment"
-            app:destination="@id/registerFragment" />
     </fragment>
     <fragment
         android:id="@+id/appoimentCancelledFragment"
@@ -122,10 +122,8 @@
         <action
             android:id="@+id/action_aboutDoctorFragment_to_aboutDoctorReviewFragment"
             app:destination="@id/aboutDoctorReviewFragment" />
-        <action
-            android:id="@+id/action_aboutDoctorFragment_to_bookingToDoctorFragment"
-            app:destination="@id/bookingToDoctorFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/aboutDoctorReviewFragment"
         android:name="com.example.doctour.presentation.ui.fragments.review.AboutDoctorReviewFragment"
@@ -141,15 +139,6 @@
         android:name="com.example.doctour.presentation.ui.fragments.appoiment.AppoimentRescheduleSuccessFragment"
         android:label="fragment_appoiment_reschedule_success"
         tools:layout="@layout/fragment_appoiment_reschedule_success" />
-    <fragment
-        android:id="@+id/bookingToDoctorFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.booking.BookingToDoctorFragment"
-        android:label="fragment_booking_to_doctor"
-        tools:layout="@layout/fragment_booking_to_doctor" >
-        <action
-            android:id="@+id/action_bookingToDoctorFragment_to_bookingToDoctorSecondFragment"
-            app:destination="@id/bookingToDoctorSecondFragment" />
-    </fragment>
 
 <fragment
         android:id="@+id/bookingToDoctorSecondFragment"
@@ -248,6 +237,15 @@
         <action
             android:id="@+id/action_searchFragment2_to_aboutDoctorFragment"
             app:destination="@id/aboutDoctorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginAndSignUpFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.login.LoginAndSignUpFragment"
+        android:label="fragment_login_and_sign_up"
+        tools:layout="@layout/fragment_login_and_sign_up" >
+        <action
+            android:id="@+id/action_loginAndSignUpFragment_to_categoryFragment2"
+            app:destination="@id/categoryFragment2" />
     </fragment>
 </navigation>
 

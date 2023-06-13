@@ -164,4 +164,27 @@
     <string name="repeat_send">Повторно отправить ОТР через 55 сек</string>
     <string name="code_was_sent">ОТР код был отправлен на номер</string>
     <string name="via_sms">через SMS:</string>
+    <string name="Write_feedback">Написать отзыв</string>
+    <string name="Registration">Регистрация</string>
+    <string name="Login">Авторизация</string>
+    <string name="Sign_Up">Зарегистрироваться</string>
+    <string name="Log_In">Войти</string>
+    <string name="Number_of_phone">Номер телефона</string>
+    <string name="Password">Пароль</string>
+    <string name="Forgot_password">Забыли пароль?</string>
+    <string name="Full_name">ФИО</string>
+    <string name="Repeat_password">Повторите пароль</string>
+    <string name="Creating_your_account_you_agree_to_our_terms_and_conditions">Создавая свою учетную запись, вы соглашаетесь с нашими Положениями и Условиями.</string>
+    <string name="repeat_your_password">repeat your password</string>
+    <string name="write_your_full_name">write your full name</string>
+    <string name="write_your_number_of_phone">write your number of phone</string>
+    <string name="write_your_password">write your password</string>
+    <string name="Date_of_birthday">Дата рождения</string>
+    <string name="Male">Мужской</string>
+    <string name="Female">Женский</string>
+    <string name="_20_04_2001">20.04.2001</string>
+    <string name="Write_review">Написать отзыв</string>
+    <string name="location_icon">location icon</string>
+    <string name="Asanov_Asan">Асанов Асан</string>
+    <string name="To_assesment_of_the_doctor">Оценить врача</string>
 </resources>
