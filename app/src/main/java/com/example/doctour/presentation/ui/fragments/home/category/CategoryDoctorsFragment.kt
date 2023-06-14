@@ -5,6 +5,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentCategoryDoctorsBinding
 import com.example.doctour.presentation.base.BaseFragment
+import com.example.doctour.presentation.ui.fragments.home.category.adapter.AdapterCategoryDoctorSpec
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -13,4 +14,11 @@ class CategoryDoctorsFragment : BaseFragment<FragmentCategoryDoctorsBinding,Cate
 ) {
     override val binding: FragmentCategoryDoctorsBinding by viewBinding(FragmentCategoryDoctorsBinding::bind)
     override val viewModel: CategoryViewModel by viewModels<CategoryViewModel>()
+    private lateinit var  adapterCategoryDoctorSpec :AdapterCategoryDoctorSpec
+
+    override fun initialize() {
+        super.initialize()
+        adapterCategoryDoctorSpec=AdapterCategoryDoctorSpec()
+        binding.rvCategoryDoctor.adapter=adapterCategoryDoctorSpec
+    }
 }

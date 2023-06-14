@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.fragments.aboutdoctor.AboutDoctorFragment"
-    >
+    tools:context=".presentation.ui.fragments.aboutdoctor.AboutDoctorFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -52,8 +50,8 @@
         android:id="@+id/main_appbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
         android:background="@color/white"
+        android:fitsSystemWindows="true"
         android:paddingTop="@dimen/_40dp">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -108,7 +106,7 @@
                             android:id="@+id/view"
                             android:layout_width="@dimen/_180dp"
                             android:layout_height="@dimen/_1dp"
-                           android:layout_marginStart="@dimen/_16dp"
+                            android:layout_marginStart="@dimen/_16dp"
                             android:layout_marginTop="@dimen/_4dp"
                             android:background="@color/grey"
                             app:layout_constraintStart_toEndOf="@id/image"
@@ -151,8 +149,8 @@
                             android:id="@+id/iv_location"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_14dp"
                             android:layout_marginStart="@dimen/_16dp"
+                            android:layout_marginTop="@dimen/_14dp"
                             android:src="@drawable/layer_list_location"
                             app:layout_constraintStart_toEndOf="@id/image"
                             app:layout_constraintTop_toBottomOf="@id/tv_surgeon" />
@@ -273,36 +271,36 @@
                     app:layout_constraintTop_toBottomOf="@id/icon_feedback" />
 
                 <TextView
-                    android:textColor="@color/home_text_color"
                     android:id="@+id/tv_just_exp"
                     style="@style/simple_black_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_64dp"
                     android:text="@string/just_experince"
+                    android:textColor="@color/home_text_color"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_num_of_experience" />
 
                 <TextView
-                    android:textColor="@color/home_text_color"
                     android:id="@+id/just_rating"
                     style="@style/simple_black_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_24dp"
                     android:text="@string/just_rating"
+                    android:textColor="@color/home_text_color"
                     app:layout_constraintEnd_toStartOf="@id/feedback"
                     app:layout_constraintStart_toEndOf="@id/tv_just_exp"
                     app:layout_constraintTop_toBottomOf="@id/tv_num_of_rating" />
 
                 <TextView
-                    android:textColor="@color/home_text_color"
                     android:id="@+id/feedback"
                     style="@style/simple_black_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_50dp"
                     android:text="@string/just_feedback"
+                    android:textColor="@color/home_text_color"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_num_of_feedback" />
 

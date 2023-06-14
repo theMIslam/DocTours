@@ -44,6 +44,15 @@ class MainActivity : AppCompatActivity() {
                 R.id.loginAndSignUpFragment ->{
                     navView.visibility = View.GONE
                 }
+                R.id.categoryDoctorsFragment ->{
+                    navView.visibility = View.GONE
+                }
+                R.id.categoryClinicFragment ->{
+                    navView.visibility = View.GONE
+                }
+                R.id.categoryServicesFragment ->{
+                    navView.visibility = View.GONE
+                }
                 else -> {navView.visibility = View.VISIBLE
                 }
             }

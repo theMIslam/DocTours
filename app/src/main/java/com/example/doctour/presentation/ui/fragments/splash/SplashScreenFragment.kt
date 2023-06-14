@@ -25,7 +25,7 @@ class SplashScreenFragment :
     override fun initialize() {
         Handler().postDelayed({
             findNavController().navigate(R.id.homeFragment2)
-        }, 2500)
+        }, 2000)
 
         when{
             userPreferences.isAuthenticated ->{

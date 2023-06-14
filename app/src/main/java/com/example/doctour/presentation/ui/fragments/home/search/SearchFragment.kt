@@ -18,8 +18,8 @@ import com.example.doctour.R
 import com.example.doctour.databinding.FragmentSearchBinding
 import com.example.doctour.presentation.base.BaseFragment
 import com.example.doctour.presentation.extensions.showToast
-import com.example.doctour.presentation.ui.fragments.appoiment.model.BermetModel
 import com.example.doctour.presentation.ui.fragments.home.search.adapter.SearchAdapter
+import com.example.doctour.presentation.ui.fragments.model.BermetModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -70,18 +70,6 @@ class SearchFragment :
 
         binding.tvArrowBack.setOnClickListener {
             findNavController().navigateUp()
-        }
-        binding.tvAll.setOnClickListener {
-            showToast("Все")
-        }
-        binding.tvDentist.setOnClickListener {
-            showToast("Дантист")
-        }
-        binding.tvPediatric.setOnClickListener {
-            showToast("Педиатр")
-        }
-        binding.tvEyeDoc.setOnClickListener {
-            showToast("Окулист")
         }
     }
 

@@ -9,6 +9,7 @@
     <ImageView
         android:id="@+id/img_back"
         style="@style/ic_back"
+        android:contentDescription="@string/image"
         android:src="@drawable/ic_arrowleft_3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,20 +34,21 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_30dp"
         android:layout_marginTop="@dimen/_34dp"
-        android:src="@drawable/search"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/tv_services"
         android:layout_marginEnd="@dimen/_18dp"
+        android:contentDescription="@string/image"
+        android:src="@drawable/search"
+        app:layout_constraintBottom_toBottomOf="@id/tv_services"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/black" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_services"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_0dp"
         android:layout_marginTop="@dimen/_30dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintTop_toBottomOf="@id/img_back"
-        android:id="@+id/rv_services"
-        tools:listitem="@layout/item_services"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        tools:listitem="@layout/item_services" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

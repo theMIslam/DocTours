@@ -2,6 +2,7 @@ package com.example.doctour.presentation.ui.fragments.password
 
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentChangePasswordBinding
@@ -19,13 +20,16 @@ class ChangePasswordFragment : BaseFragment<FragmentChangePasswordBinding,Passwo
 
     override fun initListeners() {
         super.initListeners()
+        binding.tvArrowBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
         clickers()
     }
 
     private fun clickers() {
         with(binding) {
             btnNext.setOnClickListener {
-                if (etCurrentPassword.text.isEmpty() || etNewPassword.text.isEmpty() || etRepeatNewPassword.text.isEmpty()) {
+                if (etCurrentPassword.text!!.isEmpty() || etNewPassword.text!!.isEmpty() || etRepeatNewPassword.text!!.isEmpty()) {
                     Toast.makeText(requireContext(), getString(R.string.line_), Toast.LENGTH_SHORT).show()
                 }
                 if (etCurrentPassword.text != etNewPassword.text) {

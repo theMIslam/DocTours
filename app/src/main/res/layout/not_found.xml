@@ -2,26 +2,27 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="248dp"
-            android:layout_height="284dp"
-            android:orientation="vertical"
-            android:background="@color/white"
-            android:layout_gravity="center">
-                <ImageView
-                    android:layout_width="@dimen/_221dp"
-                    android:layout_height="@dimen/_226dp"
-                    android:layout_gravity="center"
 
-                    android:contentDescription="@string/image"
-                    android:src="@drawable/img_3" />
+    <LinearLayout
+        android:layout_width="248dp"
+        android:layout_height="284dp"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginHorizontal="@dimen/_16dp"
-                    android:text="@string/not_found_this_request"
-                    style="@style/simple_black_text" />
-        </LinearLayout>
+        <ImageView
+            android:layout_width="@dimen/_221dp"
+            android:layout_height="@dimen/_226dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/image"
+            android:src="@drawable/img_3" />
+
+        <TextView
+            style="@style/simple_black_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/_16dp"
+            android:text="@string/not_found_this_request" />
+    </LinearLayout>
 </FrameLayout>

@@ -3,6 +3,7 @@ package com.example.doctour.presentation.ui.fragments.login
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentProfileFillBinding
@@ -24,6 +25,9 @@ class FillProfileFragment : BaseFragment<FragmentProfileFillBinding,LoginViewMod
 
     override fun initListeners() {
         super.initListeners()
+        binding.tvArrowBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
         setDropDownMenu()
     }
 
@@ -35,7 +39,7 @@ class FillProfileFragment : BaseFragment<FragmentProfileFillBinding,LoginViewMod
 
     private fun checking() {
         // TODO: отправка данных на сервер
-        if (binding.etFio.text.isEmpty()) {
+        if (binding.etFio.text!!.isEmpty()) {
             Toast.makeText(requireContext(), getString(R.string.fio_), Toast.LENGTH_SHORT).show()
         }
     }

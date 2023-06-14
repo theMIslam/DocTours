@@ -175,5 +175,9 @@
         <item name="android:textSize">@dimen/_22sp</item>
         <item name="android:textStyle">bold</item>
     </style>
+    <style name="AutoCompleteTVStyle">
+        <item name="colorControlNormal">@color/grey</item>
+        <item name="colorControlActivated">@color/parlament</item>
+    </style>
 
 </resources>

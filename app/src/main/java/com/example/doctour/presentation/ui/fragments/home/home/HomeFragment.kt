@@ -7,7 +7,9 @@ import com.example.doctour.R
 import com.example.doctour.databinding.FragmentHomeBinding
 import com.example.doctour.presentation.base.BaseFragment
 import com.example.doctour.presentation.extensions.navigateSafely
+import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeClinic
 import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeDoctorSpecs
+import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeInfoDoctor
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -15,23 +17,36 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
 
     override val binding by viewBinding(FragmentHomeBinding::bind)
     override val viewModel by viewModels<HomeViewModel>()
-    private val adapterHome = AdapterHomeDoctorSpecs(
-            this::onClick
-        )
+    private val adapterHome = AdapterHomeDoctorSpecs(this::specsClick)
+    private val adapterHomeClinic = AdapterHomeClinic(this::clinicClick)
+    private val adapterHomeInfoDoctor= AdapterHomeInfoDoctor(this::infoDoctorClick)
 
-    override fun initialize() {
-        binding.rvDoctorsSpecs.adapter = adapterHome
-
-        binding.tvBestDoctor.setOnClickListener {
-            findNavController().navigateSafely(R.id.homeFragment2)
+    override fun initListeners() {
+        super.initListeners()
+        binding.ivHeart.setOnClickListener {
+            findNavController().navigate(R.id.favoriteDoctorsFragment)
         }
-        binding.imgAvatar.setOnClickListener {
-
+        binding.ivSearch.setOnClickListener {
+            findNavController().navigate(R.id.searchFragment2)
+        }
+        binding.tvCountry.setOnClickListener {
+            findNavController().navigate(R.id.categoryCityFragment)
         }
 
     }
-    fun onClick(){
+    override fun initialize() {
+        binding.rvDoctorsSpecs.adapter = adapterHome
+        binding.rvClinic.adapter=adapterHomeClinic
+        binding.rvDoctorsInfo.adapter=adapterHomeInfoDoctor
+    }
+   private fun specsClick(){
         findNavController().navigateSafely(R.id.homeFragment2)
+    }
+    private fun infoDoctorClick(){
+        findNavController().navigate(R.id.aboutDoctorFragment)
+    }
+    private fun clinicClick(){
+
     }
 }
 
