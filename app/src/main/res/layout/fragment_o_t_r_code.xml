@@ -21,11 +21,9 @@
         android:id="@+id/tv_code_exam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="270dp"
+        android:layout_marginBottom="@dimen/_270dp"
         android:text="@string/code_exam"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        style="@style/mega_black_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,9 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_16dp"
         android:text="@string/code_was_sent"
-        android:textColor="@color/black"
-        android:textSize="12sp"
-        android:textStyle="bold"
+        style="@style/small_black_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_code_exam" />
@@ -49,19 +45,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/_996_555_99"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_12sp"
-        android:textStyle="bold"
+        style="@style/small_black_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_code_was_sent" />
 
-    <EditText
+     <EditText
         android:id="@+id/et_number_1"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="@dimen/_60dp"
+        android:layout_height="@dimen/_60dp"
+        android:layout_marginStart="@dimen/_40dp"
+        android:layout_marginTop="@dimen/_30dp"
+         android:inputType="number"
+         android:autofillHints="password"
         android:background="@drawable/et_code_bg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_number" />
@@ -69,33 +65,40 @@
 
     <EditText
         android:id="@+id/et_number_2"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="130dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="@dimen/_60dp"
+        android:layout_height="@dimen/_60dp"
+        android:layout_marginStart="@dimen/_130dp"
+        android:layout_marginTop="@dimen/_30dp"
+        android:inputType="number"
+        android:autofillHints="password"
         android:background="@drawable/et_code_bg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_number" />
 
     <EditText
         android:id="@+id/et_number_3"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="220dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="@dimen/_60dp"
+        android:layout_height="@dimen/_60dp"
+        android:layout_marginStart="@dimen/_220dp"
+        android:layout_marginTop="@dimen/_30dp"
         android:background="@drawable/et_code_bg"
+        android:inputType="number"
+        android:autofillHints="password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_number" />
 
     <EditText
         android:id="@+id/et_number_4"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="310dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="@dimen/_60dp"
+        android:layout_height="@dimen/_60dp"
+        android:layout_marginStart="@dimen/_310dp"
+        android:layout_marginTop="@dimen/_30dp"
+        android:autofillHints="password"
         android:background="@drawable/et_code_bg"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_number" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_number"
+        android:inputType="number"
+        />
 
     <TextView
         android:id="@+id/tv_repeat_send"
@@ -103,21 +106,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_16dp"
         android:text="@string/repeat_send"
-        android:textColor="@color/black"
+        style="@style/small_black_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_number_3" />
 
     <com.google.android.material.button.MaterialButton
-        android:layout_width="380dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="40dp"
+        android:id="@+id/btn_send"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_48dp"
+        android:layout_marginBottom="@dimen/_40dp"
         android:backgroundTint="@color/light_blue"
         android:text="@string/send"
+        android:layout_marginHorizontal="@dimen/_16dp"
         android:textSize="@dimen/_16sp"
-        app:cornerRadius="8dp"
+        app:cornerRadius="@dimen/_8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

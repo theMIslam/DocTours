@@ -4,16 +4,13 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/const_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/img_item_clinic_avatar"
@@ -33,11 +30,10 @@
             android:layout_width="@dimen/_46dp"
             android:layout_height="@dimen/_34dp"
             android:layout_marginStart="@dimen/_6dp"
+            android:contentDescription="@string/image"
             android:src="@drawable/on_clinik"
             app:layout_constraintBottom_toTopOf="@id/tv_clinic_name"
-            app:layout_constraintStart_toStartOf="@id/tv_clinic_name"
-
-            />
+            app:layout_constraintStart_toStartOf="@id/tv_clinic_name" />
 
         <TextView
             android:id="@+id/tv_clinic_name"
@@ -46,7 +42,7 @@
             android:layout_marginStart="@dimen/_14dp"
             android:layout_marginTop="@dimen/_50dp"
             android:fontFamily="@font/roboto_regular"
-            android:text="On Clinic"
+            android:text="@string/On_Clinic"
             android:textColor="@color/blue"
             android:textSize="@dimen/_12sp"
             app:layout_constraintStart_toStartOf="@id/img_item_clinic_avatar"

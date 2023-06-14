@@ -15,8 +15,7 @@
         android:src="@drawable/ic_arrowleft_3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-
-        />
+        android:contentDescription="@string/symbol"/>
 
     <TextView
         android:id="@+id/tv_best_docotrs"
@@ -29,10 +28,7 @@
         android:textColor="@color/black"
         android:textSize="@dimen/_16sp"
         app:layout_constraintStart_toEndOf="@id/img_back"
-        app:layout_constraintTop_toTopOf="parent"
-
-        />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_all"
@@ -55,10 +51,7 @@
         app:layout_constraintBottom_toBottomOf="@id/tv_all"
         app:layout_constraintStart_toEndOf="@+id/tv_all"
         app:layout_constraintTop_toBottomOf="@id/tv_best_docotrs"
-        tools:listitem="@layout/item_the_best_doctors"
-
-        />
-
+        tools:listitem="@layout/item_the_best_doctors" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
@@ -71,7 +64,6 @@
         app:layout_constraintStart_toStartOf="@id/img_back"
         app:layout_constraintTop_toBottomOf="@id/rv_best_doctors"
         tools:listitem="@layout/item_doctors_info" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

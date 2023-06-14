@@ -20,13 +20,13 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
         binding.imgHeart.setOnClickListener {
             findNavController().navigate(R.id.favoriteDoctorsFragment)
         }
-        binding.tvDoctors.setOnClickListener {
+        binding.cvDoctors.setOnClickListener {
             findNavController().navigate(R.id.categoryDoctorsFragment)
         }
-        binding.tvServices.setOnClickListener {
+        binding.cvServices.setOnClickListener {
             findNavController().navigate(R.id.categoryServicesFragment)
         }
-        binding.tvClinics.setOnClickListener {
+        binding.cvClinics.setOnClickListener {
             findNavController().navigate(R.id.categoryClinicFragment)
         }
     }

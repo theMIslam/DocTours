@@ -27,13 +27,11 @@
 
         <TextView
             android:id="@+id/tv_doctor_name"
+            style="@style/simple_black_text"
             android:layout_width="@dimen/_138dp"
             android:layout_height="@dimen/_24dp"
             android:layout_marginStart="@dimen/_14dp"
-            android:fontFamily="@font/roboto_regular"
             android:text="@string/Name"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_16sp"
             app:layout_constraintStart_toEndOf="@id/iv_doctor_avatar"
             app:layout_constraintTop_toTopOf="@id/iv_doctor_avatar" />
 
@@ -41,6 +39,7 @@
             android:layout_width="@dimen/_18dp"
             android:layout_height="@dimen/_16dp"
             android:layout_marginStart="@dimen/_16dp"
+            android:contentDescription="@string/symbol"
             android:src="@drawable/ic_heart"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tv_doctor_name"
@@ -58,33 +57,30 @@
 
         <TextView
             android:id="@+id/tv_work_experience"
+            style="@style/small_black_text_without_bold"
             android:layout_width="@dimen/_114dp"
             android:layout_height="@dimen/_16dp"
             android:layout_marginTop="@dimen/_10dp"
-            android:fontFamily="@font/roboto_regular"
             android:text="@string/workexperience"
-            android:textSize="@dimen/_14sp"
             app:layout_constraintStart_toStartOf="@id/tv_doctor_name"
             app:layout_constraintTop_toBottomOf="@id/tv_doctor_name" />
 
         <TextView
             android:id="@+id/tv_work_speciality"
+            style="@style/small_black_text_without_bold"
             android:layout_width="@dimen/_60dp"
             android:layout_height="@dimen/_16dp"
             android:layout_marginTop="@dimen/_6dp"
-            android:fontFamily="@font/roboto_regular"
             android:text="@string/xirurg"
-            android:textSize="@dimen/_14sp"
             app:layout_constraintStart_toStartOf="@id/tv_work_experience"
             app:layout_constraintTop_toBottomOf="@id/tv_work_experience" />
 
         <TextView
             android:id="@+id/tv_work_clinic"
+            style="@style/small_black_text_without_bold"
             android:layout_width="@dimen/_80dp"
             android:layout_height="@dimen/_20dp"
-            android:fontFamily="@font/roboto_regular"
             android:text="@string/nameClinic"
-            android:textSize="@dimen/_14sp"
             app:layout_constraintStart_toEndOf="@id/tv_work_speciality"
             app:layout_constraintTop_toTopOf="@id/tv_work_speciality" />
 
@@ -93,28 +89,29 @@
             android:layout_width="@dimen/_22dp"
             android:layout_height="@dimen/_20dp"
             android:layout_marginTop="@dimen/_6dp"
+            android:contentDescription="@string/symbol"
             android:src="@drawable/ic_star"
             app:layout_constraintStart_toStartOf="@id/tv_work_speciality"
             app:layout_constraintTop_toBottomOf="@id/tv_work_speciality" />
 
         <TextView
             android:id="@+id/tv_points"
+            style="@style/small_black_text_without_bold"
             android:layout_width="@dimen/_22dp"
             android:layout_height="@dimen/_20dp"
             android:layout_marginStart="@dimen/_12dp"
             android:text="@string/score"
-            android:textSize="@dimen/_14sp"
             app:layout_constraintStart_toEndOf="@id/img_stars"
             app:layout_constraintTop_toTopOf="@id/img_stars" />
 
 
         <TextView
             android:id="@+id/tv_recommendation"
+            style="@style/small_black_text_without_bold"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_20dp"
             android:layout_marginStart="@dimen/_14dp"
             android:text="@string/feedback_32"
-            android:textSize="@dimen/_14sp"
             app:layout_constraintStart_toEndOf="@id/tv_points"
             app:layout_constraintTop_toTopOf="@id/tv_points" />
 
@@ -124,42 +121,40 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_16dp"
             android:layout_marginTop="@dimen/_6dp"
+            android:contentDescription="@string/symbol"
             android:src="@drawable/layer_list_location"
             app:layout_constraintStart_toEndOf="@id/iv_doctor_avatar"
             app:layout_constraintTop_toBottomOf="@id/img_stars" />
 
         <TextView
             android:id="@+id/tv_country"
+            style="@style/small_black_text_without_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10dp"
             android:layout_marginTop="@dimen/_4dp"
             android:text="@string/bishkek"
-            android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@id/iv_location"
             app:layout_constraintTop_toBottomOf="@id/tv_points" />
 
         <TextView
             android:id="@+id/tv_ot"
+            style="@style/medium_black_text"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_marginStart="@dimen/_16dp"
             android:layout_marginTop="@dimen/_4dp"
-            android:fontFamily="@font/roboto_regular"
             android:text="@string/ot"
-            android:textSize="@dimen/_14sp"
             app:layout_constraintStart_toEndOf="@id/tv_country"
             app:layout_constraintTop_toBottomOf="@id/img_stars" />
 
         <TextView
             android:id="@+id/tv_summa"
+            style="@style/simple_parl_text"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_marginStart="30dp"
-            android:fontFamily="@font/roboto_regular"
             android:text="@string/sum"
-            android:textColor="@color/blue"
-            android:textSize="@dimen/_16sp"
             app:layout_constraintBottom_toBottomOf="@id/tv_ot"
             app:layout_constraintStart_toStartOf="@id/tv_ot" />
 
@@ -167,6 +162,7 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_20dp"
             android:layout_marginStart="@dimen/_2dp"
+            android:contentDescription="@string/symbol"
             android:src="@drawable/ic_som"
             app:layout_constraintBottom_toBottomOf="@id/tv_summa"
             app:layout_constraintStart_toEndOf="@id/tv_summa"

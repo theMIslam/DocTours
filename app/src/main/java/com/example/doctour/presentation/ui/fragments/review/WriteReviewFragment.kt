@@ -24,7 +24,7 @@ class WriteReviewFragment : BaseFragment<FragmentWriteReviewBinding,ReviewViewMo
     }
 
     private fun clickers() {
-        if (binding.etYourReview.text.isNotEmpty()) {
+        if (binding.etYourReview.text!!.isNotEmpty()) {
             binding.btnLeaveFeedback.background.setTint(Color.parseColor("#1B6B93"))
         }else {
 //            showToast("Напишите отзыв")

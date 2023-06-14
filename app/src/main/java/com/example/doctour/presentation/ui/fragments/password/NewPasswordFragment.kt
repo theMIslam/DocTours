@@ -24,7 +24,7 @@ class NewPasswordFragment : BaseFragment <FragmentNewPasswordBinding,PasswordVie
         binding.btnNext.setOnClickListener {
             findNavController().navigateUp()
         }
-        binding.arrowBack.setOnClickListener {
+        binding.tvArrowBack.setOnClickListener {
             findNavController().navigateUp()
         }
     }

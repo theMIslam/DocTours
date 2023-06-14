@@ -1,6 +1,7 @@
 package com.example.doctour.presentation.ui.fragments.home.category
 
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentCategoryDoctorsBinding
@@ -20,5 +21,12 @@ class CategoryDoctorsFragment : BaseFragment<FragmentCategoryDoctorsBinding,Cate
         super.initialize()
         adapterCategoryDoctorSpec=AdapterCategoryDoctorSpec()
         binding.rvCategoryDoctor.adapter=adapterCategoryDoctorSpec
+    }
+
+    override fun initListeners() {
+        super.initListeners()
+        binding.imgBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
     }
 }
