@@ -7,7 +7,7 @@ import com.example.doctour.R
 import com.example.doctour.databinding.FragmentAboutDoctorBinding
 import com.example.doctour.presentation.base.BaseFragment
 import com.example.doctour.presentation.extensions.loadImage
-import com.example.doctour.presentation.ui.fragments.appoiment.model.BermetModel
+import com.example.doctour.presentation.ui.fragments.model.BermetModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -54,7 +54,7 @@ class AboutDoctorFragment
         binding.tvPrice.text = data.price
         binding.tvNumOfExperience.text = data.experience
         binding.tvNumOfRating.text = data.rating
-        binding.tvNumOfFeedback.text = data.numberOfFeedbacks.toString()
+        binding.tvNumOfFeedback.text = data.numberOfFeedback.toString()
         binding.tvInfoAboutDoc.text = data.infoAboutDoctor
     }
 

@@ -12,12 +12,6 @@
         android:title="@string/Category"
         />
 
-
-    <item
-        android:id="@+id/appoimentCancelledFragment"
-        android:icon="@drawable/ic_bottom_calendar"
-        android:title="@string/Appoiment" />
-
     <item
         android:id="@+id/moreFragment"
         android:icon="@drawable/ic_bottom_square"

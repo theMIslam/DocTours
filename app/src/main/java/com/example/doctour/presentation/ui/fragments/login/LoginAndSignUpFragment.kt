@@ -11,7 +11,6 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentLoginAndSignUpBinding
 import com.example.doctour.presentation.base.BaseFragment
-import com.example.doctour.presentation.ui.fragments.appoiment.AppoimentCancelledAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 

@@ -36,73 +36,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <HorizontalScrollView
-        android:id="@+id/scroll"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="none"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_search">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_28dp"
-            android:layout_marginTop="@dimen/_26dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/tv_all"
-                style="@style/medium_white_text"
-                android:layout_width="@dimen/_64dp"
-                android:layout_height="@dimen/_26dp"
-                android:layout_marginStart="@dimen/_8dp"
-                android:background="@drawable/circle_tv_bg"
-                android:gravity="center"
-                android:text="@string/all" />
-
-            <TextView
-                android:id="@+id/tv_dentist"
-                style="@style/medium_parl_text"
-                android:layout_width="@dimen/_96dp"
-                android:layout_height="@dimen/_26dp"
-                android:layout_marginStart="@dimen/_8dp"
-                android:background="@drawable/circle_tv2_bg"
-                android:gravity="center"
-                android:text="@string/dentist" />
-
-            <TextView
-                android:id="@+id/tv_eye_doc"
-                style="@style/medium_parl_text"
-                android:layout_width="@dimen/_96dp"
-                android:layout_height="@dimen/_26dp"
-                android:layout_marginStart="@dimen/_8dp"
-                android:background="@drawable/circle_tv2_bg"
-                android:gravity="center"
-                android:text="@string/eye_doctor" />
-
-            <TextView
-                android:id="@+id/tv_pediatric"
-                style="@style/medium_parl_text"
-                android:layout_width="@dimen/_96dp"
-                android:layout_height="@dimen/_26dp"
-                android:layout_marginStart="@dimen/_8dp"
-                android:layout_marginEnd="@dimen/_16dp"
-                android:background="@drawable/circle_tv2_bg"
-                android:gravity="center"
-                android:text="@string/pediatrician" />
-        </LinearLayout>
-    </HorizontalScrollView>
-
     <TextView
         android:id="@+id/tv_found"
         style="@style/simple_black_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_20dp"
-        android:layout_marginTop="@dimen/_14dp"
+        android:layout_marginTop="@dimen/_16dp"
         android:text="@string/found"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/scroll" />
+        app:layout_constraintTop_toBottomOf="@id/et_search" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
@@ -115,21 +58,20 @@
         tools:listitem="@layout/item_found_vecancies" />
 
     <ProgressBar
+        android:id="@+id/progressBar"
         android:layout_width="@dimen/_60dp"
         android:layout_height="@dimen/_60dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/progressBar"
         android:indeterminateDrawable="@drawable/progress_bar_b"
-        />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <include
         android:id="@+id/include_not_found"
         layout="@layout/not_found"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

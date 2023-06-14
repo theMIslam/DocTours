@@ -187,4 +187,9 @@
     <string name="location_icon">location icon</string>
     <string name="Asanov_Asan">Асанов Асан</string>
     <string name="To_assesment_of_the_doctor">Оценить врача</string>
+    <string name="_996_550_55_55_55">+996 (550) 55 - 55 - 55</string>
+    <string name="_01_01_2000">01.01.2000</string>
+    <string name="Create_PIN_code">Создайте PIN код</string>
+    <string name="A">A</string>
+    <string name="Chose_the_doctor">Выбрать врача</string>
 </resources>

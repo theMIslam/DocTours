@@ -35,12 +35,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_30dp"
         android:layout_marginTop="@dimen/_34dp"
-        android:src="@drawable/search"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/tv_clinics"
         android:layout_marginEnd="@dimen/_18dp"
+        android:src="@drawable/search"
+        app:layout_constraintBottom_toBottomOf="@id/tv_clinics"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/black" />
+        app:tint="@color/black"
+        android:contentDescription="@string/image"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_clinics"
