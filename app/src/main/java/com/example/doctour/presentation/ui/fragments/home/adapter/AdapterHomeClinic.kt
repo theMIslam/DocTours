@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.databinding.ItemHomeBinding
-import com.example.doctour.presentation.ui.fragments.home.home.model.HomeModel
+import com.example.doctour.presentation.ui.fragments.home.model.HomeModel
 
 class AdapterHomeClinic (
     private val onCLick:()->Unit

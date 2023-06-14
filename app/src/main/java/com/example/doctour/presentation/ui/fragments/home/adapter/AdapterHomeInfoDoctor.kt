@@ -7,7 +7,7 @@ import android.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.databinding.ItemDoctorsInfoBinding
-import com.example.doctour.presentation.ui.fragments.home.home.model.HomeModel
+import com.example.doctour.presentation.ui.fragments.home.model.HomeModel
 
 class AdapterHomeInfoDoctor (
     private val onClick :()->Unit

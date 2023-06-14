@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.search.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_aboutDoctorFragment"
+            app:destination="@id/aboutDoctorFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_filteredDoctorsFragment"
+            app:destination="@id/favoriteDoctorsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_AboutDoctorFragment"
+            app:destination="@id/aboutDoctorFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/aboutDoctorFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.aboutdoctor.AboutDoctorFragment"
+        android:label="AboutDoctorFragment"
+        tools:layout="@layout/fragment_about_doctor" >
+        <action
+            android:id="@+id/action_detailTourFragment_to_addReviewFragment"
+            app:destination="@id/addReviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteDoctorsFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.category.FavoriteDoctorsFragment"
+        android:label="FavoriteDoctourFragment"
+        tools:layout="@layout/fragment_favorite_doctors">
+        <action
+            android:id="@+id/action_favoriteDoctorsFragment_to_detailTourFragment"
+            app:destination="@id/aboutDoctorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addReviewFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.review.AboutDoctorReviewFragment"
+        android:label="fragment_add_review"
+        tools:layout="@layout/fragment_about_doctor_review" />
+</navigation>

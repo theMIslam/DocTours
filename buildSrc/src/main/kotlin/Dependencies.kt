@@ -30,6 +30,7 @@ object Versions {
     const val google = "20.4.1"
     const val legacy = "1.0.0"
     const val smsconfiguration = "1.7.1"
+    const val gson = "2.8.9"
 
 }
 
@@ -153,6 +154,10 @@ object Libraries {
 
     object SmsConfigutation {
         const val smsconfiguration = "com.github.fraggjkee:sms-confirmation-view:${Versions.smsconfiguration}"
+    }
+
+    object Gson {
+        const val gson = "implementation 'com.google.code.gson:gson:${Versions.gson}"
     }
 
 }
