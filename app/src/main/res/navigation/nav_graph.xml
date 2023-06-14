@@ -3,7 +3,71 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    tools:ignore="InvalidNavigation">
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.example.doctour.presentation.ui.fragments.home.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment2_to_favoriteDoctorsFragment"
+            app:destination="@id/favoriteDoctorsFragment" />
+        <action
+            android:id="@+id/action_homeFragment2_to_searchFragment2"
+            app:destination="@id/searchFragment2" />
+        <action
+            android:id="@+id/action_homeFragment2_to_categoryFragment2"
+            app:destination="@id/categoryFragment2" />
+        <action
+            android:id="@+id/action_homeFragment2_to_categoryCityFragment"
+            app:destination="@id/categoryCityFragment" />
+        <action
+            android:id="@+id/action_homeFragment2_to_aboutDoctorFragment"
+            app:destination="@id/aboutDoctorFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/categoryFragment2"
+        android:name="com.example.doctour.presentation.ui.fragments.home.category.CategoryFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category" >
+        <action
+            android:id="@+id/action_categoryFragment2_to_moreFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_categoryFragment2_to_categoryServicesFragment"
+            app:destination="@id/categoryServicesFragment" />
+        <action
+            android:id="@+id/action_categoryFragment2_to_categoryClinicFragment"
+            app:destination="@id/categoryClinicFragment" />
+        <action
+            android:id="@+id/action_categoryFragment2_to_categoryDoctorsFragment"
+            app:destination="@id/categoryDoctorsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_booking_failed"
+        android:name="com.example.doctour.presentation.ui.fragments.booking.BookingFailedFragment"
+        android:label="fragment_failed"
+        tools:layout="@layout/fragment_booking_failed" />
+    <fragment
+        android:id="@+id/fragment_booking_success"
+        android:name="com.example.doctour.presentation.ui.fragments.booking.BookingSuccessFragment"
+        android:label="fragment_success"
+        tools:layout="@layout/fragment_booking_success" />
+
+    <fragment
+        android:id="@+id/fragment_review_success"
+        android:name="com.example.doctour.presentation.ui.fragments.review.ReviewSuccessFragment"
+        android:label="fragment_failed"
+        tools:layout="@layout/fragment_review_success" />
+    <fragment
+        android:id="@+id/fragment_review_failed"
+        android:name="com.example.doctour.presentation.ui.fragments.review.ReviewFailedFragment"
+        android:label="fragment_success"
+        tools:layout="@layout/fragment_review_failed" />
+
     <fragment
         android:id="@+id/splashScreenFragment"
         android:name="com.example.doctour.presentation.ui.fragments.splash.SplashScreenFragment"

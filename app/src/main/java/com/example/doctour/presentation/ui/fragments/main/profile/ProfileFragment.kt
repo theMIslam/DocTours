@@ -1,6 +1,7 @@
 package com.example.doctour.presentation.ui.fragments.main.profile
 
 import android.view.View
+import android.widget.Button
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -31,9 +32,6 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding, SignInViewModel>(
             btnProfile.setOnClickListener {
                 findNavController().navigate(R.id.fillProfileFragment)
             }
-            btnPassword.setOnClickListener {
-                findNavController().navigate(R.id.changePasswordFragment)
-            }
         }
     }
 
@@ -42,6 +40,15 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding, SignInViewModel>(
             val view: View = layoutInflater.inflate(R.layout.exit_bottom_sheet, null)
             val dialog = BottomSheetDialog(requireActivity())
             dialog.setContentView(view)
+            val btnDismiss = dialog.findViewById<Button>(R.id.btn_back)
+            val btnLeave = dialog.findViewById<Button>(R.id.btn_confirm)
+
+            btnDismiss?.setOnClickListener {
+                dialog.dismiss()
+            }
+            btnLeave?.setOnClickListener {
+
+            }
             dialog.show()
         }
     }

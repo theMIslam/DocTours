@@ -6,58 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".presentation.ui.fragments.home.HomeFragment">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_view_home_fragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_28dp"
-        android:layout_marginTop="@dimen/_18dp"
-        app:cardCornerRadius="@dimen/_40dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/img_avatar"
-            android:layout_width="@dimen/_48dp"
-            android:layout_height="@dimen/_48dp"
-            android:src="@drawable/image_doctors_avatar" />
-
-    </androidx.cardview.widget.CardView>
-
     <TextView
         android:id="@+id/tv_name"
-        android:layout_width="@dimen/_130dp"
+        android:layout_width="wrap_content"
         android:layout_height="@dimen/_24dp"
-        android:layout_marginStart="@dimen/_24dp"
-        android:layout_marginTop="@dimen/_12dp"
-        android:layout_marginBottom="@dimen/_15dp"
-        android:fontFamily="@font/roboto_regular"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_28dp"
         android:text="@string/name_profile"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_16sp"
-        app:layout_constraintBottom_toBottomOf="@id/card_view_home_fragment"
-        app:layout_constraintStart_toEndOf="@id/card_view_home_fragment" />
+        style="@style/simple_bold_black_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/iv_heart"
-        android:layout_width="@dimen/_18dp"
-        android:layout_height="@dimen/_16dp"
-        android:layout_marginStart="@dimen/_80dp"
-        android:layout_marginBottom="@dimen/_2dp"
+        android:layout_width="@dimen/_19dp"
+        android:layout_height="@dimen/_18dp"
+        android:layout_marginTop="@dimen/_31dp"
+        android:layout_marginEnd="@dimen/_21dp"
+        android:contentDescription="@string/image"
         android:src="@drawable/ic_heart"
-        app:layout_constraintBottom_toBottomOf="@id/tv_name"
-        app:layout_constraintStart_toEndOf="@id/tv_name" />
+        app:layout_constraintEnd_toStartOf="@id/iv_search"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/iv_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_30dp"
-        android:layout_marginTop="@dimen/_34dp"
+        android:layout_marginTop="@dimen/_30dp"
+        android:layout_marginEnd="@dimen/_20dp"
+        android:contentDescription="@string/image"
         android:src="@drawable/search"
-        app:layout_constraintBottom_toBottomOf="@id/iv_heart"
-        app:layout_constraintStart_toEndOf="@id/iv_heart"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginTop="@dimen/_34dp"
         app:tint="@color/black" />
 
     <ImageView
@@ -66,9 +48,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_20dp"
         android:layout_marginTop="@dimen/_32dp"
+        android:contentDescription="@string/image"
         android:src="@drawable/location"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card_view_home_fragment"
+        app:layout_constraintTop_toBottomOf="@id/tv_name"
         app:tint="@color/black" />
 
     <TextView
@@ -78,10 +61,9 @@
         android:layout_marginStart="@dimen/_20dp"
         android:layout_marginTop="@dimen/_28dp"
         android:text="@string/bishkek"
-        android:textColor="@color/home_text_color"
-        android:textSize="@dimen/_18sp"
+        style="@style/mega_parl_text"
         app:layout_constraintStart_toEndOf="@id/iv_location"
-        app:layout_constraintTop_toBottomOf="@id/card_view_home_fragment" />
+        app:layout_constraintTop_toBottomOf="@id/tv_name" />
 
     <TextView
         android:id="@+id/tv_speciality"

@@ -26,34 +26,24 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.splashScreenFragment -> {
-                    navView.visibility = View.GONE
+                R.id.homeFragment2 ->{
+                    navView.visibility = View.VISIBLE
                 }
-                R.id.fillProfileFragment ->{
-                    navView.visibility = View.GONE
+                R.id.categoryFragment2 ->{
+                    navView.visibility = View.VISIBLE
                 }
-                R.id.aboutDoctorFragment ->{
-                    navView.visibility = View.GONE
+                R.id.moreFragment ->{
+                    navView.visibility = View.VISIBLE
                 }
-                R.id.aboutDoctorReviewFragment ->{
+
+
+
+
+
+
+
+                else -> {
                     navView.visibility = View.GONE
-                }
-                R.id.bookingToDoctorSecondFragment ->{
-                    navView.visibility = View.GONE
-                }
-                R.id.loginAndSignUpFragment ->{
-                    navView.visibility = View.GONE
-                }
-                R.id.categoryDoctorsFragment ->{
-                    navView.visibility = View.GONE
-                }
-                R.id.categoryClinicFragment ->{
-                    navView.visibility = View.GONE
-                }
-                R.id.categoryServicesFragment ->{
-                    navView.visibility = View.GONE
-                }
-                else -> {navView.visibility = View.VISIBLE
                 }
             }
         }

@@ -120,7 +120,7 @@
     <string name="write_your_review">Напишите свой отзыв</string>
     <string name="your_rating_is_very_dear_to_us">Ваша оценка очень важна для нас</string>
     <string name="leave_feedback">Оставить отзыв</string>
-    <string name="name">Асанова\nАйзада</string>
+    <string name="name">Асанова Айзада</string>
     <string name="choose_language">Выберите язык</string>
     <string name="kyrgyz">Кыргызча</string>
     <string name="russian">Русский</string>
@@ -192,4 +192,15 @@
     <string name="Create_PIN_code">Создайте PIN код</string>
     <string name="A">A</string>
     <string name="Chose_the_doctor">Выбрать врача</string>
+    <string name="vector">vector</string>
+    <string name="Add_pin_code_to_make_your_account_more_secure">Добавьте PIN-код, чтобы сделать вашу учетную запись более безопсаной</string>
+    <string name="Reset_password">Восстановить пароль</string>
+    <string name="The_recovery_code_will_be_sent_to_the_next_number">Код для восстановления будет отправлен на следующий номер</string>
+    <string name="Create_new_password">Создайте новый пароль</string>
+    <string name="New_password">Новый пароль</string>
+    <string name="Repeat_your_password">Повторите пароль</string>
+    <string name="resuscitator">реаниматолог</string>
+    <string name="On_Clinic">On Clinic</string>
+    <string name="symbol">symbol</string>
+    <string name="Therapist">Терапевт</string>
 </resources>

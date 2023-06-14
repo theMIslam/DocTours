@@ -33,13 +33,11 @@
         android:id="@+id/iv_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_30dp"
-        android:layout_marginTop="@dimen/_34dp"
-        android:layout_marginEnd="@dimen/_18dp"
+        android:layout_marginTop="@dimen/_25dp"
+        android:layout_marginEnd="@dimen/_26dp"
         android:src="@drawable/search"
-        app:layout_constraintBottom_toBottomOf="@id/tv_clinics"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:tint="@color/black"
         android:contentDescription="@string/image"/>
 

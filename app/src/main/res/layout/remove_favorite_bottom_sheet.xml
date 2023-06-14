@@ -73,6 +73,7 @@
                 android:layout_width="@dimen/_18dp"
                 android:layout_height="@dimen/_16dp"
                 android:layout_marginStart="@dimen/_16dp"
+                android:contentDescription="@string/symbol"
                 android:src="@drawable/ic_heart"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/tv_doctor_name"
@@ -125,6 +126,7 @@
                 android:layout_width="@dimen/_22dp"
                 android:layout_height="@dimen/_20dp"
                 android:layout_marginTop="@dimen/_6dp"
+                android:contentDescription="@string/symbol"
                 android:src="@drawable/ic_star"
                 app:layout_constraintStart_toStartOf="@id/tv_work_speciality"
                 app:layout_constraintTop_toBottomOf="@id/tv_work_speciality" />
@@ -155,6 +157,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_16dp"
                 android:layout_marginTop="@dimen/_6dp"
+                android:contentDescription="@string/symbol"
                 android:src="@drawable/layer_list_location"
                 app:layout_constraintStart_toEndOf="@id/iv_doctor_avatar"
                 app:layout_constraintTop_toBottomOf="@id/img_stars" />
@@ -198,6 +201,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_20dp"
                 android:layout_marginStart="@dimen/_2dp"
+                android:contentDescription="@string/symbol"
                 android:src="@drawable/ic_som"
                 app:layout_constraintBottom_toBottomOf="@id/tv_summa"
                 app:layout_constraintStart_toEndOf="@id/tv_summa"
@@ -225,7 +229,7 @@
             android:textColor="@color/blue"
             android:textStyle="bold"
             app:cornerRadius="8dp" />
-        
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bsh_btn_confirm"
             android:layout_width="@dimen/_152dp"
