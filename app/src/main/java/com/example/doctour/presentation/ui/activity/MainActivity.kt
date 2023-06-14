@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.categoryFragment2 ->{
                     navView.visibility = View.VISIBLE
                 }
-                R.id.moreFragment ->{
+                R.id.fragment_profile ->{
                     navView.visibility = View.VISIBLE
                 }
 

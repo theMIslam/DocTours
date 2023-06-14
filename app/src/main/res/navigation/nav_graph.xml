@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/homeFragment2"
-        android:name="com.example.doctour.presentation.ui.fragments.home.home.HomeFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment2_to_favoriteDoctorsFragment"
             app:destination="@id/favoriteDoctorsFragment" />
@@ -29,12 +29,12 @@
 
     <fragment
         android:id="@+id/categoryFragment2"
-        android:name="com.example.doctour.presentation.ui.fragments.home.category.CategoryFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.category.CategoryFragment"
         android:label="fragment_category"
-        tools:layout="@layout/fragment_category" >
+        tools:layout="@layout/fragment_category">
         <action
             android:id="@+id/action_categoryFragment2_to_moreFragment"
-            app:destination="@id/moreFragment" />
+            app:destination="@id/fragment_profile" />
         <action
             android:id="@+id/action_categoryFragment2_to_categoryServicesFragment"
             app:destination="@id/categoryServicesFragment" />
@@ -48,23 +48,23 @@
 
     <fragment
         android:id="@+id/fragment_booking_failed"
-        android:name="com.example.doctour.presentation.ui.fragments.booking.BookingFailedFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.booking.BookingFailedFragment"
         android:label="fragment_failed"
         tools:layout="@layout/fragment_booking_failed" />
     <fragment
         android:id="@+id/fragment_booking_success"
-        android:name="com.example.doctour.presentation.ui.fragments.booking.BookingSuccessFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.booking.BookingSuccessFragment"
         android:label="fragment_success"
         tools:layout="@layout/fragment_booking_success" />
 
     <fragment
         android:id="@+id/fragment_review_success"
-        android:name="com.example.doctour.presentation.ui.fragments.review.ReviewSuccessFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.review.ReviewSuccessFragment"
         android:label="fragment_failed"
         tools:layout="@layout/fragment_review_success" />
     <fragment
         android:id="@+id/fragment_review_failed"
-        android:name="com.example.doctour.presentation.ui.fragments.review.ReviewFailedFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.review.ReviewFailedFragment"
         android:label="fragment_success"
         tools:layout="@layout/fragment_review_failed" />
 
@@ -72,31 +72,24 @@
         android:id="@+id/splashScreenFragment"
         android:name="com.example.doctour.presentation.ui.fragments.splash.SplashScreenFragment"
         android:label="fragment_splash_screen"
-        tools:layout="@layout/fragment_splash_screen" >
+        tools:layout="@layout/fragment_splash_screen">
         <action
-            android:id="@+id/action_splashScreenFragment_to_loginAndSignUpFragment"
-            app:destination="@id/loginAndSignUpFragment" />
+            android:id="@+id/action_splashScreenFragment_to_mainFlowFragment"
+            app:destination="@id/mainFlowFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
         <action
-            android:id="@+id/action_splashScreenFragment_to_homeFragment2"
-            app:destination="@id/homeFragment2" />
+            android:id="@+id/action_splashScreenFragment_to_authAndRegFlowFragment"
+            app:destination="@id/authAndRegFlowFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
-        android:id="@+id/fragment_login"
-        android:name="com.example.doctour.presentation.ui.fragments.login.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/action_fragment_login_to_forgotPasswordFragment"
-            app:destination="@id/forgotPasswordFragment" />
-    </fragment>
-
-
-    <fragment
-        android:id="@+id/moreFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.login.MoreFragment"
-        android:label="fragment_more"
-        tools:layout="@layout/fragment_more" >
+        android:id="@+id/fragment_profile"
+        android:name="com.example.doctour.presentation.ui.fragments.main.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile">
         <action
             android:id="@+id/action_moreFragment_to_fillProfileFragment"
             app:destination="@id/fillProfileFragment" />
@@ -107,16 +100,15 @@
 
     <fragment
         android:id="@+id/writeReviewFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.review.WriteReviewFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.review.WriteReviewFragment"
         android:label="fragment_write_review"
-        tools:layout="@layout/fragment_write_review" >
-    </fragment>
+        tools:layout="@layout/fragment_write_review"></fragment>
 
     <fragment
         android:id="@+id/aboutDoctorFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.aboutdoctor.AboutDoctorFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.aboutdoctor.AboutDoctorFragment"
         android:label="fragment_about_doctor"
-        tools:layout="@layout/fragment_about_doctor" >
+        tools:layout="@layout/fragment_about_doctor">
         <action
             android:id="@+id/action_aboutDoctorFragment_to_aboutDoctorReviewFragment"
             app:destination="@id/aboutDoctorReviewFragment" />
@@ -127,44 +119,43 @@
 
     <fragment
         android:id="@+id/aboutDoctorReviewFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.review.AboutDoctorReviewFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.review.AboutDoctorReviewFragment"
         android:label="fragment_about_doctor_review"
-        tools:layout="@layout/fragment_about_doctor_review" >
+        tools:layout="@layout/fragment_about_doctor_review">
         <action
             android:id="@+id/action_aboutDoctorReviewFragment_to_writeReviewFragment"
             app:destination="@id/writeReviewFragment" />
     </fragment>
 
-<fragment
+    <fragment
         android:id="@+id/bookingToDoctorSecondFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.booking.BookingToDoctorSecondFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.booking.BookingToDoctorSecondFragment"
         android:label="fragment_booking_to_doctor_second"
-        tools:layout="@layout/fragment_booking_to_doctor_second" >
+        tools:layout="@layout/fragment_booking_to_doctor_second">
 
     </fragment>
 
     <fragment
         android:id="@+id/changePasswordFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.password.ChangePasswordFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.password.ChangePasswordFragment"
         android:label="fragment_change_password"
         tools:layout="@layout/fragment_change_password" />
     <fragment
         android:id="@+id/createPinFragment2"
-        android:name="com.example.doctour.presentation.ui.fragments.login.CreatePinFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.authAndReg.signIn.CreatePinFragment"
         android:label="fragment_create_pin"
-        tools:layout="@layout/fragment_create_pin" >
-    </fragment>
+        tools:layout="@layout/fragment_create_pin"></fragment>
 
     <fragment
         android:id="@+id/failedPasswordFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.password.FailedPasswordFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.password.FailedPasswordFragment"
         android:label="fragment_failed_password"
         tools:layout="@layout/fragment_failed_password" />
     <fragment
         android:id="@+id/favoriteDoctorsFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.home.category.FavoriteDoctorsFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.category.FavoriteDoctorsFragment"
         android:label="fragment_favorite_doctors"
-        tools:layout="@layout/fragment_favorite_doctors" >
+        tools:layout="@layout/fragment_favorite_doctors">
         <action
             android:id="@+id/action_favoriteDoctorsFragment_to_aboutDoctorFragment"
             app:destination="@id/aboutDoctorFragment" />
@@ -172,103 +163,124 @@
 
     <fragment
         android:id="@+id/newPasswordFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.password.NewPasswordFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.password.NewPasswordFragment"
         android:label="fragment_new_password"
         tools:layout="@layout/fragment_new_password" />
     <fragment
         android:id="@+id/fillProfileFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.login.FillProfileFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.profile.FillProfileFragment"
         android:label="fragment_profile_fill"
-        tools:layout="@layout/fragment_profile_fill" >
-    </fragment>
+        tools:layout="@layout/fragment_profile_fill"></fragment>
 
     <fragment
-        android:id="@+id/registerFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.login.RegisterFragment"
-        android:label="fragment_register"
-        tools:layout="@layout/fragment_register" >
-    </fragment>
+        android:id="@+id/fragment_sign_up"
+        android:name="com.example.doctour.presentation.ui.fragments.authAndReg.signUp.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up"></fragment>
 
     <fragment
         android:id="@+id/successPasswordFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.password.SuccessPasswordFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.password.SuccessPasswordFragment"
         android:label="fragment_success_password"
-        tools:layout="@layout/fragment_success_password" >
-    </fragment>
+        tools:layout="@layout/fragment_success_password"></fragment>
 
     <fragment
         android:id="@+id/topDoctorsFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.home.category.TopDoctorsFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.category.TopDoctorsFragment"
         android:label="fragment_top_doctors"
         tools:layout="@layout/fragment_top_doctors" />
 
     <fragment
         android:id="@+id/searchFragment2"
-        android:name="com.example.doctour.presentation.ui.fragments.home.search.SearchFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.search.SearchFragment"
         android:label="fragment_search"
-        tools:layout="@layout/fragment_search" >
+        tools:layout="@layout/fragment_search">
         <action
             android:id="@+id/action_searchFragment2_to_aboutDoctorFragment"
             app:destination="@id/aboutDoctorFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/loginAndSignUpFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.login.LoginAndSignUpFragment"
+        android:id="@+id/SignInAndSignUpFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.authAndReg.signIn.SignInAndSignUpFragment"
         android:label="fragment_login_and_sign_up"
-        tools:layout="@layout/fragment_login_and_sign_up" >
+        tools:layout="@layout/fragment_sign_in_and_sign_up">
         <action
             android:id="@+id/action_loginAndSignUpFragment_to_homeFragment2"
             app:destination="@id/homeFragment2" />
         <action
-            android:id="@+id/action_loginAndSignUpFragment_to_fragment_login"
-            app:destination="@id/fragment_login" />
-        <action
             android:id="@+id/action_loginAndSignUpFragment_to_registerFragment"
-            app:destination="@id/registerFragment" />
+            app:destination="@id/fragment_sign_up" />
     </fragment>
+
     <fragment
         android:id="@+id/OTRCodeFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.password.OTRCodeFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.password.OTRCodeFragment"
         android:label="fragment_o_t_r_code"
-        tools:layout="@layout/fragment_o_t_r_code" >
+        tools:layout="@layout/fragment_o_t_r_code">
         <action
             android:id="@+id/action_OTRCodeFragment_to_newPasswordFragment"
             app:destination="@id/newPasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/notificationFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.home.notification.NotificationFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.notification.NotificationFragment"
         android:label="fragment_notification"
         tools:layout="@layout/fragment_notification" />
     <fragment
         android:id="@+id/categoryClinicFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.home.category.CategoryClinicFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.category.CategoryClinicFragment"
         android:label="fragment_category_clinic"
         tools:layout="@layout/fragment_category_clinic" />
     <fragment
         android:id="@+id/categoryCityFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.home.category.CategoryCityFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.category.CategoryCityFragment"
         android:label="fragment_category_city"
         tools:layout="@layout/fragment_category_city" />
     <fragment
         android:id="@+id/categoryServicesFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.home.category.CategoryServicesFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.category.CategoryServicesFragment"
         android:label="fragment_category_services"
         tools:layout="@layout/fragment_category_services" />
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.password.ForgotPasswordFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.password.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
-        tools:layout="@layout/fragment_forgot_password" >
+        tools:layout="@layout/fragment_forgot_password">
         <action
             android:id="@+id/action_forgotPasswordFragment_to_OTRCodeFragment"
             app:destination="@id/OTRCodeFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/categoryDoctorsFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.home.category.CategoryDoctorsFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.category.CategoryDoctorsFragment"
         android:label="fragment_category_doctors"
         tools:layout="@layout/fragment_category_doctors" />
-</navigation>
 
+
+    <fragment
+        android:id="@+id/mainFlowFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.MainFlowFragment"
+        android:label="fragment_main_flow"
+        tools:layout="@layout/fragment_main_flow">
+        <action
+            android:id="@+id/action_mainFlowFragment_to_authenticationFlowFragment"
+            app:destination="@id/authAndRegFlowFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/authAndRegFlowFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.authAndReg.AuthAndRegFlowFragment"
+        android:label="fragment_auth_and_reg_flow"
+        tools:layout="@layout/fragment_auth_and_reg_flow">
+        <action
+            android:id="@+id/action_authAndRegFlowFragment_to_mainFlowFragment"
+            app:destination="@id/mainFlowFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>

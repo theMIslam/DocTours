@@ -29,6 +29,9 @@ object Versions {
     const val lottieanimation = "5.2.0"
     const val google = "20.4.1"
     const val legacy = "1.0.0"
+    const val smsconfiguration = "1.7.1"
+    const val gson = "2.8.9"
+    const val gsonconverter ="2.5.0"
 
 }
 
@@ -85,7 +88,7 @@ object Libraries {
     object Hilt {
         const val android = "com.google.dagger:hilt-android:${Versions.dagger}"
         const val compiler = "com.google.dagger:hilt-compiler:${Versions.dagger}"
-    }
+}
 
     object Moshi {
         const val moshi = "com.squareup.moshi:moshi:${Versions.moshi}"
@@ -95,6 +98,7 @@ object Libraries {
     object Retrofit {
         const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
         const val converterMoshi = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
+        const val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.gsonconverter}"
     }
 
     object OkHttp {
@@ -148,6 +152,14 @@ object Libraries {
 
     object Legacy {
         const val legacy = "androidx.legacy:legacy-support-v4:${Versions.legacy}"
+    }
+
+    object SmsConfigutation {
+        const val smsconfiguration = "com.github.fraggjkee:sms-confirmation-view:${Versions.smsconfiguration}"
+    }
+
+    object Gson {
+        const val gson = "com.google.code.gson:gson:${Versions.gson}"
     }
 
 }

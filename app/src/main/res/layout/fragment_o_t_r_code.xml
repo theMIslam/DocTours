@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.fragments.password.OTRCodeFragment">
+    tools:context=".presentation.ui.fragments.main.password.OTRCodeFragment">
 
     <TextView
         android:id="@+id/arrow_back"
@@ -50,55 +50,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_code_was_sent" />
 
-     <EditText
-        android:id="@+id/et_number_1"
-        android:layout_width="@dimen/_60dp"
-        android:layout_height="@dimen/_60dp"
-        android:layout_marginStart="@dimen/_40dp"
-        android:layout_marginTop="@dimen/_30dp"
-         android:inputType="number"
-         android:autofillHints="password"
-        android:background="@drawable/et_code_bg"
+    <com.fraggjkee.smsconfirmationview.SmsConfirmationView
+        android:id="@+id/sms_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_60dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_number" />
-
-
-    <EditText
-        android:id="@+id/et_number_2"
-        android:layout_width="@dimen/_60dp"
-        android:layout_height="@dimen/_60dp"
-        android:layout_marginStart="@dimen/_130dp"
-        android:layout_marginTop="@dimen/_30dp"
-        android:inputType="number"
-        android:autofillHints="password"
-        android:background="@drawable/et_code_bg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_number" />
-
-    <EditText
-        android:id="@+id/et_number_3"
-        android:layout_width="@dimen/_60dp"
-        android:layout_height="@dimen/_60dp"
-        android:layout_marginStart="@dimen/_220dp"
-        android:layout_marginTop="@dimen/_30dp"
-        android:background="@drawable/et_code_bg"
-        android:inputType="number"
-        android:autofillHints="password"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_number" />
-
-    <EditText
-        android:id="@+id/et_number_4"
-        android:layout_width="@dimen/_60dp"
-        android:layout_height="@dimen/_60dp"
-        android:layout_marginStart="@dimen/_310dp"
-        android:layout_marginTop="@dimen/_30dp"
-        android:autofillHints="password"
-        android:background="@drawable/et_code_bg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_number"
-        android:inputType="number"
-        />
+        app:layout_constraintTop_toBottomOf="@id/tv_number"
+        app:scv_symbolBackgroundColor="@color/white"
+        app:scv_symbolBorderColor="@color/grey"
+        app:scv_symbolBorderCornerRadius="@dimen/_16dp"
+        app:scv_symbolBorderWidth="@dimen/_1dp"
+        app:scv_symbolHeight="@dimen/_61dp"
+        app:scv_symbolWidth="@dimen/_70dp"
+        app:scv_symbolsSpacing="@dimen/_16dp" />
 
     <TextView
         android:id="@+id/tv_repeat_send"
@@ -109,7 +75,7 @@
         style="@style/small_black_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_number_3" />
+        app:layout_constraintTop_toBottomOf="@id/sms_view" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_send"
