@@ -66,4 +66,3 @@
         tools:listitem="@layout/item_doctors_info" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

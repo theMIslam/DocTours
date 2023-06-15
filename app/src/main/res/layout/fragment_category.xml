@@ -24,7 +24,7 @@
         android:layout_height="@dimen/_18dp"
         android:layout_marginStart="@dimen/_58dp"
         android:contentDescription="@string/image"
-        android:src="@drawable/ic_heart"
+        android:src="@drawable/img_empty_heart"
         app:layout_constraintBottom_toBottomOf="@id/tv_categories"
         app:layout_constraintStart_toEndOf="@id/tv_categories" />
 

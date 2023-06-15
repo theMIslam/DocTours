@@ -34,7 +34,7 @@
         android:layout_marginEnd="@dimen/_26dp"
         android:contentDescription="@string/image"
         android:src="@drawable/search"
-      app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:tint="@color/black"
         />

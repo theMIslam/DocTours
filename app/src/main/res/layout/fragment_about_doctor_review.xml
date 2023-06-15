@@ -7,7 +7,7 @@
     tools:context=".presentation.ui.fragments.main.review.AboutDoctorReviewFragment">
 
     <LinearLayout
-        android:id="@+id/linear"
+        android:id="@+id/linear_about_doctor_review"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -34,6 +34,7 @@
             android:text="@string/doctor_asanov" />
     </LinearLayout>
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,7 +42,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linear"
+        app:layout_constraintTop_toBottomOf="@id/linear_about_doctor_review"
         tools:listitem="@layout/item_feedbacks" />
 
     <TextView
@@ -55,4 +56,5 @@
         android:gravity="center"
         android:text="@string/Write_feedback"
         app:layout_constraintBottom_toBottomOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
