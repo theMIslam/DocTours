@@ -2,28 +2,39 @@ package com.example.doctour.data.base
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
+import com.example.doctour.data.remote.dtos.doctour.DoctourPagingResponse
 import com.example.doctour.data.utils.DataMapper
+import retrofit2.HttpException
 import retrofit2.Response
+import java.io.IOException
+import java.io.InterruptedIOException
 
-abstract class BasePagingSource<ValueDto : DataMapper<Value>,Value : Any>(
-    private val request: suspend (position: Int) -> Response<BasePagingResponse<Value>>
+private const val BASE_STARTING_PAGE_INDEX = 1
+
+abstract class BasePagingSource<ValueDto : DataMapper<Value>, Value : Any>(
+    private val request: suspend (position: Int) -> Response<DoctourPagingResponse<ValueDto>>,
 ) : PagingSource<Int, Value>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Value> {
+        val position = params.key ?: BASE_STARTING_PAGE_INDEX
+
         return try {
-            val currentItem = params.key ?: 0
-            val response = request(currentItem)
-            val responseData = mutableListOf<Value>()
-            val data = response.body()?.results ?: emptyList()
-            responseData.addAll(data)
+            val response = request(position)
+            val data = response.body()!!
 
             LoadResult.Page(
-                data = responseData,
-                prevKey = if (currentItem == 0) null else -1,
-                nextKey = currentItem.plus(1)
+                data = data.data.map { it.mapToDomain() },
+                prevKey = null,
+                nextKey = data.next
             )
-        } catch (e: Exception) {
-            LoadResult.Error(e)
+        } catch (exception: IOException) {
+            LoadResult.Error(exception)
+        } catch (exception: HttpException) {
+            LoadResult.Error(exception)
+        } catch (exception: NullPointerException) {
+            LoadResult.Error(exception)
+        } catch (exception: InterruptedIOException) {
+            LoadResult.Error(exception)
         }
     }
 

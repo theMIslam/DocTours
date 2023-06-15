@@ -26,22 +26,15 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.homeFragment2 ->{
+                R.id.homeFragment ->{
                     navView.visibility = View.VISIBLE
                 }
-                R.id.categoryFragment2 ->{
+                R.id.categoryFragment ->{
                     navView.visibility = View.VISIBLE
                 }
                 R.id.fragment_profile ->{
                     navView.visibility = View.VISIBLE
                 }
-
-
-
-
-
-
-
                 else -> {
                     navView.visibility = View.GONE
                 }

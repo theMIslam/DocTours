@@ -6,7 +6,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentHomeBinding
 import com.example.doctour.base.BaseFragment
-import com.example.doctour.presentation.ui.extensions.navigateSafely
+import com.example.doctour.presentation.extensions.navigateSafely
 import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeClinic
 import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeDoctorSpecs
 import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeInfoDoctor
@@ -40,7 +40,7 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
         binding.rvDoctorsInfo.adapter=adapterHomeInfoDoctor
     }
    private fun specsClick(){
-        findNavController().navigateSafely(R.id.homeFragment2)
+        findNavController().navigateSafely(R.id.homeFragment)
     }
     private fun infoDoctorClick(){
         findNavController().navigate(R.id.aboutDoctorFragment)

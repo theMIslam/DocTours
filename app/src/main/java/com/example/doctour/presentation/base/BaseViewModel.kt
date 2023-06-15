@@ -1,4 +1,4 @@
-package com.example.doctour.base
+package com.example.doctour.presentation.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

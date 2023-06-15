@@ -113,8 +113,5 @@ android {
 
         // SMS configuration
         implementation(Libraries.SmsConfigutation.smsconfiguration)
-
-        // Gson
-       // implementation(Libraries.Gson.gson)
     }
 }

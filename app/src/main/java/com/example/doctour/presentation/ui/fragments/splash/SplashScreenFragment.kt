@@ -9,7 +9,7 @@ import com.example.doctour.R
 import com.example.doctour.databinding.FragmentSplashScreenBinding
 import com.example.doctour.di.UserPreferences
 import com.example.doctour.base.BaseFragment
-import com.example.doctour.presentation.ui.extensions.navigateSafely
+import com.example.doctour.presentation.extensions.navigateSafely
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -24,7 +24,7 @@ class SplashScreenFragment :
     lateinit var userPreferences: UserPreferences
     override fun initialize() {
         Handler().postDelayed({
-            findNavController().navigate(R.id.homeFragment2)
+            findNavController().navigate(R.id.homeFragment)
         }, 2000)
 
         when{

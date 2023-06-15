@@ -8,7 +8,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentBookingToDoctorSecondBinding
 import com.example.doctour.base.BaseFragment
-import com.example.doctour.presentation.ui.extensions.showToast
+import com.example.doctour.presentation.extensions.showToast
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -70,7 +70,5 @@ dependencies {
     // Gson
     implementation(Libraries.Gson.gson)
 
-   // implementation(Libraries.Glide.glide)
-
     implementation(Libraries.Retrofit.gsonConverter)
 }
