@@ -1,57 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.fragments.home.category.CategoryClinicFragment">
+    tools:context=".presentation.ui.home.category.CategoryClinicFragment">
 
-    <TextView
-        android:id="@+id/arrow_back"
-        style="@style/simple_black_text"
-        android:layout_width="@dimen/_18dp"
-        android:layout_height="@dimen/_11dp"
-        android:layout_marginStart="@dimen/_20dp"
-        android:layout_marginTop="@dimen/_26dp"
-        android:background="@drawable/img_14"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_clinics"
-        style="@style/simple_black_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_16dp"
-        android:layout_marginTop="@dimen/_20dp"
-        android:text="@string/clinic"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/arrow_back"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/iv_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_30dp"
-        android:layout_marginTop="@dimen/_34dp"
-        android:src="@drawable/search"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/tv_clinics"
-        android:layout_marginEnd="@dimen/_18dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/black" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_clinics"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_0dp"
-        android:layout_marginStart="@dimen/_16dp"
-        android:layout_marginTop="@dimen/_24dp"
-        android:layout_marginEnd="@dimen/_16dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/arrow_back"
-        tools:listitem="@layout/item_clinic_info" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

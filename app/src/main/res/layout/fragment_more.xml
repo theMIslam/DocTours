@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".presentation.ui.fragments.login.MoreFragment">
+    tools:context=".presentation.ui.login.MoreFragment">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/btn_profile"
+        android:id="@+id/cv_profile"
         android:layout_width="match_parent"
         android:layout_height="92dp"
         android:layout_marginHorizontal="24dp"
@@ -16,44 +16,43 @@
         app:cardCornerRadius="16dp"
         app:cardElevation="8dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_profile"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/white"
+            android:drawableLeft="@drawable/google"
+            android:drawableRight="@drawable/ic_next"
+            android:text="@string/name"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:cornerRadius="16dp" />
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/iv_profile"
-                android:layout_width="@dimen/_60dp"
-                android:layout_height="@dimen/_60dp"
-                android:layout_margin="@dimen/_16dp"
-                android:src="@color/blue"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+    </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:id="@+id/tv_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_20dp"
-                android:text="@string/name"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_20_sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/iv_profile"
-                app:layout_constraintTop_toTopOf="parent" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_language"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp">
 
-            <ImageView
-                android:id="@+id/iv_next"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_24dp"
-                android:src="@drawable/ic_next"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_language"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/white"
+            android:drawableEnd="@drawable/ic_next"
+            android:text="@string/language"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:cornerRadius="16dp" />
 
     </androidx.cardview.widget.CardView>
 
@@ -62,7 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="8dp">
 
@@ -72,10 +71,10 @@
             android:layout_height="match_parent"
             android:backgroundTint="@color/white"
             android:drawableEnd="@drawable/ic_next"
-            android:text="@string/change_passwordd"
+            android:text="@string/password"
             android:textAlignment="textStart"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:textStyle="bold"
             app:cornerRadius="16dp" />
 
@@ -94,17 +93,44 @@
             android:id="@+id/ms_biometric_entry"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:checked="true"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/biometric_entry"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:thumbTint="@drawable/switch_color"
+            app:trackTint="@drawable/switch_bg"
+            android:textOn="On"
+            android:textOff="Off"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_push_notification"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp">
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/ms_push_notification"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:checked="false"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:text="@string/definition_of_geolocation"
+            android:text="@string/push_notifications"
             android:textColor="@color/black"
-            android:textOff="Off"
-            android:textOn="On"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:textStyle="bold"
             app:thumbTint="@drawable/switch_color"
-            app:trackTint="@drawable/switch_bg" />
+            app:trackTint="@drawable/switch_bg"
+            android:textOn="On"
+            android:textOff="Off"/>
 
     </androidx.cardview.widget.CardView>
 
@@ -126,29 +152,7 @@
             android:text="@string/exit"
             android:textAlignment="textStart"
             android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:cornerRadius="16dp" />
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cv_delete_account"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="24dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="8dp">
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_delete_account"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:backgroundTint="@color/white"
-            android:text="@string/delete_account"
-            android:textAlignment="textStart"
-            android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:textStyle="bold"
             app:cornerRadius="16dp" />
     </androidx.cardview.widget.CardView>
