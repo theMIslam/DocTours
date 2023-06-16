@@ -17,6 +17,14 @@
         <item name="fontFamily">@font/roboto_regular</item>
         <item name="android:textSize">16sp</item>
     </style>
+
+    <style name="simple_bold_black_text">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="simple_parl_text">
         <item name="android:textColor">@color/parlament</item>
         <item name="fontFamily">@font/roboto_regular</item>
@@ -56,6 +64,12 @@
         <item name="android:textColor">@color/black</item>
         <item name="fontFamily">@font/roboto_regular</item>
         <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="small_black_text_without_bold">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">12sp</item>
     </style>
     <style name="small_parl_text">
         <item name="android:textColor">@color/parlament</item>
@@ -77,19 +91,15 @@
         <item name="android:textColorHint">@color/grey</item>
     </style>
 
-
-
     <style name="CornerRadius">
         <item name="cornerSize">8dp</item>
     </style>
-
 
     <style name="notification_img">
         <item name="android:fontFamily">@font/roboto_regular</item>
         <item name="android:layout_width">64dp</item>
         <item name="android:layout_height">64dp</item>
         <item name="android:layout_marginTop">30dp</item>
-
     </style>
 
     <style name="notification_text">
@@ -148,31 +158,43 @@
         <item name="android:layout_height">@dimen/_24dp</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/blue</item>
-
     </style>
 
     <style name="ic_back">
-
         <item name="android:layout_width">@dimen/_18dp</item>
         <item name="android:layout_height">@dimen/_12dp</item>
         <item name="android:layout_marginTop">@dimen/_18dp</item>
         <item name="android:layout_marginStart">@dimen/_12dp</item>
-
     </style>
+
     <style name="BottomDialogAnimation">
         <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
         <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
     </style>
+
     <style name="btn_simple_bold">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/_16sp</item>
         <item name="android:textStyle">bold</item>
         <item name="fontFamily">@font/roboto_regular</item>
     </style>
+
     <style name="mega_black_text">
         <item name="android:textColor">@color/black</item>
         <item name="fontFamily">@font/roboto_regular</item>
         <item name="android:textSize">@dimen/_22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AutoCompleteTVStyle">
+        <item name="colorControlNormal">@color/grey</item>
+        <item name="colorControlActivated">@color/parlament</item>
+    </style>
+
+    <style name="mega_parl_text">
+        <item name="android:textColor">@color/parlament</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">@dimen/_18sp</item>
         <item name="android:textStyle">bold</item>
     </style>
 

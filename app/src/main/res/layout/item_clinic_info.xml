@@ -1,6 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_doctor_avatar"
+            android:layout_width="@dimen/_110dp"
+            android:layout_height="@dimen/_110dp"
+            android:layout_marginVertical="@dimen/_10dp"
+            android:layout_marginStart="@dimen/_20dp"
+            android:background="@color/calendar"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image_doctors_avatar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/CornerRadius" />
+
+        <TextView
+            android:id="@+id/tv_clinic_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_16dp"
+            android:text="@string/on_clinic"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/iv_doctor_avatar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_heart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginEnd="@dimen/_18dp"
+            android:contentDescription="@string/image"
+            android:src="@drawable/ic_heart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_clinic_name" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="@dimen/_221dp"
+            android:layout_height="@dimen/_1dp"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_12dp"
+            android:background="@color/grey"
+            app:layout_constraintStart_toEndOf="@id/iv_doctor_avatar"
+            app:layout_constraintTop_toBottomOf="@id/tv_clinic_name" />
+
+        <TextView
+            android:id="@+id/network_of_clinics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:text="@string/network_of_clinics"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_12sp"
+            app:layout_constraintStart_toEndOf="@id/iv_doctor_avatar"
+            app:layout_constraintTop_toBottomOf="@id/view" />
+
+        <ImageView
+            android:id="@+id/img_stars"
+            android:layout_width="@dimen/_22dp"
+            android:layout_height="@dimen/_20dp"
+            android:layout_marginTop="@dimen/_6dp"
+            android:contentDescription="@string/image"
+            android:src="@drawable/ic_star"
+            app:layout_constraintStart_toStartOf="@id/network_of_clinics"
+            app:layout_constraintTop_toBottomOf="@id/network_of_clinics" />
+
+        <TextView
+            android:id="@+id/tv_points"
+            android:layout_width="@dimen/_22dp"
+            android:layout_height="@dimen/_20dp"
+            android:layout_marginStart="@dimen/_12dp"
+            android:text="@string/score"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintStart_toEndOf="@id/img_stars"
+            app:layout_constraintTop_toTopOf="@id/img_stars" />
+
+
+        <TextView
+            android:id="@+id/tv_recommendation"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_20dp"
+            android:layout_marginStart="@dimen/_14dp"
+            android:text="@string/feedback_32"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintStart_toEndOf="@id/tv_points"
+            app:layout_constraintTop_toTopOf="@id/tv_points" />
+
+        <TextView
+            android:id="@+id/tv_ot"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_4dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/ot"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintStart_toEndOf="@id/iv_doctor_avatar"
+            app:layout_constraintTop_toBottomOf="@id/img_stars" />
+
+        <TextView
+            android:id="@+id/tv_summa"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="30dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/sum"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_16sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_ot"
+            app:layout_constraintStart_toStartOf="@id/tv_ot" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_20dp"
+            android:layout_marginStart="@dimen/_2dp"
+            android:contentDescription="@string/image"
+            android:src="@drawable/ic_som"
+            app:layout_constraintBottom_toBottomOf="@id/tv_summa"
+            app:layout_constraintStart_toEndOf="@id/tv_summa"
+            app:layout_constraintTop_toTopOf="@id/tv_summa" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

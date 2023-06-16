@@ -6,12 +6,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.doctour.R
 import com.example.doctour.databinding.ItemHomeBinding
-import com.example.doctour.presentation.ui.fragments.home.home.model.HomeModel
+import com.example.doctour.presentation.ui.fragments.home.model.HomeModel
 
 
-class AdapterHomeDoctorSpecs (private val onClick: () -> Unit
-): ListAdapter<HomeModel,AdapterHomeDoctorSpecs.ViewHolder>(
+class AdapterHomeDoctorSpecs (private val onClick: () -> Unit): ListAdapter<HomeModel,AdapterHomeDoctorSpecs.ViewHolder>(
    Comparator()
 ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):AdapterHomeDoctorSpecs.ViewHolder {

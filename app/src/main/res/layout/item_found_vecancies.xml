@@ -10,7 +10,7 @@
         android:layout_width="@dimen/_110dp"
         android:layout_height="@dimen/_110dp"
         android:layout_margin="@dimen/_16dp"
-        android:src="@drawable/img"
+        android:src="@drawable/image_doctors_avatar"
         app:layout_constraintBaseline_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -33,7 +33,7 @@
         android:layout_height="@dimen/_15dp"
         android:layout_marginTop="@dimen/_21dp"
         android:layout_marginEnd="@dimen/_38dp"
-        android:background="@drawable/img_1"
+        android:background="@drawable/img_empty_heart"
         android:contentDescription="@string/image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -61,15 +61,14 @@
 
     <TextView
         android:id="@+id/tv_experience"
+        style="@style/small_black_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/tv_experience_name"
-        app:layout_constraintTop_toBottomOf="@id/view"
-        android:text="@string/_16_years"
-        style="@style/small_black_text"
-        android:layout_marginTop="@dimen/_1dp"
         android:layout_marginStart="@dimen/_2dp"
-        />
+        android:layout_marginTop="@dimen/_1dp"
+        android:text="@string/_16_years"
+        app:layout_constraintStart_toEndOf="@id/tv_experience_name"
+        app:layout_constraintTop_toBottomOf="@id/view" />
 
     <TextView
         android:id="@+id/profession"

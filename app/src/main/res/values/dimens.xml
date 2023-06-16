@@ -110,5 +110,12 @@
     <dimen name="_62dp">62dp</dimen>
     <dimen name="_272dp">272dp</dimen>
     <dimen name="_304dp">304dp</dimen>
+    <dimen name="_24sp">24sp</dimen>
+    <dimen name="_270dp">270dp</dimen>
+    <dimen name="_17sp">17sp</dimen>
+    <dimen name="_220dp">220dp</dimen>
+    <dimen name="_310dp">310dp</dimen>
+    <dimen name="_90dp">90dp</dimen>
+    <dimen name="_136dp">136dp</dimen>
 
 </resources>
