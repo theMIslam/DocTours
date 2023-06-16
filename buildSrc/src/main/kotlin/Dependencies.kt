@@ -31,6 +31,7 @@ object Versions {
     const val legacy = "1.0.0"
     const val smsconfiguration = "1.7.1"
     const val gson = "2.8.9"
+    const val gsonconverter ="2.5.0"
 
 }
 
@@ -97,6 +98,7 @@ object Libraries {
     object Retrofit {
         const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
         const val converterMoshi = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
+        const val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.gsonconverter}"
     }
 
     object OkHttp {
@@ -157,7 +159,7 @@ object Libraries {
     }
 
     object Gson {
-        const val gson = "implementation 'com.google.code.gson:gson:${Versions.gson}"
+        const val gson = "com.google.code.gson:gson:${Versions.gson}"
     }
 
 }

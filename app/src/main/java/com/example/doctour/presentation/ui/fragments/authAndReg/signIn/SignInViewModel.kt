@@ -6,6 +6,5 @@ import javax.inject.Inject
 
 @HiltViewModel
 class   SignInViewModel @Inject constructor (
-
         ): BaseViewModel() {
 }

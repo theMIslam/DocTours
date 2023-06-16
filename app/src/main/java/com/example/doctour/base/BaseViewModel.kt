@@ -8,7 +8,6 @@ import androidx.paging.map
 import com.example.doctour.domain.core.Either
 import com.example.doctour.domain.core.NetworkError
 import com.example.doctour.presentation.ui.state.UIState
-import com.geeks.ulul.core.network.result.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -18,68 +17,61 @@ import kotlinx.coroutines.launch
 
 abstract class BaseViewModel : ViewModel() {
 
-    protected fun <T> mutableUiStateFlow() = MutableStateFlow<UIState<T>>(UIState.Idle())
+    @Suppress("FunctionName")
+    protected fun <T> MutableUIStateFlow() = MutableStateFlow<UIState<T>>(UIState.Idle())
 
-    protected fun <T, S> Flow<Either<String, T>>.gatherRequest(
+    protected fun <T> MutableStateFlow<UIState<T>>.reset() {
+        value = UIState.Idle()
+    }
+
+
+    protected fun <T> Flow<Either<NetworkError, T>>.collectNetworkRequest(
+        state: MutableStateFlow<UIState<T>>
+    ) = collectUIState(state) {
+        UIState.Success(it)
+    }
+
+    protected fun <T, S> Flow<Either<NetworkError, T>>.collectNetworkRequest(
         state: MutableStateFlow<UIState<S>>,
-        mappedData: (data: T) -> S,
+        mapToUI: (T) -> S
+    ) = collectUIState(state) {
+        UIState.Success(mapToUI(it))
+    }
+
+    private fun <T, S> Flow<Either<NetworkError, T>>.collectUIState(
+        state: MutableStateFlow<UIState<S>>,
+        successful: (T) -> UIState.Success<S>
     ) {
         viewModelScope.launch(Dispatchers.IO) {
             state.value = UIState.Loading()
-            this@gatherRequest.collect {
+            this@collectUIState.collect {
                 when (it) {
-                    is Either.Left -> state.value = UIState.Error(it.value)
-                    is Either.Right -> state.value =
-                        UIState.Success(mappedData(it.value))
+                    is Either.Left -> state.value = UIState.Error(it.value.toString())
+                    is Either.Right -> state.value = successful(it.value)
                 }
             }
-
         }
     }
 
-    protected fun <T> Flow<Either<String, T>>.gatherRequest(
-        state: MutableStateFlow<UIState<T>>,
-    ) {
-        viewModelScope.launch(Dispatchers.IO) {
-            state.value = UIState.Loading()
-            this@gatherRequest.collect {
-                when (it) {
-                    is Either.Left -> state.value = UIState.Error(it.value)
-                    is Either.Right -> state.value =
-                        UIState.Success(it.value)
-                }
-            }
+    protected fun <T, S> Flow<T>.collectLocalRequest(
+        mapToUI: (T) -> S
+    ): Flow<S> = map { value: T ->
+        mapToUI(value)
+    }
 
+    protected fun <T, S> Flow<List<T>>.collectLocalRequestForList(
+        mapToUI: (T) -> S
+    ): Flow<List<S>> = map { value: List<T> ->
+        value.map { data: T ->
+            mapToUI(data)
         }
     }
 
-    protected fun <T : Any, S : Any> Flow<PagingData<T>>.gatherPagingRequest(
-        mappedData: (data: T) -> S,
-    ) = map {
-        it.map { data -> mappedData(data) }
+    protected fun <T : Any, S : Any> Flow<PagingData<T>>.collectPagingRequest(
+        mapToUI: (T) -> S
+    ): Flow<PagingData<S>> = map { value: PagingData<T> ->
+        value.map { data: T ->
+            mapToUI(data)
+        }
     }.cachedIn(viewModelScope)
-
-    protected fun <T> Flow<Resource<T>>.collectFlow(
-        _state: MutableStateFlow<UIState<T>>
-    ){
-        viewModelScope.launch(Dispatchers.IO) {
-            this@collectFlow.collect { res ->
-                when (res) {
-                    is Resource.Error -> {
-                        if (res.message != null) {
-                            _state.value = UIState.Error(res.message!!)
-                        }
-                    }
-                    is Resource.Loading -> {
-                        _state.value = UIState.Loading()
-                    }
-                    is Resource.Success -> {
-                        if (res.data != null) {
-                            _state.value = UIState.Success(res.data!!)
-                        }
-                    }
-                }
-            }
-        }
-    }
 }
