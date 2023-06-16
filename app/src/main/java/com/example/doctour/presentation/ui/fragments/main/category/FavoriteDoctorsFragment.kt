@@ -2,7 +2,6 @@ package com.example.doctour.presentation.ui.fragments.main.category
 
 
 import android.app.Dialog
-import android.view.View
 import android.view.Window
 import android.widget.Button
 import androidx.fragment.app.viewModels
@@ -10,10 +9,8 @@ import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentFavoriteDoctorsBinding
-import com.example.doctour.base.BaseFragment
-import com.example.doctour.presentation.base.BaseFragment
 import com.example.doctour.presentation.ui.fragments.home.category.adapter.FavoriteDoctorsAdapter
-import com.google.android.material.button.MaterialButton
+import com.example.doctour.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

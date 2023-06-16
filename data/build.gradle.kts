@@ -43,7 +43,7 @@ android {
 dependencies {
 
     // Module
-    implementation(project(mapOf("path" to ":app")))
+   //implementation(project(mapOf("path" to ":app")))
     implementation(project(":domain"))
 
     // Retrofit
@@ -70,5 +70,5 @@ dependencies {
     // Gson
     implementation(Libraries.Gson.gson)
 
-    implementation(Libraries.Glide.glide)
+    implementation(Libraries.Retrofit.gsonConverter)
 }

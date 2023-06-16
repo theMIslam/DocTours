@@ -6,7 +6,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentAboutDoctorBinding
 import com.example.doctour.base.BaseFragment
-import com.example.doctour.presentation.ui.extensions.loadImage
+import com.example.doctour.presentation.extensions.loadImage
 import com.example.doctour.presentation.ui.fragments.main.model.BermetModel
 import dagger.hilt.android.AndroidEntryPoint
 

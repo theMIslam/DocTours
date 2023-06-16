@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.databinding.ItemDoctorsInfoBinding
-import com.example.doctour.presentation.ui.fragments.model.BermetModel
+import com.example.doctour.presentation.ui.fragments.main.model.BermetModel
 
 class FavoriteDoctorsAdapter(
     private val onClick:()->Unit,
