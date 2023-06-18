@@ -1,4 +1,4 @@
-package com.example.doctour.domain.model
+package com.example.doctour.domain.model.local
 
 class Doctour(
     val id: Long,

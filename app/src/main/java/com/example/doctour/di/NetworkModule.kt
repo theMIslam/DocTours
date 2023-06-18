@@ -1,7 +1,6 @@
 package com.example.doctour.di
 
 import androidx.lifecycle.MutableLiveData
-import com.example.doctour.data.remote.client.NetworkClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,15 +15,15 @@ object NetworkModule {
     @Provides
     fun provideTokenErrorListener() = MutableLiveData<String>()
 
-    @Singleton
-    @Provides
-    fun provideAuthenticatorApiService(
-        authenticatorClient: NetworkClient.AuthenticatorClient
-    ) = authenticatorClient.provideAuthenticatorApiService()
+//    @Singleton
+//    @Provides
+//    fun provideAuthenticatorApiService(
+//        authenticatorClient: NetworkClient.AuthenticatorClient
+//    ) = authenticatorClient.provideAuthenticatorApiService()
 
-    @Singleton
-    @Provides
-    fun provideDoctourApiService(
-        networkClient: NetworkClient
-    ) = networkClient.provideDoctourApiService()
+//    @Singleton
+//    @Provides
+//    fun provideDoctourApiService(
+//        networkClient: NetworkClient
+//    ) = networkClient.provideDoctourApiService()
 }

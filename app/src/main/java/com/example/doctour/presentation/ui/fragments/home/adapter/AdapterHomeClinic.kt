@@ -10,7 +10,7 @@ class AdapterHomeClinic (
     private val onCLick:()->Unit
         ):RecyclerView.Adapter<AdapterHomeClinic.ViewHolderHomeClinic>(){
 
-    private val list :ArrayList<HomeModel> = ArrayList()
+    private val list :ArrayList<HomeModel> = ArrayList<HomeModel>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderHomeClinic {
        return ViewHolderHomeClinic(ItemHomeBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
