@@ -11,6 +11,5 @@ class DoctourEntity(
     val id: Long,
     val bar: String
 ) : DataMapper<Doctour> {
-
     override fun mapToDomain() = Doctour(id, bar)
 }

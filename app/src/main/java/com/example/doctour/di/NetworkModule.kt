@@ -15,15 +15,4 @@ object NetworkModule {
     @Provides
     fun provideTokenErrorListener() = MutableLiveData<String>()
 
-//    @Singleton
-//    @Provides
-//    fun provideAuthenticatorApiService(
-//        authenticatorClient: NetworkClient.AuthenticatorClient
-//    ) = authenticatorClient.provideAuthenticatorApiService()
-
-//    @Singleton
-//    @Provides
-//    fun provideDoctourApiService(
-//        networkClient: NetworkClient
-//    ) = networkClient.provideDoctourApiService()
 }

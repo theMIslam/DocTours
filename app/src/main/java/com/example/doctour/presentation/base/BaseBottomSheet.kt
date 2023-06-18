@@ -64,10 +64,7 @@ abstract class BaseBottomSheet<Binding : ViewBinding>(
         initialize()
         setupListeners()
     }
+    protected open fun initialize() {}
 
-    protected open fun initialize() {
-    }
-
-    protected open fun setupListeners() {
-    }
+    protected open fun setupListeners() {}
 }

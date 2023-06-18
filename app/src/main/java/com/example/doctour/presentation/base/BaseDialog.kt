@@ -26,10 +26,6 @@ abstract class BaseDialog<Binding : ViewBinding>(
         initialize()
         setupListeners()
     }
-
-    protected open fun initialize() {
-    }
-
-    protected open fun setupListeners() {
-    }
+    protected open fun initialize() {}
+    protected open fun setupListeners() {}
 }

@@ -6,15 +6,15 @@ import com.example.doctour.domain.repositories.DoctourRepository
 import javax.inject.Inject
 
 class DoctourRepositoryImpl @Inject constructor(
-      private val dao: DoctourDao
+      //private val dao: DoctourDao
 )
-   // : BaseRepository(), DoctourRepository
+    //: BaseRepository(),
+   // DoctourRepository
 {
-
-   // override fun fetchDoctour() = doNetworkRequestWithMapping {
+//    override fun fetchDoctour() = doNetworkRequestWithMapping {
 //        service.fetchDoctour().onSuccess { data ->
 //            dao.insertDoctour(data.toEntity())
 //        }
-    }
-  //  override fun getDoctour() = doLocalRequestForList { dao.getAllDoctour() }
-//}
+//    }
+   // override fun getDoctour() = doLocalRequestForList { dao.getAllDoctour() }
+}
