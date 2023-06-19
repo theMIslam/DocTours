@@ -2,7 +2,6 @@ package com.example.doctour.data.base
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.example.doctour.data.remote.dtos.doctour.DoctourPagingResponse
 import com.example.doctour.data.utils.DataMapper
 import retrofit2.HttpException
 import retrofit2.Response
