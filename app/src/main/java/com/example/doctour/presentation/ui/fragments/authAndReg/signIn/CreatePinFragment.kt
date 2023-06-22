@@ -1,11 +1,11 @@
 package com.example.doctour.presentation.ui.fragments.authAndReg.signIn
 
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.Navigation.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
-import com.example.doctour.databinding.FragmentCreatePinBinding
 import com.example.doctour.base.BaseFragment
+import com.example.doctour.databinding.FragmentCreatePinBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

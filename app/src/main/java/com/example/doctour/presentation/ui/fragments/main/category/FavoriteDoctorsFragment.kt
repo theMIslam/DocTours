@@ -9,8 +9,8 @@ import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.databinding.FragmentFavoriteDoctorsBinding
+import com.example.doctour.presentation.base.BaseFragment
 import com.example.doctour.presentation.ui.fragments.home.category.adapter.FavoriteDoctorsAdapter
-import com.example.doctour.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

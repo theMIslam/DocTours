@@ -1,11 +1,8 @@
 package com.example.doctour.data.base
 
-import android.util.Config.DEBUG
 import android.util.Log
 import android.webkit.MimeTypeMap
-import androidx.paging.Pager
-import androidx.paging.PagingConfig
-import androidx.paging.PagingData
+import com.example.doctour.BuildConfig
 import com.example.doctour.data.utils.DataMapper
 import com.example.doctour.data.utils.fromJson
 import com.example.doctour.domain.core.Either
@@ -73,7 +70,7 @@ abstract class BaseRepository {
 
             else -> {
                 val message = exception.localizedMessage ?: "Error Occurred!"
-                if (DEBUG) Log.d(this@BaseRepository.javaClass.simpleName, message)
+                if (BuildConfig.DEBUG) Log.d(this@BaseRepository.javaClass.simpleName, message)
                 emit(Either.Left(NetworkError.Unexpected(message)))
             }
         }
@@ -106,27 +103,4 @@ abstract class BaseRepository {
         request: () -> Flow<List<T>>
     ): Flow<List<S>> = request().map { list -> list.map { data -> data.mapToDomain() } }
 
-    protected fun <ValueDto : DataMapper<Value>, Value : Any, PagingSource : BasePagingSource<ValueDto, Value>> doPagingRequest(
-        pagingSource: () -> PagingSource,
-        pageSize: Int = 10,
-        prefetchDistance: Int = pageSize,
-        enablePlaceholders: Boolean = true,
-        initialLoadSize: Int = pageSize * 3,
-        maxSize: Int = Int.MAX_VALUE,
-        jumpThreshold: Int = Int.MIN_VALUE
-    ): Flow<PagingData<Value>> {
-        return Pager(
-            config = PagingConfig(
-                pageSize,
-                prefetchDistance,
-                enablePlaceholders,
-                initialLoadSize,
-                maxSize,
-                jumpThreshold
-            ),
-            pagingSourceFactory = {
-                pagingSource()
-            }
-        ).flow
-    }
 }

@@ -3,7 +3,7 @@ package com.example.doctour.presentation.ui.fragments.authAndReg
 import androidx.activity.OnBackPressedCallback
 import androidx.navigation.NavController
 import com.example.doctour.R
-import com.example.doctour.base.BaseFlowFragment
+import com.example.doctour.presentation.base.BaseFlowFragment
 
 class AuthAndRegFlowFragment :
     BaseFlowFragment(R.layout.fragment_auth_and_reg_flow, R.id.nav_host_fragment_auth_and_reg){

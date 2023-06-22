@@ -1,4 +1,5 @@
 package com.example.doctour.presentation.ui.fragments.home.model
 
-class HomeModel {
-}
+data class HomeModel(
+    var id:Int
+)

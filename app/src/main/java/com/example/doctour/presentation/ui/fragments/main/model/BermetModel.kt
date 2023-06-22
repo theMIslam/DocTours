@@ -1,6 +1,7 @@
 package com.example.doctour.presentation.ui.fragments.main.model
 
 data class BermetModel(
+    var id:Int,
     var name:String,
     var image:String,
     var profession:String,

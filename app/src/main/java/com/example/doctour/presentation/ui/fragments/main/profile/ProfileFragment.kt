@@ -6,8 +6,8 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
-import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentProfileBinding
+import com.example.doctour.presentation.base.BaseFragment
 import com.example.doctour.presentation.ui.fragments.authAndReg.signIn.SignInViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
