@@ -1,7 +1,7 @@
 package com.example.doctour.presentation.ui.fragments.authAndReg.signIn
 
 import androidx.fragment.app.viewModels
-import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment

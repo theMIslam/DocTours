@@ -2,7 +2,7 @@ package com.example.doctour.data.base
 
 import android.util.Log
 import android.webkit.MimeTypeMap
-import com.example.doctour.BuildConfig
+import com.example.doctour.data.BuildConfig
 import com.example.doctour.data.utils.DataMapper
 import com.example.doctour.data.utils.fromJson
 import com.example.doctour.domain.core.Either
