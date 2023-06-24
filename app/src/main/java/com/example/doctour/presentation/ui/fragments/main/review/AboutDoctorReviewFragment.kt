@@ -4,8 +4,8 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
+import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentAboutDoctorReviewBinding
-import com.example.doctour.presentation.base.BaseFragment
 import com.example.doctour.presentation.ui.fragments.main.aboutdoctor.AboutDoctorViewModel
 import dagger.hilt.android.AndroidEntryPoint
 

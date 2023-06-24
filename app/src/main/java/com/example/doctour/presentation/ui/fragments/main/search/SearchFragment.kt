@@ -6,8 +6,8 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
+import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentSearchBinding
-import com.example.doctour.presentation.base.BaseFragment
 import com.example.doctour.presentation.ui.fragments.main.search.adapter.SearchAdapter
 import com.example.doctour.presentation.ui.fragments.main.model.BermetModel
 import dagger.hilt.android.AndroidEntryPoint
