@@ -13,12 +13,9 @@ class SignInAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
     override fun createFragment(position: Int): Fragment =
         when(position){
             0->{
-                SignInFragment()
-            }
-
+                SignInFragment() }
             1->{
-                SignUpFragment()
-            }
+                SignUpFragment() }
             else -> {
                 throw Resources.NotFoundException("Position not found")
             }

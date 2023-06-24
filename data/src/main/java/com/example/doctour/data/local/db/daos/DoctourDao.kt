@@ -6,7 +6,6 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface DoctourDao {
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertDoctour(foo: DoctourEntity)
 

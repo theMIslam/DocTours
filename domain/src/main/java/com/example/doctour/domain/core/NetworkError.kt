@@ -7,6 +7,5 @@ sealed class NetworkError {
 
     class ApiInputs(val error: MutableMap<String, List<String>>?) : NetworkError()
 
-
     object Timeout : NetworkError()
 }

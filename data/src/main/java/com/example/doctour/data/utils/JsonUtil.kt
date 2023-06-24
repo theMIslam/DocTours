@@ -7,7 +7,6 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 
 private val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
 
-
 internal inline fun <reified T> fromJson(value: String): T? {
     return moshi.adapter(T::class.java).fromJson(value)
 }

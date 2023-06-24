@@ -4,8 +4,8 @@ import android.graphics.Color
 import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
-import com.example.doctour.databinding.FragmentWriteReviewBinding
 import com.example.doctour.base.BaseFragment
+import com.example.doctour.databinding.FragmentWriteReviewBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
