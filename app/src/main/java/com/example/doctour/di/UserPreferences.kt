@@ -4,15 +4,29 @@ import android.content.Context
 import android.content.SharedPreferences
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
+import java.util.prefs.Preferences
 import javax.inject.Inject
 
 
 class UserPreferences @Inject constructor(
     context: Context
 ) {
-    private  val sharedPreferences:SharedPreferences = context.getSharedPreferences("preference",
-        Context.MODE_PRIVATE
-    )
+    private val sharedPreferences: SharedPreferences = context.getSharedPreferences(
+        "preference",
+        Context.MODE_PRIVATE)
+   private val editor :SharedPreferences.Editor = sharedPreferences.edit()
+
+    fun setLogin (isLogin:Boolean){
+        editor.putBoolean("Login",isLogin).commit()
+    }
+    fun isLogin():Boolean{
+        return sharedPreferences.getBoolean("Login",false)
+    }
+    fun removeData(){
+        editor.clear()
+        editor.commit()
+    }
+
     var isAuthenticated: Boolean
         get() = sharedPreferences.getBoolean(PreferencesKeys.IS_AUTHENTICATED, false)
         set(value) = sharedPreferences.put(PreferencesKeys.IS_AUTHENTICATED, value)

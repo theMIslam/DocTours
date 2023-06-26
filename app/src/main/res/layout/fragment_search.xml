@@ -18,24 +18,6 @@
         android:searchIcon="@drawable/layer_list_search"
         />
 
-<!--    <EditText-->
-<!--        android:id="@+id/et_search"-->
-<!--        style="@style/et_black"-->
-<!--        android:layout_width="@dimen/_293dp"-->
-<!--        android:layout_height="@dimen/_48dp"-->
-<!--        android:layout_marginStart="@dimen/_8dp"-->
-<!--        android:layout_marginTop="@dimen/_20dp"-->
-<!--        android:autofillHints="name"-->
-<!--        android:background="@drawable/circle_edit_bg"-->
-<!--        android:drawableEnd="@drawable/layer_list_search"-->
-<!--        android:hint="@string/search"-->
-<!--        android:inputType="text"-->
-<!--        android:maxLines="2"-->
-<!--        android:paddingStart="@dimen/_16dp"-->
-<!--        android:paddingEnd="@dimen/_14dp"-->
-<!--        app:layout_constraintStart_toEndOf="@id/tv_arrow_back"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
     <TextView
         android:id="@+id/tv_arrow_back"
         android:layout_width="@dimen/_18dp"
