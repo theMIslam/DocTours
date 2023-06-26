@@ -1,6 +1,7 @@
 package com.example.doctour.presentation.ui.fragments.authAndReg.signUp
 
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
@@ -15,5 +16,12 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
 
     override val binding: FragmentSignUpBinding by viewBinding(FragmentSignUpBinding::bind)
     override val viewModel: SignUpViewModel by viewModels<SignUpViewModel>()
+
+    override fun initListeners() {
+        super.initListeners()
+        binding.btnRegister.setOnClickListener {
+            findNavController().navigate(R.id.homeFragment)
+        }
+    }
 
 }

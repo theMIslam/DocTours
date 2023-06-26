@@ -25,17 +25,17 @@ class SplashScreenFragment :
     lateinit var userPreferences: UserPreferences
     override fun initialize() {
         Handler().postDelayed({
-            findNavController().navigate(R.id.homeFragment)
+            //findNavController().navigate(SplashScreenFragmentDirections.actionSplashScreenFragmentToSignInAndSignUpFragment())
+            when {
+                userPreferences.isAuthenticated -> {
+                      findNavController().navigateSafely(R.id.action_splashScreenFragment_to_homeFragment)
+                }
+
+                !userPreferences.isAuthenticated -> {
+                     findNavController().navigateSafely(R.id.action_splashScreenFragment_to_SignInAndSignUpFragment)
+                }
+            }
         }, 2000)
 
-        when {
-            userPreferences.isAuthenticated -> {
-                findNavController().navigateSafely(R.id.splashScreenFragment)
-            }
-
-            !userPreferences.isAuthenticated -> {
-                findNavController().navigateSafely(R.id.splashScreenFragment)
-            }
-        }
     }
 }
