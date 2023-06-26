@@ -1,7 +1,7 @@
 package com.example.doctour.data.remote.dtos.doctour
 
 import com.example.doctour.data.utils.DataMapper
-import com.example.doctour.domain.model.local.Doctour
+import com.example.doctour.domain.model.local.DoctourLocal
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
@@ -11,7 +11,7 @@ class DoctourDto(
     val id: Long,
     @Json(name = "bar")
     val bar: String
-) : DataMapper<Doctour> {
+) : DataMapper<DoctourLocal> {
 
-    override fun mapToDomain() = Doctour(id, bar)
+    override fun mapToDomain() = DoctourLocal(id, bar)
 }
