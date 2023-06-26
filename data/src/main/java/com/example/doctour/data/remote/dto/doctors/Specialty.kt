@@ -1,0 +1,1 @@
+package com.example.doctour.data.remote.dto.doctorsdata class Specialty(    val id: Int,    val name: String,    val name_ky: String,    val name_ru: String)
