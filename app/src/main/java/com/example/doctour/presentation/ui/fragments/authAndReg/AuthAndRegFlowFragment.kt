@@ -4,7 +4,9 @@ import androidx.activity.OnBackPressedCallback
 import androidx.navigation.NavController
 import com.example.doctour.R
 import com.example.doctour.base.BaseFlowFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AuthAndRegFlowFragment :
     BaseFlowFragment(R.layout.fragment_auth_and_reg_flow, R.id.nav_host_fragment_auth_and_reg){
 
