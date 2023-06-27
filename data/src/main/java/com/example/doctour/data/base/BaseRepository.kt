@@ -5,8 +5,8 @@ import android.webkit.MimeTypeMap
 import com.example.doctour.data.BuildConfig
 import com.example.doctour.data.utils.DataMapper
 import com.example.doctour.data.utils.fromJson
-import com.example.doctour.domain.core.Either
-import com.example.doctour.domain.core.NetworkError
+import com.example.doctour.domain.utils.Either
+import com.example.doctour.domain.utils.NetworkError
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull

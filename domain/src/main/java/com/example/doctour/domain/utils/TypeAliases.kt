@@ -1,4 +1,4 @@
-package com.example.doctour.domain.core
+package com.example.doctour.domain.utils
 
 import kotlinx.coroutines.flow.Flow
 

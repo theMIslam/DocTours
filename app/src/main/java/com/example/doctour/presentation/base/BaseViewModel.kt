@@ -5,8 +5,8 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import androidx.paging.map
-import com.example.doctour.domain.core.Either
-import com.example.doctour.domain.core.NetworkError
+import com.example.doctour.domain.utils.Either
+import com.example.doctour.domain.utils.NetworkError
 import com.example.doctour.presentation.ui.state.UIState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow

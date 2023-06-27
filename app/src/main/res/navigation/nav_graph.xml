@@ -149,7 +149,7 @@
 
     <fragment
         android:id="@+id/createPinFragment2"
-        android:name="com.example.doctour.presentation.ui.fragments.authAndReg.signIn.CreatePinFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.authAndReg.signIn.pincode.CreatePinFragment"
         android:label="fragment_create_pin"
         tools:layout="@layout/fragment_create_pin"/>
 
