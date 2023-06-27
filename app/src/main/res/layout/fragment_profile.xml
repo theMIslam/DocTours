@@ -60,7 +60,7 @@
         <com.google.android.material.materialswitch.MaterialSwitch
             android:id="@+id/ms_biometric_entry"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height ="match_parent"
             android:checked="false"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
