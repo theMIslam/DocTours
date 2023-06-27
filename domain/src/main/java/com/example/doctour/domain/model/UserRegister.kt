@@ -8,5 +8,5 @@ class UserRegister (
         val lastname: String?,
         val phone: Int?,
         val gender: String?,
-        val birthday: String?
+        val birthday: List<Int>?
         )

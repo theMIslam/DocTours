@@ -10,7 +10,8 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 
 internal fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
-    .baseUrl(BuildConfig.BUILD_TYPE)
+        // по факту тут должно быть BASE_URL
+    .baseUrl(BuildConfig.BASE_URL)
     .client(okHttpClient)
     .addConverterFactory(
         MoshiConverterFactory.create(Moshi.Builder().add(KotlinJsonAdapterFactory()).build())

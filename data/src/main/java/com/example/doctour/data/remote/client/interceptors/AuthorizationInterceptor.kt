@@ -1,6 +1,5 @@
 package com.example.doctour.data.remote.client.interceptors
 
-
 import com.example.doctour.data.local.preferences.PreferencesHelper
 import okhttp3.Interceptor
 import okhttp3.Response

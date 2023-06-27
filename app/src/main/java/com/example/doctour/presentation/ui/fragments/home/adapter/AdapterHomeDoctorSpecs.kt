@@ -1,18 +1,18 @@
 package com.example.doctour.presentation.ui.fragments.home.adapter
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.doctour.R
 import com.example.doctour.databinding.ItemHomeBinding
-import com.example.doctour.presentation.ui.fragments.home.model.HomeModel
+import com.example.doctour.domain.model.Specialization
 
 
-class AdapterHomeDoctorSpecs (private val onClick: () -> Unit): ListAdapter<HomeModel,AdapterHomeDoctorSpecs.ViewHolder>(
-   Comparator()
+class AdapterHomeDoctorSpecs (
+    private val onClick: () -> Unit
+): ListAdapter<Specialization,AdapterHomeDoctorSpecs.ViewHolder>(
+   DFUtilHomeDoctorSpec()
 ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):AdapterHomeDoctorSpecs.ViewHolder {
         return ViewHolder(
@@ -20,11 +20,10 @@ class AdapterHomeDoctorSpecs (private val onClick: () -> Unit): ListAdapter<Home
                 LayoutInflater.from(parent.context
                 ), parent, false))
     }
-    inner class ViewHolder(
-        private val binding: ItemHomeBinding
-    ) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(model: HomeModel) {
+    inner class ViewHolder(private val binding: ItemHomeBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(specialization: Specialization) {
             itemView.setOnClickListener {
+
                 onClick()
             }
         }
@@ -32,13 +31,12 @@ class AdapterHomeDoctorSpecs (private val onClick: () -> Unit): ListAdapter<Home
     override fun onBindViewHolder(holder: AdapterHomeDoctorSpecs.ViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
-    @SuppressLint("DiffUtilEquals")
-    class Comparator : DiffUtil.ItemCallback<HomeModel>() {
-        override fun areItemsTheSame(oldItem: HomeModel, newItem: HomeModel): Boolean {
+   private class DFUtilHomeDoctorSpec : DiffUtil.ItemCallback<Specialization>() {
+        override fun areItemsTheSame(oldItem: Specialization, newItem: Specialization): Boolean {
              return oldItem == newItem
         }
 
-        override fun areContentsTheSame(oldItem: HomeModel, newItem: HomeModel): Boolean {
+        override fun areContentsTheSame(oldItem: Specialization, newItem: Specialization): Boolean {
             return oldItem == newItem
         }
     }

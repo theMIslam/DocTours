@@ -1,0 +1,1 @@
+package com.example.doctour.data.remote.dto.category.doctoursdata class CategoryDoctors(    val count: Int,    val next: Any,    val previous: Any,    val results: List<Result>)

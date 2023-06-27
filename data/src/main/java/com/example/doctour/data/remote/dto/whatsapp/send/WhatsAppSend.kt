@@ -1,0 +1,1 @@
+package com.example.doctour.data.remote.dto.whatsapp.senddata class WhatsAppSend(    val age: Int,    val doctor: Int,    val email: String,    val firstname: String,    val gender: String,    val lastname: String,    val number: String,    val problem: String,    val surname: String)

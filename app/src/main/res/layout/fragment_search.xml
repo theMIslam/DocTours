@@ -6,23 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".presentation.ui.fragments.main.search.SearchFragment">
 
-    <EditText
-        android:id="@+id/et_search"
-        style="@style/et_black"
+    <SearchView
         android:layout_width="@dimen/_293dp"
         android:layout_height="@dimen/_48dp"
+        android:id="@+id/searview"
+        android:background="@drawable/searview_background"
+        app:layout_constraintStart_toEndOf="@id/tv_arrow_back"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="@dimen/_8dp"
         android:layout_marginTop="@dimen/_20dp"
-        android:autofillHints="name"
-        android:background="@drawable/circle_edit_bg"
-        android:drawableEnd="@drawable/layer_list_search"
-        android:hint="@string/search"
-        android:inputType="text"
-        android:maxLines="2"
-        android:paddingStart="@dimen/_16dp"
-        android:paddingEnd="@dimen/_14dp"
-        app:layout_constraintStart_toEndOf="@id/tv_arrow_back"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:searchIcon="@drawable/layer_list_search"
+        />
 
     <TextView
         android:id="@+id/tv_arrow_back"
@@ -31,7 +25,7 @@
         android:layout_marginStart="@dimen/_20dp"
         android:layout_marginTop="@dimen/_38dp"
         android:background="@drawable/img_14"
-        app:layout_constraintEnd_toStartOf="@id/et_search"
+        app:layout_constraintEnd_toStartOf="@id/searview"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,7 +38,7 @@
         android:layout_marginTop="@dimen/_16dp"
         android:text="@string/found"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_search" />
+        app:layout_constraintTop_toBottomOf="@id/searview" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"

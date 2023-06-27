@@ -12,11 +12,5 @@ class UserRegisterVIewModel: ViewModel(){
         RetrofitClient.create()
     }
 
-    fun usersRegister(): LiveData<UserRegisterEntity> {
-        return postUserRegister()
-    }
-
-    private fun postUserRegister(): LiveData<UserRegisterEntity> {
-
-    }
+    
 }

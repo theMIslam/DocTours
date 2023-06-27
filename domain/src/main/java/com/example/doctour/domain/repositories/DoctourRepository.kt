@@ -1,15 +1,10 @@
 package com.example.doctour.domain.repositories
 
-import com.example.doctour.domain.core.RemotePagingWrapper
-import com.example.doctour.domain.core.RemoteWrapper
-import com.example.doctour.domain.model.Doctour
+import com.example.doctour.domain.model.local.DoctourLocal
+import com.example.doctour.domain.utils.RemoteWrapper
 import kotlinx.coroutines.flow.Flow
 
 interface DoctourRepository {
-
-    fun fetchDoctour(): RemoteWrapper<Doctour>
-
-    fun fetchDoctourPaging(): RemotePagingWrapper<Doctour>
-
-    fun getDoctour(): Flow<List<Doctour>>
+    fun fetchDoctour(): RemoteWrapper<DoctourLocal>
+    fun getDoctour(): Flow<List<DoctourLocal>>
 }

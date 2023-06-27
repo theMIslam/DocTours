@@ -33,7 +33,7 @@
             android:singleLine="true"
             android:autofillHints="phone"
             android:textColor="@color/black"
-            android:inputType="phone"/>
+            android:inputType="text"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -50,6 +50,7 @@
         app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
         app:boxStrokeColor="@color/blue"
+        app:hintTextColor="@color/parlament"
         app:layout_constraintTop_toBottomOf="@id/til_number"
         app:placeholderTextColor="@color/blue">
 
@@ -58,7 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:imeOptions="actionDone"
-            android:inputType="textPassword"
+            android:inputType="text"
             android:textColor="@color/black"
             android:drawableEnd="@drawable/layer_list_remove_eye"
             android:singleLine="true"

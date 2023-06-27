@@ -83,6 +83,12 @@
             app:destination="@id/authAndRegFlowFragment"
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_SignInAndSignUpFragment"
+            app:destination="@id/SignInAndSignUpFragment" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 
     <fragment
@@ -143,7 +149,7 @@
 
     <fragment
         android:id="@+id/createPinFragment2"
-        android:name="com.example.doctour.presentation.ui.fragments.authAndReg.signIn.CreatePinFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.authAndReg.signIn.pincode.CreatePinFragment"
         android:label="fragment_create_pin"
         tools:layout="@layout/fragment_create_pin"/>
 
@@ -177,7 +183,11 @@
         android:id="@+id/fragment_sign_up"
         android:name="com.example.doctour.presentation.ui.fragments.authAndReg.signUp.SignUpFragment"
         android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up"/>
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_fragment_sign_up_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/successPasswordFragment"
@@ -212,6 +222,9 @@
         <action
             android:id="@+id/action_loginAndSignUpFragment_to_registerFragment"
             app:destination="@id/fragment_sign_up" />
+        <action
+            android:id="@+id/action_SignInAndSignUpFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 
     <fragment
@@ -282,6 +295,18 @@
             app:destination="@id/mainFlowFragment"
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_authAndRegFlowFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.authAndReg.signIn.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 
 </navigation>
