@@ -1,6 +1,6 @@
 package com.example.doctour.domain.model.local
 
-class Doctour(
+class DoctourLocal(
     val id: Long,
     val bar: String
 )
