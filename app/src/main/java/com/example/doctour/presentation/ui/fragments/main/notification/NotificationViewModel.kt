@@ -3,7 +3,7 @@ package com.example.doctour.presentation.ui.fragments.main.notification
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.doctour.R
-import com.example.doctour.presentation.base.BaseViewModel
+import com.example.doctour.base.BaseViewModel
 import com.example.doctour.presentation.ui.fragments.home.model.Notification
 
 

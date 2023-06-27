@@ -1,1 +1,1 @@
-package com.example.doctour.presentation.ui.fragments.authAndReg.signUpimport com.example.doctour.presentation.base.BaseViewModelimport dagger.hilt.android.lifecycle.HiltViewModelimport javax.inject.Inject@HiltViewModelclass SignUpViewModel @Inject constructor() : BaseViewModel() {}
+package com.example.doctour.presentation.ui.fragments.authAndReg.signUpimport com.example.doctour.base.BaseViewModelimport dagger.hilt.android.lifecycle.HiltViewModelimport javax.inject.Inject@HiltViewModelclass SignUpViewModel @Inject constructor() : BaseViewModel() {}
