@@ -1,8 +1,9 @@
-package com.example.doctour.presentation.ui.fragments.authAndReg.signIn
+package com.example.doctour.presentation.ui.fragments.authAndReg.signIn.adapter
 
 import android.content.res.Resources
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.doctour.presentation.ui.fragments.authAndReg.signIn.SignInFragment
 import com.example.doctour.presentation.ui.fragments.authAndReg.signUp.SignUpFragment
 
 class SignInAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {

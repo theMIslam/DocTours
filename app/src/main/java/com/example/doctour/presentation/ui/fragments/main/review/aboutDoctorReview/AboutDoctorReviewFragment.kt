@@ -1,4 +1,4 @@
-package com.example.doctour.presentation.ui.fragments.main.review
+package com.example.doctour.presentation.ui.fragments.main.review.aboutDoctorReview
 
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
@@ -9,6 +9,8 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentAboutDoctorReviewBinding
+import com.example.doctour.presentation.ui.fragments.main.review.ReviewViewModel
+import com.example.doctour.presentation.ui.fragments.main.review.aboutDoctorReview.adapter.AboutDoctorReviewAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -22,7 +24,7 @@ class AboutDoctorReviewFragment :
         FragmentAboutDoctorReviewBinding::bind
     )
     override val viewModel: ReviewViewModel by viewModels()
-    private val adapterAboutDoctorReview = AdapterAboutDoctorReview()
+    private val adapterAboutDoctorReview = AboutDoctorReviewAdapter()
 
     override fun initRequest() {
         super.initRequest()

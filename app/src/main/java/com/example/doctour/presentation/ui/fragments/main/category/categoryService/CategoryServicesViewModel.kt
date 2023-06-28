@@ -2,7 +2,7 @@ package com.example.doctour.presentation.ui.fragments.main.category.categoryServ
 
 import com.example.doctour.base.BaseViewModel
 import com.example.doctour.domain.usecases.GetCategoryServiceUseCase
-import com.example.doctour.model.toServiceUi
+import com.example.doctour.presentation.model.toServiceUi
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

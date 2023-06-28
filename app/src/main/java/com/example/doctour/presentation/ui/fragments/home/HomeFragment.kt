@@ -12,7 +12,7 @@ import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentHomeBinding
 import com.example.doctour.presentation.extensions.navigateSafely
-import com.example.doctour.model.DoctorUi
+import com.example.doctour.presentation.model.DoctorUi
 import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeClinic
 import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeDoctorSpecs
 import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeInfoDoctor
@@ -72,7 +72,7 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
         findNavController().navigate(R.id.aboutDoctorFragment)
     }
     private fun clinicClick(){
-
+        findNavController().navigate(R.id.categoryClinicFragment)
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {

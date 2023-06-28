@@ -1,4 +1,4 @@
-package com.example.doctour.data.remote.pagingsources
+package com.example.doctour.data.remote.pagingsources.сategory
 
 import com.example.doctour.data.base.BasePagingSource
 import com.example.doctour.data.model.SpecialtyDt

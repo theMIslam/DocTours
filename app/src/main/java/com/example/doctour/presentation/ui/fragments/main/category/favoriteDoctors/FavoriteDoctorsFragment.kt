@@ -1,4 +1,4 @@
-package com.example.doctour.presentation.ui.fragments.main.category.favorite
+package com.example.doctour.presentation.ui.fragments.main.category.favoriteDoctors
 
 
 import android.app.Dialog
@@ -14,8 +14,7 @@ import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentFavoriteDoctorsBinding
 import com.example.doctour.presentation.extensions.showToast
-import com.example.doctour.model.DoctorUi
-import com.example.doctour.presentation.ui.fragments.main.category.CategoryViewModel
+import com.example.doctour.presentation.model.DoctorUi
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

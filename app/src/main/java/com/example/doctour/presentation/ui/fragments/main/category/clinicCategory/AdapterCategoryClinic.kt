@@ -6,7 +6,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.base.BaseDiffUtilItemCallback
 import com.example.doctour.databinding.ItemClinicInfoBinding
-import com.example.doctour.model.ClinicsUi
+import com.example.doctour.presentation.model.ClinicsUi
 import com.example.doctour.presentation.extensions.loadImage
 
 class AdapterCategoryClinic(

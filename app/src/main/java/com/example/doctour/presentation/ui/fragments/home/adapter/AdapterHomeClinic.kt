@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.databinding.ItemHomeBinding
 import com.example.doctour.domain.model.Clinic
-import com.example.doctour.model.ClinicsUi
+import com.example.doctour.presentation.model.ClinicsUi
 
 class AdapterHomeClinic(
     private val onCLick: () -> Unit

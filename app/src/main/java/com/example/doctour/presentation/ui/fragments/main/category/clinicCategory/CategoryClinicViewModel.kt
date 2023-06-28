@@ -2,7 +2,7 @@ package com.example.doctour.presentation.ui.fragments.main.category.clinicCatego
 
 import com.example.doctour.base.BaseViewModel
 import com.example.doctour.domain.usecases.GetClinicUseCase
-import com.example.doctour.model.toClinicsUi
+import com.example.doctour.presentation.model.toClinicsUi
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

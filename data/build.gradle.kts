@@ -21,12 +21,12 @@ android {
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
-            buildConfigField("String", "BASE_URL", "\"doctour.pythonanywhere.com/\"")
+            buildConfigField("String", "BASE_URL", "\"bekbolsun.pythonanywhere.com/\"")
             buildConfigField("String", "API_KEY", "\"\"")
         }
 
         getByName(AndroidConfig.debug) {
-            buildConfigField("String", "BASE_URL", "\"doctour.pythonanywhere.com/\"")
+            buildConfigField("String", "BASE_URL", "\"bekbolsun.pythonanywhere.com/\"")
         }
     }
     compileOptions {
@@ -70,6 +70,5 @@ dependencies {
 
     // Gson
     implementation(Libraries.Gson.gson)
-
     implementation(Libraries.Retrofit.gsonConverter)
 }

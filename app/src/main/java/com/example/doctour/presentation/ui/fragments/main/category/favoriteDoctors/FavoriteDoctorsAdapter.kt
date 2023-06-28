@@ -1,4 +1,4 @@
-package com.example.doctour.presentation.ui.fragments.main.category.favorite
+package com.example.doctour.presentation.ui.fragments.main.category.favoriteDoctors
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.base.BaseDiffUtilItemCallback
 import com.example.doctour.databinding.ItemDoctorsInfoBinding
-import com.example.doctour.model.DoctorUi
+import com.example.doctour.presentation.model.DoctorUi
 import com.example.doctour.presentation.extensions.loadImage
 
 class FavoriteDoctorsAdapter(

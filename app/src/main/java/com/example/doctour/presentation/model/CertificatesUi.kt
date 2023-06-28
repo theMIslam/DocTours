@@ -1,14 +1,14 @@
-package com.example.doctour.model
+package com.example.doctour.presentation.model
 
 import com.example.doctour.base.IBaseDiffModel
-import com.example.doctour.domain.model.Experience
+import com.example.doctour.domain.model.Certificates
 
-data class ExperienceUi(
+data class CertificatesUi(
     override val id: Int,
     val year: String,
     val title: String,
     val doctor: Int
 ):IBaseDiffModel<Int>
-fun Experience.toExperienceUI()=ExperienceUi(
+fun Certificates.toCertificatesUi()= CertificatesUi(
     id, year, title, doctor
 )
