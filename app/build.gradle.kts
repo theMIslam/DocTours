@@ -129,5 +129,7 @@ android {
         // Event bus
         implementation(Libraries.EventBus.eventBus)
 
+        //libphonenumber
+        implementation("com.googlecode.libphonenumber:libphonenumber:8.13.14")
     }
 }
