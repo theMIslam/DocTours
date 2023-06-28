@@ -33,7 +33,7 @@
             android:singleLine="true"
             android:autofillHints="phone"
             android:textColor="@color/black"
-            android:inputType="text"/>
+            android:inputType="phone"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
