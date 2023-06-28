@@ -29,6 +29,12 @@ object PreferencesModule {
 
     @Singleton
     @Provides
+    fun provideProfilePreferences(
+        @ApplicationContext context: Context
+    ) = ProfilePreferences(context)
+
+    @Singleton
+    @Provides
     fun generateSharedPreferences(@ApplicationContext context: Context): SharedPreferences =
         context.getSharedPreferences(
             DOCTOUR_SHARED_PREFERENCES,

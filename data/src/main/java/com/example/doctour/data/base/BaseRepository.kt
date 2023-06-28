@@ -9,6 +9,8 @@ import com.example.doctour.data.utils.DataMapper
 import com.example.doctour.data.utils.fromJson
 import com.example.doctour.domain.utils.Either
 import com.example.doctour.domain.utils.NetworkError
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -23,7 +25,7 @@ abstract class BaseRepository {
 
     protected fun <ValueDto:DataMapper<Value>,Value:Any>doPagingRequest(
         pagingSource: BasePagingSource<ValueDto,Value>,
-        pageSize:Int =5,
+        pageSize:Int =10,
         prefetchDistance: Int = pageSize,
         enablePlaceholders: Boolean = true,
         initialLoadSize: Int = pageSize * 3,
@@ -31,7 +33,7 @@ abstract class BaseRepository {
         jumpThreshold: Int = Int.MIN_VALUE
     )= Pager(
             config = PagingConfig(
-                pageSize = pageSize,
+                pageSize,
                 prefetchDistance,
                 enablePlaceholders,
                 initialLoadSize,
@@ -43,6 +45,12 @@ abstract class BaseRepository {
             }
         ).flow
 
+   private fun ResponseBody?.toApiError2():MutableMap<String,List<String>>{
+       return Gson().fromJson(
+           this?.string(),
+           object :TypeToken<MutableMap<String ,List<String>>>(){}.type
+       )
+   }
     protected fun <T : DataMapper<S>, S> doNetworkRequestWithMapping(
         request: suspend () -> Response<T>
     ): Flow<Either<NetworkError, S>> = doNetworkRequest(request) { body ->

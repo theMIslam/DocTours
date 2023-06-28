@@ -29,6 +29,8 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
 
     override fun initListeners() {
         super.initListeners()
+        passwordFocusListener()
+        phoneNumberFocusListener()
         binding.btnLogIn.setOnClickListener {
             findNavController().navigate(R.id.homeFragment)
         }
@@ -57,6 +59,47 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
         val phoneNumberUtil = PhoneNumberUtil.getInstance()
         val defaultCountryNumber = phoneNumberUtil.getCountryCodeForRegion("KG")
         binding.etNumber.setText("+$defaultCountryNumber")
+    }
+
+    private fun phoneNumberFocusListener() {
+        binding.etNumber.setOnFocusChangeListener{ _,focused->
+            if (!focused){
+                binding.tilNumber.helperText=validPhoneNumber()
+            }
+        }
+    }
+
+    private fun validPhoneNumber(): String? {
+        val phone = binding.etNumber.text.toString()
+        if (!phone.matches(".*[0-9]*.".toRegex())){
+            return "Должны быть цифры"
+        }
+        if (phone.length < 10){
+            return  "Должно быть 10 цифр "
+        }
+        return null
+    }
+
+    private fun passwordFocusListener() {
+        binding.etPassword.setOnFocusChangeListener{ _,focused->
+            if (!focused){
+                binding.tilPassword.helperText=validPassword()
+            }
+        }
+    }
+
+    private fun validPassword(): String? {
+        val password = binding.etPassword.text.toString()
+        if (password.length < 8){
+            return  "Минимальное количество символов 8"
+        }
+        if (!password.matches(".*[A-Z]*.".toRegex())){
+            return "Должен содержать 1 символ верхнего регистра"
+        }
+        if (!password.matches(".*[a-z]*.".toRegex())){
+            return "Должен содержать 1 символ нижнего регистра"
+        }
+        return null
     }
 
     override fun initSubscribers() {

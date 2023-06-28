@@ -1,6 +1,6 @@
 package com.example.doctour.presentation.ui.fragments.main.profile
 
-import android.content.Intent
+import android.content.Context
 import android.view.View
 import android.widget.Button
 import androidx.fragment.app.viewModels
@@ -30,6 +30,18 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding, SignInViewModel>(
         super.initListeners()
         setBottomSheet()
         clickers()
+    }
+
+    override fun initialize() {
+        super.initialize()
+        binding.tvName.hint = "ФИО"
+        getSharedData()
+    }
+
+    private fun getSharedData() {
+        val pref = activity?.getSharedPreferences("preferences_profile",Context.MODE_PRIVATE)
+        val id = pref?.getString("fio","")
+        binding.tvName.text = id
     }
 
     private fun clickers() {

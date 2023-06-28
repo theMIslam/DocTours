@@ -2,7 +2,21 @@ package com.example.doctour.data.model
 
 import com.example.doctour.data.utils.DataMapper
 import com.example.doctour.domain.model.Doctor
+import com.example.doctour.domain.model.DoctorResponse
 
+data class DoctorDtResponse(
+    val count:Int,
+    val next:String?,
+    val previous:String?,
+    val result:List<DoctorDt>
+):DataMapper<DoctorResponse>{
+    override fun mapToDomain(): DoctorResponse= DoctorResponse(
+        count,
+        next,
+        previous,
+        result.map { it.mapToDomain() }
+    )
+}
 data class DoctorDt(
     val average_rating: Double,
     val clinic: List<ClinicDt>,
