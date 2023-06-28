@@ -8,18 +8,22 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentHomeBinding
-import com.example.doctour.domain.model.Doctor
 import com.example.doctour.presentation.extensions.navigateSafely
 import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeClinic
 import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeDoctorSpecs
 import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeInfoDoctor
 import com.example.doctour.presentation.ui.fragments.home.model.DoctorModel
 import com.example.doctour.presentation.ui.fragments.home.model.HomeModel
+import com.example.doctour.presentation.ui.fragments.main.category.observer.DataChangeListener
+import com.example.doctour.presentation.ui.fragments.main.category.observer.TextUpdate
 import dagger.hilt.android.AndroidEntryPoint
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 
 @AndroidEntryPoint
 class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home),
-    Parcelable {
+    Parcelable, DataChangeListener {
 
     override val binding by viewBinding(FragmentHomeBinding::bind)
     override val viewModel by viewModels<HomeViewModel>()
@@ -119,6 +123,25 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
         override fun newArray(size: Int): Array<HomeFragment?> {
             return arrayOfNulls(size)
         }
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun onTextUpdate(event: TextUpdate) {
+        binding.tvCountry.text = event.newText
+    }
+
+    override fun onStart() {
+        super.onStart()
+        EventBus.getDefault().register(this)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        EventBus.getDefault().unregister(this)
+    }
+
+    override fun updateText(newText: String) {
+        binding.tvCountry.text = newText
     }
 }
 

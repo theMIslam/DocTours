@@ -7,12 +7,15 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.doctour.R
 import com.example.doctour.databinding.ActivityMainBinding
+import com.example.doctour.presentation.ui.fragments.home.HomeFragment
+import com.example.doctour.presentation.ui.fragments.main.category.CategoryCityFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)

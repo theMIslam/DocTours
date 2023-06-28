@@ -114,7 +114,8 @@ android {
         // SMS configuration
         implementation(Libraries.SmsConfigutation.smsconfiguration)
 
-        //state flow
+        //event bus
+        implementation(Libraries.EventBus.eventBus)
 
     }
 }

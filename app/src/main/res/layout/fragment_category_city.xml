@@ -14,6 +14,7 @@
         android:layout_marginStart="@dimen/_20dp"
         android:layout_marginTop="@dimen/_26dp"
         android:background="@drawable/img_14"
+        android:clickable="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
