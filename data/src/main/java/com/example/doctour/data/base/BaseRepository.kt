@@ -4,7 +4,6 @@ import android.util.Log
 import android.webkit.MimeTypeMap
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
-import androidx.paging.PagingData
 import com.example.doctour.data.BuildConfig
 import com.example.doctour.data.utils.DataMapper
 import com.example.doctour.data.utils.fromJson
