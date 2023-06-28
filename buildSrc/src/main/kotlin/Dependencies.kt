@@ -32,6 +32,7 @@ object Versions {
     const val smsconfiguration = "1.7.1"
     const val gson = "2.8.9"
     const val gsonconverter ="2.5.0"
+    const val eventbus = "3.2.0"
 
 }
 
@@ -157,6 +158,9 @@ object Libraries {
         const val smsconfiguration = "com.github.fraggjkee:sms-confirmation-view:${Versions.smsconfiguration}"
     }
 
+    object EventBus {
+        const val eventBus = "org.greenrobot:eventbus:${Versions.eventbus}"
+    }
     object Gson {
         const val gson = "com.google.code.gson:gson:${Versions.gson}"
     }

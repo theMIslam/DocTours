@@ -126,5 +126,8 @@ android {
         implementation(Libraries.Paging.runtime)
         implementation(Libraries.Paging.common)
 
+        // Event bus
+        implementation(Libraries.EventBus.eventBus)
+
     }
 }

@@ -6,16 +6,23 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentCategoryCityBinding
-import com.example.doctour.presentation.extensions.showToast
 import com.example.doctour.presentation.ui.fragments.main.category.CategoryViewModel
+import com.example.doctour.presentation.ui.fragments.main.category.observer.DataChangeListener
+import com.example.doctour.presentation.ui.fragments.main.category.observer.TextUpdate
 import dagger.hilt.android.AndroidEntryPoint
+import org.greenrobot.eventbus.EventBus
 
 @AndroidEntryPoint
 class CategoryCityFragment: BaseFragment<FragmentCategoryCityBinding, CategoryViewModel>(
     R.layout.fragment_category_city
 ) {
+    private var dataChangeListener: DataChangeListener? = null
     override val binding: FragmentCategoryCityBinding by viewBinding(FragmentCategoryCityBinding::bind)
-    override val viewModel: CategoryViewModel by viewModels()
+    override val viewModel: CategoryViewModel by viewModels<CategoryViewModel>()
+
+    fun setDataChangeListener(listener: DataChangeListener) {
+        dataChangeListener = listener
+    }
 
     override fun initListeners() {
         super.initListeners()
@@ -23,10 +30,14 @@ class CategoryCityFragment: BaseFragment<FragmentCategoryCityBinding, CategoryVi
             findNavController().navigateUp()
         }
         binding.tvBishkek.setOnClickListener {
-            showToast("Bishkek")
+            findNavController().navigateUp()
         }
         binding.tvOsh.setOnClickListener {
-            showToast("Osh")
+            dataChangeListener?.updateText(getString(R.string.osh))
+            EventBus.getDefault().post(TextUpdate(getString(R.string.osh)))
+        }
+        binding.tvOsh.setOnClickListener {
+            findNavController().navigateUp()
         }
     }
 
