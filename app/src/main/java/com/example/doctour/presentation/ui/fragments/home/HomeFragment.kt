@@ -8,10 +8,13 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentHomeBinding
+import com.example.doctour.domain.model.Doctor
 import com.example.doctour.presentation.extensions.navigateSafely
 import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeClinic
 import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeDoctorSpecs
 import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeInfoDoctor
+import com.example.doctour.presentation.ui.fragments.home.model.DoctorModel
+import com.example.doctour.presentation.ui.fragments.home.model.HomeModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -21,6 +24,8 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
     override val binding by viewBinding(FragmentHomeBinding::bind)
     override val viewModel by viewModels<HomeViewModel>()
     private val adapterHome = AdapterHomeDoctorSpecs(this::specsClick)
+    private val data = mutableListOf<HomeModel>()
+    private val doctors = mutableListOf<DoctorModel>()
     private val adapterHomeClinic = AdapterHomeClinic(this::clinicClick)
     private val adapterHomeInfoDoctor= AdapterHomeInfoDoctor(this::infoDoctorClick)
 
@@ -38,12 +43,55 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
         binding.tvCountry.setOnClickListener {
             findNavController().navigate(R.id.categoryCityFragment)
         }
-
     }
+
     override fun initialize() {
+        super.initialize()
+        adapterHome()
+        adapterHomeClinic()
+        adapterHomeInfoDoctor()
+    }
+    private fun adapterHome() {
         binding.rvDoctorsSpecs.adapter = adapterHome
+        val item1 = HomeModel(getString(R.string.Therapist), R.drawable.ic_people)
+        val item2 = HomeModel(getString(R.string.Therapist), R.drawable.ic_people)
+        val item3 = HomeModel(getString(R.string.Therapist), R.drawable.ic_people)
+        val item4 = HomeModel(getString(R.string.Therapist), R.drawable.ic_people)
+        data.add(item1)
+        data.add(item2)
+        data.add(item3)
+        data.add(item4)
+        adapterHome.submitList(data)
+    }
+
+    private fun adapterHomeClinic() {
         binding.rvClinic.adapter=adapterHomeClinic
+        val item1 = HomeModel(getString(R.string.on_clinic), R.drawable.on_clinik)
+        val item2 = HomeModel(getString(R.string.on_clinic), R.drawable.on_clinik)
+        val item3 = HomeModel(getString(R.string.on_clinic), R.drawable.on_clinik)
+        val item4 = HomeModel(getString(R.string.on_clinic), R.drawable.on_clinik)
+        data.add(item1)
+        data.add(item2)
+        data.add(item3)
+        data.add(item4)
+        adapterHomeClinic.submitList(data)
+    }
+
+    private fun adapterHomeInfoDoctor() {
         binding.rvDoctorsInfo.adapter=adapterHomeInfoDoctor
+        val item1 = DoctorModel(getString(R.string.Name), getString(R.string.workexperience),
+        getString(R.string.xirurg), getString(R.string.on_clinic), R.drawable.ic_star,
+        getString(R.string.score), getString(R.string.feedback_32), R.drawable.layer_list_location,
+        getString(R.string.bishkek), getString(R.string.sum), R.drawable.ic_som)
+        val item2 = DoctorModel(getString(R.string.Name), getString(R.string.workexperience),
+            getString(R.string.xirurg), getString(R.string.on_clinic), R.drawable.ic_star,
+            getString(R.string.score), getString(R.string.feedback_32), R.drawable.layer_list_location,
+            getString(R.string.bishkek), getString(R.string.sum), R.drawable.ic_som)
+
+        doctors.add(item1)
+        doctors.add(item2)
+
+        adapterHomeInfoDoctor.submitList(doctors)
     }
    private fun specsClick(){
         findNavController().navigateSafely(R.id.homeFragment)
