@@ -26,4 +26,10 @@ object PreferencesModule {
         @ApplicationContext context: Context
     ) = UserPreferences(context)
 
+    @Singleton
+    @Provides
+    fun provideProfilePreferences(
+        @ApplicationContext context: Context
+    ) = ProfilePreferences(context)
+
 }

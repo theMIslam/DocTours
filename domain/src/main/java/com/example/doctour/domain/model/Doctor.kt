@@ -16,3 +16,9 @@ data class Doctor(
     val summary_ru: String,
     val city:City
 )
+data class DoctorResponse(
+    val count:Int,
+    val next:String?,
+    val previous:String?,
+    val results:List<Doctor>
+)
