@@ -1,5 +1,6 @@
 package com.example.doctour.presentation.ui.fragments.home
 
+import android.content.Context
 import android.os.Parcel
 import android.os.Parcelable
 import androidx.core.view.isVisible
@@ -49,6 +50,16 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
         }
     }
 
+    override fun initialize() {
+        super.initialize()
+        binding.tvName.hint = "ФИО"
+        getSharedData()
+    }
+    private fun getSharedData() {
+        val pref = activity?.getSharedPreferences("preferences_profile", Context.MODE_PRIVATE)
+        val id = pref?.getString("fio","")
+        binding.tvName.text = id
+    }
     constructor(parcel: Parcel) : this() {
     }
 

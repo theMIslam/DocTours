@@ -1,7 +1,7 @@
 package com.example.doctour.domain.repositories
 
 import androidx.paging.PagingData
-import com.example.doctour.domain.model.Clinic
+import com.example.doctour.domain.model.Clinics
 import com.example.doctour.domain.model.Doctor
 import com.example.doctour.domain.model.Review
 import com.example.doctour.domain.model.Service
@@ -21,7 +21,7 @@ interface RemoteDoctorRepository {
 
     fun getSpecialityOfDoctors():Flow<PagingData<Speciality>>
 
-    fun  getClinics():Flow<PagingData<Clinic>>
+    fun  getClinics():Flow<PagingData<Clinics>>
 
     fun getCategoryServicesOfDoctors(
         name:String?,

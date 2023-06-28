@@ -40,7 +40,6 @@ class FavoriteDoctorsAdapter(
                  binding.tvWorkSpeciality.text=doctor.specialties.toString()
                  binding.tvWorkClinic.text=doctor.clinic.toString()
                 binding.tvRecommendation.text = "${doctor.num_reviews} рекомендаций"
-                binding.tvCountry.text=city.name
                 binding.tvPoints.text=average_rating.toString()
                 binding.tvSumma.text=num_reviews.toString()
             }

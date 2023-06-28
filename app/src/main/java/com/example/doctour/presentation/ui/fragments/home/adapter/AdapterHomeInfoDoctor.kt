@@ -40,7 +40,6 @@ class AdapterHomeInfoDoctor(
              tvWorkClinic.text=doctor.clinic.toString()
             tvPoints.text=doctor.average_rating.toString()
             tvRecommendation.text="${doctor.num_reviews} рекомендаций"
-            tvCountry.text=doctor.city.name
         }
     }
 }

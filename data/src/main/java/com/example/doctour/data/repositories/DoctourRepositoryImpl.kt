@@ -8,7 +8,7 @@ import com.example.doctour.data.remote.pagingsources.CategoryDoctorsPagingSource
 import com.example.doctour.data.remote.pagingsources.CategoryServicesOfDoctorsPagingSource
 import com.example.doctour.data.remote.pagingsources.DoctourPagingSource
 import com.example.doctour.data.remote.pagingsources.ReviewsPagingSource
-import com.example.doctour.domain.model.Clinic
+import com.example.doctour.domain.model.Clinics
 import com.example.doctour.domain.model.Review
 import com.example.doctour.domain.model.Service
 import com.example.doctour.domain.repositories.RemoteDoctorRepository
@@ -30,7 +30,7 @@ class DoctourRepositoryImpl @Inject constructor(
     override fun getSpecialityOfDoctors()
     =doPagingRequest(CategoryDoctorsPagingSource(doctourApiService))
 
-    override fun getClinics(): Flow<PagingData<Clinic>> {
+    override fun getClinics(): Flow<PagingData<Clinics>> {
         return doPagingRequest(CategoryClinicsPaging(doctourApiService))
     }
 

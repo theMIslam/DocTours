@@ -11,14 +11,10 @@ data class SpecialtyDtResponse (
         )
 data class SpecialtyDt(
     val id: Int,
-    val name: String,
-    val name_ky: String,
-    val name_ru: String
+    val name: String
 ) : DataMapper<Speciality> {
     override fun mapToDomain() = Speciality(
         id,
-        name,
-        name_ru,
-        name_ky
+        name
     )
 }

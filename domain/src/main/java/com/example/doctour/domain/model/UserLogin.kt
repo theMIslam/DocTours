@@ -1,6 +1,6 @@
 package com.example.doctour.domain.model
 
 data class UserLogin(
-    val email:String,
+    val phone_number:String,
     val password:String
 )
