@@ -28,95 +28,96 @@ import retrofit2.http.Query
 interface DoctourApiService {
     @GET("/api/v1/src/doctors/")
     fun getDoctors(
-        @Query("page")page: Int,
-        @Query("specialties")specialties:String,
-        @Query("clinic")clinic: String,
-        @Query("category_service")categoryService:String,
-        @Query("city")city:String,
-        @Query("search")search: String,
-        @Query("ordering")ordering: String
-    ):BaseResponse<DoctorDt>
+        @Query("page") page: Int,
+        @Query("specialties") specialties: String,
+        @Query("clinic") clinic: String,
+        @Query("category_service") categoryService: String,
+        @Query("city") city: String,
+        @Query("search") search: String,
+        @Query("ordering") ordering: String
+    ): BaseResponse<DoctorDt>
+
     @GET("/api/v1/src/clinics/")
     fun getClinics(
-        @Query("page")page: Int
-    ):BaseResponse<ClinicsDt>
+        @Query("page") page: Int
+    ): BaseResponse<ClinicsDt>
 
     @GET("/api/v1/src/doctors/{id}")
     fun getDoctorsById(
-        @Path("id")id:Int
-    ):DoctorDetailDt
+        @Path("id") id: Int
+    ): DoctorDetailDt
 
     @GET("/api/v1/src/reviews/")
     fun getReviews(
-        @Query("page")page: Int
-    ):BaseResponse<ReviewDt>
+        @Query("page") page: Int
+    ): BaseResponse<ReviewDt>
 
     @POST("/api/v1/src/reviews/")
     fun postReviews(
-        @Body data:ReviewDt
-    ):ResponseBody
+        @Body data: ReviewDt
+    ): ResponseBody
 
     @GET("/api/v1/src/service/")
     fun getCategoryServicesOfDoctors(
-        @Query("id")id:Int,
-        @Query("name")name:String,
-        @Query("price")price:String,
-        @Query("search")search:String,
-    ):BaseResponse<ServiceDt>
+        @Query("id") id: Int,
+        @Query("name") name: String,
+        @Query("price") price: String,
+        @Query("search") search: String,
+    ): BaseResponse<ServiceDt>
 
     @GET("/api/v1/src/service/clinics/")
     fun getCategoryServicesOfClinics(
-        @Query("id")id:Int
-    ):BaseResponse<SubServiceClinicsDt>
+        @Query("id") id: Int
+    ): BaseResponse<SubServiceClinicsDt>
 
     @GET("/api/v1/src/speciality/")
     fun getSpecialityOfDoctors(
-        @Query("id")id:Int
-    ):BaseResponse<SpecialityDt>
+        @Query("id") id: Int
+    ): BaseResponse<SpecialityDt>
 
     @POST("/api/v1/src/whatsapp-send/")
     fun postWhatsappSend(
-        @Body data:WhatsappSendDt
-    ):ResponseBody
+        @Body data: WhatsappSendDt
+    ): ResponseBody
 
     @GET("/api/v1/users/favorites/")
     fun getFavorites(
-        @Query("page")page: Int
-    ):BaseResponse<FavoriteDt>
+        @Query("page") page: Int
+    ): BaseResponse<FavoriteDt>
 
     @POST("/api/v1/users/favorites/")
     fun postFavorites(
-        @Body data:FavoriteDt
-    ):ResponseBody
+        @Body data: FavoriteDt
+    ): ResponseBody
 
     @GET("/api/v1/users/logout/")
     fun logOut()
 
     @POST("/api/v1/users/password-reset/confirm/{token}/api_v1_users_password-reset_confirm_create")
     fun postPasswordConfirmReset(
-        @Body data:PasswordConfirmResetDt,
-        @Path("token") token:String
-    ):ResponseBody
+        @Body data: PasswordConfirmResetDt,
+        @Path("token") token: String
+    ): ResponseBody
 
     @POST("/api/v1/users/reset/")
     fun postReset(
-        @Body data:PasswordResetDt
-    ):ResponseBody
+        @Body data: PasswordResetDt
+    ): ResponseBody
 
     @POST("/api/v1/users/signin/")
     fun postSignIn(
-        @Body data:UserLoginDt
-    ):ResponseBody
+        @Body data: UserLoginDt
+    ): ResponseBody
 
     @POST("/api/v1/users/signup/")
     fun postFavorites(
-        @Body data:UserRegisterDt
-    ):ResponseBody
+        @Body data: UserRegisterDt
+    ): ResponseBody
 
     @POST("/api/v1/users/token-refresh/")
     fun postTokenRefresh(
-        @Body data:TokenRefreshDt
-    ):ResponseBody
+        @Body data: TokenRefreshDt
+    ): ResponseBody
 
     @GET("/api/foo")
     suspend fun fetchDoctour(): Response<DoctourDto>
