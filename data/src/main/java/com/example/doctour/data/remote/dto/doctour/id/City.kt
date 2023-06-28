@@ -1,0 +1,1 @@
+package com.example.doctour.data.remote.dto.doctour.iddata class City(    val id: Int,    val name: String)

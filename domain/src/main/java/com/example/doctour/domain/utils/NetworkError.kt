@@ -1,4 +1,4 @@
-package com.example.doctour.domain.core
+package com.example.doctour.domain.utils
 
 sealed class NetworkError {
     class Unexpected(val error: String) : NetworkError()

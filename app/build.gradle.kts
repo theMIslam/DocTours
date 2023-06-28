@@ -114,13 +114,14 @@ android {
         // SMS configuration
         implementation(Libraries.SmsConfigutation.smsconfiguration)
 
-        implementation("androidx.constraintlayout:constraintlayout:2.1.4")
         //retrofit
         implementation(Libraries.Retrofit.retrofit)
         implementation(Libraries.Retrofit.gsonConverter)
+
         //okhttp
         implementation(Libraries.OkHttp.okHttp)
         implementation(Libraries.OkHttp.loggingInterceptor)
+
         //paging
         implementation(Libraries.Paging.runtime)
         implementation(Libraries.Paging.common)

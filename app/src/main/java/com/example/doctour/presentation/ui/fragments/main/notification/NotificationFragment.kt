@@ -8,10 +8,10 @@ import com.example.doctour.databinding.FragmentNotificationBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class NotificationFragment : BaseFragment<FragmentNotificationBinding, ViewModelNotification>(
+class NotificationFragment : BaseFragment<FragmentNotificationBinding, NotificationViewModel>(
     R.layout.fragment_notification
 ) {
 
     override val binding: FragmentNotificationBinding by viewBinding(FragmentNotificationBinding::bind)
-    override val viewModel: ViewModelNotification by viewModels<ViewModelNotification>()
+    override val viewModel: NotificationViewModel by viewModels<NotificationViewModel>()
 }

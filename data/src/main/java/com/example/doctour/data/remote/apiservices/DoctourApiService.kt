@@ -78,8 +78,8 @@ interface DoctourApiService {
         @Query("page")page:Int
     ):BaseResponse<SpecialtyDt>
 
-    @POST("api/v1/src/whatsapp-send/")
-   suspend fun postWhatsappSend(
+    @POST("/api/v1/src/whatsapp-send/")
+    fun postWhatsappSend(
         @Body data:WhatsappSendDt
     ):ResponseBody
 

@@ -1,7 +1,7 @@
 package com.example.doctour.domain.repositories
 
-import com.example.doctour.domain.core.RemoteWrapper
 import com.example.doctour.domain.model.local.DoctourLocal
+import com.example.doctour.domain.utils.RemoteWrapper
 import kotlinx.coroutines.flow.Flow
 
 interface DoctourRepository {

@@ -31,6 +31,7 @@ class TokenAuthenticator @Inject constructor(
                         .header("Authorization", "Bearer $preferencesHelper.<new_access_token>")
                         .build()
                 }
+
                 else -> {
                     null
                 }

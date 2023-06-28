@@ -21,11 +21,12 @@ android {
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
-            buildConfigField("String", "BASE_URL", "\"https://doctour.com/\"")
+            buildConfigField("String", "BASE_URL", "\"doctour.pythonanywhere.com/\"")
+            buildConfigField("String", "API_KEY", "\"\"")
         }
 
         getByName(AndroidConfig.debug) {
-            buildConfigField("String", "BASE_URL", "\"https://dev.doctour.com/\"")
+            buildConfigField("String", "BASE_URL", "\"doctour.pythonanywhere.com/\"")
         }
     }
     compileOptions {

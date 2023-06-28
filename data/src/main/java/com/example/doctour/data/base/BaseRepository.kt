@@ -1,15 +1,14 @@
 package com.example.doctour.data.base
 
-import android.util.Config.DEBUG
 import android.util.Log
 import android.webkit.MimeTypeMap
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
-import androidx.paging.PagingData
+import com.example.doctour.data.BuildConfig
 import com.example.doctour.data.utils.DataMapper
 import com.example.doctour.data.utils.fromJson
-import com.example.doctour.domain.core.Either
-import com.example.doctour.domain.core.NetworkError
+import com.example.doctour.domain.utils.Either
+import com.example.doctour.domain.utils.NetworkError
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -95,7 +94,7 @@ abstract class BaseRepository {
 
             else -> {
                 val message = exception.localizedMessage ?: "Error Occurred!"
-                if (DEBUG) Log.d(this@BaseRepository.javaClass.simpleName, message)
+                if (BuildConfig.DEBUG) Log.d(this@BaseRepository.javaClass.simpleName, message)
                 emit(Either.Left(NetworkError.Unexpected(message)))
             }
         }

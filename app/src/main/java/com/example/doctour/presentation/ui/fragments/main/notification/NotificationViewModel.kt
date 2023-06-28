@@ -7,7 +7,7 @@ import com.example.doctour.base.BaseViewModel
 import com.example.doctour.presentation.ui.fragments.home.model.Notification
 
 
-class ViewModelNotification : BaseViewModel() {
+class NotificationViewModel : BaseViewModel() {
 
     private val _notification = MutableLiveData<List<Notification>>()
     val notification: LiveData<List<Notification>> get() = _notification
