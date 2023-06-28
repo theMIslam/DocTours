@@ -6,7 +6,7 @@ data class WhatsappSend(
     val firstname:String,
     val lastname:String,
     val gender:String,
-    val age:List<Int>,
+    val age:Int,
     val number:String,
     val email:String,
     val problem:String

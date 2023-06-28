@@ -2,26 +2,24 @@ package com.example.doctour.presentation.model
 
 import com.example.doctour.base.IBaseDiffModel
 import com.example.doctour.domain.model.City
-import com.example.doctour.domain.model.Clinic
+import com.example.doctour.domain.model.Clinics
 import com.example.doctour.domain.model.Doctor
 import com.example.doctour.domain.model.Review
 import com.example.doctour.domain.model.Speciality
 
 data class DoctorUi(
     override val id: Int,
-    val average_rating: Double,
+    val average_rating: String,
     val clinic: List<ClinicsUi>,
     val experience: Int,
     val full_name: String,
-    val num_reviews: Int,
-    val phone: String,
+    val num_reviews:String,
     val photo: String,
     val price: Int,
     val specialties: List<SpecialityUi>,
     val summary: String,
-    val summary_ky: String,
-    val summary_ru: String,
-    val city: CityUi
+    val instagram :String,
+    val doctor_reviews:List<ReviewUi>
 ) : IBaseDiffModel<Int>
 
 fun Doctor.toDoctorUi() = DoctorUi(
@@ -31,14 +29,12 @@ fun Doctor.toDoctorUi() = DoctorUi(
     experience,
     full_name,
     num_reviews,
-    phone,
     photo,
     price,
     specialties.map { it.toSpecialityUi() },
     summary,
-    summary_ky,
-    summary_ru,
-    city.toCityUi()
+    instagram,
+    doctor_reviews.map { it.toReviewUi() }
 )
 
 data class ReviewUi(
@@ -54,13 +50,11 @@ fun Review.toReviewUi() = ReviewUi(
 
 data class SpecialityUi(
     override val id: Int,
-    val name: String,
-    val name_ru: String,
-    val name_ky: String?
+    val name: String
 ):IBaseDiffModel<Int>
 
 fun Speciality.toSpecialityUi() = SpecialityUi(
-    id, name, name_ru, name_ky
+    id, name
 )
 
 data class ClinicsUi(
@@ -68,8 +62,6 @@ data class ClinicsUi(
     val contacts1: Long,
     val contacts2: Long,
     val descriptions: String,
-    val descriptions_ky: Any,
-    val descriptions_ru: String,
     val ending_working_day: String,
     override val id: Int,
     val link_2gis: String,
@@ -81,14 +73,12 @@ data class ClinicsUi(
     val weekend: String
 ):IBaseDiffModel<Int>
 
-fun Clinic.toClinicsUi() = ClinicsUi(
+fun Clinics.toClinicsUi() = ClinicsUi(
     id=id,
     photo=photo,
     link_clinic=link_clinic,
     link_2gis=link_2gis,
     descriptions=descriptions,
-    descriptions_ru=descriptions_ru,
-    descriptions_ky=descriptions_ky,
     starting_working_day=starting_working_day,
     ending_working_day=ending_working_day,
     address=address,

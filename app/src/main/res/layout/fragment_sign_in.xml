@@ -104,16 +104,4 @@
         />
 
 
-    <ImageView
-        android:id="@+id/eye"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/layer_list_remove_eye"
-        app:layout_constraintEnd_toEndOf="@id/til_password"
-        app:layout_constraintBottom_toBottomOf="@id/til_password"
-        app:layout_constraintTop_toTopOf="@id/til_password"
-        android:layout_marginHorizontal="@dimen/_16dp"
-        android:layout_marginTop="@dimen/_16dp"/>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

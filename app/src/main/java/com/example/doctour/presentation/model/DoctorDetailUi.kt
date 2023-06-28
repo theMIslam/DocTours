@@ -1,38 +1,37 @@
 package com.example.doctour.presentation.model
 
 import com.example.doctour.base.IBaseDiffModel
-import com.example.doctour.data.model.CertificatesDt
-import com.example.doctour.data.model.CityDt
-import com.example.doctour.data.model.ClinicDt
-import com.example.doctour.data.model.EducationDt
-import com.example.doctour.data.model.ExperienceDt
-import com.example.doctour.data.model.ReviewDt
-import com.example.doctour.data.model.ServiceDt
-import com.example.doctour.data.model.SpecializationDt
-import com.example.doctour.data.model.SpecialtyDt
+import com.example.doctour.domain.model.Certificates
+import com.example.doctour.domain.model.City
+import com.example.doctour.domain.model.Clinics
 import com.example.doctour.domain.model.DoctorDetail
+import com.example.doctour.domain.model.Education
+import com.example.doctour.domain.model.Experience
+import com.example.doctour.domain.model.Review
+import com.example.doctour.domain.model.Service
+import com.example.doctour.domain.model.Speciality
+import com.example.doctour.domain.model.Specialization
 
 data class DoctorDetailUi(
     override val id: Int,
-    val doctor_reviews: List<ReviewUi>,
-    val average_rating: String,
-    val num_reviews: String,
-    val specialties: List<SpecialityUi>,
-    val clinic: List<ClinicsUi>,
-    val category_services: List<ServiceUi>,
+    val doctor_reviews:List<ReviewUi>,
+    val average_rating:String,
+    val num_reviews:String,
+    val specialties :List<SpecialityUi>,
+    val clinic:List<ClinicsUi>,
+    val category_services:List<ServiceUi>,
     val city: CityUi,
-    val doctor_experience: List<ExperienceUi>,
-    val doctor_certificates: List<CertificatesUi>,
-    val doctor_education: List<EducationUi>,
-    val doctor_specialization: List<SpecializationUI>,
-    val photo: String,
-    val full_name: String,
-    val experience: Int,
-    val price: Int,
-    val summary: String,
-    val summary_ru: String,
-    val summary_ky: String,
-    val phone: String
+    val doctor_experience:List<ExperienceUi>,
+    val doctor_certificates:List<CertificatesUi>,
+    val doctor_education:List<EducationUi>,
+    val doctor_specialization:List<SpecializationUI>,
+    val photo:String,
+    val full_name:String,
+    val experience:Int,
+    val instagram :String,
+    val price:Int,
+    val summary:String,
+    val phone:String
 ) : IBaseDiffModel<Int>
 
 fun DoctorDetail.toDoctorDetailUi() = DoctorDetailUi(
@@ -51,9 +50,5 @@ fun DoctorDetail.toDoctorDetailUi() = DoctorDetailUi(
     photo,
     full_name,
     experience,
-    price,
-    summary,
-    summary_ru,
-    summary_ky,
-    phone
+    instagram, price, summary, phone
 )
