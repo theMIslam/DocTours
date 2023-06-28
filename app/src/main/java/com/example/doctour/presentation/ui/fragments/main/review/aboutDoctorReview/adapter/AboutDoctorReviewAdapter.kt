@@ -1,4 +1,4 @@
-package com.example.doctour.presentation.ui.fragments.main.review
+package com.example.doctour.presentation.ui.fragments.main.review.aboutDoctorReview.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,10 +6,10 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.base.BaseDiffUtilItemCallback
 import com.example.doctour.databinding.ItemFeedbacksBinding
-import com.example.doctour.model.ReviewUi
+import com.example.doctour.presentation.model.ReviewUi
 
-class AdapterAboutDoctorReview
-    : PagingDataAdapter<ReviewUi, AdapterAboutDoctorReview.AboutDoctorViewHolder>(
+class AboutDoctorReviewAdapter
+    : PagingDataAdapter<ReviewUi, AboutDoctorReviewAdapter.AboutDoctorViewHolder>(
     BaseDiffUtilItemCallback()
 ) {
     override fun onBindViewHolder(holder: AboutDoctorViewHolder, position: Int) {

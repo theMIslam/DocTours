@@ -9,7 +9,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentCategoryDoctorsBinding
-import com.example.doctour.model.SpecialityUi
+import com.example.doctour.presentation.model.SpecialityUi
 import com.example.doctour.presentation.extensions.showToast
 import dagger.hilt.android.AndroidEntryPoint
 

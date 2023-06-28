@@ -1,4 +1,4 @@
-package com.example.doctour.presentation.ui.fragments.main.category
+package com.example.doctour.presentation.ui.fragments.main.category.cityCategory
 
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -7,6 +7,7 @@ import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentCategoryCityBinding
 import com.example.doctour.presentation.extensions.showToast
+import com.example.doctour.presentation.ui.fragments.main.category.CategoryViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

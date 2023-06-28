@@ -1,4 +1,4 @@
-package com.example.doctour.model
+package com.example.doctour.presentation.model
 
 import com.example.doctour.base.IBaseDiffModel
 import com.example.doctour.domain.model.Education
@@ -10,6 +10,6 @@ data class EducationUi(
     val specialization: String,
     val doctor: Int
 ):IBaseDiffModel<Int>
-fun Education.toEducationUi()=EducationUi(
+fun Education.toEducationUi()= EducationUi(
     id, year, title, specialization, doctor
 )

@@ -3,9 +3,9 @@ package com.example.doctour.data.repositories
 import androidx.paging.PagingData
 import com.example.doctour.data.base.BaseRepository
 import com.example.doctour.data.remote.apiservices.DoctourApiService
-import com.example.doctour.data.remote.pagingsources.CategoryClinicsPaging
-import com.example.doctour.data.remote.pagingsources.CategoryDoctorsPagingSource
-import com.example.doctour.data.remote.pagingsources.CategoryServicesOfDoctorsPagingSource
+import com.example.doctour.data.remote.pagingsources.сategory.CategoryClinicsPaging
+import com.example.doctour.data.remote.pagingsources.сategory.CategoryDoctorsPagingSource
+import com.example.doctour.data.remote.pagingsources.сategory.CategoryServicesOfDoctorsPagingSource
 import com.example.doctour.data.remote.pagingsources.DoctourPagingSource
 import com.example.doctour.data.remote.pagingsources.ReviewsPagingSource
 import com.example.doctour.domain.model.Clinic

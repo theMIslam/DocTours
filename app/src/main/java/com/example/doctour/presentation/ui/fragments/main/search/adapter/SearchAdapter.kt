@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.databinding.ItemFoundVecanciesBinding
-import com.example.doctour.model.DoctorUi
+import com.example.doctour.presentation.model.DoctorUi
 import com.example.doctour.presentation.extensions.loadImage
 
 class SearchAdapter (

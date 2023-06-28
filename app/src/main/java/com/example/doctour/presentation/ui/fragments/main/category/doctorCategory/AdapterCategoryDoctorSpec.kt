@@ -6,7 +6,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.base.BaseDiffUtilItemCallback
 import com.example.doctour.databinding.ItemCategoryDoctorsBinding
-import com.example.doctour.model.SpecialityUi
+import com.example.doctour.presentation.model.SpecialityUi
 
 class AdapterCategoryDoctorSpec(
     private val onCLick:(SpecialityUi)->Unit

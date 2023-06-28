@@ -1,4 +1,4 @@
-package com.example.doctour.model
+package com.example.doctour.presentation.model
 
 import com.example.doctour.base.IBaseDiffModel
 import com.example.doctour.domain.model.Clinic
@@ -13,7 +13,7 @@ data class SubServiceUi(
     val clinic:List<ClinicsUi>
 ):IBaseDiffModel<Int>
 
-fun SubService.toSubUi()=SubServiceUi(
+fun SubService.toSubUi()= SubServiceUi(
     id,name,price,num_clinic,service,clinic.map { it.toClinicsUi() }
 )
 

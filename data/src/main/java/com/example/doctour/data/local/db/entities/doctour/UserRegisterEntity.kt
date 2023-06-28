@@ -4,7 +4,6 @@ import androidx.room.Entity
 
 @Entity(tableName = "register")
 class UserRegisterEntity(
-    val email: String?,
     val password: String?,
     val username: String?,
     val surname: String?,

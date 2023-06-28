@@ -125,7 +125,7 @@
 
     <fragment
         android:id="@+id/aboutDoctorReviewFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.review.AboutDoctorReviewFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.review.aboutDoctorReview.AboutDoctorReviewFragment"
         android:label="fragment_about_doctor_review"
         tools:layout="@layout/fragment_about_doctor_review">
         <action
@@ -160,7 +160,7 @@
         tools:layout="@layout/fragment_failed_password" />
     <fragment
         android:id="@+id/favoriteDoctorsFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.category.favorite.FavoriteDoctorsFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.category.favoriteDoctors.FavoriteDoctorsFragment"
         android:label="fragment_favorite_doctors"
         tools:layout="@layout/fragment_favorite_doctors">
         <action
@@ -242,7 +242,7 @@
         tools:layout="@layout/fragment_category_clinic" />
     <fragment
         android:id="@+id/categoryCityFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.category.CategoryCityFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.category.cityCategory.CategoryCityFragment"
         android:label="fragment_category_city"
         tools:layout="@layout/fragment_category_city" />
     <fragment

@@ -6,7 +6,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.base.BaseDiffUtilItemCallback
 import com.example.doctour.databinding.ItemServicesBinding
-import com.example.doctour.model.ServiceUi
+import com.example.doctour.presentation.model.ServiceUi
 
 class AdapterCategoryServices
     : PagingDataAdapter<ServiceUi,AdapterCategoryServices.CategoryServiceViewHolder>(
