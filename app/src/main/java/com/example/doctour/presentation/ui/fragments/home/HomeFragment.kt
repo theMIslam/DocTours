@@ -14,8 +14,11 @@ import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeDoc
 import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeInfoDoctor
 import com.example.doctour.presentation.ui.fragments.home.model.DoctorModel
 import com.example.doctour.presentation.ui.fragments.home.model.HomeModel
+import com.example.doctour.presentation.ui.fragments.main.category.observer.TextUpdate
 import dagger.hilt.android.AndroidEntryPoint
 import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 
 @AndroidEntryPoint
 class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home),
@@ -80,9 +83,9 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
     private fun adapterHomeInfoDoctor() {
         binding.rvDoctorsInfo.adapter=adapterHomeInfoDoctor
         val item1 = DoctorModel(getString(R.string.Name), getString(R.string.workexperience),
-        getString(R.string.xirurg), getString(R.string.on_clinic), R.drawable.ic_star,
-        getString(R.string.score), getString(R.string.feedback_32), R.drawable.layer_list_location,
-        getString(R.string.bishkek), getString(R.string.sum), R.drawable.ic_som)
+            getString(R.string.xirurg), getString(R.string.on_clinic), R.drawable.ic_star,
+            getString(R.string.score), getString(R.string.feedback_32), R.drawable.layer_list_location,
+            getString(R.string.bishkek), getString(R.string.sum), R.drawable.ic_som)
         val item2 = DoctorModel(getString(R.string.Name), getString(R.string.workexperience),
             getString(R.string.xirurg), getString(R.string.on_clinic), R.drawable.ic_star,
             getString(R.string.score), getString(R.string.feedback_32), R.drawable.layer_list_location,
@@ -93,7 +96,7 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
 
         adapterHomeInfoDoctor.submitList(doctors)
     }
-   private fun specsClick(){
+    private fun specsClick(){
         findNavController().navigateSafely(R.id.homeFragment)
     }
     private fun infoDoctorClick(){
@@ -121,6 +124,10 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
         }
     }
 
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun onTextUpdate(event: TextUpdate) {
+        binding.tvCountry.text = event.newText
+    }
     override fun onStart() {
         super.onStart()
         EventBus.getDefault().register(this)
