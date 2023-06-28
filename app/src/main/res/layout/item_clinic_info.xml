@@ -12,7 +12,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/iv_doctor_avatar"
+            android:id="@+id/iv_clinic_avatar"
             android:layout_width="@dimen/_110dp"
             android:layout_height="@dimen/_110dp"
             android:layout_marginVertical="@dimen/_10dp"
@@ -34,7 +34,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_16sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/iv_doctor_avatar"
+            app:layout_constraintStart_toEndOf="@id/iv_clinic_avatar"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
@@ -55,7 +55,7 @@
             android:layout_marginStart="@dimen/_16dp"
             android:layout_marginTop="@dimen/_12dp"
             android:background="@color/grey"
-            app:layout_constraintStart_toEndOf="@id/iv_doctor_avatar"
+            app:layout_constraintStart_toEndOf="@id/iv_clinic_avatar"
             app:layout_constraintTop_toBottomOf="@id/tv_clinic_name" />
 
         <TextView
@@ -67,7 +67,7 @@
             android:text="@string/network_of_clinics"
             android:textColor="@color/grey"
             android:textSize="@dimen/_12sp"
-            app:layout_constraintStart_toEndOf="@id/iv_doctor_avatar"
+            app:layout_constraintStart_toEndOf="@id/iv_clinic_avatar"
             app:layout_constraintTop_toBottomOf="@id/view" />
 
         <ImageView
@@ -110,7 +110,7 @@
             android:fontFamily="@font/roboto_regular"
             android:text="@string/ot"
             android:textSize="@dimen/_14sp"
-            app:layout_constraintStart_toEndOf="@id/iv_doctor_avatar"
+            app:layout_constraintStart_toEndOf="@id/iv_clinic_avatar"
             app:layout_constraintTop_toBottomOf="@id/img_stars" />
 
         <TextView

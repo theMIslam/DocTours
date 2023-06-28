@@ -4,15 +4,12 @@ import com.example.doctour.data.utils.DataMapper
 import com.example.doctour.domain.model.Review
 
 data class ReviewDt(
+    val doctor: Int,
     val id: Int,
-    val text: String,
     val stars: Int,
-    val doctor: List<Int>
+    val text: String
 ) : DataMapper<Review> {
     override fun mapToDomain() = Review(
-        id,
-        text,
-        stars,
-        doctor
+        doctor, id, stars, text
     )
 }

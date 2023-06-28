@@ -6,7 +6,7 @@ data class DoctorDetail(
     val average_rating:String,
     val num_reviews:String,
     val specialties :List<Speciality>,
-    val clinic:List<Clinics>,
+    val clinic:List<Clinic>,
     val category_services:List<Service>,
     val city:City,
     val doctor_experience:List<Experience>,

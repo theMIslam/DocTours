@@ -10,3 +10,8 @@ data class Notification(
 data class StateData(
     val notifications: List<Notification>
 )
+data class ItemPhoto(
+    val id:Int,
+    val title:String,
+    val image :String
+)

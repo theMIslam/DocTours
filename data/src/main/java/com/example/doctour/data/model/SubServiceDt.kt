@@ -9,7 +9,7 @@ data class SubServiceDt(
     val price:Int,
     val num_clinic:String,
     val service:Int,
-    val clinic:List<ClinicsDt>
+    val clinic:List<ClinicDt>
 ):DataMapper<SubService>{
     override fun mapToDomain()= SubService(
         id,

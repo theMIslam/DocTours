@@ -45,7 +45,7 @@
     </fragment>
     <fragment
         android:id="@+id/favoriteDoctorsFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.category.FavoriteDoctorsFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.category.favorite.FavoriteDoctorsFragment"
         android:label="FavoriteDoctourFragment"
         tools:layout="@layout/fragment_favorite_doctors">
         <action

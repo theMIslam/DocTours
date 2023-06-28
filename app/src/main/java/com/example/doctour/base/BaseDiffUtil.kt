@@ -8,7 +8,6 @@ interface IBaseDiffModel<T> {
 }
 
 class BaseDiffUtilItemCallback<T : IBaseDiffModel<S>, S> : DiffUtil.ItemCallback<T>() {
-
     override fun areItemsTheSame(oldItem: T, newItem: T): Boolean {
         return oldItem.id == newItem.id
     }

@@ -2,13 +2,17 @@ package com.example.doctour.presentation.ui.fragments.home
 
 import android.os.Parcel
 import android.os.Parcelable
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.paging.LoadState
+import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentHomeBinding
 import com.example.doctour.presentation.extensions.navigateSafely
+import com.example.doctour.model.DoctorUi
 import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeClinic
 import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeDoctorSpecs
 import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeInfoDoctor
@@ -19,10 +23,31 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
     Parcelable {
 
     override val binding by viewBinding(FragmentHomeBinding::bind)
-    override val viewModel by viewModels<HomeViewModel>()
+    override val viewModel:HomeViewModel by viewModels()
     private val adapterHome = AdapterHomeDoctorSpecs(this::specsClick)
     private val adapterHomeClinic = AdapterHomeClinic(this::clinicClick)
     private val adapterHomeInfoDoctor= AdapterHomeInfoDoctor(this::infoDoctorClick)
+
+    private fun setUpHomeInFoRecycler() = with(binding){
+        rvDoctorsInfo.layoutManager=LinearLayoutManager(requireContext())
+        rvDoctorsInfo.adapter=adapterHomeInfoDoctor
+        adapterHomeInfoDoctor.addLoadStateListener {loadState ->
+            rvDoctorsInfo.isVisible= loadState.refresh is  LoadState.NotLoading
+            progressBar.isVisible= loadState.refresh is  LoadState.NotLoading
+        }
+    }
+
+    override fun initRequest() {
+        super.initRequest()
+        setUpHomeInFoRecycler()
+        fetchDoctorInfo()
+    }
+
+    private fun fetchDoctorInfo() {
+        viewModel.getALlDoctors().collectPaging {
+            adapterHomeInfoDoctor.submitData(it)
+        }
+    }
 
     constructor(parcel: Parcel) : this() {
     }
@@ -40,15 +65,10 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
         }
 
     }
-    override fun initialize() {
-        binding.rvDoctorsSpecs.adapter = adapterHome
-        binding.rvClinic.adapter=adapterHomeClinic
-        binding.rvDoctorsInfo.adapter=adapterHomeInfoDoctor
-    }
    private fun specsClick(){
         findNavController().navigateSafely(R.id.homeFragment)
     }
-    private fun infoDoctorClick(){
+    private fun infoDoctorClick(doctorUi: DoctorUi){
         findNavController().navigate(R.id.aboutDoctorFragment)
     }
     private fun clinicClick(){

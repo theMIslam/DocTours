@@ -160,7 +160,7 @@
         tools:layout="@layout/fragment_failed_password" />
     <fragment
         android:id="@+id/favoriteDoctorsFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.category.FavoriteDoctorsFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.category.favorite.FavoriteDoctorsFragment"
         android:label="fragment_favorite_doctors"
         tools:layout="@layout/fragment_favorite_doctors">
         <action
@@ -194,12 +194,6 @@
         android:name="com.example.doctour.presentation.ui.fragments.main.password.SuccessPasswordFragment"
         android:label="fragment_success_password"
         tools:layout="@layout/fragment_success_password"/>
-
-    <fragment
-        android:id="@+id/topDoctorsFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.category.TopDoctorsFragment"
-        android:label="fragment_top_doctors"
-        tools:layout="@layout/fragment_top_doctors" />
 
     <fragment
         android:id="@+id/searchFragment2"
@@ -243,7 +237,7 @@
         tools:layout="@layout/fragment_notification" />
     <fragment
         android:id="@+id/categoryClinicFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.category.CategoryClinicFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.category.clinicCategory.CategoryClinicFragment"
         android:label="fragment_category_clinic"
         tools:layout="@layout/fragment_category_clinic" />
     <fragment
@@ -253,7 +247,7 @@
         tools:layout="@layout/fragment_category_city" />
     <fragment
         android:id="@+id/categoryServicesFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.category.CategoryServicesFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.category.categoryService.CategoryServicesFragment"
         android:label="fragment_category_services"
         tools:layout="@layout/fragment_category_services" />
     <fragment
@@ -268,7 +262,7 @@
 
     <fragment
         android:id="@+id/categoryDoctorsFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.category.CategoryDoctorsFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.category.doctorCategory.CategoryDoctorsFragment"
         android:label="fragment_category_doctors"
         tools:layout="@layout/fragment_category_doctors" />
 

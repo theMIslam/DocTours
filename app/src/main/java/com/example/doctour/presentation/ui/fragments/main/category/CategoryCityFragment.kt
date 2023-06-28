@@ -6,6 +6,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentCategoryCityBinding
+import com.example.doctour.presentation.extensions.showToast
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -13,7 +14,7 @@ class CategoryCityFragment: BaseFragment<FragmentCategoryCityBinding, CategoryVi
     R.layout.fragment_category_city
 ) {
     override val binding: FragmentCategoryCityBinding by viewBinding(FragmentCategoryCityBinding::bind)
-    override val viewModel: CategoryViewModel by viewModels<CategoryViewModel>()
+    override val viewModel: CategoryViewModel by viewModels()
 
     override fun initListeners() {
         super.initListeners()
@@ -21,10 +22,10 @@ class CategoryCityFragment: BaseFragment<FragmentCategoryCityBinding, CategoryVi
             findNavController().navigateUp()
         }
         binding.tvBishkek.setOnClickListener {
-            //chosen location
+            showToast("Bishkek")
         }
         binding.tvOsh.setOnClickListener {
-            //chosen location
+            showToast("Osh")
         }
     }
 
