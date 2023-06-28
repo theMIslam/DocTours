@@ -21,9 +21,8 @@ data class DoctorDetailDt(
     val experience: Int,
     val price: Int,
     val summary: String,
-    val summary_ru: String,
-    val summary_ky: String,
-    val phone: String
+    val phone: String,
+    val instagram:String
 ) : DataMapper<DoctorDetail> {
     override fun mapToDomain() = DoctorDetail(
         id,
@@ -41,10 +40,9 @@ data class DoctorDetailDt(
         photo,
         full_name,
         experience,
-        price,
         summary,
-        summary_ru,
-        summary_ky,
-        phone
+        price,
+        phone,
+        instagram
     )
 }

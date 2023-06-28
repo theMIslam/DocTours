@@ -8,9 +8,9 @@ import com.example.doctour.data.remote.client.RetrofitClient
 
 class UserRegisterVIewModel: ViewModel(){
 
-    private val apiService: UserRegisterApiService by lazy {
-        RetrofitClient.create()
-    }
+//    private val apiService: UserRegisterApiService by lazy {
+//        RetrofitClient.create()
+//    }
 
     
 }

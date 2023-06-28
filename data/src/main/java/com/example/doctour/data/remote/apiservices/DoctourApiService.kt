@@ -2,14 +2,19 @@ package com.example.doctour.data.remote.apiservices
 
 import com.example.doctour.data.base.BaseResponse
 import com.example.doctour.data.model.ClinicDt
+import com.example.doctour.data.model.ClinicDtResponse
 import com.example.doctour.data.model.DoctorDetailDt
 import com.example.doctour.data.model.DoctorDt
+import com.example.doctour.data.model.DoctorDtResponse
 import com.example.doctour.data.model.FavoriteDt
 import com.example.doctour.data.model.PasswordConfirmResetDt
 import com.example.doctour.data.model.PasswordResetDt
 import com.example.doctour.data.model.ReviewDt
+import com.example.doctour.data.model.ReviewDtResponse
 import com.example.doctour.data.model.ServiceDt
+import com.example.doctour.data.model.ServiceDtResponse
 import com.example.doctour.data.model.SpecialtyDt
+import com.example.doctour.data.model.SpecialtyDtResponse
 import com.example.doctour.data.model.SubServiceClinicsDt
 import com.example.doctour.data.model.TokenRefreshDt
 import com.example.doctour.data.model.UserLoginDt
@@ -18,6 +23,7 @@ import com.example.doctour.data.model.WhatsappSendDt
 //import com.example.doctour.data.remote.dtos.doctour.DoctourDto
 //import com.example.doctour.data.remote.dtos.doctour.DoctourPagingResponse
 import okhttp3.ResponseBody
+import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -25,7 +31,7 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface DoctourApiService {
-    @GET("api/v1/src/doctors/")
+    @GET("/api/v1/src/doctors/")
    suspend fun getAllDoctors(
         @Query("page")page: Int,
         @Query("specialties")specialties:String?,
@@ -34,39 +40,39 @@ interface DoctourApiService {
         @Query("city")city:String?,
         @Query("search")search: String?,
         @Query("ordering")ordering: String?
-    ):BaseResponse<DoctorDt>
+    ):Response<BaseResponse<DoctorDt>>
     @GET("api/v1/src/doctors/")
     suspend fun getDoctors(
         @Query("page")page: Int
     ):BaseResponse<DoctorDt>
 
-    @GET("api/v1/src/clinics/")
+    @GET("/api/v1/src/clinics/")
    suspend fun getClinics(
         @Query("page")page: Int
-    ):BaseResponse<ClinicDt>
+    ):Response<BaseResponse<ClinicDt>>
 
     @GET("/api/v1/src/doctors/{id}")
    suspend fun getDoctorsById(
         @Path("id")id:Int
     ):DoctorDetailDt
 
-    @GET("api/v1/src/reviews/")
+    @GET("/api/v1/src/reviews/")
    suspend fun getReviews(
         @Query("page")page: Int
-    ):BaseResponse<ReviewDt>
+    ):Response<BaseResponse<ReviewDt>>
 
     @POST("/api/v1/src/reviews/")
    suspend fun postReviews(
         @Body data:ReviewDt
     ):ResponseBody
 
-    @GET("api/v1/src/service/")
+    @GET("/api/v1/src/service/")
    suspend fun getCategoryServicesOfDoctors(
         @Query("id")id:Int,
         @Query("name")name:String?,
         @Query("price")price:String?,
         @Query("search")search:String?,
-    ):BaseResponse<ServiceDt>
+    ):Response<BaseResponse<ServiceDt>>
 
     @GET("api/v1/src/service/clinics/")
    suspend fun getCategoryServicesOfClinics(
@@ -76,7 +82,7 @@ interface DoctourApiService {
     @GET("api/v1/src/speciality/")
    suspend fun getSpecialityOfDoctors(
         @Query("page")page:Int
-    ):BaseResponse<SpecialtyDt>
+    ):Response<BaseResponse<SpecialtyDt>>
 
     @POST("/api/v1/src/whatsapp-send/")
     fun postWhatsappSend(

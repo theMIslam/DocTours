@@ -12,24 +12,24 @@ class RetrofitClient {
 
     companion object {
 
-        fun create(): UserRegisterApiService {
-            val interceptor = HttpLoggingInterceptor()
-            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
-
-            val okHttpClient = OkHttpClient.Builder()
-                .writeTimeout(20, TimeUnit.SECONDS)
-                .readTimeout(20, TimeUnit.SECONDS)
-                .connectTimeout(20, TimeUnit.SECONDS)
-                .addInterceptor(interceptor)
-                .build()
-
-            val retrofit = Retrofit.Builder()
-                .baseUrl(BuildConfig.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(okHttpClient)
-                .build()
-
-            return retrofit.create(UserRegisterApiService::class.java)
-        }
+//        fun create(): UserRegisterApiService {
+//            val interceptor = HttpLoggingInterceptor()
+//            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+//
+//            val okHttpClient = OkHttpClient.Builder()
+//                .writeTimeout(20, TimeUnit.SECONDS)
+//                .readTimeout(20, TimeUnit.SECONDS)
+//                .connectTimeout(20, TimeUnit.SECONDS)
+//                .addInterceptor(interceptor)
+//                .build()
+//
+//            val retrofit = Retrofit.Builder()
+//                .baseUrl(BuildConfig.BASE_URL)
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .client(okHttpClient)
+//                .build()
+//
+//            return retrofit.create(UserRegisterApiService::class.java)
+       // }
     }
 }
