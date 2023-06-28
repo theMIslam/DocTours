@@ -7,36 +7,40 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.databinding.ItemHomeBinding
 import com.example.doctour.domain.model.Specialization
+import com.example.doctour.model.SpecializationUI
+import com.example.doctour.presentation.ui.fragments.home.model.ItemPhoto
 
 
-class AdapterHomeDoctorSpecs (
+class AdapterHomeDoctorSpecs(
     private val onClick: () -> Unit
-): ListAdapter<Specialization,AdapterHomeDoctorSpecs.ViewHolder>(
-   DFUtilHomeDoctorSpec()
-) {
+): RecyclerView.Adapter<AdapterHomeDoctorSpecs.ViewHolder>() {
+
+    private var list = ArrayList<ItemPhoto>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):AdapterHomeDoctorSpecs.ViewHolder {
         return ViewHolder(
             ItemHomeBinding.inflate(
                 LayoutInflater.from(parent.context
                 ), parent, false))
     }
-    inner class ViewHolder(private val binding: ItemHomeBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(specialization: Specialization) {
-            itemView.setOnClickListener {
 
-                onClick()
-            }
+    inner class ViewHolder(private val binding: ItemHomeBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(itemPhoto:ItemPhoto) {
+
         }
+    }
+
+    override fun getItemCount(): Int {
+        return list.size
     }
     override fun onBindViewHolder(holder: AdapterHomeDoctorSpecs.ViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(list[position])
     }
-   private class DFUtilHomeDoctorSpec : DiffUtil.ItemCallback<Specialization>() {
-        override fun areItemsTheSame(oldItem: Specialization, newItem: Specialization): Boolean {
-             return oldItem == newItem
+   private class DFUtilHomeDoctorSpec : DiffUtil.ItemCallback<SpecializationUI>() {
+        override fun areItemsTheSame(oldItem: SpecializationUI, newItem: SpecializationUI): Boolean {
+            return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: Specialization, newItem: Specialization): Boolean {
+        override fun areContentsTheSame(oldItem: SpecializationUI, newItem: SpecializationUI): Boolean {
             return oldItem == newItem
         }
     }

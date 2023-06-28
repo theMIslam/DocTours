@@ -1,8 +1,14 @@
 package com.example.doctour.data.base
 
-data class BaseResponse <T>(
-    val count:Int,
-    val next:String,
-    val previous:String,
-    val results:List<T>
+import com.google.gson.annotations.SerializedName
+
+data class BaseResponse<T>(
+    @SerializedName("count")
+    val count: Int,
+    @SerializedName("next")
+    val next:String?,
+    @SerializedName("previous")
+    val previous: Any,
+    @SerializedName("results")
+    val results: List<T>
 )

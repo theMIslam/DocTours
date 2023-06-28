@@ -129,11 +129,7 @@ abstract class BaseViewModel : ViewModel() {
      * @see cachedIn
      * @see viewModelScope
      */
-    protected fun <T : Any, S : Any> Flow<PagingData<T>>.collectPagingRequest(
-        mapToUI: (T) -> S
-    ): Flow<PagingData<S>> = map { value: PagingData<T> ->
-        value.map { data: T ->
-            mapToUI(data)
-        }
-    }.cachedIn(viewModelScope)
+    protected  fun <T : Any, S : Any> Flow<PagingData<T>>.collectPagingRequest(
+        mappedData: (T) -> S
+    )=map { it.map { data -> mappedData(data) } }.cachedIn(viewModelScope)
 }

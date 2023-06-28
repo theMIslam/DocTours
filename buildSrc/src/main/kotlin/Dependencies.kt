@@ -36,7 +36,6 @@ object Versions {
 }
 
 object Libraries {
-
     object Coroutines {
         const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${
             Versions.coroutines

@@ -8,8 +8,8 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentSearchBinding
+import com.example.doctour.model.DoctorUi
 import com.example.doctour.presentation.ui.fragments.main.search.adapter.SearchAdapter
-import com.example.doctour.presentation.ui.fragments.main.model.BermetModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -19,10 +19,10 @@ class SearchFragment :
         (R.layout.fragment_search) {
 
     private var myAdapter: SearchAdapter? = null
-    private var users = ArrayList<BermetModel>()
+    private var users = ArrayList<DoctorUi>()
 
     override val binding: FragmentSearchBinding by  viewBinding(FragmentSearchBinding::bind)
-    override val viewModel: SearchViewModel by viewModels<SearchViewModel>()
+    override val viewModel: SearchViewModel by viewModels()
 
     override fun initListeners() {
         super.initListeners()
@@ -31,7 +31,7 @@ class SearchFragment :
         onClickListeners()
     }
 
-    private fun onItemClick(bermetModel: BermetModel) {
+    private fun onItemClick(doctorUi: DoctorUi) {
       findNavController().navigate(R.id.aboutDoctorFragment)
     }
 

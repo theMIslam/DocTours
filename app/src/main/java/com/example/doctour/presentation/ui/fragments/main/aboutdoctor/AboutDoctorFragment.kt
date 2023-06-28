@@ -6,8 +6,9 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentAboutDoctorBinding
+import com.example.doctour.model.DoctorDetailUi
+import com.example.doctour.model.DoctorUi
 import com.example.doctour.presentation.extensions.loadImage
-import com.example.doctour.presentation.ui.fragments.main.model.BermetModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -17,7 +18,7 @@ class AboutDoctorFragment
 ) {
 
     override val binding: FragmentAboutDoctorBinding by viewBinding(FragmentAboutDoctorBinding::bind)
-    override val viewModel: AboutDoctorViewModel by viewModels<AboutDoctorViewModel>()
+    override val viewModel: AboutDoctorViewModel by viewModels()
     private val adapterFeedback: AdapterFeedbacks by lazy {
         AdapterFeedbacks()
     }
@@ -44,18 +45,19 @@ class AboutDoctorFragment
         }
     }
 
-    private fun getData() {
-        val data = this.arguments?.getSerializable("key") as BermetModel
-        binding.tvNameOfDoctor.text = "Врач ${data.name}"
-        binding.image.loadImage(data.image)
-        binding.name.text = data.name
-        binding.tvSurgeon.text = data.profession
-        binding.tvClinic.text = data.clinic
-        binding.tvPrice.text = data.price
-        binding.tvNumOfExperience.text = data.experience
-        binding.tvNumOfRating.text = data.rating
-        binding.tvNumOfFeedback.text = data.numberOfFeedback.toString()
-        binding.tvInfoAboutDoc.text = data.infoAboutDoctor
+    private fun  getInfoAboutDoctor(){
+        val data = this.arguments?.getSerializable("key") as DoctorDetailUi
+        binding.tvNameOfDoctor.text = "Врач ${data.full_name}"
+        binding.image.loadImage(data.photo)
+        binding.name.text = data.full_name
+       // binding.tvSurgeon.text = data.specialties
+        //binding.tvClinic.text = data.clinic
+        binding.tvPrice.text = data.price.toString()
+        binding.tvNumOfExperience.text = data.experience.toString()
+        binding.tvNumOfRating.text = data.average_rating
+        binding.tvNumOfFeedback.text = data.num_reviews
+        binding.tvInfoAboutDoc.text = data.summary
+
     }
 
 }

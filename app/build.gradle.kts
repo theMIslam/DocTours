@@ -114,7 +114,17 @@ android {
         // SMS configuration
         implementation(Libraries.SmsConfigutation.smsconfiguration)
 
-        //state flow
+        // Retrofit
+        implementation(Libraries.Retrofit.retrofit)
+        implementation(Libraries.Retrofit.gsonConverter)
+
+        // OkHttp & Interceptor
+        implementation(Libraries.OkHttp.okHttp)
+        implementation(Libraries.OkHttp.loggingInterceptor)
+
+        // Paging
+        implementation(Libraries.Paging.runtime)
+        implementation(Libraries.Paging.common)
 
     }
 }

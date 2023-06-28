@@ -1,18 +1,18 @@
 package com.example.doctour.domain.model
 
 data class Doctor(
-    val id:Int,
-    val doctor_reviews:List<Review>,
-    val average_rating:String,
-    val num_reviews:String,
-    val specialties:List<Speciality>,
-    val clinic:List<Clinics>,
-    val photo:String,
-    val full_name:String,
-    val experience:String,
-    val price:Int,
-    val summary:String,
-    val summary_ru:String,
-    val summary_ky:String,
-    val phone:String
+    val average_rating: Double,
+    val clinic: List<Clinic>,
+    val experience: Int,
+    val full_name: String,
+    val id: Int,
+    val num_reviews: Int,
+    val phone: String,
+    val photo: String,
+    val price: Int,
+    val specialties: List<Speciality>,
+    val summary: String,
+    val summary_ky: String,
+    val summary_ru: String,
+    val city:City
 )

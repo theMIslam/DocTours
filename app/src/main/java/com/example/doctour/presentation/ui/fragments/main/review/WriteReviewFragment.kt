@@ -17,7 +17,6 @@ class WriteReviewFragment : BaseFragment<FragmentWriteReviewBinding, ReviewViewM
     override val binding: FragmentWriteReviewBinding by viewBinding(FragmentWriteReviewBinding::bind)
     override val viewModel: ReviewViewModel by viewModels<ReviewViewModel>()
 
-
     override fun initListeners() {
         super.initListeners()
         clickers()
@@ -26,7 +25,7 @@ class WriteReviewFragment : BaseFragment<FragmentWriteReviewBinding, ReviewViewM
     private fun clickers() {
         if (binding.etYourReview.text!!.isNotEmpty()) {
             binding.btnLeaveFeedback.background.setTint(Color.parseColor("#1B6B93"))
-        }else {
+        } else {
 //            showToast("Напишите отзыв")
         }
 

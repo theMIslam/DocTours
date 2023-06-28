@@ -18,7 +18,7 @@ class BookingToDoctorSecondFragment :
 ){
 
     override val binding: FragmentBookingToDoctorSecondBinding by viewBinding(FragmentBookingToDoctorSecondBinding::bind)
-    override val viewModel: BookingToDoctorViewModel by viewModels<BookingToDoctorViewModel>()
+    override val viewModel: BookingToDoctorViewModel by viewModels()
 
     override fun initListeners() {
         super.initListeners()
