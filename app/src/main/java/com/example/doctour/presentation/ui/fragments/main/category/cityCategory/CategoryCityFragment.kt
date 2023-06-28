@@ -33,10 +33,7 @@ class CategoryCityFragment: BaseFragment<FragmentCategoryCityBinding, CategoryVi
             findNavController().navigateUp()
         }
         binding.tvOsh.setOnClickListener {
-            dataChangeListener?.updateText(getString(R.string.osh))
             EventBus.getDefault().post(TextUpdate(getString(R.string.osh)))
-        }
-        binding.tvOsh.setOnClickListener {
             findNavController().navigateUp()
         }
     }

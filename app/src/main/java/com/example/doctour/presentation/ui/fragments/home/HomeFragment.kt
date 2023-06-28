@@ -14,16 +14,12 @@ import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeDoc
 import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeInfoDoctor
 import com.example.doctour.presentation.ui.fragments.home.model.DoctorModel
 import com.example.doctour.presentation.ui.fragments.home.model.HomeModel
-import com.example.doctour.presentation.ui.fragments.main.category.observer.DataChangeListener
-import com.example.doctour.presentation.ui.fragments.main.category.observer.TextUpdate
 import dagger.hilt.android.AndroidEntryPoint
 import org.greenrobot.eventbus.EventBus
-import org.greenrobot.eventbus.Subscribe
-import org.greenrobot.eventbus.ThreadMode
 
 @AndroidEntryPoint
 class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home),
-    Parcelable, DataChangeListener {
+    Parcelable {
 
     override val binding by viewBinding(FragmentHomeBinding::bind)
     override val viewModel by viewModels<HomeViewModel>()
@@ -125,11 +121,6 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
         }
     }
 
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    fun onTextUpdate(event: TextUpdate) {
-        binding.tvCountry.text = event.newText
-    }
-
     override fun onStart() {
         super.onStart()
         EventBus.getDefault().register(this)
@@ -138,10 +129,6 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
     override fun onStop() {
         super.onStop()
         EventBus.getDefault().unregister(this)
-    }
-
-    override fun updateText(newText: String) {
-        binding.tvCountry.text = newText
     }
 }
 
