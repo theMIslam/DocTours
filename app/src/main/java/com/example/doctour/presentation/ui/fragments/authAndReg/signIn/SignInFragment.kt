@@ -1,6 +1,8 @@
 package com.example.doctour.presentation.ui.fragments.authAndReg.signIn
 
 import android.annotation.SuppressLint
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -23,14 +25,31 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
     override val binding: FragmentSignInBinding by viewBinding(FragmentSignInBinding::bind)
     override val viewModel: SignInViewModel by viewModels()
 
+    private var isPasswordVisible: Boolean = false
+
     override fun initListeners() {
         super.initListeners()
         binding.btnLogIn.setOnClickListener {
             findNavController().navigate(R.id.homeFragment)
         }
+        binding.eye.setOnClickListener {
+            isPasswordVisible = !isPasswordVisible
+            togglePasswordVisibility()
+        }
         binding.tvForgotPassword.setOnClickListener {
             findNavController().navigate(R.id.forgotPasswordFragment)
         }
+    }
+
+    private fun togglePasswordVisibility() {
+        if (isPasswordVisible) {
+            binding.etPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
+            binding.eye.setImageResource(R.drawable.ic_close_eye)
+        } else {
+            binding.etPassword.transformationMethod = PasswordTransformationMethod.getInstance()
+            binding.eye.setImageResource(R.drawable.layer_list_remove_eye)
+        }
+        binding.etPassword.text?.let { binding.etPassword.setSelection(it.length) }
     }
 
     @SuppressLint("SetTextI18n")
