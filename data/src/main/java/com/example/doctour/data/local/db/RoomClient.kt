@@ -5,7 +5,6 @@ import androidx.room.Room
 import com.example.doctour.data.local.db.daos.DoctourDao
 
 class RoomClient {
-
     fun provideAppDatabase(context: Context) = Room
         .databaseBuilder(context, AppDatabase::class.java, "doctour.db")
         .build()

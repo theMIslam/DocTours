@@ -13,7 +13,7 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
     R.layout.fragment_category
 ) {
     override val binding: FragmentCategoryBinding by viewBinding(FragmentCategoryBinding::bind)
-    override val viewModel: CategoryViewModel by viewModels<CategoryViewModel>()
+    override val viewModel: CategoryViewModel by viewModels()
 
     override fun initListeners() {
         super.initListeners()

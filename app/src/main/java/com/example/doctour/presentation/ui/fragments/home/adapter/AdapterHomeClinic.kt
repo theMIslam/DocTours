@@ -6,12 +6,13 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.databinding.ItemHomeBinding
-import com.example.doctour.domain.model.Clinics
+import com.example.doctour.domain.model.Clinic
+import com.example.doctour.model.ClinicsUi
 
 class AdapterHomeClinic(
     private val onCLick: () -> Unit
-) : ListAdapter<Clinics, AdapterHomeClinic.ViewHolderHomeClinic>(
-    DFUtilHomeClinic()
+) : ListAdapter<ClinicsUi, AdapterHomeClinic.ViewHolderHomeClinic>(
+    DFUtilHomeClinicsUi()
 ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderHomeClinic {
         return ViewHolderHomeClinic(
@@ -28,7 +29,7 @@ class AdapterHomeClinic(
     }
     inner class ViewHolderHomeClinic(private val binding: ItemHomeBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(clinics: Clinics) {
+        fun bind(clinics: ClinicsUi) {
 
             itemView.setOnClickListener {
                 onCLick
@@ -37,12 +38,12 @@ class AdapterHomeClinic(
 
     }
 }
-private class DFUtilHomeClinic : DiffUtil.ItemCallback<Clinics>() {
-    override fun areItemsTheSame(oldItem: Clinics, newItem: Clinics): Boolean {
+private class DFUtilHomeClinicsUi : DiffUtil.ItemCallback<ClinicsUi>() {
+    override fun areItemsTheSame(oldItem: ClinicsUi, newItem: ClinicsUi): Boolean {
         return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: Clinics, newItem: Clinics): Boolean {
+    override fun areContentsTheSame(oldItem: ClinicsUi, newItem: ClinicsUi): Boolean {
         return oldItem == newItem
     }
 }

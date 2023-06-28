@@ -6,5 +6,5 @@ data class SubService(
     val price:Int,
     val num_clinic:String,
     val service:Int,
-    val clinic:List<Clinics>
+    val clinic:List<Clinic>
 )

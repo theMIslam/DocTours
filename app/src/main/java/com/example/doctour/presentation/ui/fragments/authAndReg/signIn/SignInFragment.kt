@@ -1,5 +1,6 @@
 package com.example.doctour.presentation.ui.fragments.authAndReg.signIn
 
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -7,7 +8,6 @@ import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentSignInBinding
 import com.example.doctour.di.UserPreferences
-import com.example.doctour.presentation.extensions.navigateSafely
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -29,4 +29,15 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
         }
     }
 
+    override fun initSubscribers() {
+        viewModel.signInState.spectateUiState (success = {
+            userPreferences.isAuthenticated = true
+            userPreferences.userID = it.id
+            userPreferences.username = it.username
+            userPreferences.password = binding.etPassword.text.toString()
+            initListeners()
+        }, error = {
+            Toast.makeText(requireContext(), getString(R.string.something_went_wrong), Toast.LENGTH_SHORT).show()
+        })
+    }
 }

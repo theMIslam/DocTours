@@ -203,4 +203,5 @@
     <string name="On_Clinic">On Clinic</string>
     <string name="symbol">symbol</string>
     <string name="Therapist">Терапевт</string>
+    <string name="something_went_wrong">Something went wrong</string>
 </resources>
