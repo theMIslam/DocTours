@@ -50,52 +50,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_code_was_sent" />
 
-     <EditText
-        android:id="@+id/et_number_1"
-        android:layout_width="@dimen/_60dp"
-        android:layout_height="@dimen/_60dp"
-        android:layout_marginStart="@dimen/_40dp"
-        android:layout_marginTop="@dimen/_30dp"
-         android:inputType="number"
-         android:autofillHints="password"
-        android:background="@drawable/et_code_bg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_number" />
-
-
-    <EditText
-        android:id="@+id/et_number_2"
-        android:layout_width="@dimen/_60dp"
-        android:layout_height="@dimen/_60dp"
-        android:layout_marginStart="@dimen/_130dp"
-        android:layout_marginTop="@dimen/_30dp"
-        android:inputType="number"
-        android:autofillHints="password"
-        android:background="@drawable/et_code_bg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_number" />
-
-    <EditText
-        android:id="@+id/et_number_3"
-        android:layout_width="@dimen/_60dp"
-        android:layout_height="@dimen/_60dp"
-        android:layout_marginStart="@dimen/_220dp"
-        android:layout_marginTop="@dimen/_30dp"
-        android:background="@drawable/et_code_bg"
-        android:inputType="number"
-        android:autofillHints="password"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_number" />
-
-    <EditText
-        android:id="@+id/et_number_4"
-        android:layout_width="@dimen/_60dp"
-        android:layout_height="@dimen/_60dp"
-        android:layout_marginStart="@dimen/_310dp"
-        android:layout_marginTop="@dimen/_30dp"
-        android:autofillHints="password"
-        android:background="@drawable/et_code_bg"
-        tools:ignore="MissingConstraints" />
     <com.fraggjkee.smsconfirmationview.SmsConfirmationView
         android:id="@+id/sms_view"
         android:layout_width="wrap_content"

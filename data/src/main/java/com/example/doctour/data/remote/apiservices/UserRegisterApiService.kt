@@ -1,5 +1,6 @@
 package com.example.doctour.data.remote.apiservices
 
+import androidx.room.ProvidedTypeConverter
 import com.example.doctour.data.remote.dtos.auth.SignInDto
 import com.example.doctour.data.remote.dtos.auth.SignInResultDto
 import com.example.doctour.data.remote.dtos.auth.UserRegisterDto
@@ -8,6 +9,7 @@ import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST
 
+@ProvidedTypeConverter
 interface UserRegisterApiService {
 
     @POST("/api/register")

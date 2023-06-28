@@ -22,7 +22,7 @@ class NewPasswordFragment : BaseFragment<FragmentNewPasswordBinding, PasswordVie
     }
     private fun onClick() {
         binding.btnNext.setOnClickListener {
-            findNavController().navigateUp()
+            findNavController().navigate(R.id.signInFragment)
         }
         binding.tvArrowBack.setOnClickListener {
             findNavController().navigateUp()

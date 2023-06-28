@@ -33,7 +33,7 @@
             android:singleLine="true"
             android:autofillHints="phone"
             android:textColor="@color/black"
-            android:inputType="text"/>
+            android:inputType="phone"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -59,13 +59,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:imeOptions="actionDone"
-            android:inputType="text"
+            android:inputType="textPassword"
             android:textColor="@color/black"
-            android:drawableEnd="@drawable/layer_list_remove_eye"
             android:singleLine="true"
             android:autofillHints="phone"/>
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/eye"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/layer_list_remove_eye"
+        app:layout_constraintEnd_toEndOf="@id/til_password"
+        app:layout_constraintBottom_toBottomOf="@id/til_password"
+        app:layout_constraintTop_toTopOf="@id/til_password"
+        android:layout_marginHorizontal="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_16dp"/>
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_forgot_password"
