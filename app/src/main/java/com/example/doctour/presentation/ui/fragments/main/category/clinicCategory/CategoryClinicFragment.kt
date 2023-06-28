@@ -9,7 +9,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentCategoryClinicBinding
-import com.example.doctour.presentation.ui.fragments.main.category.CategoryViewModel
+import com.example.doctour.presentation.ui.fragments.main.category.clinicCategory.adapter.CategoryClinicAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -18,7 +18,7 @@ class CategoryClinicFragment : BaseFragment<FragmentCategoryClinicBinding,Catego
 ){
     override val binding: FragmentCategoryClinicBinding by viewBinding(FragmentCategoryClinicBinding::bind)
     override val viewModel: CategoryClinicViewModel by viewModels()
-    private val adapterCategoryClinic=AdapterCategoryClinic()
+    private val adapterCategoryClinic= CategoryClinicAdapter()
 
     override fun initListeners() {
         super.initListeners()

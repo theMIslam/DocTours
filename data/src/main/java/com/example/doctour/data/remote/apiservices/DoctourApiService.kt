@@ -128,11 +128,4 @@ interface DoctourApiService {
         @Body data:TokenRefreshDt
     ):ResponseBody
 
-//    @GET("/api/foo")
-//    suspend fun fetchDoctour(): Response<DoctourDto>
-//
-//    @GET("/api/foo")
-//    suspend fun fetchDoctourPaging(
-//        @Query("page") page: Int
-//    ): Response<DoctourPagingResponse<DoctourDto>>
 }

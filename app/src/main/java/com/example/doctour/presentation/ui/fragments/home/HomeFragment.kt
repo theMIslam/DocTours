@@ -14,9 +14,9 @@ import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentHomeBinding
 import com.example.doctour.presentation.extensions.navigateSafely
 import com.example.doctour.presentation.model.DoctorUi
-import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeClinic
-import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeDoctorSpecs
-import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeInfoDoctor
+import com.example.doctour.presentation.ui.fragments.home.adapter.HomeClinicAdapter
+import com.example.doctour.presentation.ui.fragments.home.adapter.HomeDoctorSpecsAdapter
+import com.example.doctour.presentation.ui.fragments.home.adapter.HomeInfoDoctorAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -25,9 +25,9 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
 
     override val binding by viewBinding(FragmentHomeBinding::bind)
     override val viewModel:HomeViewModel by viewModels()
-    private val adapterHome = AdapterHomeDoctorSpecs(this::specsClick)
-    private val adapterHomeClinic = AdapterHomeClinic(this::clinicClick)
-    private val adapterHomeInfoDoctor= AdapterHomeInfoDoctor(this::infoDoctorClick)
+    private val adapterHome = HomeDoctorSpecsAdapter(this::specsClick)
+    private val adapterHomeClinic = HomeClinicAdapter(this::clinicClick)
+    private val adapterHomeInfoDoctor= HomeInfoDoctorAdapter(this::infoDoctorClick)
 
     private fun setUpHomeInFoRecycler() = with(binding){
         rvDoctorsInfo.layoutManager=LinearLayoutManager(requireContext())

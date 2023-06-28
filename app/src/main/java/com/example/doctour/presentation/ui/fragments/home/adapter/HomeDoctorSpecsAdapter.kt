@@ -9,12 +9,12 @@ import com.example.doctour.databinding.ItemHomeBinding
 import com.example.doctour.presentation.ui.fragments.home.model.HomeModel
 
 
-class AdapterHomeDoctorSpecs (
+class HomeDoctorSpecsAdapter (
     private val onClick: () -> Unit
-): ListAdapter<HomeModel,AdapterHomeDoctorSpecs.ViewHolder>(
+): ListAdapter<HomeModel,HomeDoctorSpecsAdapter.ViewHolder>(
    DFUtilHomeDoctorSpec()
 ) {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):AdapterHomeDoctorSpecs.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):HomeDoctorSpecsAdapter.ViewHolder {
         return ViewHolder(
             ItemHomeBinding.inflate(
                 LayoutInflater.from(parent.context
@@ -29,7 +29,7 @@ class AdapterHomeDoctorSpecs (
             }
         }
     }
-    override fun onBindViewHolder(holder: AdapterHomeDoctorSpecs.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: HomeDoctorSpecsAdapter.ViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
    private class DFUtilHomeDoctorSpec : DiffUtil.ItemCallback<HomeModel>() {

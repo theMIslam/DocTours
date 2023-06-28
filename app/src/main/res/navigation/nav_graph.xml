@@ -155,7 +155,7 @@
 
     <fragment
         android:id="@+id/failedPasswordFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.password.FailedPasswordFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.password.success.failed.FailedPasswordFragment"
         android:label="fragment_failed_password"
         tools:layout="@layout/fragment_failed_password" />
     <fragment
@@ -191,7 +191,7 @@
 
     <fragment
         android:id="@+id/successPasswordFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.password.SuccessPasswordFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.password.success.SuccessPasswordFragment"
         android:label="fragment_success_password"
         tools:layout="@layout/fragment_success_password"/>
 

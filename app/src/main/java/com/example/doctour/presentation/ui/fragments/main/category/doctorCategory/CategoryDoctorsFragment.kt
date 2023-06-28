@@ -21,11 +21,11 @@ class CategoryDoctorsFragment : BaseFragment<FragmentCategoryDoctorsBinding, Cat
         FragmentCategoryDoctorsBinding::bind
     )
     override val viewModel: CategoryDoctorsViewModel by viewModels()
-    private lateinit var adapterCategoryDoctorSpec: AdapterCategoryDoctorSpec
+    private lateinit var adapterCategoryDoctorSpec: CategoryDoctorSpecAdapter
 
     override fun initialize() {
         super.initialize()
-        adapterCategoryDoctorSpec = AdapterCategoryDoctorSpec(this::onItemClick)
+        adapterCategoryDoctorSpec = CategoryDoctorSpecAdapter(this::onItemClick)
         binding.rvCategoryDoctor.adapter = adapterCategoryDoctorSpec
         binding.rvCategoryDoctor.layoutManager=LinearLayoutManager(requireContext())
 

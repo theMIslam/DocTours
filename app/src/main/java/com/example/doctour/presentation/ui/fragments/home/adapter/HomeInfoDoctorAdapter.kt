@@ -3,18 +3,15 @@ package com.example.doctour.presentation.ui.fragments.home.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.base.BaseDiffUtilItemCallback
 import com.example.doctour.databinding.ItemDoctorsInfoBinding
-import com.example.doctour.domain.model.Doctor
 import com.example.doctour.presentation.extensions.loadImage
 import com.example.doctour.presentation.model.DoctorUi
 
-class AdapterHomeInfoDoctor(
+class HomeInfoDoctorAdapter(
     private val onClickListener: (DoctorUi) -> Unit
-) : PagingDataAdapter<DoctorUi, AdapterHomeInfoDoctor.ViewHolderHomeInfoDoctor>(
+) : PagingDataAdapter<DoctorUi, HomeInfoDoctorAdapter.ViewHolderHomeInfoDoctor>(
     BaseDiffUtilItemCallback()
 ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderHomeInfoDoctor {

@@ -1,4 +1,4 @@
-package com.example.doctour.presentation.ui.fragments.main.category.clinicCategory
+package com.example.doctour.presentation.ui.fragments.main.category.clinicCategory.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,8 +9,8 @@ import com.example.doctour.databinding.ItemClinicInfoBinding
 import com.example.doctour.presentation.model.ClinicsUi
 import com.example.doctour.presentation.extensions.loadImage
 
-class AdapterCategoryClinic(
-) : PagingDataAdapter<ClinicsUi, AdapterCategoryClinic.ClinicsViewHolder>(
+class CategoryClinicAdapter(
+) : PagingDataAdapter<ClinicsUi, CategoryClinicAdapter.ClinicsViewHolder>(
     BaseDiffUtilItemCallback()
 ) {
     override fun onBindViewHolder(holder: ClinicsViewHolder, position: Int) {

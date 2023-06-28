@@ -1,4 +1,4 @@
-package com.example.doctour.presentation.ui.fragments.main.category.categoryService
+package com.example.doctour.presentation.ui.fragments.main.category.categoryService.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,8 +8,8 @@ import com.example.doctour.base.BaseDiffUtilItemCallback
 import com.example.doctour.databinding.ItemServicesBinding
 import com.example.doctour.presentation.model.ServiceUi
 
-class AdapterCategoryServices
-    : PagingDataAdapter<ServiceUi,AdapterCategoryServices.CategoryServiceViewHolder>(
+class CategoryServicesAdapter
+    : PagingDataAdapter<ServiceUi, CategoryServicesAdapter.CategoryServiceViewHolder>(
     BaseDiffUtilItemCallback()
 ) {
     inner class CategoryServiceViewHolder (
