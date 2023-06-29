@@ -17,7 +17,11 @@ import com.example.doctour.presentation.model.DoctorUi
 import com.example.doctour.presentation.ui.fragments.home.adapter.HomeClinicAdapter
 import com.example.doctour.presentation.ui.fragments.home.adapter.HomeDoctorSpecsAdapter
 import com.example.doctour.presentation.ui.fragments.home.adapter.HomeInfoDoctorAdapter
+import com.example.doctour.presentation.ui.fragments.main.category.observer.TextUpdate
 import dagger.hilt.android.AndroidEntryPoint
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 
 @AndroidEntryPoint
 class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home),
@@ -103,5 +107,21 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
             return arrayOfNulls(size)
         }
     }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun onTextUpdate(event: TextUpdate) {
+        binding.tvCountry.text = event.newText
+    }
+
+    override fun onStart() {
+        super.onStart()
+        EventBus.getDefault().register(this)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        EventBus.getDefault().unregister(this)
+    }
+
 }
 
