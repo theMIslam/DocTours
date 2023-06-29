@@ -34,7 +34,7 @@ class FavoriteDoctorsAdapter(
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(doctor: DoctorUi) {
             doctor.apply {
-                binding.ivDoctorAvatar.loadImage(photo)
+                photo?.let { binding.ivDoctorAvatar.loadImage(it) }
                 binding.tvDoctorName.text=full_name
                 binding.tvWorkExperience.text =experience.toString()
                  binding.tvWorkSpeciality.text=doctor.specialties.toString()

@@ -33,7 +33,7 @@ class SearchAdapter (
 
     inner class SearchViewHolder(private var binding: ItemFoundVecanciesBinding) : RecyclerView.ViewHolder(binding.root)  {
         fun bind(doctorUi: DoctorUi) {
-            binding.image.loadImage(doctorUi.photo)
+            doctorUi.photo?.let { binding.image.loadImage(it) }
             binding.name.text = doctorUi.full_name
             binding.tvExperience.text = doctorUi.experience.toString()
             binding.profession.text=doctorUi.specialties.toString()

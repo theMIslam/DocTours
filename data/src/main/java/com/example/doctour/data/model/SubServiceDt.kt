@@ -5,10 +5,10 @@ import com.example.doctour.domain.model.SubService
 
 data class SubServiceDt(
     val id:Int,
-    val name:String,
-    val price:Int,
+    val name:String?,
+    val price:Int?,
     val count_clinic:String?,
-    val service:Int,
+    val service:Int?,
     val clinic:List<ClinicDt> ?= emptyList()
 ):DataMapper<SubService>{
     override fun mapToDomain()= SubService(

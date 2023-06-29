@@ -4,10 +4,10 @@ import com.example.doctour.base.IBaseDiffModel
 import com.example.doctour.domain.model.Service
 
 data class ServiceUi(
-    val description: String,
+    val description: String?,
     override val id: Int,
-    val name: String,
-    val price: Int,
+    val name: String?,
+    val price: Int?,
     val subservice_service: List<SubServiceUi>?= emptyList()
 ):IBaseDiffModel<Int>
 

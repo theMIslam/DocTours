@@ -25,7 +25,7 @@ abstract class BaseRepository {
 
     protected fun <ValueDto:DataMapper<Value>,Value:Any>doPagingRequest(
         pagingSource: BasePagingSource<ValueDto,Value>,
-        pageSize:Int =10,
+        pageSize:Int =20,
         prefetchDistance: Int = pageSize,
         enablePlaceholders: Boolean = true,
         initialLoadSize: Int = pageSize * 3,

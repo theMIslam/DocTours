@@ -16,6 +16,7 @@ class AdapterCategoryServices
         private val binding:ItemServicesBinding
             ):RecyclerView.ViewHolder(binding.root){
             fun bind(serviceUi: ServiceUi){
+                binding.tvServiceName.text=serviceUi.name
 
             }
     }

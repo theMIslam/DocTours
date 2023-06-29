@@ -10,10 +10,10 @@ data class ServiceDtResponse (
     val result:List<ServiceDt>
         )
 data class ServiceDt(
-    val description: String,
+    val description: String?,
     val id: Int,
-    val name: String,
-    val price: Int,
+    val name: String?,
+    val price: Int?,
     val subservice_service: List<SubServiceDt>?= emptyList()
 ):DataMapper<Service>{
     override fun mapToDomain()= Service(
