@@ -6,23 +6,22 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.base.BaseDiffUtilItemCallback
 import com.example.doctour.databinding.ItemServicesBinding
+import com.example.doctour.presentation.model.ServiceUi
 
 class CategoryServicesAdapter
-    : PagingDataAdapter<String, CategoryServicesAdapter.CategoryServiceViewHolder>(BaseDiffUtilItemCallback()) {
+    : PagingDataAdapter<ServiceUi,CategoryServicesAdapter.CategoryServiceViewHolder>(
+    BaseDiffUtilItemCallback()
+) {
     inner class CategoryServiceViewHolder (
         private val binding:ItemServicesBinding
-            ):RecyclerView.ViewHolder(binding.root){
-            fun bind(title: String){
+    ):RecyclerView.ViewHolder(binding.root){
+        fun bind(serviceUi: ServiceUi){
 
-            }
+        }
     }
 
     override fun onBindViewHolder(holder: CategoryServiceViewHolder, position: Int) {
-        val item = getItem(position)
-        if (item != null) {
-
-            holder.bind(item)
-        }
+        getItem(position)?.let { holder.bind(it) }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryServiceViewHolder {

@@ -23,7 +23,7 @@ class CategoryServicesFragment : BaseFragment<FragmentCategoryServicesBinding, C
 ) {
     override val binding: FragmentCategoryServicesBinding by viewBinding(FragmentCategoryServicesBinding::bind)
     override val viewModel: CategoryServicesViewModel by viewModels()
-    private val adapterCategoryServices= CategoryServicesAdapter()
+    private val adapterCategoryServices=CategoryServicesAdapter()
 
     override fun initListeners() {
         super.initListeners()
@@ -38,34 +38,17 @@ class CategoryServicesFragment : BaseFragment<FragmentCategoryServicesBinding, C
             binding.rvServices.isVisible = loadStates.refresh is LoadState.NotLoading
             binding.progressBar.isVisible = loadStates.refresh is LoadState.Loading
         }
+        viewModel.getServiceOfDoctors().collectPaging {
+            adapterCategoryServices.submitData(it)
+        }
         getServices()
     }
 
     private fun getServices() {
-        //viewModel.getServiceOfDoctors().collectPaging {
-        // adapterCategoryServices.submitData(it)
-        //}
-
-        val pagingData: PagingData<String> = stringList.toPagingData()
-
-        viewLifecycleOwner.lifecycleScope.launch {
-            adapterCategoryServices.submitData(pagingData)
+        viewModel.getServiceOfDoctors().collectPaging {
+            adapterCategoryServices.submitData(it)
         }
     }
-
-    val stringList: List<String> = getYourStringList()
-
-    private fun getYourStringList(): List<String> {
-        return listOf("Узи", "Узи", "Узи")
-    }
-
-    fun List<String>.toPagingData(): Flow<PagingData<String>> {
-        return Pager(
-            config = PagingConfig(pageSize = 20),
-            pagingSourceFactory = { StringPagingSource(this) }
-        ).flow
-    }
-
 
     override fun initialize() {
         super.initialize()
