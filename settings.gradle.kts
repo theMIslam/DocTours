@@ -16,7 +16,7 @@ dependencyResolutionManagement {
         maven { url = uri("https://jitpack.io") }
     }
 }
-rootProject.name = "Doctour"
+rootProject.name = "DocTour"
 include(
     ":app",
     ":data",
