@@ -10,5 +10,5 @@ data class ExperienceUi(
     val doctor: Int
 ):IBaseDiffModel<Int>
 fun Experience.toExperienceUI()=ExperienceUi(
-    id, year, title, doctor
+    id=id, year=year, title=title, doctor=doctor
 )

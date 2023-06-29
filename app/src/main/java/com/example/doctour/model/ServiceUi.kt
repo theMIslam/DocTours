@@ -8,9 +8,9 @@ data class ServiceUi(
     override val id: Int,
     val name: String,
     val price: Int,
-    val subservice_service: List<SubServiceUi>
+    val subservice_service: List<SubServiceUi>?= emptyList()
 ):IBaseDiffModel<Int>
 
 fun Service.toServiceUi()=ServiceUi(
-    description, id, name, price, subservice_service.map { it.toSubUi() }
+    description=description, id=id, name=name, price=price, subservice_service?.map { it.toSubUi() }
 )

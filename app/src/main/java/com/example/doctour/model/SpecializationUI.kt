@@ -10,5 +10,5 @@ data class SpecializationUI(
 ): IBaseDiffModel<Int>
 
 fun Specialization.toSpecializationUi() =SpecializationUI(
-    id, title, doctor
+    id=id, title=title, doctor=doctor
 )

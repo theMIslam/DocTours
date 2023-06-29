@@ -4,7 +4,7 @@ data class SubService(
     val id:Int,
     val name:String,
     val price:Int,
-    val count_clinic:String,
+    val count_clinic:String?,
     val service:Int,
-    val clinic:List<Clinics>
+    val clinic:List<Clinics>?= emptyList()
 )

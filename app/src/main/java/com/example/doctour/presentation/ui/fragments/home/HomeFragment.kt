@@ -20,28 +20,32 @@ import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeInf
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home),
-    Parcelable {
+class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home){
 
     override val binding by viewBinding(FragmentHomeBinding::bind)
     override val viewModel:HomeViewModel by viewModels()
     private val adapterHome = AdapterHomeDoctorSpecs(this::specsClick)
     private val adapterHomeClinic = AdapterHomeClinic(this::clinicClick)
-    private val adapterHomeInfoDoctor= AdapterHomeInfoDoctor(this::infoDoctorClick)
+    private val adapterHomeInfoDoctor= AdapterHomeInfoDoctor()
 
-    private fun setUpHomeInFoRecycler() = with(binding){
-        rvDoctorsInfo.layoutManager=LinearLayoutManager(requireContext())
-        rvDoctorsInfo.adapter=adapterHomeInfoDoctor
+    private fun setUpHomeInFoRecycler() {
+        with(binding){
+            rvDoctorsInfo.layoutManager=LinearLayoutManager(context)
+            rvClinic.layoutManager=LinearLayoutManager(context)
+            rvDoctorsSpecs.layoutManager=LinearLayoutManager(context)
+            rvDoctorsInfo.adapter=adapterHomeInfoDoctor
+            rvDoctorsSpecs.adapter=adapterHome
+            rvClinic.adapter=adapterHomeClinic }
         adapterHomeInfoDoctor.addLoadStateListener {loadState ->
-            rvDoctorsInfo.isVisible= loadState.refresh is  LoadState.NotLoading
-            progressBar.isVisible= loadState.refresh is  LoadState.NotLoading
+            binding.rvDoctorsInfo.isVisible= loadState.refresh is  LoadState.NotLoading
+            binding.progressBar.isVisible= loadState.refresh is  LoadState.NotLoading
         }
+        fetchDoctorInfo()
+
     }
 
     override fun initRequest() {
         super.initRequest()
-        setUpHomeInFoRecycler()
-        fetchDoctorInfo()
     }
 
     private fun fetchDoctorInfo() {
@@ -52,8 +56,10 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
 
     override fun initialize() {
         super.initialize()
+        setUpHomeInFoRecycler()
         binding.tvName.hint = "ФИО"
         getSharedData()
+
     }
     private fun getSharedData() {
         val pref = activity?.getSharedPreferences("preferences_profile", Context.MODE_PRIVATE)
@@ -85,15 +91,6 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
     private fun clinicClick(){
 
     }
-
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
-
-    }
-
-    override fun describeContents(): Int {
-        return 0
-    }
-
     companion object CREATOR : Parcelable.Creator<HomeFragment> {
         override fun createFromParcel(parcel: Parcel): HomeFragment {
             return HomeFragment(parcel)

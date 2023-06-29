@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.databinding.ItemHomeBinding
 import com.example.doctour.domain.model.Specialization
 import com.example.doctour.model.SpecializationUI
+import com.example.doctour.presentation.extensions.loadImage
 import com.example.doctour.presentation.ui.fragments.home.model.ItemPhoto
 
 

@@ -8,20 +8,14 @@ import com.example.doctour.domain.model.Review
 import com.example.doctour.domain.model.Speciality
 
 data class DoctorDtResponse(
-    val count:Int,
-    val next:String?,
-    val previous:String?,
     val result:List<DoctorDt>
 ):DataMapper<DoctorResponse>{
     override fun mapToDomain(): DoctorResponse= DoctorResponse(
-        count,
-        next,
-        previous,
         result.map { it.mapToDomain() }
     )
 }
 data class DoctorDt(
-    val average_rating: String,
+    val average_rating: String?,
     val clinic: List<ClinicDt>,
     val experience: Int,
     val full_name: String,
@@ -29,23 +23,23 @@ data class DoctorDt(
     val num_reviews:String,
     val photo: String,
     val price: Int,
-    val specialties: List<SpecialtyDt>,
+    val specialties:List<SpecialtyDt>,
     val summary: String,
     val instagram :String,
-    val doctor_reviews:List<ReviewDt>
+    val doctor_reviews:List<ReviewDt> ?= emptyList()
 ) : DataMapper<Doctor> {
     override fun mapToDomain() = Doctor(
-        average_rating,
+        average_rating=average_rating,
         clinic.map { it.mapToDomain() },
-        experience,
-        full_name,
-        id,
-        num_reviews,
-        photo,
-        price,
+        experience=experience,
+        full_name=full_name,
+        id=id,
+        num_reviews=num_reviews,
+        photo=photo,
+        price=price,
         specialties.map { it.mapToDomain() },
-        summary,
-        instagram,
-        doctor_reviews.map { it.mapToDomain() }
+        summary=summary,
+        instagram=instagram,
+        doctor_reviews?.map { it.mapToDomain()}
     )
 }

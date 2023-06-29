@@ -11,5 +11,5 @@ data class EducationUi(
     val doctor: Int
 ):IBaseDiffModel<Int>
 fun Education.toEducationUi()=EducationUi(
-    id, year, title, specialization, doctor
+    id=id, year=year, title=title, specialization=specialization, doctor=doctor
 )

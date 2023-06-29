@@ -10,5 +10,8 @@ data class CertificatesUi(
     val doctor: Int
 ):IBaseDiffModel<Int>
 fun Certificates.toCertificatesUi()=CertificatesUi(
-    id, year, title, doctor
+    id=id,
+    year=year,
+    title=title,
+    doctor=doctor
 )

@@ -8,12 +8,12 @@ data class SubServiceUi(
     override val id:Int,
     val name:String,
     val price:Int,
-    val count_clinic:String,
+    val count_clinic:String?,
     val service:Int,
-    val clinic:List<ClinicsUi>
+    val clinic:List<ClinicsUi>?= emptyList()
 ):IBaseDiffModel<Int>
 
 fun SubService.toSubUi()=SubServiceUi(
-    id,name,price,count_clinic, service, clinic.map { it.toClinicsUi() }
+    id=id,name=name,price=price,count_clinic=count_clinic, service=service, clinic?.map { it.toClinicsUi() }
 )
 

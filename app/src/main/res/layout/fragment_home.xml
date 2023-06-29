@@ -80,7 +80,6 @@
         android:layout_height="0dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintStart_toStartOf="@id/tv_speciality"
         app:layout_constraintTop_toBottomOf="@id/tv_speciality"
         tools:listitem="@layout/item_home" />
 
@@ -98,7 +97,6 @@
         android:layout_height="0dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintStart_toStartOf="@id/tv_best_clinic"
         app:layout_constraintTop_toBottomOf="@id/tv_best_clinic"
         tools:listitem="@layout/item_clinic" />
 
@@ -114,14 +112,15 @@
         android:id="@+id/rv_doctors_info"
         android:layout_width="match_parent"
         android:layout_marginHorizontal="@dimen/_16dp"
-        android:layout_height="@dimen/_0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_10dp"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_best_doctor"
-        tools:listitem="@layout/item_doctors_info" />
+        tools:listitem="@layout/item_doctors_info"
+        />
 
     <ProgressBar
         android:id="@+id/progressBar"
