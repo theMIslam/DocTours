@@ -1,4 +1,4 @@
-package com.example.doctour.presentation.ui.fragments.main.category.doctorCategory
+package com.example.doctour.presentation.ui.fragments.main.category.doctorCategory.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
