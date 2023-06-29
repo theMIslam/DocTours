@@ -2,26 +2,19 @@ package com.example.doctour.data.remote.apiservices
 
 import com.example.doctour.data.base.BaseResponse
 import com.example.doctour.data.model.ClinicDt
-import com.example.doctour.data.model.ClinicDtResponse
 import com.example.doctour.data.model.DoctorDetailDt
 import com.example.doctour.data.model.DoctorDt
-import com.example.doctour.data.model.DoctorDtResponse
 import com.example.doctour.data.model.FavoriteDt
 import com.example.doctour.data.model.PasswordConfirmResetDt
 import com.example.doctour.data.model.PasswordResetDt
 import com.example.doctour.data.model.ReviewDt
-import com.example.doctour.data.model.ReviewDtResponse
 import com.example.doctour.data.model.ServiceDt
-import com.example.doctour.data.model.ServiceDtResponse
 import com.example.doctour.data.model.SpecialtyDt
-import com.example.doctour.data.model.SpecialtyDtResponse
 import com.example.doctour.data.model.SubServiceClinicsDt
 import com.example.doctour.data.model.TokenRefreshDt
 import com.example.doctour.data.model.UserLoginDt
 import com.example.doctour.data.model.UserRegisterDt
 import com.example.doctour.data.model.WhatsappSendDt
-//import com.example.doctour.data.remote.dtos.doctour.DoctourDto
-//import com.example.doctour.data.remote.dtos.doctour.DoctourPagingResponse
 import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.Body

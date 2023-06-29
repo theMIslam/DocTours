@@ -1,4 +1,4 @@
-package com.example.doctour.presentation.model
+package com.example.doctour.model
 
 import com.example.doctour.base.IBaseDiffModel
 import com.example.doctour.domain.model.Experience
@@ -9,6 +9,6 @@ data class ExperienceUi(
     val title: String,
     val doctor: Int
 ):IBaseDiffModel<Int>
-fun Experience.toExperienceUI()= ExperienceUi(
-    id, year, title, doctor
+fun Experience.toExperienceUI()=ExperienceUi(
+    id=id, year=year, title=title, doctor=doctor
 )

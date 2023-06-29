@@ -35,10 +35,10 @@ data class DoctorDetailUi(
 ) : IBaseDiffModel<Int>
 
 fun DoctorDetail.toDoctorDetailUi() = DoctorDetailUi(
-    id,
+    id=id,
     doctor_reviews.map { it.toReviewUi() },
-    average_rating,
-    num_reviews,
+    average_rating=average_rating,
+    num_reviews=num_reviews,
     specialties.map { it.toSpecialityUi() },
     clinic.map { it.toClinicsUi() },
     category_services.map { it.toServiceUi() },
@@ -47,8 +47,11 @@ fun DoctorDetail.toDoctorDetailUi() = DoctorDetailUi(
     doctor_certificates.map { it.toCertificatesUi() },
     doctor_education.map { it.toEducationUi() },
     doctor_specialization.map { it.toSpecializationUi() },
-    photo,
-    full_name,
-    experience,
-    instagram, price, summary, phone
+    photo=photo,
+    full_name=full_name,
+    experience=experience,
+    instagram=instagram,
+    price=price,
+    summary=summary,
+    phone=phone
 )

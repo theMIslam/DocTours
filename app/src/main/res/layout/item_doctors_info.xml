@@ -4,13 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_doctor_avatar"
             android:layout_width="@dimen/_110dp"
@@ -168,7 +161,5 @@
             app:layout_constraintBottom_toBottomOf="@id/tv_summa"
             app:layout_constraintStart_toEndOf="@id/tv_summa"
             app:layout_constraintTop_toTopOf="@id/tv_summa" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
