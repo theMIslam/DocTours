@@ -1,4 +1,4 @@
-package com.example.doctour.presentation.ui.fragments.main.category.doctorCategory
+package com.example.doctour.presentation.ui.fragments.main.category.doctorCategory.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,10 +8,10 @@ import com.example.doctour.base.BaseDiffUtilItemCallback
 import com.example.doctour.databinding.ItemCategoryDoctorsBinding
 import com.example.doctour.presentation.model.SpecialityUi
 
-class AdapterCategoryDoctorSpec(
+class CategoryDoctorSpecAdapter(
     private val onCLick:(SpecialityUi)->Unit
 ) :
-    PagingDataAdapter<SpecialityUi, AdapterCategoryDoctorSpec.ViewHolderCategoryDoctor>(
+    PagingDataAdapter<SpecialityUi, CategoryDoctorSpecAdapter.ViewHolderCategoryDoctor>(
       BaseDiffUtilItemCallback()
     ){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderCategoryDoctor {

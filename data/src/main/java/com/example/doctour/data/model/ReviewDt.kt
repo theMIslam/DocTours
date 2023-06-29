@@ -12,8 +12,8 @@ data class ReviewDtResponse(
 data class ReviewDt(
     val doctor: Int,
     val id: Int,
-    val stars: Int,
-    val text: String
+    val stars: Int?,
+    val text: String?
 ) : DataMapper<Review> {
     override fun mapToDomain() = Review(
         doctor, id, stars, text

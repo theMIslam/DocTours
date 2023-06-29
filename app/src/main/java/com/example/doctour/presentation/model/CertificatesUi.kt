@@ -1,4 +1,4 @@
-package com.example.doctour.presentation.model
+package com.example.doctour.model
 
 import com.example.doctour.base.IBaseDiffModel
 import com.example.doctour.domain.model.Certificates
@@ -9,6 +9,9 @@ data class CertificatesUi(
     val title: String,
     val doctor: Int
 ):IBaseDiffModel<Int>
-fun Certificates.toCertificatesUi()= CertificatesUi(
-    id, year, title, doctor
+fun Certificates.toCertificatesUi()=CertificatesUi(
+    id=id,
+    year=year,
+    title=title,
+    doctor=doctor
 )

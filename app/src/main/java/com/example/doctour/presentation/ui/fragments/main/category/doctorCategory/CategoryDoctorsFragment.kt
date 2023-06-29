@@ -11,6 +11,7 @@ import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentCategoryDoctorsBinding
 import com.example.doctour.presentation.model.SpecialityUi
 import com.example.doctour.presentation.extensions.showToast
+import com.example.doctour.presentation.ui.fragments.main.category.doctorCategory.adapter.CategoryDoctorSpecAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -21,11 +22,11 @@ class CategoryDoctorsFragment : BaseFragment<FragmentCategoryDoctorsBinding, Cat
         FragmentCategoryDoctorsBinding::bind
     )
     override val viewModel: CategoryDoctorsViewModel by viewModels()
-    private lateinit var adapterCategoryDoctorSpec: AdapterCategoryDoctorSpec
+    private lateinit var adapterCategoryDoctorSpec: CategoryDoctorSpecAdapter
 
     override fun initialize() {
         super.initialize()
-        adapterCategoryDoctorSpec = AdapterCategoryDoctorSpec(this::onItemClick)
+        adapterCategoryDoctorSpec = CategoryDoctorSpecAdapter(this::onItemClick)
         binding.rvCategoryDoctor.adapter = adapterCategoryDoctorSpec
         binding.rvCategoryDoctor.layoutManager=LinearLayoutManager(requireContext())
 

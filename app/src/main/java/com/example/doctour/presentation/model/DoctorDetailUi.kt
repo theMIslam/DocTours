@@ -1,16 +1,15 @@
 package com.example.doctour.presentation.model
 
 import com.example.doctour.base.IBaseDiffModel
-import com.example.doctour.domain.model.Certificates
-import com.example.doctour.domain.model.City
-import com.example.doctour.domain.model.Clinics
 import com.example.doctour.domain.model.DoctorDetail
-import com.example.doctour.domain.model.Education
-import com.example.doctour.domain.model.Experience
-import com.example.doctour.domain.model.Review
-import com.example.doctour.domain.model.Service
-import com.example.doctour.domain.model.Speciality
-import com.example.doctour.domain.model.Specialization
+import com.example.doctour.model.CertificatesUi
+import com.example.doctour.model.EducationUi
+import com.example.doctour.model.ExperienceUi
+import com.example.doctour.model.SpecializationUI
+import com.example.doctour.model.toCertificatesUi
+import com.example.doctour.model.toEducationUi
+import com.example.doctour.model.toExperienceUI
+import com.example.doctour.model.toSpecializationUi
 
 data class DoctorDetailUi(
     override val id: Int,
@@ -35,10 +34,10 @@ data class DoctorDetailUi(
 ) : IBaseDiffModel<Int>
 
 fun DoctorDetail.toDoctorDetailUi() = DoctorDetailUi(
-    id,
+    id=id,
     doctor_reviews.map { it.toReviewUi() },
-    average_rating,
-    num_reviews,
+    average_rating=average_rating,
+    num_reviews=num_reviews,
     specialties.map { it.toSpecialityUi() },
     clinic.map { it.toClinicsUi() },
     category_services.map { it.toServiceUi() },
@@ -47,8 +46,11 @@ fun DoctorDetail.toDoctorDetailUi() = DoctorDetailUi(
     doctor_certificates.map { it.toCertificatesUi() },
     doctor_education.map { it.toEducationUi() },
     doctor_specialization.map { it.toSpecializationUi() },
-    photo,
-    full_name,
-    experience,
-    instagram, price, summary, phone
+    photo=photo,
+    full_name=full_name,
+    experience=experience,
+    instagram=instagram,
+    price=price,
+    summary=summary,
+    phone=phone
 )

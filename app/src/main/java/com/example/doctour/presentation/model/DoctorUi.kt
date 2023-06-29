@@ -1,16 +1,19 @@
 package com.example.doctour.presentation.model
 
 import com.example.doctour.base.IBaseDiffModel
+import com.example.doctour.data.utils.DataMapper
 import com.example.doctour.domain.model.City
 import com.example.doctour.domain.model.Clinics
 import com.example.doctour.domain.model.Doctor
+import com.example.doctour.domain.model.DoctorResponse
+import com.example.doctour.domain.model.ListSpecialty
 import com.example.doctour.domain.model.Review
 import com.example.doctour.domain.model.Speciality
 
 data class DoctorUi(
     override val id: Int,
-    val average_rating: String,
-    val clinic: List<ClinicsUi>,
+    val average_rating: String?,
+    val clinic:List<ClinicsUi>,
     val experience: Int,
     val full_name: String,
     val num_reviews:String,
@@ -19,29 +22,29 @@ data class DoctorUi(
     val specialties: List<SpecialityUi>,
     val summary: String,
     val instagram :String,
-    val doctor_reviews:List<ReviewUi>
+    val doctor_reviews:List<ReviewUi>?= emptyList()
 ) : IBaseDiffModel<Int>
 
 fun Doctor.toDoctorUi() = DoctorUi(
-    id,
-    average_rating,
+    id=id,
+    average_rating=average_rating,
     clinic.map { it.toClinicsUi() },
-    experience,
-    full_name,
-    num_reviews,
-    photo,
-    price,
+    experience=experience,
+    full_name=full_name,
+    num_reviews=num_reviews,
+    photo=photo,
+    price=price,
     specialties.map { it.toSpecialityUi() },
-    summary,
-    instagram,
-    doctor_reviews.map { it.toReviewUi() }
+    summary=summary,
+    instagram=instagram,
+    doctor_reviews?.map { it.toReviewUi() }
 )
 
 data class ReviewUi(
     val doctor: Int,
     override val id: Int,
-    val stars: Int,
-    val text: String
+    val stars: Int?,
+    val text: String?
 ):IBaseDiffModel<Int>
 
 fun Review.toReviewUi() = ReviewUi(
@@ -54,7 +57,14 @@ data class SpecialityUi(
 ):IBaseDiffModel<Int>
 
 fun Speciality.toSpecialityUi() = SpecialityUi(
-    id, name
+    id=id, name=name
+)
+
+data class ListSpecUi(
+    val specialty :List<SpecialityUi>
+)
+fun ListSpecialty.toLIStSPecUi()=ListSpecUi(
+    specialty.map { it.toSpecialityUi() }
 )
 
 data class ClinicsUi(
@@ -95,5 +105,5 @@ data class CityUi(
 )
 
 fun City.toCityUi() = CityUi(
-    id, name
+    id=id, name=name
 )

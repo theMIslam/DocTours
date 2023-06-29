@@ -14,13 +14,13 @@ data class ServiceDt(
     val id: Int,
     val name: String,
     val price: Int,
-    val subservice_service: List<SubServiceDt>
+    val subservice_service: List<SubServiceDt>?= emptyList()
 ):DataMapper<Service>{
     override fun mapToDomain()= Service(
        description,
         id,
         name,
         price,
-        subservice_service.map { it.mapToDomain() }
+        subservice_service?.map { it.mapToDomain() }
     )
 }

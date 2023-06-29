@@ -1,4 +1,4 @@
-package com.example.doctour.presentation.ui.fragments.main.category.favoriteDoctors
+package com.example.doctour.presentation.ui.fragments.main.category.favoriteDoctors.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

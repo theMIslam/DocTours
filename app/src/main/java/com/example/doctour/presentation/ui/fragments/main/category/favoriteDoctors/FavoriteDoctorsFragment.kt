@@ -15,6 +15,7 @@ import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentFavoriteDoctorsBinding
 import com.example.doctour.presentation.extensions.showToast
 import com.example.doctour.presentation.model.DoctorUi
+import com.example.doctour.presentation.ui.fragments.main.category.favoriteDoctors.adapter.FavoriteDoctorsAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

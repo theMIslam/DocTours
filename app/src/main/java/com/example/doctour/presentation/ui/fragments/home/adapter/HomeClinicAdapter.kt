@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.databinding.ItemHomeBinding
 import com.example.doctour.presentation.model.ClinicsUi
 
-class AdapterHomeClinic(
+class HomeClinicAdapter(
     private val onCLick: () -> Unit
-) : ListAdapter<ClinicsUi, AdapterHomeClinic.ViewHolderHomeClinic>(
+) : ListAdapter<ClinicsUi, HomeClinicAdapter.ViewHolderHomeClinic>(
     DFUtilHomeClinicsUi()
 ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderHomeClinic {
