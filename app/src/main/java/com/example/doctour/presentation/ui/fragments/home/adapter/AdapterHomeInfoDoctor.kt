@@ -12,7 +12,9 @@ import com.example.doctour.domain.model.Doctor
 import com.example.doctour.presentation.extensions.loadImage
 import com.example.doctour.model.DoctorUi
 
-class AdapterHomeInfoDoctor : PagingDataAdapter<DoctorUi, AdapterHomeInfoDoctor.ViewHolderHomeInfoDoctor>(
+class AdapterHomeInfoDoctor (
+    private val onCLick: (DoctorUi) -> Unit
+        ) : PagingDataAdapter<DoctorUi, AdapterHomeInfoDoctor.ViewHolderHomeInfoDoctor>(
     BaseDiffUtilItemCallback()
 ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderHomeInfoDoctor {
@@ -36,12 +38,16 @@ class AdapterHomeInfoDoctor : PagingDataAdapter<DoctorUi, AdapterHomeInfoDoctor.
         fun bind(doctor: DoctorUi) {
             doctor.photo?.let { binding.ivDoctorAvatar.loadImage(it) }
             binding.tvDoctorName.text = doctor.full_name.toString()
-            binding.tvWorkExperience.text = doctor.experience.toString()
+            binding.tvWorkExperience.text = "Стаж работы ${doctor.experience.toString()}"
             //binding.tvWorkSpeciality.text = doctor.specialties
            // binding.tvWorkClinic.text = doctor.clinic
             binding.tvPoints.text = doctor.average_rating.toString()
             binding.tvRecommendation.text = "${doctor.num_reviews} рекомендаций"
             binding.tvSumma.text = doctor.price.toString()
+
+            itemView.setOnClickListener {
+                onCLick(doctor)
+            }
         }
     }
 }

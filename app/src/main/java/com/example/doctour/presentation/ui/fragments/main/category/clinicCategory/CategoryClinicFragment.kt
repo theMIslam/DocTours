@@ -29,15 +29,24 @@ class CategoryClinicFragment : BaseFragment<FragmentCategoryClinicBinding,Catego
 
     override fun initialize() {
         super.initialize()
-        binding.rvClinics.adapter=adapterCategoryClinic
-        binding.rvClinics.layoutManager = LinearLayoutManager(requireContext())
+        setUpRecyclerView()
     }
-    override fun initRequest() {
-        super.initRequest()
+
+    private fun setUpRecyclerView() {
+        binding.rvClinics.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvClinics.adapter=adapterCategoryClinic
         adapterCategoryClinic.addLoadStateListener { loadStates ->
             binding.rvClinics.isVisible = loadStates.refresh is LoadState.NotLoading
             binding.progressBar.isVisible = loadStates.refresh is LoadState.Loading
         }
+    }
+
+    override fun initRequest() {
+        super.initRequest()
+        getClinics()
+    }
+
+    private fun getClinics() {
         viewModel.getClinic().collectPaging {
             adapterCategoryClinic.submitData(it)
         }

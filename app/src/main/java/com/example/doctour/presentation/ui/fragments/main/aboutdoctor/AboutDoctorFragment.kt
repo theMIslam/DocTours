@@ -43,20 +43,23 @@ class AboutDoctorFragment
         binding.ivHeart.setOnClickListener {
 
         }
+        getInfoAboutDoctor()
     }
 
     private fun  getInfoAboutDoctor(){
-        val data = this.arguments?.getSerializable("key") as DoctorDetailUi
-        binding.tvNameOfDoctor.text = "Врач ${data.full_name}"
-        data.photo?.let { binding.image.loadImage(it) }
-        binding.name.text = data.full_name
-       // binding.tvSurgeon.text = data.specialties
-        //binding.tvClinic.text = data.clinic
-        binding.tvPrice.text = data.price.toString()
-        binding.tvNumOfExperience.text = data.experience.toString()
-        binding.tvNumOfRating.text = data.average_rating
-        binding.tvNumOfFeedback.text = data.num_reviews
-        binding.tvInfoAboutDoc.text = data.summary
+        if (arguments!=null){
+            val data = this.arguments?.getSerializable("about") as DoctorUi
+            binding.tvNameOfDoctor.text = "Врач ${data.full_name}"
+            data.photo?.let { binding.image.loadImage(it) }
+            binding.name.text = data.full_name
+            // binding.tvSurgeon.text = data.specialties
+            //binding.tvClinic.text = data.clinic
+            binding.tvPrice.text = data.price.toString()
+            binding.tvNumOfExperience.text = data.experience.toString()
+            binding.tvNumOfRating.text = data.average_rating
+            binding.tvNumOfFeedback.text = data.num_reviews
+            binding.tvInfoAboutDoc.text = data.summary
+        }
 
     }
 

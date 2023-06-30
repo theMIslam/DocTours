@@ -25,10 +25,20 @@ class DoctourRepositoryImpl @Inject constructor(
         city: String?,
         search: String?,
         ordering: String?
-    )= doPagingRequest(DoctourPagingSource(doctourApiService,specialties, clinic, categoryService, city, search, ordering))
+    ) = doPagingRequest(
+        DoctourPagingSource(
+            doctourApiService,
+            specialties,
+            clinic,
+            categoryService,
+            city,
+            search,
+            ordering
+        )
+    )
 
-    override fun getSpecialityOfDoctors()
-    =doPagingRequest(CategoryDoctorsPagingSource(doctourApiService))
+    override fun getSpecialityOfDoctors() =
+        doPagingRequest(CategoryDoctorsPagingSource(doctourApiService))
 
     override fun getClinics(): Flow<PagingData<Clinics>> {
         return doPagingRequest(CategoryClinicsPaging(doctourApiService))
@@ -39,7 +49,14 @@ class DoctourRepositoryImpl @Inject constructor(
         price: String?,
         search: String?
     ): Flow<PagingData<Service>> {
-        return doPagingRequest(CategoryServicesOfDoctorsPagingSource(doctourApiService,name,price,search))
+        return doPagingRequest(
+            CategoryServicesOfDoctorsPagingSource(
+                doctourApiService,
+                name,
+                price,
+                search
+            )
+        )
     }
 
     override fun getReviews(): Flow<PagingData<Review>> {

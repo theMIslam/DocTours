@@ -7,13 +7,6 @@ import com.example.doctour.domain.model.DoctorResponse
 import com.example.doctour.domain.model.Review
 import com.example.doctour.domain.model.Speciality
 
-data class DoctorDtResponse(
-    val result:List<DoctorDt>
-):DataMapper<DoctorResponse>{
-    override fun mapToDomain(): DoctorResponse= DoctorResponse(
-        result.map { it.mapToDomain() }
-    )
-}
 data class DoctorDt(
     val average_rating: String?,
     val clinic: List<ClinicDt>?= emptyList(),

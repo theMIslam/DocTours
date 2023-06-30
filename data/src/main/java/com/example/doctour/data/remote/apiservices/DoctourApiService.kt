@@ -11,6 +11,7 @@ import com.example.doctour.data.model.ReviewDt
 import com.example.doctour.data.model.ServiceDt
 import com.example.doctour.data.model.SpecialtyDt
 import com.example.doctour.data.model.SubServiceClinicsDt
+import com.example.doctour.data.model.SubServiceDt
 import com.example.doctour.data.model.TokenRefreshDt
 import com.example.doctour.data.model.UserLoginDt
 import com.example.doctour.data.model.UserRegisterDt
@@ -44,6 +45,7 @@ interface DoctourApiService {
         @Query("page")page: Int
     ):Response<BaseResponse<ClinicDt>>
 
+
     @GET("/api/v1/src/doctors/{id}")
    suspend fun getDoctorsById(
         @Path("id")id:Int
@@ -70,7 +72,7 @@ interface DoctourApiService {
     @GET("api/v1/src/service/clinics/")
    suspend fun getCategoryServicesOfClinics(
         @Query("id")id:Int
-    ):BaseResponse<SubServiceClinicsDt>
+    ):Response<BaseResponse<SubServiceDt>>
 
     @GET("api/v1/src/speciality/")
    suspend fun getSpecialityOfDoctors(

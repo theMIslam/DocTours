@@ -2,7 +2,6 @@ package com.example.doctour.data.remote.pagingsources
 
 import com.example.doctour.data.base.BasePagingSource
 import com.example.doctour.data.model.DoctorDt
-import com.example.doctour.data.model.DoctorDtResponse
 import com.example.doctour.data.remote.apiservices.DoctourApiService
 import com.example.doctour.domain.model.Doctor
 import com.example.doctour.domain.model.DoctorResponse

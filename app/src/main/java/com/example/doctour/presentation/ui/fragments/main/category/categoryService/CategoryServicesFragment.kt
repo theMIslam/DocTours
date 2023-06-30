@@ -31,10 +31,6 @@ class CategoryServicesFragment : BaseFragment<FragmentCategoryServicesBinding, C
 
     override fun initRequest() {
         super.initRequest()
-        adapterCategoryServices.addLoadStateListener { loadStates ->
-            binding.rvServices.isVisible = loadStates.refresh is LoadState.NotLoading
-            binding.progressBar.isVisible = loadStates.refresh is LoadState.Loading
-        }
         getServices()
     }
 
@@ -46,8 +42,16 @@ class CategoryServicesFragment : BaseFragment<FragmentCategoryServicesBinding, C
 
     override fun initialize() {
         super.initialize()
-        binding.rvServices.adapter = adapterCategoryServices
+        setUpRecyclerView()
+    }
+
+    private fun setUpRecyclerView() {
         binding.rvServices.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvServices.adapter = adapterCategoryServices
+        adapterCategoryServices.addLoadStateListener { loadStates ->
+            binding.rvServices.isVisible = loadStates.refresh is LoadState.NotLoading
+            binding.progressBar.isVisible = loadStates.refresh is LoadState.Loading
+        }
     }
 
 }

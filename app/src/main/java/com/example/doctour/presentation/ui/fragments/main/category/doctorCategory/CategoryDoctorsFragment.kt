@@ -25,18 +25,26 @@ class CategoryDoctorsFragment : BaseFragment<FragmentCategoryDoctorsBinding, Cat
 
     override fun initialize() {
         super.initialize()
+        setUpRecyclerView()
+    }
+
+    private fun setUpRecyclerView() {
         adapterCategoryDoctorSpec = AdapterCategoryDoctorSpec(this::onItemClick)
         binding.rvCategoryDoctor.adapter = adapterCategoryDoctorSpec
         binding.rvCategoryDoctor.layoutManager=LinearLayoutManager(requireContext())
 
         adapterCategoryDoctorSpec.addLoadStateListener {loadState ->
             binding.rvCategoryDoctor.isVisible= loadState.refresh is  LoadState.NotLoading
-           binding.progressBar.isVisible= loadState.refresh is  LoadState.NotLoading
+            binding.progressBar.isVisible= loadState.refresh is  LoadState.Loading
         }
     }
 
     override fun initRequest() {
         super.initRequest()
+        getSpecialityDoctors()
+    }
+
+    private fun getSpecialityDoctors() {
         viewModel.getSpecialityOfDoctors().collectPaging {
             adapterCategoryDoctorSpec.submitData(it)
         }

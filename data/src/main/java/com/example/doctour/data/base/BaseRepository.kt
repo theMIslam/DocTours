@@ -5,10 +5,12 @@ import android.webkit.MimeTypeMap
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import com.example.doctour.data.BuildConfig
+import com.example.doctour.data.model.ClinicDt
 import com.example.doctour.data.utils.DataMapper
 import com.example.doctour.data.utils.fromJson
 import com.example.doctour.domain.utils.Either
 import com.example.doctour.domain.utils.NetworkError
+import com.example.doctour.domain.utils.Resource
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.Dispatchers
@@ -19,38 +21,53 @@ import okhttp3.RequestBody.Companion.asRequestBody
 import okhttp3.ResponseBody
 import retrofit2.Response
 import java.io.File
+import java.io.IOException
 import java.io.InterruptedIOException
 
 abstract class BaseRepository {
 
-    protected fun <ValueDto:DataMapper<Value>,Value:Any>doPagingRequest(
-        pagingSource: BasePagingSource<ValueDto,Value>,
-        pageSize:Int =20,
+    protected fun <ValueDto : DataMapper<Value>, Value : Any> doPagingRequest(
+        pagingSource: BasePagingSource<ValueDto, Value>,
+        pageSize: Int = 20,
         prefetchDistance: Int = pageSize,
         enablePlaceholders: Boolean = true,
         initialLoadSize: Int = pageSize * 3,
         maxSize: Int = Int.MAX_VALUE,
         jumpThreshold: Int = Int.MIN_VALUE
-    )= Pager(
-            config = PagingConfig(
-                pageSize,
-                prefetchDistance,
-                enablePlaceholders,
-                initialLoadSize,
-                maxSize,
-                jumpThreshold
-            ),
-            pagingSourceFactory = {
-                pagingSource
-            }
-        ).flow
+    ) = Pager(
+        config = PagingConfig(
+            pageSize,
+            prefetchDistance,
+            enablePlaceholders,
+            initialLoadSize,
+            maxSize,
+            jumpThreshold
+        ),
+        pagingSourceFactory = {
+            pagingSource
+        }
+    ).flow
 
-   private fun ResponseBody?.toApiError2():MutableMap<String,List<String>>{
-       return Gson().fromJson(
-           this?.string(),
-           object :TypeToken<MutableMap<String ,List<String>>>(){}.type
-       )
-   }
+    protected fun <T> doRequest(request: suspend () -> T) = flow {
+        emit(Resource.Loading())
+        try {
+            emit(Resource.Success(request()))
+        } catch (ioException: IOException) {
+            emit(
+                Resource.Error(
+                    ioException.localizedMessage ?: "IoException error "
+                )
+            )
+        }
+    }.flowOn(Dispatchers.IO)
+
+    private fun ResponseBody?.toApiError2(): MutableMap<String, List<String>> {
+        return Gson().fromJson(
+            this?.string(),
+            object : TypeToken<MutableMap<String, List<String>>>() {}.type
+        )
+    }
+
     protected fun <T : DataMapper<S>, S> doNetworkRequestWithMapping(
         request: suspend () -> Response<T>
     ): Flow<Either<NetworkError, S>> = doNetworkRequest(request) { body ->

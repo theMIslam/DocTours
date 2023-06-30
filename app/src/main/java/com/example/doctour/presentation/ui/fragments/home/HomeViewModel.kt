@@ -5,7 +5,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.doctour.base.BaseViewModel
 import com.example.doctour.domain.usecases.GetAllDoctorsUseCase
+import com.example.doctour.domain.usecases.GetCategoryDoctorsUseCase
+import com.example.doctour.domain.usecases.GetClinicUseCase
+import com.example.doctour.model.toClinicsUi
 import com.example.doctour.model.toDoctorUi
+import com.example.doctour.model.toSpecialityUi
 import com.example.doctour.presentation.ui.fragments.home.model.Notification
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -14,7 +18,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val getAllDoctorsUseCase: GetAllDoctorsUseCase
+    private val getAllDoctorsUseCase: GetAllDoctorsUseCase,
+    private val  getDoctorSpeciality: GetCategoryDoctorsUseCase,
+    private  val getClinicUseCase: GetClinicUseCase
 ) : BaseViewModel() {
 
     private val _speciality = MutableStateFlow<String?>(null)
@@ -43,6 +49,10 @@ class HomeViewModel @Inject constructor(
         _ordering.value
     ).collectPagingRequest { it.toDoctorUi() }
 
+    fun getTheBestDoctorSpeciality () = getDoctorSpeciality().collectPagingRequest { it.toSpecialityUi() }
+
+    fun getTheBestClinics() = getClinicUseCase().collectPagingRequest { it.toClinicsUi() }
+    
     private val _notification = MutableLiveData<List<Notification>>()
     val notification: LiveData<List<Notification>> get() = _notification
 

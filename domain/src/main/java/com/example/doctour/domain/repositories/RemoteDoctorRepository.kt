@@ -6,6 +6,9 @@ import com.example.doctour.domain.model.Doctor
 import com.example.doctour.domain.model.Review
 import com.example.doctour.domain.model.Service
 import com.example.doctour.domain.model.Speciality
+import com.example.doctour.domain.utils.Either
+import com.example.doctour.domain.utils.NetworkError
+import com.example.doctour.domain.utils.Resource
 import kotlinx.coroutines.flow.Flow
 
 interface RemoteDoctorRepository {
@@ -30,4 +33,5 @@ interface RemoteDoctorRepository {
     ):Flow<PagingData<Service>>
 
     fun getReviews():Flow<PagingData<Review>>
+
 }
