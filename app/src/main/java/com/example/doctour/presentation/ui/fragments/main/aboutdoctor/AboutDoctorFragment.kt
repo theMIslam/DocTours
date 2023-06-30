@@ -8,6 +8,7 @@ import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentAboutDoctorBinding
 import com.example.doctour.presentation.model.DoctorDetailUi
 import com.example.doctour.presentation.extensions.loadImage
+import com.example.doctour.presentation.model.DoctorUi
 import com.example.doctour.presentation.ui.fragments.main.aboutdoctor.adapter.FeedbacksAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -43,20 +44,23 @@ class AboutDoctorFragment
         binding.ivHeart.setOnClickListener {
 
         }
+        getInfoAboutDoctor()
     }
 
     private fun  getInfoAboutDoctor(){
-        val data = this.arguments?.getSerializable("key") as DoctorDetailUi
-        binding.tvNameOfDoctor.text = "Врач ${data.full_name}"
-        data.photo?.let { binding.image.loadImage(it) }
-        binding.name.text = data.full_name
-       // binding.tvSurgeon.text = data.specialties
-        //binding.tvClinic.text = data.clinic
-        binding.tvPrice.text = data.price.toString()
-        binding.tvNumOfExperience.text = data.experience.toString()
-        binding.tvNumOfRating.text = data.average_rating
-        binding.tvNumOfFeedback.text = data.num_reviews
-        binding.tvInfoAboutDoc.text = data.summary
+        if (arguments!=null){
+            val data = this.arguments?.getSerializable("about") as DoctorUi
+            binding.tvNameOfDoctor.text = "Врач ${data.full_name}"
+            data.photo?.let { binding.image.loadImage(it) }
+            binding.name.text = data.full_name
+            // binding.tvSurgeon.text = data.specialties
+            //binding.tvClinic.text = data.clinic
+            binding.tvPrice.text = data.price.toString()
+            binding.tvNumOfExperience.text = data.experience.toString()
+            binding.tvNumOfRating.text = data.average_rating
+            binding.tvNumOfFeedback.text = data.num_reviews
+            binding.tvInfoAboutDoc.text = data.summary
+        }
 
     }
 

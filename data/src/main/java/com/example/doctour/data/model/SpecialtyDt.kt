@@ -13,10 +13,3 @@ data class SpecialtyDt(
         name
     )
 }
-data class ListSpecialtyDt(
-    val specialty:List<SpecialtyDt>
-):DataMapper<ListSpecialty>{
-    override fun mapToDomain(): ListSpecialty = ListSpecialty(
-        specialty.map { it.mapToDomain() }
-    )
-}

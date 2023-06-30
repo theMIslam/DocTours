@@ -3,6 +3,7 @@ package com.example.doctour.presentation.ui.fragments.home
 import android.content.Context
 import android.os.Parcel
 import android.os.Parcelable
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -12,43 +13,65 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentHomeBinding
-import com.example.doctour.presentation.extensions.navigateSafely
+import com.example.doctour.presentation.extensions.showToast
 import com.example.doctour.presentation.model.DoctorUi
-import com.example.doctour.presentation.ui.fragments.home.adapter.HomeDoctorSpecsAdapter
-import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeInfoDoctor
 import com.example.doctour.presentation.ui.fragments.home.adapter.HomeClinicAdapter
+import com.example.doctour.presentation.ui.fragments.home.adapter.HomeDoctorSpecsAdapter
+import com.example.doctour.presentation.ui.fragments.home.adapter.HomeInfoDoctorAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home){
+class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home) {
 
     override val binding by viewBinding(FragmentHomeBinding::bind)
-    override val viewModel:HomeViewModel by viewModels()
-    private val adapterHome = HomeDoctorSpecsAdapter(this::specsClick)
-    private val adapterHomeClinic = HomeClinicAdapter(this::clinicClick)
-    private val adapterHomeInfoDoctor= AdapterHomeInfoDoctor()
+    override val viewModel: HomeViewModel by viewModels()
 
+    private val adapterHomeDoctorSpecs = HomeDoctorSpecsAdapter(this::onSpecsClick)
+    private val adapterHomeClinic = HomeClinicAdapter(this::onClinicClick)
+    private val adapterHomeInfoDoctor = HomeInfoDoctorAdapter(this::onDoctorInfoClick)
     private fun setUpHomeInFoRecycler() {
-        with(binding){
-            rvDoctorsInfo.layoutManager=LinearLayoutManager(context)
-            rvClinic.layoutManager=LinearLayoutManager(context)
-            rvDoctorsSpecs.layoutManager=LinearLayoutManager(context)
-            rvDoctorsInfo.adapter=adapterHomeInfoDoctor
-            rvDoctorsSpecs.adapter=adapterHome
-            rvClinic.adapter=adapterHomeClinic }
-        adapterHomeInfoDoctor.addLoadStateListener {loadState ->
-            binding.rvDoctorsInfo.isVisible= loadState.refresh is  LoadState.NotLoading
-            binding.progressBar.isVisible= loadState.refresh is  LoadState.NotLoading
+        with(binding) {
+            rvDoctorsSpecs.layoutManager =
+                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            rvDoctorsSpecs.adapter = adapterHomeDoctorSpecs
+            rvClinic.layoutManager =
+                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            rvClinic.adapter = adapterHomeClinic
+            rvDoctorsInfo.layoutManager = LinearLayoutManager(context)
+            rvDoctorsInfo.adapter = adapterHomeInfoDoctor
         }
-        fetchDoctorInfo()
+        adapterHomeDoctorSpecs.addLoadStateListener { loadState ->
+            binding.rvDoctorsSpecs.isVisible = loadState.refresh is LoadState.NotLoading
+            binding.progressBar.isVisible = loadState.refresh is LoadState.Loading
+        }
+        adapterHomeClinic.addLoadStateListener { loadState ->
+            binding.rvClinic.isVisible = loadState.refresh is LoadState.NotLoading
+            binding.progressBar.isVisible = loadState.refresh is LoadState.Loading
+        }
+        adapterHomeInfoDoctor.addLoadStateListener { loadState ->
+            binding.rvDoctorsInfo.isVisible = loadState.refresh is LoadState.NotLoading
+            binding.progressBar.isVisible = loadState.refresh is LoadState.Loading
+        }
+    }
 
+    private fun onDoctorInfoClick(doctorUi: DoctorUi) {
+        findNavController().navigate(R.id.aboutDoctorFragment, bundleOf(
+            "about" to doctorUi
+        ))
     }
 
     override fun initRequest() {
         super.initRequest()
+        fetchDoctorInfo()
     }
 
     private fun fetchDoctorInfo() {
+        viewModel.getTheBestDoctorSpeciality().collectPaging {
+            adapterHomeDoctorSpecs.submitData(it)
+        }
+        viewModel.getTheBestClinics().collectPaging {
+            adapterHomeClinic.submitData(it)
+        }
         viewModel.getALlDoctors().collectPaging {
             adapterHomeInfoDoctor.submitData(it)
         }
@@ -61,11 +84,13 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
         getSharedData()
 
     }
+
     private fun getSharedData() {
         val pref = activity?.getSharedPreferences("preferences_profile", Context.MODE_PRIVATE)
-        val id = pref?.getString("fio","")
+        val id = pref?.getString("fio", "")
         binding.tvName.text = id
     }
+
     constructor(parcel: Parcel) : this() {
     }
 
@@ -82,15 +107,15 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
         }
 
     }
-   private fun specsClick(){
-        findNavController().navigateSafely(R.id.homeFragment)
-    }
-    private fun infoDoctorClick(doctorUi: DoctorUi){
-        findNavController().navigate(R.id.aboutDoctorFragment)
-    }
-    private fun clinicClick(){
 
+    private fun onSpecsClick() {
+        showToast("Speciality Click")
     }
+
+    private fun onClinicClick() {
+        showToast("Clinic Click")
+    }
+
     companion object CREATOR : Parcelable.Creator<HomeFragment> {
         override fun createFromParcel(parcel: Parcel): HomeFragment {
             return HomeFragment(parcel)

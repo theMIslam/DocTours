@@ -2,20 +2,21 @@ package com.example.doctour.presentation.ui.fragments.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.doctour.databinding.ItemHomeBinding
+import com.example.doctour.databinding.ItemClinicBinding
+import com.example.doctour.presentation.extensions.loadImage
 import com.example.doctour.presentation.model.ClinicsUi
 
 class HomeClinicAdapter(
     private val onCLick: () -> Unit
-) : ListAdapter<ClinicsUi, HomeClinicAdapter.ViewHolderHomeClinic>(
+) : PagingDataAdapter<ClinicsUi, HomeClinicAdapter.ViewHolderHomeClinic>(
     DFUtilHomeClinicsUi()
 ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderHomeClinic {
         return ViewHolderHomeClinic(
-            ItemHomeBinding.inflate(
+            ItemClinicBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -24,14 +25,16 @@ class HomeClinicAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolderHomeClinic, position: Int) {
-        holder.bind(getItem(position))
+        getItem(position)?.let { holder.bind(it) }
     }
-    inner class ViewHolderHomeClinic(private val binding: ItemHomeBinding) :
+    inner class ViewHolderHomeClinic(private val binding: ItemClinicBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(clinics: ClinicsUi) {
+            clinics.photo?.let { binding.imgClinicAvatar.loadImage(it) }
+            binding.tvClinicName.text=clinics.title
 
             itemView.setOnClickListener {
-                onCLick
+                onCLick()
             }
         }
 

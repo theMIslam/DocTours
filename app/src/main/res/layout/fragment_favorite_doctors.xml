@@ -20,27 +20,27 @@
         android:id="@+id/tv_favorites"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_20dp"
         android:fontFamily="@font/roboto_regular"
         android:text="@string/My_Favorite"
         android:textColor="@color/black"
         android:textSize="@dimen/_16sp"
-        android:layout_marginStart="@dimen/_16dp"
-        android:layout_marginTop="@dimen/_20dp"
         app:layout_constraintStart_toEndOf="@id/img_back"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="0dp"
         android:layout_marginTop="@dimen/_10dp"
+        android:layout_marginBottom="@dimen/_10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_favorites"
-        app:layout_constraintEnd_toEndOf="parent"
         tools:listitem="@layout/item_doctors_info"
-
         />
+
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="@dimen/_60dp"
@@ -48,6 +48,7 @@
         android:indeterminateDrawable="@drawable/progress_bar_b"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -9,8 +9,8 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentCategoryDoctorsBinding
-import com.example.doctour.presentation.model.SpecialityUi
 import com.example.doctour.presentation.extensions.showToast
+import com.example.doctour.presentation.model.SpecialityUi
 import com.example.doctour.presentation.ui.fragments.main.category.doctorCategory.adapter.CategoryDoctorSpecAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,18 +26,26 @@ class CategoryDoctorsFragment : BaseFragment<FragmentCategoryDoctorsBinding, Cat
 
     override fun initialize() {
         super.initialize()
+        setUpRecyclerView()
+    }
+
+    private fun setUpRecyclerView() {
         adapterCategoryDoctorSpec = CategoryDoctorSpecAdapter(this::onItemClick)
         binding.rvCategoryDoctor.adapter = adapterCategoryDoctorSpec
         binding.rvCategoryDoctor.layoutManager=LinearLayoutManager(requireContext())
 
         adapterCategoryDoctorSpec.addLoadStateListener {loadState ->
             binding.rvCategoryDoctor.isVisible= loadState.refresh is  LoadState.NotLoading
-           binding.progressBar.isVisible= loadState.refresh is  LoadState.NotLoading
+            binding.progressBar.isVisible= loadState.refresh is  LoadState.Loading
         }
     }
 
     override fun initRequest() {
         super.initRequest()
+        getSpecialityDoctors()
+    }
+
+    private fun getSpecialityDoctors() {
         viewModel.getSpecialityOfDoctors().collectPaging {
             adapterCategoryDoctorSpec.submitData(it)
         }
