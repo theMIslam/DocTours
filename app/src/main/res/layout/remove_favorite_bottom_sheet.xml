@@ -31,9 +31,10 @@
         android:id="@+id/doctor_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_16dp"
         android:layout_marginTop="@dimen/_20dp"
+        android:layout_marginHorizontal="@dimen/_5dp"
         app:cardCornerRadius="@dimen/_8dp"
+        android:paddingBottom="@dimen/_10dp"
         app:cardElevation="@dimen/_8dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -48,7 +49,7 @@
                 android:layout_width="@dimen/_110dp"
                 android:layout_height="@dimen/_110dp"
                 android:layout_marginVertical="@dimen/_10dp"
-                android:layout_marginStart="@dimen/_20dp"
+                android:layout_marginStart="@dimen/_16dp"
                 android:background="@color/calendar"
                 android:scaleType="centerCrop"
                 android:src="@drawable/image_doctors_avatar"
@@ -61,7 +62,7 @@
                 android:id="@+id/tv_doctor_name"
                 android:layout_width="@dimen/_138dp"
                 android:layout_height="@dimen/_24dp"
-                android:layout_marginStart="@dimen/_14dp"
+                android:layout_marginStart="@dimen/_12dp"
                 android:fontFamily="@font/roboto_regular"
                 android:text="@string/Name"
                 android:textColor="@color/black"
@@ -74,6 +75,7 @@
                 android:layout_height="@dimen/_16dp"
                 android:layout_marginStart="@dimen/_16dp"
                 android:contentDescription="@string/symbol"
+                android:layout_marginEnd="@dimen/_5dp"
                 android:src="@drawable/ic_heart"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/tv_doctor_name"
@@ -81,29 +83,31 @@
 
             <View
                 android:id="@+id/view"
-                android:layout_width="@dimen/_221dp"
+                android:layout_width="0dp"
                 android:layout_height="@dimen/_1dp"
-                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginHorizontal="@dimen/_16dp"
                 android:layout_marginTop="@dimen/_4dp"
                 android:background="@color/grey"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/iv_doctor_avatar"
                 app:layout_constraintTop_toBottomOf="@id/tv_doctor_name" />
 
             <TextView
                 android:id="@+id/tv_work_experience"
-                android:layout_width="@dimen/_114dp"
-                android:layout_height="@dimen/_16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10dp"
                 android:fontFamily="@font/roboto_regular"
                 android:text="@string/workexperience"
                 android:textSize="@dimen/_14sp"
+                android:layout_marginStart="@dimen/_12dp"
                 app:layout_constraintStart_toStartOf="@id/tv_doctor_name"
                 app:layout_constraintTop_toBottomOf="@id/tv_doctor_name" />
 
             <TextView
                 android:id="@+id/tv_work_speciality"
-                android:layout_width="@dimen/_60dp"
-                android:layout_height="@dimen/_16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_6dp"
                 android:fontFamily="@font/roboto_regular"
                 android:text="@string/xirurg"
@@ -113,11 +117,12 @@
 
             <TextView
                 android:id="@+id/tv_work_clinic"
-                android:layout_width="@dimen/_80dp"
-                android:layout_height="@dimen/_20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_regular"
                 android:text="@string/nameClinic"
                 android:textSize="@dimen/_14sp"
+                android:layout_marginStart="@dimen/_6dp"
                 app:layout_constraintStart_toEndOf="@id/tv_work_speciality"
                 app:layout_constraintTop_toTopOf="@id/tv_work_speciality" />
 
@@ -144,7 +149,7 @@
             <TextView
                 android:id="@+id/tv_recommendation"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/_20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_6dp"
                 android:text="@string/feedback_32"
                 android:textSize="@dimen/_14sp"
@@ -216,14 +221,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="41dp"
+        android:layout_marginBottom="@dimen/_20dp"
+       android:layout_marginHorizontal="@dimen/_12dp"
         android:orientation="horizontal">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bsh_btn_back"
-            android:layout_width="@dimen/_152dp"
+            android:layout_width="@dimen/_150dp"
             android:layout_height="@dimen/_48dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginBottom="@dimen/_38dp"
             android:backgroundTint="@color/light_blue"
             android:text="@string/cancel"
             android:textColor="@color/blue"
@@ -232,10 +237,9 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bsh_btn_confirm"
-            android:layout_width="@dimen/_152dp"
+            android:layout_width="@dimen/_150dp"
             android:layout_height="@dimen/_48dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginBottom="@dimen/_38dp"
+            android:layout_marginStart="@dimen/_14dp"
             android:backgroundTint="@color/blue"
             android:text="@string/yes_delete"
             android:textColor="@color/white"

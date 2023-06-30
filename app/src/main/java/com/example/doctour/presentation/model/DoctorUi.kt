@@ -9,6 +9,7 @@ import com.example.doctour.domain.model.DoctorResponse
 import com.example.doctour.domain.model.ListSpecialty
 import com.example.doctour.domain.model.Review
 import com.example.doctour.domain.model.Speciality
+import java.io.Serializable
 
 data class DoctorUi(
     override val id: Int,
@@ -23,7 +24,7 @@ data class DoctorUi(
     val summary: String?,
     val instagram :String?,
     val doctor_reviews:List<ReviewUi>?= emptyList()
-) : IBaseDiffModel<Int>
+) : IBaseDiffModel<Int>,java.io.Serializable
 
 fun Doctor.toDoctorUi() = DoctorUi(
     id=id,
