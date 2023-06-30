@@ -48,7 +48,7 @@ class AboutDoctorFragment
     private fun  getInfoAboutDoctor(){
         val data = this.arguments?.getSerializable("key") as DoctorDetailUi
         binding.tvNameOfDoctor.text = "Врач ${data.full_name}"
-        binding.image.loadImage(data.photo)
+        data.photo?.let { binding.image.loadImage(it) }
         binding.name.text = data.full_name
        // binding.tvSurgeon.text = data.specialties
         //binding.tvClinic.text = data.clinic

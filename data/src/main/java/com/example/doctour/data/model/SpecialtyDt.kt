@@ -6,7 +6,7 @@ import com.example.doctour.domain.model.Speciality
 
 data class SpecialtyDt(
     val id: Int,
-    val name: String
+    val name: String?
 ) : DataMapper<Speciality> {
     override fun mapToDomain() = Speciality(
         id,

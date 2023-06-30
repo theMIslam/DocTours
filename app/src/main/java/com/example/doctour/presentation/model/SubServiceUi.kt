@@ -8,10 +8,10 @@ import com.example.doctour.presentation.model.toClinicsUi
 
 data class SubServiceUi(
     override val id:Int,
-    val name:String,
-    val price:Int,
+    val name:String?,
+    val price:Int?,
     val count_clinic:String?,
-    val service:Int,
+    val service:Int?,
     val clinic:List<ClinicsUi>?= emptyList()
 ):IBaseDiffModel<Int>
 

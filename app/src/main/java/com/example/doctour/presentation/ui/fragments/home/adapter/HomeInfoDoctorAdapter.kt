@@ -34,7 +34,7 @@ class AdapterHomeInfoDoctor : PagingDataAdapter<DoctorUi, AdapterHomeInfoDoctor.
     inner class ViewHolderHomeInfoDoctor(private val binding: ItemDoctorsInfoBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(doctor: DoctorUi) {
-            binding.ivDoctorAvatar.loadImage(doctor.photo)
+            doctor.photo?.let { binding.ivDoctorAvatar.loadImage(it) }
             binding.tvDoctorName.text = doctor.full_name.toString()
             binding.tvWorkExperience.text = doctor.experience.toString()
             //binding.tvWorkSpeciality.text = doctor.specialties

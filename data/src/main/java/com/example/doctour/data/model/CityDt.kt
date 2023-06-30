@@ -5,7 +5,7 @@ import com.example.doctour.domain.model.City
 
 data class CityDt(
     val id: Int,
-    val name: String
+    val name: String?
 ) : DataMapper<City> {
     override fun mapToDomain() = City(
         id,

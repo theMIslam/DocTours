@@ -9,19 +9,20 @@ import com.example.doctour.databinding.ItemServicesBinding
 import com.example.doctour.presentation.model.ServiceUi
 
 class CategoryServicesAdapter
-    : PagingDataAdapter<ServiceUi,CategoryServicesAdapter.CategoryServiceViewHolder>(
+    : PagingDataAdapter<ServiceUi, CategoryServicesAdapter.CategoryServiceViewHolder>(
     BaseDiffUtilItemCallback()
 ) {
     inner class CategoryServiceViewHolder (
         private val binding:ItemServicesBinding
-    ):RecyclerView.ViewHolder(binding.root){
-        fun bind(serviceUi: ServiceUi){
+            ):RecyclerView.ViewHolder(binding.root){
+            fun bind(serviceUi: ServiceUi){
+                binding.tvServiceName.text=serviceUi.name
 
-        }
+            }
     }
 
     override fun onBindViewHolder(holder: CategoryServiceViewHolder, position: Int) {
-        getItem(position)?.let { holder.bind(it) }
+         getItem(position)?.let { holder.bind(it) }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryServiceViewHolder {

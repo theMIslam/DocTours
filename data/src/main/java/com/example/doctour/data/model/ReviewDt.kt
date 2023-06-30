@@ -7,10 +7,10 @@ data class ReviewDtResponse(
     val count:Int,
     val next:String?,
     val previous:String?,
-    val result:List<ReviewDt>
+    val result:List<ReviewDt>?= emptyList()
         )
 data class ReviewDt(
-    val doctor: Int,
+    val doctor: Int?,
     val id: Int,
     val stars: Int?,
     val text: String?

@@ -30,8 +30,8 @@ class CategoryClinicAdapter(
     inner class ClinicsViewHolder(private val binding: ItemClinicInfoBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(clinicsUi: ClinicsUi) {
-            binding.ivClinicAvatar.loadImage(clinicsUi.photo)
-            binding.tvClinicName.text=clinicsUi.title
+            clinicsUi.photo?.let { binding.ivClinicAvatar.loadImage(it) }
+            binding.tvClinicName.text = clinicsUi.title
             ///tupik
             //????????
         }

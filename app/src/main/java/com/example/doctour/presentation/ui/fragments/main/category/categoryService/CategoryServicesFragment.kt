@@ -17,13 +17,17 @@ import com.example.doctour.presentation.ui.fragments.main.category.categoryServi
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.Flow
+
 @AndroidEntryPoint
-class CategoryServicesFragment : BaseFragment<FragmentCategoryServicesBinding, CategoryServicesViewModel>(
-    R.layout.fragment_category_services
-) {
-    override val binding: FragmentCategoryServicesBinding by viewBinding(FragmentCategoryServicesBinding::bind)
+class CategoryServicesFragment :
+    BaseFragment<FragmentCategoryServicesBinding, CategoryServicesViewModel>(
+        R.layout.fragment_category_services
+    ) {
+    override val binding: FragmentCategoryServicesBinding by viewBinding(
+        FragmentCategoryServicesBinding::bind
+    )
     override val viewModel: CategoryServicesViewModel by viewModels()
-    private val adapterCategoryServices=CategoryServicesAdapter()
+    private val adapterCategoryServices = CategoryServicesAdapter()
 
     override fun initListeners() {
         super.initListeners()
