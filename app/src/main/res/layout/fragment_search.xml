@@ -24,7 +24,7 @@
         android:layout_height="@dimen/_11dp"
         android:layout_marginStart="@dimen/_20dp"
         android:layout_marginTop="@dimen/_38dp"
-        android:background="@drawable/img_14"
+        android:background="@drawable/arrow_back"
         app:layout_constraintEnd_toStartOf="@id/searview"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

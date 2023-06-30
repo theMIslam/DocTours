@@ -22,7 +22,7 @@
             android:layout_height="@dimen/_11dp"
             android:layout_marginStart="@dimen/_20dp"
             android:layout_marginTop="@dimen/_26dp"
-            android:background="@drawable/img_14" />
+            android:background="@drawable/arrow_back" />
 
         <TextView
             android:id="@+id/tv_name_of_doctor"
