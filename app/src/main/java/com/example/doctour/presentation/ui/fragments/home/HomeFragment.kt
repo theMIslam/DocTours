@@ -3,6 +3,7 @@ package com.example.doctour.presentation.ui.fragments.home
 import android.content.Context
 import android.os.Parcel
 import android.os.Parcelable
+import android.view.View
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
@@ -22,14 +23,22 @@ import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeInf
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home) {
+class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home),
+    AdapterHomeInfoDoctor.ClickListener {
+
+    override fun onClick(doctorUi: DoctorUi) {
+        findNavController().navigate(R.id.aboutDoctorFragment, bundleOf(
+                "about" to doctorUi
+            ))
+    }
 
     override val binding by viewBinding(FragmentHomeBinding::bind)
     override val viewModel: HomeViewModel by viewModels()
 
     private val adapterHomeDoctorSpecs = AdapterHomeDoctorSpecs(this::onSpecsClick)
     private val adapterHomeClinic = AdapterHomeClinic(this::onClinicClick)
-    private val adapterHomeInfoDoctor = AdapterHomeInfoDoctor(this::onDoctorInfoClick)
+    private val adapterHomeInfoDoctor = AdapterHomeInfoDoctor(this)
+
     private fun setUpHomeInFoRecycler() {
         with(binding) {
             rvDoctorsSpecs.layoutManager =
@@ -56,9 +65,11 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
     }
 
     private fun onDoctorInfoClick(doctorUi: DoctorUi) {
-        findNavController().navigate(R.id.aboutDoctorFragment, bundleOf(
-            "about" to doctorUi
-        ))
+        findNavController().navigate(
+            R.id.aboutDoctorFragment, bundleOf(
+                "about" to doctorUi
+            )
+        )
     }
 
     override fun initRequest() {
@@ -97,7 +108,7 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
 
     override fun initListeners() {
         super.initListeners()
-        binding.ivHeart.setOnClickListener {
+        binding.checkboxHeart.setOnClickListener {
             findNavController().navigate(R.id.favoriteDoctorsFragment)
         }
         binding.ivSearch.setOnClickListener {

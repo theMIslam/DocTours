@@ -11,10 +11,9 @@ import com.example.doctour.presentation.extensions.loadImage
 
 class FavoriteDoctorsAdapter(
     private val onClick:(DoctorUi)->Unit,
-    private val onLongClick:(DoctorUi)->Unit
-) : PagingDataAdapter<DoctorUi, FavoriteDoctorsAdapter.FavoriteDoctorsViewHolder>(
-    BaseDiffUtilItemCallback()
-) {
+    private val onLongClick:(DoctorUi)->Unit,
+    private val listOfDoctors :ArrayList<DoctorUi>
+) : RecyclerView.Adapter< FavoriteDoctorsAdapter.FavoriteDoctorsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteDoctorsViewHolder {
         return FavoriteDoctorsViewHolder(
@@ -26,8 +25,12 @@ class FavoriteDoctorsAdapter(
         )
     }
 
+    override fun getItemCount(): Int {
+        return listOfDoctors.size
+    }
+
     override fun onBindViewHolder(holder: FavoriteDoctorsViewHolder, position: Int) {
-        getItem(position)?.let { holder.bind(it) }
+        holder.bind(listOfDoctors[position])
     }
     inner class FavoriteDoctorsViewHolder(
         private val binding: ItemDoctorsInfoBinding

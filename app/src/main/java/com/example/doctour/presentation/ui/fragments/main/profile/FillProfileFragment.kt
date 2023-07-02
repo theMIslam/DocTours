@@ -2,6 +2,7 @@ package com.example.doctour.presentation.ui.fragments.main.profile
 
 import android.content.Context
 import android.widget.ArrayAdapter
+import androidx.core.view.get
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -34,17 +35,18 @@ class FillProfileFragment : BaseFragment<FragmentProfileFillBinding, SignInViewM
             findNavController().navigateUp()
         }
         setDropDownMenu()
+
         binding.btnSave.setOnClickListener {
-          //  profilePreferences.saveName(binding.etFio.text.toString())
+            profilePreferences.saveName(binding.etFio.text.toString())
             profilePreferences.savePhone(binding.etNumber.text.toString())
             profilePreferences.saveBirthday(binding.etData.text.toString())
-            profilePreferences.saveGender(binding.actvGender.text.toString())
 
             putSharedData()
         }
+        binding.etFio.setText(profilePreferences.getName())
         binding.etNumber.setText(profilePreferences.getPhone())
         binding.etData.setText(profilePreferences.getBirthday())
-        binding.actvGender.setText(profilePreferences.getGender())
+       // binding.actvGender.setText(profilePreferences.getGender())
     }
 
     private fun putSharedData() {
@@ -57,7 +59,7 @@ class FillProfileFragment : BaseFragment<FragmentProfileFillBinding, SignInViewM
     }
 
     private fun setDropDownMenu() {
-        val gender = arrayOf("Женский", "Мужской")
+        val gender = arrayOf("Женский", "Мужской", "Другое")
         val arrayAdapter = ArrayAdapter(requireActivity(), R.layout.item_dropdown, gender)
         binding.actvGender.setAdapter(arrayAdapter)
     }
