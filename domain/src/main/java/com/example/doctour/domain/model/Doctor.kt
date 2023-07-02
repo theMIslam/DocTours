@@ -12,8 +12,9 @@ data class Doctor(
     val specialties:List<Speciality>?= emptyList(),
     val summary: String?,
     val instagram :String?,
-    val doctor_reviews:List<Review> ?= emptyList()
-)
-data class DoctorResponse(
-    val results:List<Doctor>
+    val doctor_reviews:List<Review> ?= emptyList(),
+    val isChoosen :Boolean = false,
+    val clinicObject:Clinics?,
+    val specialtiesObject:Speciality?,
+    val doctor_reviewsObject:Review?
 )
