@@ -35,11 +35,11 @@
 
             <ImageView
                 android:id="@+id/iv_next"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_24dp"
+                android:layout_height="@dimen/_24dp"
                 android:layout_marginEnd="@dimen/_24dp"
                 android:contentDescription="@string/vector"
-                android:src="@drawable/ic_next"
+                android:src="@drawable/karandash"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -91,6 +91,29 @@
             android:backgroundTint="@color/white"
             android:drawableEnd="@drawable/ic_next"
             android:text="@string/exit"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:cornerRadius="16dp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_delete"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_delete_account"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/white"
+            android:drawableEnd="@drawable/ic_next"
+            android:text="@string/Delete_account"
             android:textAlignment="textStart"
             android:textColor="@color/black"
             android:textSize="20sp"

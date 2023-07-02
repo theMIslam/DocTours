@@ -6,6 +6,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import com.example.doctour.data.BuildConfig
 import com.example.doctour.data.model.ClinicDt
+import com.example.doctour.data.remote.dtos.auth.SignInDto
 import com.example.doctour.data.utils.DataMapper
 import com.example.doctour.data.utils.fromJson
 import com.example.doctour.domain.utils.Either
@@ -25,6 +26,19 @@ import java.io.IOException
 import java.io.InterruptedIOException
 
 abstract class BaseRepository {
+
+    protected fun <T> makeNetworkRequest(
+        gatherIfSucceed: ((T) -> Unit)? = null,
+        request: suspend () -> T
+    ) =
+        flow<Either<String, T>> {
+            request().also {
+                gatherIfSucceed?.invoke(it)
+                emit(Either.Right(value = it))
+            }
+        }.flowOn(Dispatchers.IO).catch { exception ->
+            emit(Either.Left(value = exception.localizedMessage ?: "Error Occurred!"))
+        }
 
     protected fun <ValueDto : DataMapper<Value>, Value : Any> doPagingRequest(
         pagingSource: BasePagingSource<ValueDto, Value>,

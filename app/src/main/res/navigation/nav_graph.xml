@@ -125,7 +125,7 @@
 
     <fragment
         android:id="@+id/aboutDoctorReviewFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.review.AboutDoctorReviewFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.review.aboutDoctorReview.AboutDoctorReviewFragment"
         android:label="fragment_about_doctor_review"
         tools:layout="@layout/fragment_about_doctor_review">
         <action
@@ -155,12 +155,12 @@
 
     <fragment
         android:id="@+id/failedPasswordFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.password.FailedPasswordFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.password.success.failed.FailedPasswordFragment"
         android:label="fragment_failed_password"
         tools:layout="@layout/fragment_failed_password" />
     <fragment
         android:id="@+id/favoriteDoctorsFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.category.favorite.FavoriteDoctorsFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.category.favoriteDoctors.FavoriteDoctorsFragment"
         android:label="fragment_favorite_doctors"
         tools:layout="@layout/fragment_favorite_doctors">
         <action
@@ -191,7 +191,7 @@
 
     <fragment
         android:id="@+id/successPasswordFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.password.SuccessPasswordFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.password.success.SuccessPasswordFragment"
         android:label="fragment_success_password"
         tools:layout="@layout/fragment_success_password"/>
 
@@ -242,7 +242,7 @@
         tools:layout="@layout/fragment_category_clinic" />
     <fragment
         android:id="@+id/categoryCityFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.category.CategoryCityFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.category.cityCategory.CategoryCityFragment"
         android:label="fragment_category_city"
         tools:layout="@layout/fragment_category_city" />
     <fragment
@@ -302,5 +302,15 @@
             android:id="@+id/action_signInFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.onboarding.OnBoardingFragment"
+        android:label="fragment_on_boarding"
+        tools:layout="@layout/fragment_on_boarding" />
+    <fragment
+        android:id="@+id/onBoardPageFragment2"
+        android:name="com.example.doctour.presentation.ui.fragments.main.onboarding.OnBoardPageFragment"
+        android:label="fragment_on_board_page"
+        tools:layout="@layout/fragment_on_board_page" />
 
 </navigation>

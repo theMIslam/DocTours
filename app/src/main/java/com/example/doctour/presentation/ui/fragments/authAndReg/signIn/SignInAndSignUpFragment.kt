@@ -6,6 +6,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentSignInAndSignUpBinding
+import com.example.doctour.presentation.ui.fragments.authAndReg.signIn.adapter.SignInAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -14,7 +15,7 @@ class SignInAndSignUpFragment : BaseFragment<FragmentSignInAndSignUpBinding, Sig
 ) {
 
     override val binding: FragmentSignInAndSignUpBinding by viewBinding(FragmentSignInAndSignUpBinding::bind)
-    override val viewModel: SignInViewModel by viewModels<SignInViewModel>()
+    override val viewModel: SignInViewModel by viewModels()
     private lateinit var loginAdapter: SignInAdapter
     private lateinit var viewPager2: ViewPager2
     private lateinit var tabLayout: TabLayout

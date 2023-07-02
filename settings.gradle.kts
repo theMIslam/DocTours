@@ -1,6 +1,7 @@
 pluginManagement {
     repositories {
         gradlePluginPortal()
+        maven("https://jitpack.io")
         google()
         mavenCentral()
         maven { url = uri("https://jitpack.io") }
@@ -15,7 +16,7 @@ dependencyResolutionManagement {
         maven { url = uri("https://jitpack.io") }
     }
 }
-rootProject.name = "Doctour"
+rootProject.name = "DocTour"
 include(
     ":app",
     ":data",

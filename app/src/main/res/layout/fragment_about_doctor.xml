@@ -19,7 +19,7 @@
             android:layout_height="@dimen/_11dp"
             android:layout_marginStart="@dimen/_20dp"
             android:layout_marginTop="@dimen/_26dp"
-            android:background="@drawable/img_14"
+            android:background="@drawable/arrow_back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -390,6 +390,6 @@
         android:layout_marginBottom="@dimen/_25dp"
         android:background="@drawable/circle_tv_bg"
         android:gravity="center"
-        android:text="@string/register" />
+        android:text="@string/whatsapp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

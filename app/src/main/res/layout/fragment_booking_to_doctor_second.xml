@@ -13,7 +13,7 @@
         android:layout_height="@dimen/_11dp"
         android:layout_marginStart="@dimen/_20dp"
         android:layout_marginTop="@dimen/_26dp"
-        android:background="@drawable/img_14"
+        android:background="@drawable/arrow_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -157,7 +157,7 @@
         android:layout_marginHorizontal="@dimen/_16dp"
         android:layout_marginBottom="@dimen/_32dp"
         android:backgroundTint="@color/blue"
-        android:text="@string/register"
+        android:text="@string/whatsapp"
         android:textAllCaps="false"
         android:textSize="16sp"
         app:cornerRadius="8dp"

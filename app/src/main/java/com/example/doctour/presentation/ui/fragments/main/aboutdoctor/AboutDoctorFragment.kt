@@ -7,10 +7,12 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentAboutDoctorBinding
-import com.example.doctour.model.DoctorUi
+
 import com.example.doctour.presentation.extensions.loadImage
 import com.example.doctour.presentation.extensions.showToast
 import com.example.doctour.presentation.ui.state.UIState
+import com.example.doctour.presentation.model.DoctorUi
+import com.example.doctour.presentation.ui.fragments.main.aboutdoctor.adapter.FeedbacksAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -21,8 +23,8 @@ class AboutDoctorFragment
 
     override val binding: FragmentAboutDoctorBinding by viewBinding(FragmentAboutDoctorBinding::bind)
     override val viewModel: AboutDoctorViewModel by viewModels()
-    private val adapterFeedback: AdapterFeedbacks by lazy {
-        AdapterFeedbacks()
+    private val adapterFeedback: FeedbacksAdapter by lazy {
+        FeedbacksAdapter()
     }
     private var selectedList = arrayListOf<DoctorUi>()
 

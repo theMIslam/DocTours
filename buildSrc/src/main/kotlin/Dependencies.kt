@@ -32,6 +32,8 @@ object Versions {
     const val smsconfiguration = "1.7.1"
     const val gson = "2.8.9"
     const val gsonconverter ="2.5.0"
+    const val eventbus = "3.2.0"
+    const val libphonenumber = "8.13.14"
 
 }
 
@@ -87,7 +89,7 @@ object Libraries {
     object Hilt {
         const val android = "com.google.dagger:hilt-android:${Versions.dagger}"
         const val compiler = "com.google.dagger:hilt-compiler:${Versions.dagger}"
-}
+    }
 
     object Moshi {
         const val moshi = "com.squareup.moshi:moshi:${Versions.moshi}"
@@ -154,15 +156,23 @@ object Libraries {
     }
 
     object SmsConfigutation {
-        const val smsconfiguration = "com.github.fraggjkee:sms-confirmation-view:${Versions.smsconfiguration}"
+        const val smsconfiguration =
+            "com.github.fraggjkee:sms-confirmation-view:${Versions.smsconfiguration}"
+    }
+
+    object EventBus {
+        const val eventBus = "org.greenrobot:eventbus:${Versions.eventbus}"
     }
 
     object Gson {
         const val gson = "com.google.code.gson:gson:${Versions.gson}"
     }
 
+    object LibPhoneNumber {
+        const val libphonenumber =
+            "com.googlecode.libphonenumber:libphonenumber:${Versions.libphonenumber}"
+    }
 }
-
 object Plugins {
 
     object AGP {

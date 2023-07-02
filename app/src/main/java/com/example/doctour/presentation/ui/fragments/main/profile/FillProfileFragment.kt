@@ -10,6 +10,7 @@ import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentProfileFillBinding
 import com.example.doctour.di.ProfilePreferences
+import com.example.doctour.presentation.extensions.showToast
 import com.example.doctour.presentation.ui.fragments.authAndReg.signIn.SignInViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -40,6 +41,7 @@ class FillProfileFragment : BaseFragment<FragmentProfileFillBinding, SignInViewM
             profilePreferences.saveName(binding.etFio.text.toString())
             profilePreferences.savePhone(binding.etNumber.text.toString())
             profilePreferences.saveBirthday(binding.etData.text.toString())
+            showToast("Сохранено")
 
             putSharedData()
         }

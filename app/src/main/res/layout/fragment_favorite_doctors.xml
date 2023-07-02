@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.fragments.main.category.favorite.FavoriteDoctorsFragment">
+    tools:context=".presentation.ui.fragments.main.category.favoriteDoctors.FavoriteDoctorsFragment">
 
     <ImageView
         android:id="@+id/img_back"
@@ -12,7 +12,7 @@
         android:layout_marginStart="@dimen/_20dp"
         android:layout_marginTop="@dimen/_26dp"
         android:contentDescription="@string/symbol"
-        android:src="@drawable/ic_arrowleft_3"
+        android:src="@drawable/arrow_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

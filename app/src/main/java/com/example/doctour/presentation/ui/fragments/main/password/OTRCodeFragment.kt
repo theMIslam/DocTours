@@ -1,5 +1,6 @@
 package com.example.doctour.presentation.ui.fragments.main.password
 
+import androidx.core.view.isNotEmpty
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -20,7 +21,9 @@ class OTRCodeFragment(
     override fun initListeners() {
         super.initListeners()
         binding.btnSend.setOnClickListener {
-            findNavController().navigate(R.id.newPasswordFragment)
+            if (binding.smsView.isNotEmpty()) {
+                findNavController().navigate(R.id.newPasswordFragment)
+            }
         }
     }
 }

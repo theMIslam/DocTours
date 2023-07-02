@@ -14,17 +14,16 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentHomeBinding
-import com.example.doctour.presentation.extensions.navigateSafely
-import com.example.doctour.model.DoctorUi
 import com.example.doctour.presentation.extensions.showToast
-import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeClinic
-import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeDoctorSpecs
-import com.example.doctour.presentation.ui.fragments.home.adapter.AdapterHomeInfoDoctor
+import com.example.doctour.presentation.model.DoctorUi
+import com.example.doctour.presentation.ui.fragments.home.adapter.HomeClinicAdapter
+import com.example.doctour.presentation.ui.fragments.home.adapter.HomeDoctorSpecsAdapter
+import com.example.doctour.presentation.ui.fragments.home.adapter.HomeInfoDoctorAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home),
-    AdapterHomeInfoDoctor.ClickListener {
+    HomeInfoDoctorAdapter.ClickListener {
 
     override fun onClick(doctorUi: DoctorUi) {
         findNavController().navigate(R.id.aboutDoctorFragment, bundleOf(
@@ -35,10 +34,9 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
     override val binding by viewBinding(FragmentHomeBinding::bind)
     override val viewModel: HomeViewModel by viewModels()
 
-    private val adapterHomeDoctorSpecs = AdapterHomeDoctorSpecs(this::onSpecsClick)
-    private val adapterHomeClinic = AdapterHomeClinic(this::onClinicClick)
-    private val adapterHomeInfoDoctor = AdapterHomeInfoDoctor(this)
-
+    private val adapterHomeDoctorSpecs = HomeDoctorSpecsAdapter(this::onSpecsClick)
+    private val adapterHomeClinic = HomeClinicAdapter(this::onClinicClick)
+    private val adapterHomeInfoDoctor = HomeInfoDoctorAdapter(this)
     private fun setUpHomeInFoRecycler() {
         with(binding) {
             rvDoctorsSpecs.layoutManager =

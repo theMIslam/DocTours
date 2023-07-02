@@ -114,17 +114,22 @@ android {
         // SMS configuration
         implementation(Libraries.SmsConfigutation.smsconfiguration)
 
-        //retrofit
+        // Retrofit
         implementation(Libraries.Retrofit.retrofit)
         implementation(Libraries.Retrofit.gsonConverter)
 
-        //okhttp
+        // OkHttp & Interceptor
         implementation(Libraries.OkHttp.okHttp)
         implementation(Libraries.OkHttp.loggingInterceptor)
 
-        //paging
+        // Paging
         implementation(Libraries.Paging.runtime)
         implementation(Libraries.Paging.common)
 
+        // Event bus
+        implementation(Libraries.EventBus.eventBus)
+
+        // LibPhoneNumber
+        implementation(Libraries.LibPhoneNumber.libphonenumber)
     }
 }

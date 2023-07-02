@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.fragments.main.review.AboutDoctorReviewFragment">
+    tools:context=".presentation.ui.fragments.main.review.aboutDoctorReview.AboutDoctorReviewFragment">
 
     <LinearLayout
         android:id="@+id/linear_about_doctor_review"
@@ -22,7 +22,7 @@
             android:layout_height="@dimen/_11dp"
             android:layout_marginStart="@dimen/_20dp"
             android:layout_marginTop="@dimen/_26dp"
-            android:background="@drawable/img_14" />
+            android:background="@drawable/arrow_back" />
 
         <TextView
             android:id="@+id/tv_name_of_doctor"
