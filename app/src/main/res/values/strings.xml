@@ -204,4 +204,7 @@
     <string name="symbol">symbol</string>
     <string name="Therapist">Терапевт</string>
     <string name="something_went_wrong">Something went wrong</string>
+    <string name="delete_accounts">Удалить аккаунт</string>
+    <string name="cancellation">Отмена</string>
+    <string name="delete">Удалить</string>
 </resources>
