@@ -1,4 +1,4 @@
-package com.example.doctour.core
+package com.example.doctour.data.network.core
 
 import android.app.Application
 import android.content.Context
