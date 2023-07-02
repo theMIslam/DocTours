@@ -21,6 +21,21 @@ import kotlinx.coroutines.launch
  */
 abstract class BaseViewModel : ViewModel() {
 
+    protected fun <T> Flow<Either<String, T>>.gatherRequest(
+        state: MutableStateFlow<UIState<T>>,
+    ) {
+        viewModelScope.launch(Dispatchers.IO) {
+            state.value = UIState.Loading()
+            this@gatherRequest.collect {
+                when (it) {
+                    is Either.Left -> state.value = UIState.Error(it.value)
+                    is Either.Right -> state.value =
+                        UIState.Success(it.value)
+                }
+            }
+
+        }
+    }
     /**
      * Creates a [MutableStateFlow] with [UIState] and the given initial value [UIState.Idle]
      */
@@ -129,7 +144,7 @@ abstract class BaseViewModel : ViewModel() {
      * @see cachedIn
      * @see viewModelScope
      */
-    protected  fun <T : Any, S : Any> Flow<PagingData<T>>.collectPagingRequest(
+    protected fun <T : Any, S : Any> Flow<PagingData<T>>.collectPagingRequest(
         mappedData: (T) -> S
-    )=map { it.map { data -> mappedData(data) } }.cachedIn(viewModelScope)
+    ) = map { it.map { data -> mappedData(data) } }.cachedIn(viewModelScope)
 }

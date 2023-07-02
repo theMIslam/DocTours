@@ -35,11 +35,11 @@
 
             <ImageView
                 android:id="@+id/iv_next"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_24dp"
+                android:layout_height="@dimen/_24dp"
                 android:layout_marginEnd="@dimen/_24dp"
                 android:contentDescription="@string/vector"
-                android:src="@drawable/Edit"
+                android:src="@drawable/karandash"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -60,7 +60,7 @@
         <com.google.android.material.materialswitch.MaterialSwitch
             android:id="@+id/ms_biometric_entry"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height ="match_parent"
             android:checked="false"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
@@ -97,6 +97,5 @@
             android:textStyle="bold"
             app:cornerRadius="16dp" />
     </androidx.cardview.widget.CardView>
-
 
 </LinearLayout>

@@ -57,7 +57,7 @@ class FillProfileFragment : BaseFragment<FragmentProfileFillBinding, SignInViewM
     }
 
     private fun setDropDownMenu() {
-        val gender = arrayOf("Женский", "Мужской")
+        val gender = arrayOf("Женский", "Мужской", "Другое")
         val arrayAdapter = ArrayAdapter(requireActivity(), R.layout.item_dropdown, gender)
         binding.actvGender.setAdapter(arrayAdapter)
     }
