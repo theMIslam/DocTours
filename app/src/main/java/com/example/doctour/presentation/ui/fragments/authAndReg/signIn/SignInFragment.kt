@@ -11,6 +11,8 @@ import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentSignInBinding
 import com.example.doctour.di.UserPreferences
+import com.example.doctour.presentation.extensions.activityNavController
+import com.example.doctour.presentation.extensions.navigateSafely
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import com.google.i18n.phonenumbers.PhoneNumberUtil
@@ -24,8 +26,6 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
 
     override val binding: FragmentSignInBinding by viewBinding(FragmentSignInBinding::bind)
     override val viewModel: SignInViewModel by viewModels()
-
-    private var isPasswordVisible: Boolean = false
 
     override fun initListeners() {
         super.initListeners()
@@ -89,13 +89,36 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
 
     override fun initSubscribers() {
         viewModel.signInState.spectateUiState (success = {
+            userPreferences.accessToken = getAuthenticationToken(it.tokens, true)
+            userPreferences.refreshToken = getAuthenticationToken(it.tokens, true)
             userPreferences.isAuthenticated = true
             userPreferences.userID = it.id
             userPreferences.username = it.username
             userPreferences.password = binding.etPassword.text.toString()
+            activityNavController().navigateSafely(R.id.action_authAndRegFlowFragment_to_mainFlowFragment)
             initListeners()
         }, error = {
             Toast.makeText(requireContext(), getString(R.string.something_went_wrong), Toast.LENGTH_SHORT).show()
         })
+    }
+
+    private fun getAuthenticationToken(
+        tokenString: String,
+        shouldGetAccessToken: Boolean
+    ) = when (shouldGetAccessToken) {
+        true -> {
+            val tokenMap = tokenString.substring(1, tokenString.length - 1)
+                .split(", ")
+                .map { it.split(": ") }
+                .associate { (k, v) -> k to v }
+            tokenMap["'access'"]?.removeSurrounding("'")
+        }
+        false -> {
+            val tokenMap = tokenString.substring(1, tokenString.length - 1)
+                .split(", ")
+                .map { it.split(": ") }
+                .associate { (k, v) -> k to v }
+            tokenMap["'refresh'"]?.removeSurrounding("'")
+        }
     }
 }

@@ -51,6 +51,11 @@ class UserPreferences @Inject constructor(
         get() = sharedPreferences.getString(PreferencesKeys.PASSWORD, "")
         set(value) = sharedPreferences.put(PreferencesKeys.PASSWORD, value.toString())
 
+    var userNumber: String?
+        get() = sharedPreferences.getString(PreferencesKeys.USER_NUMBER, "")
+        set(value) = sharedPreferences.put(PreferencesKeys.USER_NUMBER, value.toString())
+
+
     fun clearPreferences() = sharedPreferences.clear()
 
     private val _authenticationState = MutableSharedFlow<Boolean>()

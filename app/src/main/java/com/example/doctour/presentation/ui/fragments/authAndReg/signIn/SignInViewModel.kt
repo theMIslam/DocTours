@@ -8,12 +8,13 @@ import kotlinx.coroutines.flow.asStateFlow
 import javax.inject.Inject
 
 @HiltViewModel
-class   SignInViewModel @Inject constructor (
-        private val authenticationRepository: AuthenticationRepositoryImpl
-        ): BaseViewModel() {
-        private val _signInState = MutableUIStateFlow<SignInResultDto>()
-        val signInState = _signInState.asStateFlow()
+class SignInViewModel @Inject constructor(
+    private val authenticationRepository: AuthenticationRepositoryImpl
+) : BaseViewModel() {
 
-        fun signIn(username: String, password: String) =
-                authenticationRepository.signIn(username, password)
+    private val _signInState = MutableUIStateFlow<SignInResultDto>()
+    val signInState = _signInState.asStateFlow()
+
+    fun signIn(username: String, password: String) =
+        authenticationRepository.signIn(username, password)
 }
