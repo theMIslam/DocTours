@@ -40,11 +40,11 @@ class HomeInfoDoctorAdapter (
 
             doctor.photo?.let { binding.ivDoctorAvatar.loadImage(it) }
             binding.tvDoctorName.text = doctor.full_name.toString()
-            binding.tvWorkExperience.text = "Стаж работы ${doctor.experience.toString()}"
+            binding.tvWorkExperience.text = "Стаж работы ${doctor.experience.toString()} года"
             binding.tvWorkSpeciality.text = doctor.specialtiesObject?.name
              binding.tvWorkClinic.text = doctor.clinicObject?.title
             binding.tvPoints.text = doctor.average_rating.toString()
-            binding.tvRecommendation.text = "${doctor.num_reviews} рекомендаций"
+            binding.tvRecommendation.text = "(${doctor.num_reviews} отзыва)"
             binding.tvSumma.text = doctor.price.toString()
             binding.tvHeart.isChecked = doctor.isChoosen
         }
