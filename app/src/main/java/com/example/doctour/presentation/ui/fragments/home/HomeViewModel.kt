@@ -23,6 +23,10 @@ class HomeViewModel @Inject constructor(
     private  val getClinicUseCase: GetClinicUseCase
 ) : BaseViewModel() {
 
+    fun heartClick(){
+
+    }
+
     private val _speciality = MutableStateFlow<String?>(null)
     val speciality = _speciality.asStateFlow()
 

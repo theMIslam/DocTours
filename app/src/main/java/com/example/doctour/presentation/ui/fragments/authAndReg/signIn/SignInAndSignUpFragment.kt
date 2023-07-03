@@ -15,7 +15,7 @@ class SignInAndSignUpFragment : BaseFragment<FragmentSignInAndSignUpBinding, Sig
 ) {
 
     override val binding: FragmentSignInAndSignUpBinding by viewBinding(FragmentSignInAndSignUpBinding::bind)
-    override val viewModel: SignInViewModel by viewModels<SignInViewModel>()
+    override val viewModel: SignInViewModel by viewModels()
     private lateinit var loginAdapter: SignInAdapter
     private lateinit var viewPager2: ViewPager2
     private lateinit var tabLayout: TabLayout

@@ -34,14 +34,16 @@
             app:layout_constraintStart_toEndOf="@id/tv_arrow_back"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/iv_heart"
-            android:layout_width="@dimen/_20dp"
-            android:layout_height="@dimen/_20dp"
+        <CheckBox
+            android:id="@+id/checkbox_heart"
+            android:layout_width="@dimen/_24dp"
+            android:layout_height="@dimen/_22dp"
             android:layout_marginTop="@dimen/_22dp"
             android:layout_marginEnd="@dimen/_22dp"
-            android:contentDescription="@string/image"
-            android:src="@drawable/img_empty_heart"
+            android:button="@null"
+            android:background="@drawable/heart_checkbox"
+            android:checked="false"
+            app:useMaterialThemeColors = "false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -362,6 +364,17 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/title_feedback"
                     tools:listitem="@layout/item_feedbacks" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="@dimen/_60dp"
+                    android:layout_height="@dimen/_60dp"
+                    android:indeterminateDrawable="@drawable/progress_bar_b"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.appbar.CollapsingToolbarLayout>

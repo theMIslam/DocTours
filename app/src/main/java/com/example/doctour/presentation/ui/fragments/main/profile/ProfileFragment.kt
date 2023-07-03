@@ -10,6 +10,7 @@ import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentProfileBinding
 import com.example.doctour.di.UserPreferences
+import com.example.doctour.presentation.extensions.showToast
 import com.example.doctour.presentation.ui.fragments.authAndReg.signIn.SignInViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
@@ -65,6 +66,22 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding, SignInViewModel>(
             }
             btnLeave?.setOnClickListener {
               onLogOut()
+            }
+            dialog.show()
+        }
+
+        binding.btnDeleteAccount.setOnClickListener{
+            val view: View = layoutInflater.inflate(R.layout.delete_account_bottom_sheet, null)
+            val dialog = BottomSheetDialog(requireActivity())
+            dialog.setContentView(view)
+            val btnDelete = dialog.findViewById<Button>(R.id.btn_delete_dabs)
+            val btnCancel = dialog.findViewById<Button>(R.id.btn_cancel_dabs)
+
+            btnDelete?.setOnClickListener {
+               showToast("delete account")
+            }
+            btnCancel?.setOnClickListener {
+                dialog.dismiss()
             }
             dialog.show()
         }

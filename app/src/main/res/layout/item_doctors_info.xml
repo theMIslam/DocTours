@@ -29,13 +29,16 @@
             app:layout_constraintStart_toEndOf="@id/iv_doctor_avatar"
             app:layout_constraintTop_toTopOf="@id/iv_doctor_avatar" />
 
-        <ImageView
+        <CheckBox
             android:id="@+id/tv_heart"
-            android:layout_width="@dimen/_18dp"
-            android:layout_height="@dimen/_16dp"
+            android:layout_width="@dimen/_24dp"
+            android:layout_height="@dimen/_22dp"
             android:layout_marginStart="@dimen/_16dp"
             android:contentDescription="@string/symbol"
-            android:src="@drawable/ic_heart"
+            app:useMaterialThemeColors ="false"
+            android:button="@null"
+            android:checked="false"
+            android:background="@drawable/heart_checkbox"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tv_doctor_name"
             app:layout_constraintTop_toTopOf="@id/tv_doctor_name" />

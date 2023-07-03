@@ -1,7 +1,6 @@
-package com.example.doctour.model
+package com.example.doctour.presentation.model
 
 import com.example.doctour.base.IBaseDiffModel
-import com.example.doctour.domain.model.Clinics
 import com.example.doctour.domain.model.SubService
 import com.example.doctour.presentation.model.ClinicsUi
 import com.example.doctour.presentation.model.toClinicsUi

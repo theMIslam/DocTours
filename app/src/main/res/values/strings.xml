@@ -207,5 +207,7 @@
     <string name="delete_accounts">Удалить аккаунт</string>
     <string name="cancellation">Отмена</string>
     <string name="delete">Удалить</string>
+    <string name="Delete">Удалить</string>
+    <string name="Delete_account">Удалить аккаунт</string>
 
 </resources>

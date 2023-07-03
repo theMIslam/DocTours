@@ -1,8 +1,6 @@
 package com.example.doctour.presentation.ui.fragments.authAndReg.signIn
 
 import android.annotation.SuppressLint
-import android.text.method.HideReturnsTransformationMethod
-import android.text.method.PasswordTransformationMethod
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
