@@ -21,14 +21,21 @@ import com.example.doctour.presentation.ui.fragments.home.adapter.HomeInfoDoctor
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home) {
+class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home),
+    HomeInfoDoctorAdapter.ClickListener {
+
+    override fun onClick(doctorUi: DoctorUi) {
+        findNavController().navigate(R.id.aboutDoctorFragment, bundleOf(
+                "about" to doctorUi
+            ))
+    }
 
     override val binding by viewBinding(FragmentHomeBinding::bind)
     override val viewModel: HomeViewModel by viewModels()
 
     private val adapterHomeDoctorSpecs = HomeDoctorSpecsAdapter(this::onSpecsClick)
     private val adapterHomeClinic = HomeClinicAdapter(this::onClinicClick)
-    private val adapterHomeInfoDoctor = HomeInfoDoctorAdapter(this::onDoctorInfoClick)
+    private val adapterHomeInfoDoctor = HomeInfoDoctorAdapter(this)
     private fun setUpHomeInFoRecycler() {
         with(binding) {
             rvDoctorsSpecs.layoutManager =

@@ -40,4 +40,10 @@ object PreferencesModule {
             DOCTOUR_SHARED_PREFERENCES,
             Context.MODE_PRIVATE
         )
+
+    @Singleton
+    @Provides
+    fun provideOnBoardingSharedPreferences(
+        @ApplicationContext context: Context
+    )= OnBoardingPreferences(context)
 }

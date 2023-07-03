@@ -9,13 +9,13 @@ import com.example.doctour.base.BaseDiffUtilItemCallback
 import com.example.doctour.databinding.ItemDoctorsInfoBinding
 import com.example.doctour.presentation.extensions.loadImage
 import com.example.doctour.presentation.model.DoctorUi
-import kotlin.reflect.KFunction1
 
-class HomeInfoDoctorAdapter(
-    private val onCLick: KFunction1<DoctorUi, Unit>
-) : PagingDataAdapter<DoctorUi, HomeInfoDoctorAdapter.ViewHolderHomeInfoDoctor>(
-    BaseDiffUtilItemCallback()
-), View.OnClickListener {
+class HomeInfoDoctorAdapter (
+    private val onCLick: ClickListener
+        ) : PagingDataAdapter<DoctorUi, HomeInfoDoctorAdapter.ViewHolderHomeInfoDoctor>(
+    BaseDiffUtilItemCallback())
+    , View.OnClickListener {
+
     override fun onClick(v: View) {
         val doctorUi = v.tag as DoctorUi
         onCLick.onClick(doctorUi)
@@ -42,7 +42,7 @@ class HomeInfoDoctorAdapter(
             binding.tvDoctorName.text = doctor.full_name.toString()
             binding.tvWorkExperience.text = "Стаж работы ${doctor.experience.toString()}"
             binding.tvWorkSpeciality.text = doctor.specialtiesObject?.name
-            binding.tvWorkClinic.text = doctor.clinicObject?.title
+             binding.tvWorkClinic.text = doctor.clinicObject?.title
             binding.tvPoints.text = doctor.average_rating.toString()
             binding.tvRecommendation.text = "${doctor.num_reviews} рекомендаций"
             binding.tvSumma.text = doctor.price.toString()

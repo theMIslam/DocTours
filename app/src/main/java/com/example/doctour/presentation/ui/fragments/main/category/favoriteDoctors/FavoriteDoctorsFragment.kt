@@ -43,8 +43,8 @@ class FavoriteDoctorsFragment
     }
 
     private fun getData() {
-        list = arguments?.getSerializable("favorite doctor") as ArrayList<DoctorUi>
-        adapterFavoriteDoctor = FavoriteDoctorsAdapter(this::onClick, this::onLongClick, list)
+//        list = arguments?.getSerializable("favorite doctor") as ArrayList<DoctorUi>
+        adapterFavoriteDoctor = FavoriteDoctorsAdapter(list,this::onClick,this::onLongClick)
         binding.rv.adapter = adapterFavoriteDoctor
     }
 
