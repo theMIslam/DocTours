@@ -17,7 +17,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/CornerRadius" />
+            app:shapeAppearanceOverlay="@style/CornerRadius"
+            />
 
         <TextView
             android:id="@+id/tv_doctor_name"
@@ -96,7 +97,7 @@
             android:id="@+id/tv_points"
             style="@style/small_black_text_without_bold"
             android:layout_width="@dimen/_22dp"
-            android:layout_height="@dimen/_20dp"
+            android:layout_height="@dimen/_18dp"
             android:layout_marginStart="@dimen/_12dp"
             android:text="@string/score"
             app:layout_constraintStart_toEndOf="@id/img_stars"
@@ -130,7 +131,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10dp"
-            android:layout_marginTop="@dimen/_4dp"
+            android:layout_marginTop="@dimen/_8dp"
             android:text="@string/bishkek"
             app:layout_constraintStart_toEndOf="@id/iv_location"
             app:layout_constraintTop_toBottomOf="@id/tv_points" />

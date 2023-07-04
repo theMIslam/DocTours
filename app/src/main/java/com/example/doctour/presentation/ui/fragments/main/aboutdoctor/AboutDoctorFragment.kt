@@ -58,22 +58,12 @@ class AboutDoctorFragment
         }
         binding.checkboxHeart.setOnCheckedChangeListener { checkbox, isChecked ->
             if (isChecked) {
-                saveFavDoctor()
-//                val data = this.arguments?.getSerializable("about") as DoctorUi
-//                selectedList.add(data)
-//                val bundle = Bundle()
-//                bundle.putSerializable("favorite doctor", selectedList)
                 showToast("Добавлено в избранные")
             } else {
                 showToast("Удалено из избранных")
             }
         }
         getInfoAboutDoctor()
-    }
-
-    private fun saveFavDoctor() {
-//        val data = arguments?.getSerializable("about") as DoctorUi
-//        viewModel.addFavoriteDoctor(doctor = data)
     }
 
     private fun getInfoAboutDoctor() {
