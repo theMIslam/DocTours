@@ -37,7 +37,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
         passwordValidate()
         initViewModel()
         binding.btnSignUp.setOnClickListener {
-            findNavController().navigate(R.id.homeFragment)
+            findNavController().navigate(R.id.action_fragment_sign_up_to_homeFragment)
         }
         binding.btnSignUp.setOnClickListener {
             when {
