@@ -17,6 +17,7 @@ import com.example.doctour.presentation.extensions.navigateSafely
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 
@@ -27,6 +28,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
     override val binding: FragmentSignUpBinding by viewBinding(FragmentSignUpBinding::bind)
     override val viewModel: SignUpViewModel by viewModels<SignUpViewModel>()
 
+    @Inject
     lateinit var userPreferences: UserPreferences
 
     override fun initListeners() {
@@ -40,26 +42,42 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
             when {
 
                 binding.etFullName.text.toString().isEmpty() ->
-                    Toast.makeText(requireContext(), "Имя / Фамилия не должна быть пустой", Toast.LENGTH_LONG).show();
+                    Toast.makeText(
+                        requireContext(),
+                        "Имя / Фамилия не должна быть пустой",
+                        Toast.LENGTH_LONG
+                    ).show();
 
 
                 binding.etNumber.text.toString().isEmpty() ->
-                    Toast.makeText(requireContext(), "Электронная почта не должна быть пустой", Toast.LENGTH_LONG).show();
+                    Toast.makeText(
+                        requireContext(),
+                        "Электронная почта не должна быть пустой",
+                        Toast.LENGTH_LONG
+                    ).show();
 
                 binding.etRepeatPassword.text.toString() != binding.etPassword.text.toString() ->
-                    Toast.makeText(requireContext(), "Повторный пароль не совпадает", Toast.LENGTH_LONG).show();
+                    Toast.makeText(
+                        requireContext(),
+                        "Повторный пароль не совпадает",
+                        Toast.LENGTH_LONG
+                    ).show();
 
                 binding.etPassword.text.toString().isEmpty() ->
-                    Toast.makeText(requireContext(), "Пароль не может быть пустым", Toast.LENGTH_LONG).show();
+                    Toast.makeText(
+                        requireContext(),
+                        "Пароль не может быть пустым",
+                        Toast.LENGTH_LONG
+                    ).show();
                 else -> {
                     hideKeyboard()
                     userPreferences.userNumber = binding.etNumber.text.toString()
-                    viewModel.signUp(
-                        binding.etFullName.text.toString(),
+                    viewModel.registerUser(
                         binding.etNumber.text.toString(),
-                        binding.etPassword.text.toString(),
+                        binding.etFullName.text.toString(),
+                        binding.etGender.text.toString(),
+                        binding.etBirthday.text.toString(),
                         binding.etPassword.text.toString()
-
                     )
                 }
             }
@@ -117,7 +135,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
             }
 
             else -> {
-               tilRepeatPassword.error = null
+                tilRepeatPassword.error = null
                 true
             }
 
@@ -136,6 +154,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
                 tilPassword.error = "Пароль должен быть от 8 до 16 символов"
                 false
             }
+
             else -> {
                 tilPassword.error = null
                 true
@@ -174,7 +193,11 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
         viewModel.signUpState.spectateUiState(success = {
 
             findNavController().navigateSafely(R.id.action_signUpFragment_to_signInFragment)
-            Toast.makeText(requireContext(), "Вы успешно зарегистрировались вам придет письмо на номер", Toast.LENGTH_LONG).show();
+            Toast.makeText(
+                requireContext(),
+                "Вы успешно зарегистрировались вам придет письмо на номер",
+                Toast.LENGTH_LONG
+            ).show();
         }, error = {
             Toast.makeText(requireContext(), "Что-то пошло не так", Toast.LENGTH_LONG).show();
 

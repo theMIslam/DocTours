@@ -25,6 +25,12 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface DoctourApiService {
+
+    @POST("/api/v1/users/login/")
+    suspend fun postLogin(
+        @Body data:UserLoginDt
+    ):UserLoginDt
+
     @POST("/api/v1/users/register/")
     suspend fun postRegister(
         @Body data:UserRegisterDt

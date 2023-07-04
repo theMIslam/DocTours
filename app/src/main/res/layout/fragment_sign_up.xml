@@ -100,48 +100,32 @@
                     android:singleLine="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <LinearLayout
-                android:id="@+id/linear"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_gender"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_16dp"
-                android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/til_birthday">
+                app:boxCornerRadiusBottomEnd="@dimen/_10dp"
+                app:boxCornerRadiusBottomStart="@dimen/_10dp"
+                app:boxCornerRadiusTopEnd="@dimen/_10dp"
+                app:boxCornerRadiusTopStart="@dimen/_10dp"
+                app:boxStrokeColor="@color/blue"
+                app:counterOverflowTextColor="@color/blue"
+                app:hintTextColor="@color/blue"
+                app:layout_constraintTop_toBottomOf="@id/til_number">
 
-                <TextView
-                    android:id="@+id/tv_gender"
-                    style="@style/simple_parl_text"
-                    android:layout_width="@dimen/_30dp"
-                    android:layout_height="@dimen/_24dp"
-                    android:text="@string/gender" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/gender"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-                <RadioGroup
-                    android:id="@+id/radiolayout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/_24dp"
-                    android:layout_marginStart="@dimen/_62dp"
-                    android:orientation="horizontal">
 
-                    <RadioButton
-                        android:id="@+id/btn_male"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Male"
-                        android:textAppearance="@style/simple_black_text"
-                        app:buttonTint="@color/parlament"
-                        tools:ignore="TouchTargetSizeCheck" />
-
-                    <RadioButton
-                        android:id="@+id/btn_female"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_30dp"
-                        android:text="@string/Female"
-                        android:textAppearance="@style/simple_black_text"
-                        app:buttonTint="@color/parlament"
-                        tools:ignore="TouchTargetSizeCheck" />
-                </RadioGroup>
-            </LinearLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_password"

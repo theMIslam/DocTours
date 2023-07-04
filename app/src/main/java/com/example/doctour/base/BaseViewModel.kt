@@ -22,6 +22,7 @@ import kotlinx.coroutines.launch
  */
 abstract class BaseViewModel : ViewModel() {
 
+    protected fun <T> mutableUiStateFlow() = MutableStateFlow<UIState<T>>(UIState.Idle())
     protected fun <T>Flow<Resource<T>>.collectData(
         _state:MutableStateFlow<UIState<T>>
     ){
