@@ -71,6 +71,8 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
         }
     }
 
+
+
     private fun validPassword(): String? {
         val password = binding.etPassword.text.toString()
         if (password.length < 8){
