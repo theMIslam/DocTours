@@ -15,10 +15,10 @@ interface AuthenticatorApiService {
     @POST("/api/refreshtoken")
     fun refreshToken(@Body refreshToken: RefreshToken): Call<Tokens>
 
-    @POST("users/register/")
+    @POST("/users/register/")
     suspend fun signUp(@Body signUpDto: SignUpDto):List<SignInResultDto>
 
-    @POST("api/v1/users/login/")
+    @POST("/api/v1/users/login/")
     suspend fun signIn(@Body signInDto: SignInDto): SignInResultDto
 
 }
