@@ -5,6 +5,7 @@ import com.example.doctour.data.remote.dtos.auth.SignInResultDto
 import com.example.doctour.data.remote.dtos.auth.SignUpDto
 import com.example.doctour.data.remote.dtos.tokens.RefreshToken
 import com.example.doctour.data.remote.dtos.tokens.Tokens
+import okhttp3.Response
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST
@@ -15,8 +16,9 @@ interface AuthenticatorApiService {
     fun refreshToken(@Body refreshToken: RefreshToken): Call<Tokens>
 
     @POST("users/register/")
-    suspend fun signUp(@Body signUpDto: SignUpDto)
+    suspend fun signUp(@Body signUpDto: SignUpDto):List<SignInResultDto>
 
-    @POST("users/login/")
-    suspend fun login(@Body signInDto: SignInDto): SignInResultDto
+    @POST("api/v1/users/login/")
+    suspend fun signIn(@Body signInDto: SignInDto): SignInResultDto
+
 }
