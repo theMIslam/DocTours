@@ -4,23 +4,13 @@ import com.example.doctour.data.utils.DataMapper
 import com.example.doctour.domain.model.UserRegister
 
 data class UserRegisterDt(
-    val email: String?,
-    val password: String?,
-    val username: String?,
-    val surname: String?,
-    val lastname: String?,
-    val phone: Int?,
+    val phone_number: String?,
+    val fullname: String?,
     val gender: String?,
-    val birthday: List<Int>?= emptyList()
+    val birthday:String?,
+    val password: String?
 ) : DataMapper<UserRegister> {
     override fun mapToDomain() = UserRegister(
-        email,
-        password,
-        username,
-        surname,
-        lastname,
-        phone,
-        gender,
-        birthday
+       phone_number, fullname, gender, birthday, password
     )
 }

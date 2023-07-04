@@ -42,6 +42,6 @@ class AuthenticationRepositoryImpl @Inject constructor(
             emit(Either.Left(value = exception.localizedMessage ?: "Error Occurred!"))
         }
 
-    fun signIn(username: String, password: String) =
+  suspend  fun signIn(username: String, password: String) =
         authenticationApiService.login(SignInDto(username, password))
 }

@@ -33,6 +33,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
         super.initListeners()
         passwordFocusListener()
         passwordValidate()
+        initViewModel()
         binding.btnSignUp.setOnClickListener {
             findNavController().navigate(R.id.homeFragment)
         }
@@ -166,7 +167,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
         return null
     }
 
-    fun initViewModel() {
+    private fun initViewModel() {
         val viewModel = ViewModelProvider(this)[UserRegisterVIewModel::class.java]
     }
 

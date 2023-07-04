@@ -1,167 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="@dimen/_16dp">
+    android:elevation="@dimen/_8dp"
+    app:cardCornerRadius="@dimen/_8dp">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/image"
-        android:layout_width="@dimen/_110dp"
-        android:layout_height="@dimen/_110dp"
-        android:layout_margin="@dimen/_16dp"
-        android:src="@drawable/image_doctors_avatar"
-        app:layout_constraintBaseline_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/rounded_corners" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/_16dp">
 
-    <TextView
-        android:id="@+id/name"
-        style="@style/simple_black_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_16dp"
-        android:layout_marginTop="@dimen/_16dp"
-        android:layout_marginEnd="48dp"
-        android:text="@string/app_name"
-        app:layout_constraintStart_toEndOf="@id/image"
-        app:layout_constraintTop_toTopOf="parent" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_doctor_avatar"
+            android:layout_width="@dimen/_110dp"
+            android:layout_height="@dimen/_110dp"
+            android:layout_marginVertical="@dimen/_10dp"
+            android:layout_marginStart="@dimen/_20dp"
+            android:background="@color/calendar"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image_doctors_avatar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/CornerRadius"
+            />
 
-    <ImageView
-        android:layout_width="@dimen/_15dp"
-        android:layout_height="@dimen/_15dp"
-        android:layout_marginTop="@dimen/_21dp"
-        android:layout_marginEnd="@dimen/_38dp"
-        android:background="@drawable/img_empty_heart"
-        android:contentDescription="@string/image"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tv_doctor_name"
+            style="@style/simple_black_text"
+            android:layout_width="@dimen/_138dp"
+            android:layout_height="@dimen/_24dp"
+            android:layout_marginStart="@dimen/_14dp"
+            android:text="@string/Name"
+            app:layout_constraintStart_toEndOf="@id/iv_doctor_avatar"
+            app:layout_constraintTop_toTopOf="@id/iv_doctor_avatar" />
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="@dimen/_240dp"
-        android:layout_height="@dimen/_1dp"
-        android:layout_marginStart="@dimen/_16dp"
-        android:layout_marginTop="@dimen/_4dp"
-        android:background="@color/grey"
-        app:layout_constraintStart_toEndOf="@id/image"
-        app:layout_constraintTop_toBottomOf="@id/name" />
+        <CheckBox
+            android:id="@+id/tv_heart"
+            android:layout_width="@dimen/_24dp"
+            android:layout_height="@dimen/_22dp"
+            android:layout_marginStart="@dimen/_16dp"
+            android:contentDescription="@string/symbol"
+            app:useMaterialThemeColors ="false"
+            android:button="@null"
+            android:checked="false"
+            android:background="@drawable/heart_checkbox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_doctor_name"
+            app:layout_constraintTop_toTopOf="@id/tv_doctor_name" />
 
-    <TextView
-        android:id="@+id/tv_experience_name"
-        style="@style/small_black_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_16dp"
-        android:layout_marginTop="@dimen/_1dp"
-        android:text="@string/experience"
-        app:layout_constraintStart_toEndOf="@id/image"
-        app:layout_constraintTop_toBottomOf="@id/view" />
+        <View
+            android:id="@+id/view"
+            android:layout_width="@dimen/_221dp"
+            android:layout_height="@dimen/_1dp"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_4dp"
+            android:background="@color/grey"
+            app:layout_constraintStart_toEndOf="@id/iv_doctor_avatar"
+            app:layout_constraintTop_toBottomOf="@id/tv_doctor_name" />
 
-    <TextView
-        android:id="@+id/tv_experience"
-        style="@style/small_black_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_2dp"
-        android:layout_marginTop="@dimen/_1dp"
-        android:text="@string/_16_years"
-        app:layout_constraintStart_toEndOf="@id/tv_experience_name"
-        app:layout_constraintTop_toBottomOf="@id/view" />
+        <TextView
+            android:id="@+id/tv_work_experience"
+            style="@style/small_black_text_without_bold"
+            android:layout_width="@dimen/_114dp"
+            android:layout_height="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:text="@string/workexperience"
+            app:layout_constraintStart_toStartOf="@id/tv_doctor_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_doctor_name" />
 
-    <TextView
-        android:id="@+id/profession"
-        style="@style/small_black_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_16dp"
-        android:layout_marginTop="@dimen/_1dp"
-        android:text="@string/surgeon"
-        app:layout_constraintStart_toEndOf="@id/image"
-        app:layout_constraintTop_toBottomOf="@id/tv_experience_name" />
+        <TextView
+            android:id="@+id/tv_work_speciality"
+            style="@style/small_black_text_without_bold"
+            android:layout_width="@dimen/_60dp"
+            android:layout_height="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_6dp"
+            android:text="@string/xirurg"
+            app:layout_constraintStart_toStartOf="@id/tv_work_experience"
+            app:layout_constraintTop_toBottomOf="@id/tv_work_experience" />
 
-    <TextView
-        android:id="@+id/slash"
-        style="@style/slash"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_8dp"
-        android:text="@string/slash"
-        app:layout_constraintStart_toEndOf="@id/profession"
-        app:layout_constraintTop_toBottomOf="@id/tv_experience_name" />
+        <TextView
+            android:id="@+id/tv_work_clinic"
+            style="@style/small_black_text_without_bold"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_20dp"
+            android:text="@string/nameClinic"
+            app:layout_constraintStart_toEndOf="@id/tv_work_speciality"
+            app:layout_constraintTop_toTopOf="@id/tv_work_speciality" />
 
-    <TextView
-        android:id="@+id/tv_clinic"
-        style="@style/small_black_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_8dp"
-        android:layout_marginTop="@dimen/_1dp"
-        android:text="@string/nova_clinic"
-        app:layout_constraintStart_toEndOf="@id/slash"
-        app:layout_constraintTop_toBottomOf="@id/tv_experience_name" />
+        <ImageView
+            android:id="@+id/img_stars"
+            android:layout_width="@dimen/_22dp"
+            android:layout_height="@dimen/_20dp"
+            android:layout_marginTop="@dimen/_6dp"
+            android:contentDescription="@string/symbol"
+            android:src="@drawable/ic_star"
+            app:layout_constraintStart_toStartOf="@id/tv_work_speciality"
+            app:layout_constraintTop_toBottomOf="@id/tv_work_speciality" />
 
-    <TextView
-        android:id="@+id/rating"
-        style="@style/small_black_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_40dp"
-        android:layout_marginTop="@dimen/_2dp"
-        android:text="@string/_0_0"
-        app:layout_constraintStart_toEndOf="@id/image"
-        app:layout_constraintTop_toBottomOf="@id/profession" />
+        <TextView
+            android:id="@+id/tv_points"
+            style="@style/small_black_text_without_bold"
+            android:layout_width="@dimen/_22dp"
+            android:layout_height="@dimen/_18dp"
+            android:layout_marginStart="@dimen/_12dp"
+            android:text="@string/score"
+            app:layout_constraintStart_toEndOf="@id/img_stars"
+            app:layout_constraintTop_toTopOf="@id/img_stars" />
 
-    <ImageView
-        android:layout_width="@dimen/_18dp"
-        android:layout_height="@dimen/_17dp"
-        android:layout_marginStart="@dimen/_16dp"
-        android:layout_marginTop="@dimen/_2dp"
-        android:contentDescription="@string/image"
-        android:src="@drawable/ic_close_eye"
-        app:layout_constraintStart_toEndOf="@id/image"
-        app:layout_constraintTop_toBottomOf="@id/profession" />
 
-    <TextView
-        android:id="@+id/recommendation"
-        style="@style/small_black_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_8dp"
-        android:layout_marginTop="@dimen/_2dp"
-        android:text="@string/recomendation"
-        app:layout_constraintStart_toEndOf="@id/rating"
-        app:layout_constraintTop_toBottomOf="@id/tv_clinic" />
+        <TextView
+            android:id="@+id/tv_recommendation"
+            style="@style/small_black_text_without_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_20dp"
+            android:layout_marginStart="@dimen/_14dp"
+            android:text="@string/feedback_32"
+            app:layout_constraintStart_toEndOf="@id/tv_points"
+            app:layout_constraintTop_toTopOf="@id/tv_points" />
 
-    <TextView
-        android:id="@+id/tv_from"
-        style="@style/small_black_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_16dp"
-        android:layout_marginTop="@dimen/_4dp"
-        android:text="@string/from"
-        app:layout_constraintStart_toEndOf="@id/image"
-        app:layout_constraintTop_toBottomOf="@id/rating" />
+        <ImageView
+            android:id="@+id/iv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_6dp"
+            android:contentDescription="@string/symbol"
+            android:src="@drawable/layer_list_location"
+            app:layout_constraintStart_toEndOf="@id/iv_doctor_avatar"
+            app:layout_constraintTop_toBottomOf="@id/img_stars" />
 
-    <TextView
-        android:id="@+id/tv_price"
-        style="@style/simple_parl_txt_without_font"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="@dimen/_2dp"
-        android:text="@string/_1000"
-        app:layout_constraintStart_toEndOf="@id/tv_from"
-        app:layout_constraintTop_toBottomOf="@id/rating" />
+        <TextView
+            android:id="@+id/tv_country"
+            style="@style/small_black_text_without_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:text="@string/bishkek"
+            app:layout_constraintStart_toEndOf="@id/iv_location"
+            app:layout_constraintTop_toBottomOf="@id/tv_points" />
 
-    <TextView
-        style="@style/simple_parl_txt_without_font"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_2dp"
-        android:text="@string/c"
-        app:layout_constraintStart_toEndOf="@id/tv_price"
-        app:layout_constraintTop_toBottomOf="@id/recommendation" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_ot"
+            style="@style/medium_black_text"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_4dp"
+            android:text="@string/ot"
+            app:layout_constraintStart_toEndOf="@id/tv_country"
+            app:layout_constraintTop_toBottomOf="@id/img_stars" />
+
+        <TextView
+            android:id="@+id/tv_summa"
+            style="@style/simple_parl_text"
+            android:layout_width="@dimen/_40dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/sum"
+            app:layout_constraintBottom_toBottomOf="@id/tv_ot"
+            app:layout_constraintStart_toStartOf="@id/tv_ot" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_20dp"
+            android:layout_marginStart="@dimen/_2dp"
+            android:contentDescription="@string/symbol"
+            android:src="@drawable/ic_som"
+            app:layout_constraintBottom_toBottomOf="@id/tv_summa"
+            app:layout_constraintStart_toEndOf="@id/tv_summa"
+            app:layout_constraintTop_toTopOf="@id/tv_summa" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -27,6 +27,7 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
 
     override fun initListeners() {
         super.initListeners()
+        numberCode()
         passwordFocusListener()
         phoneNumberFocusListener()
         binding.btnLogIn.setOnClickListener {
