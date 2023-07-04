@@ -15,7 +15,7 @@ data class ClinicDt(
     val starting_working_day: String?,
     val title: String?,
     val weekday: String?,
-    val weekend: String
+    val weekend: String?
 ) : DataMapper<Clinics> {
     override fun mapToDomain() = Clinics(
         address,

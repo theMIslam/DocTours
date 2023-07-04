@@ -161,7 +161,7 @@
     <string name="uzi">УЗИ</string>
     <string name="code_exam">Проверка ОТР кода</string>
     <string name="_996_555_99">+996 555******99</string>
-    <string name="repeat_send">Повторно отправить ОТР через 55 сек</string>
+    <string name="repeat_send">Повторно отправить ОТР через</string>
     <string name="code_was_sent">ОТР код был отправлен на номер</string>
     <string name="via_sms">через SMS:</string>
     <string name="Write_feedback">Написать отзыв</string>
@@ -207,4 +207,9 @@
     <string name="delete_accounts">Удалить аккаунт</string>
     <string name="cancellation">Отмена</string>
     <string name="delete">Удалить</string>
+    <string name="Delete">Удалить</string>
+    <string name="Delete_account">Удалить аккаунт</string>
+    <string name="second">секунд</string>
+    <string name="_55">55</string>
+
 </resources>

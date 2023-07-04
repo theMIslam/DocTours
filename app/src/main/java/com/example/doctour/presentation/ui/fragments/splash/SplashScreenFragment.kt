@@ -8,6 +8,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentSplashScreenBinding
+import com.example.doctour.di.OnBoardingPreferences
 import com.example.doctour.di.UserPreferences
 import com.example.doctour.presentation.extensions.navigateSafely
 import dagger.hilt.android.AndroidEntryPoint
@@ -25,16 +26,20 @@ class SplashScreenFragment :
     lateinit var userPreferences: UserPreferences
     override fun initialize() {
         Handler().postDelayed({
-            //findNavController().navigate(SplashScreenFragmentDirections.actionSplashScreenFragmentToSignInAndSignUpFragment())
-            when {
-                userPreferences.isAuthenticated -> {
-                      findNavController().navigateSafely(R.id.action_splashScreenFragment_to_homeFragment)
-                }
 
-                !userPreferences.isAuthenticated -> {
-                     findNavController().navigateSafely(R.id.action_splashScreenFragment_to_SignInAndSignUpFragment)
-                }
-            }
+            if (!OnBoardingPreferences(requireContext()).isShowOnBoarding()){
+                findNavController().navigate(R.id.onBoardingFragment)
+            }else {
+                findNavController().navigate(R.id.SignInAndSignUpFragment)}
+//            when {
+//                userPreferences.isAuthenticated -> {
+//                      findNavController().navigateSafely(R.id.action_splashScreenFragment_to_homeFragment)
+//                }
+//
+//                !userPreferences.isAuthenticated -> {
+//                     findNavController().navigateSafely(R.id.action_splashScreenFragment_to_SignInAndSignUpFragment)
+//                }
+//            }
         }, 2000)
 
     }

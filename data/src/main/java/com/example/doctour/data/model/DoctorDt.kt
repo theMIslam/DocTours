@@ -1,11 +1,8 @@
 package com.example.doctour.data.model
 
 import com.example.doctour.data.utils.DataMapper
-import com.example.doctour.domain.model.Clinics
 import com.example.doctour.domain.model.Doctor
-import com.example.doctour.domain.model.DoctorResponse
-import com.example.doctour.domain.model.Review
-import com.example.doctour.domain.model.Speciality
+
 
 data class DoctorDt(
     val average_rating: String?,
@@ -19,7 +16,11 @@ data class DoctorDt(
     val specialties:List<SpecialtyDt>?= emptyList(),
     val summary: String?,
     val instagram :String?,
-    val doctor_reviews:List<ReviewDt> ?= emptyList()
+    val doctor_reviews:List<ReviewDt> ?= emptyList(),
+    val isChoosen :Boolean = false,
+    val clinicObject: ClinicDt?,
+    val specialtiesObject: SpecialtyDt?,
+    val doctor_reviewsObject: ReviewDt?
 ) : DataMapper<Doctor> {
     override fun mapToDomain() = Doctor(
         average_rating=average_rating,
@@ -33,6 +34,10 @@ data class DoctorDt(
         specialties?.map { it.mapToDomain() },
         summary=summary,
         instagram=instagram,
-        doctor_reviews?.map { it.mapToDomain()}
+        doctor_reviews?.map { it.mapToDomain()},
+        isChoosen,
+        clinicObject=clinicObject?.mapToDomain(),
+        specialtiesObject=specialtiesObject?.mapToDomain(),
+        doctor_reviewsObject =doctor_reviewsObject?.mapToDomain()
     )
 }

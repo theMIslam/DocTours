@@ -2,6 +2,7 @@ package com.example.doctour.presentation.ui.fragments.main.profile
 
 import android.content.Context
 import android.widget.ArrayAdapter
+import androidx.core.view.get
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -9,6 +10,7 @@ import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentProfileFillBinding
 import com.example.doctour.di.ProfilePreferences
+import com.example.doctour.presentation.extensions.showToast
 import com.example.doctour.presentation.ui.fragments.authAndReg.signIn.SignInViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -34,17 +36,19 @@ class FillProfileFragment : BaseFragment<FragmentProfileFillBinding, SignInViewM
             findNavController().navigateUp()
         }
         setDropDownMenu()
+
         binding.btnSave.setOnClickListener {
-          //  profilePreferences.saveName(binding.etFio.text.toString())
+            profilePreferences.saveName(binding.etFio.text.toString())
             profilePreferences.savePhone(binding.etNumber.text.toString())
             profilePreferences.saveBirthday(binding.etData.text.toString())
-            profilePreferences.saveGender(binding.actvGender.text.toString())
+            showToast("Сохранено")
 
             putSharedData()
         }
+        binding.etFio.setText(profilePreferences.getName())
         binding.etNumber.setText(profilePreferences.getPhone())
         binding.etData.setText(profilePreferences.getBirthday())
-        binding.actvGender.setText(profilePreferences.getGender())
+       // binding.actvGender.setText(profilePreferences.getGender())
     }
 
     private fun putSharedData() {

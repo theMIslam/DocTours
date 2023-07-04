@@ -2,14 +2,6 @@ package com.example.doctour.presentation.model
 
 import com.example.doctour.base.IBaseDiffModel
 import com.example.doctour.domain.model.DoctorDetail
-import com.example.doctour.model.CertificatesUi
-import com.example.doctour.model.EducationUi
-import com.example.doctour.model.ExperienceUi
-import com.example.doctour.model.SpecializationUI
-import com.example.doctour.model.toCertificatesUi
-import com.example.doctour.model.toEducationUi
-import com.example.doctour.model.toExperienceUI
-import com.example.doctour.model.toSpecializationUi
 
 data class DoctorDetailUi(
     override val id: Int,

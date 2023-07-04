@@ -2,8 +2,6 @@ package com.example.doctour.presentation.model
 
 import com.example.doctour.base.IBaseDiffModel
 import com.example.doctour.domain.model.Service
-import com.example.doctour.model.SubServiceUi
-import com.example.doctour.model.toSubUi
 
 data class ServiceUi(
     val description: String?,

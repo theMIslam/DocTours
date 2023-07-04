@@ -45,32 +45,19 @@
             android:layout_height="wrap_content"
             android:text="@string/fio" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_fio"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <EditText
+            android:id="@+id/et_fio"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_58dp"
             android:layout_marginTop="@dimen/_8dp"
+            android:background="@drawable/edit_text_corner"
             android:hint="@string/name_profile"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:paddingHorizontal="@dimen/_6dp"
             android:textColorHint="@color/grey"
-            app:boxCornerRadiusBottomEnd="@dimen/_10dp"
-            app:boxCornerRadiusBottomStart="@dimen/_10dp"
-            app:boxCornerRadiusTopEnd="@dimen/_10dp"
-            app:boxCornerRadiusTopStart="@dimen/_10dp"
-            app:boxStrokeColor="@color/blue"
-            app:hintTextColor="@color/parlament"
-            app:placeholderTextColor="@color/blue">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_fio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:singleLine="true"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-        </com.google.android.material.textfield.TextInputLayout>
+            />
 
         <TextView
             android:id="@+id/tv_numberPhone"
@@ -80,32 +67,19 @@
             android:layout_marginTop="@dimen/_24dp"
             android:text="@string/Number_of_phone" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_age"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <EditText
+            android:id="@+id/et_age"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_58dp"
             android:layout_marginTop="@dimen/_8dp"
+            android:background="@drawable/edit_text_corner"
             android:hint="@string/_996_550_55_55_55"
+            android:inputType="text"
+            android:singleLine="true"
+            android:paddingHorizontal="@dimen/_6dp"
+            android:textColor="@color/black"
             android:textColorHint="@color/grey"
-            app:boxCornerRadiusBottomEnd="@dimen/_10dp"
-            app:boxCornerRadiusBottomStart="@dimen/_10dp"
-            app:boxCornerRadiusTopEnd="@dimen/_10dp"
-            app:boxCornerRadiusTopStart="@dimen/_10dp"
-            app:boxStrokeColor="@color/blue"
-            app:hintTextColor="@color/parlament"
-            app:placeholderTextColor="@color/blue">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_age"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="phone"
-                android:singleLine="true"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-        </com.google.android.material.textfield.TextInputLayout>
+           />
 
         <TextView
             android:id="@+id/tv_describe_your_problem"
@@ -115,40 +89,27 @@
             android:layout_marginTop="@dimen/_24dp"
             android:text="@string/Date_of_birthday" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_dateOfBirthday"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <EditText
+            android:id="@+id/et_dateOfBirthday"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_58dp"
             android:layout_marginTop="@dimen/_8dp"
+            android:background="@drawable/edit_text_corner"
+            android:drawableEnd="@drawable/layer_list_calendar"
             android:hint="@string/_01_01_2000"
+            android:paddingHorizontal="@dimen/_20dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
             android:textColorHint="@color/grey"
-            app:boxCornerRadiusBottomEnd="@dimen/_10dp"
-            app:boxCornerRadiusBottomStart="@dimen/_10dp"
-            app:boxCornerRadiusTopEnd="@dimen/_10dp"
-            app:boxCornerRadiusTopStart="@dimen/_10dp"
-            app:boxStrokeColor="@color/blue"
-            app:hintTextColor="@color/parlament"
-            app:placeholderTextColor="@color/blue">
+            android:inputType="text"
+            />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_dateOfBirthday"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:drawableEnd="@drawable/layer_list_calendar"
-                android:inputType="text"
-                android:paddingHorizontal="@dimen/_20dp"
-                android:singleLine="true"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-        </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginHorizontal="@dimen/_16dp">
+            android:layout_marginHorizontal="@dimen/_16dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/tv_gender"
@@ -161,7 +122,7 @@
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_62dp"
+                android:layout_marginStart="@dimen/_16dp"
                 android:layout_marginTop="@dimen/_12dp"
                 android:orientation="horizontal">
 
@@ -170,18 +131,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/Male"
-                    android:textStyle="bold"
                     android:textAppearance="@style/simple_black_text"
+                    android:textStyle="bold"
                     app:buttonTint="@color/parlament" />
 
                 <RadioButton
                     android:id="@+id/btn_female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_30dp"
+                    android:layout_marginStart="@dimen/_20dp"
                     android:text="@string/Female"
-                    android:textStyle="bold"
                     android:textAppearance="@style/simple_black_text"
+                    android:textStyle="bold"
                     app:buttonTint="@color/parlament" />
             </RadioGroup>
 
@@ -196,7 +157,7 @@
         android:layout_marginHorizontal="@dimen/_16dp"
         android:layout_marginBottom="@dimen/_32dp"
         android:backgroundTint="@color/blue"
-        android:text="@string/register"
+        android:text="@string/whatsapp"
         android:textAllCaps="false"
         android:textSize="16sp"
         app:cornerRadius="8dp"

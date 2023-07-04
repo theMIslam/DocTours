@@ -1,15 +1,11 @@
 package com.example.doctour.presentation.model
 
 import com.example.doctour.base.IBaseDiffModel
-import com.example.doctour.data.utils.DataMapper
 import com.example.doctour.domain.model.City
 import com.example.doctour.domain.model.Clinics
 import com.example.doctour.domain.model.Doctor
-import com.example.doctour.domain.model.DoctorResponse
-import com.example.doctour.domain.model.ListSpecialty
 import com.example.doctour.domain.model.Review
 import com.example.doctour.domain.model.Speciality
-import java.io.Serializable
 
 data class DoctorUi(
     override val id: Int,
@@ -23,9 +19,12 @@ data class DoctorUi(
     val specialties: List<SpecialityUi>?= emptyList(),
     val summary: String?,
     val instagram :String?,
-    val doctor_reviews:List<ReviewUi>?= emptyList()
+    val doctor_reviews:List<ReviewUi>?= emptyList(),
+    val isChoosen :Boolean = false,
+    val clinicObject: ClinicsUi?,
+    val specialtiesObject: SpecialityUi?,
+    val doctor_reviewsObject: ReviewUi?
 ) : IBaseDiffModel<Int>,java.io.Serializable
-
 fun Doctor.toDoctorUi() = DoctorUi(
     id=id,
     average_rating=average_rating,
@@ -38,7 +37,11 @@ fun Doctor.toDoctorUi() = DoctorUi(
     specialties?.map { it.toSpecialityUi() },
     summary=summary,
     instagram=instagram,
-    doctor_reviews?.map { it.toReviewUi() }
+    doctor_reviews?.map { it.toReviewUi() },
+    isChoosen,
+    specialtiesObject=specialtiesObject?.toSpecialityUi(),
+    clinicObject = clinicObject?.toClinicsUi(),
+    doctor_reviewsObject = doctor_reviewsObject?.toReviewUi()
 )
 
 data class ReviewUi(
@@ -60,14 +63,6 @@ data class SpecialityUi(
 fun Speciality.toSpecialityUi() = SpecialityUi(
     id=id, name=name
 )
-
-data class ListSpecUi(
-    val specialty :List<SpecialityUi>
-)
-fun ListSpecialty.toLIStSPecUi()=ListSpecUi(
-    specialty.map { it.toSpecialityUi() }
-)
-
 data class ClinicsUi(
     val address: String?,
     val contacts1: Long?,
