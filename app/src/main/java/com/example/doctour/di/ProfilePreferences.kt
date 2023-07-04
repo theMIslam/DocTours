@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import javax.inject.Inject
 
-class ProfilePreferences@Inject constructor(
+class ProfilePreferences @Inject constructor(
     context: Context
 )  {
     private val sharedPreferences: SharedPreferences = context.getSharedPreferences(
