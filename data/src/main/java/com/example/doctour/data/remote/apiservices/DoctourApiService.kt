@@ -28,7 +28,7 @@ interface DoctourApiService {
     @POST("/api/v1/users/register/")
     suspend fun postRegister(
         @Body data:UserRegisterDt
-    ):Response<UserRegisterDt>
+    ):UserRegisterDt
 
     @GET("/api/v1/src/doctors/")
     suspend fun searchByTitle(

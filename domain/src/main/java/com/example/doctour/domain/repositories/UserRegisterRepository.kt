@@ -8,5 +8,11 @@ import kotlinx.coroutines.flow.Flow
 
 interface UserRegisterRepository {
 
-    fun postRegister(data:UserRegister):Flow<Either<NetworkError,UserRegister>>
+    fun postRegister(
+         phone_number: String?,
+         fullname: String?,
+         gender: String?,
+         birthday: String?,
+         password: String?
+    ):Flow<Either<String,UserRegister>>
 }
