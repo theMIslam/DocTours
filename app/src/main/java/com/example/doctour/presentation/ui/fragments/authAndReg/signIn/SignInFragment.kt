@@ -7,10 +7,12 @@ import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
+import com.example.doctour.data.model.UserLoginDt
 import com.example.doctour.databinding.FragmentSignInBinding
 import com.example.doctour.di.UserPreferences
 import com.example.doctour.presentation.extensions.activityNavController
 import com.example.doctour.presentation.extensions.navigateSafely
+import com.example.doctour.presentation.extensions.showToast
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import com.google.i18n.phonenumbers.PhoneNumberUtil
@@ -30,8 +32,19 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
         numberCode()
         passwordFocusListener()
         phoneNumberFocusListener()
+
         binding.btnLogIn.setOnClickListener {
-            findNavController().navigate(R.id.homeFragment)
+            when{
+                binding.etNumber.text.toString().isEmpty() ->{
+                    showToast("Имя / Фамилия не должна быть пустой")
+                }
+                binding.etPassword.text.toString().isEmpty()->{
+                    showToast("Пароль не может быть пустым")
+                }
+                else ->{
+                        viewModel.logInUser(binding.etNumber.text.toString(),binding.etPassword.text.toString())
+                }
+            }
         }
         binding.tvForgotPassword.setOnClickListener {
             findNavController().navigate(R.id.forgotPasswordFragment)
@@ -89,17 +102,21 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
     }
 
     override fun initSubscribers() {
-        viewModel.signInState.spectateUiState (success = {
-            userPreferences.accessToken = getAuthenticationToken(it.tokens, true)
-            userPreferences.refreshToken = getAuthenticationToken(it.tokens, true)
+        viewModel.signIn.spectateUiState (success = {
+            //userPreferences.accessToken = getAuthenticationToken(it.tokens, true)
+           // userPreferences.refreshToken = getAuthenticationToken(it.tokens, true)
             userPreferences.isAuthenticated = true
-            userPreferences.userID = it.id
-            userPreferences.username = it.username
-            userPreferences.password = binding.etPassword.text.toString()
-            activityNavController().navigateSafely(R.id.action_authAndRegFlowFragment_to_mainFlowFragment)
+           // userPreferences.userID = it.id
+            //userPreferences.username = it.username
+            userPreferences.userNumber = it.phone_number
+            userPreferences.password = it.password
+            findNavController().navigate(R.id.homeFragment)
+           // activityNavController().navigateSafely(R.id.action_authAndRegFlowFragment_to_mainFlowFragment)
+            showToast("Вы успешно зашли")
             initListeners()
         }, error = {
-            Toast.makeText(requireContext(), getString(R.string.something_went_wrong), Toast.LENGTH_SHORT).show()
+            showToast(getString(R.string.something_went_wrong))
+            //Toast.makeText(requireContext(), getString(R.string.something_went_wrong), Toast.LENGTH_SHORT).show()
         })
     }
 
