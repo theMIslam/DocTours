@@ -8,7 +8,9 @@ import com.example.doctour.data.remote.pagingsources.сategory.CategoryDoctorsPa
 import com.example.doctour.data.remote.pagingsources.сategory.CategoryServicesOfDoctorsPagingSource
 import com.example.doctour.data.remote.pagingsources.DoctourPagingSource
 import com.example.doctour.data.remote.pagingsources.ReviewsPagingSource
+import com.example.doctour.data.remote.pagingsources.SearchPagingSource
 import com.example.doctour.domain.model.Clinics
+import com.example.doctour.domain.model.Doctor
 import com.example.doctour.domain.model.Review
 import com.example.doctour.domain.model.Service
 import com.example.doctour.domain.repositories.RemoteDoctorRepository
@@ -18,6 +20,13 @@ import javax.inject.Inject
 class DoctourRepositoryImpl @Inject constructor(
     private val doctourApiService: DoctourApiService
 ) : RemoteDoctorRepository, BaseRepository() {
+
+    override fun searchByTitle(
+        search: String?
+    ): Flow<PagingData<Doctor>> = doPagingRequest(
+        SearchPagingSource(doctourApiService,search)
+    )
+
     override fun getAllDoctors(
         specialties: String?,
         clinic: String?,

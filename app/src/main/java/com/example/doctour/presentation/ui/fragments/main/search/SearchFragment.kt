@@ -1,9 +1,13 @@
 package com.example.doctour.presentation.ui.fragments.main.search
 
 import android.annotation.SuppressLint
-import android.widget.SearchView.OnQueryTextListener
+import androidx.appcompat.widget.SearchView
+import androidx.core.os.bundleOf
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.paging.LoadState
+import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
@@ -18,36 +22,61 @@ class SearchFragment :
     BaseFragment<FragmentSearchBinding, SearchViewModel>
         (R.layout.fragment_search) {
 
-    private var myAdapter: SearchAdapter? = null
-    private var users = ArrayList<DoctorUi>()
-
-    override val binding: FragmentSearchBinding by  viewBinding(FragmentSearchBinding::bind)
+    override val binding: FragmentSearchBinding by viewBinding(FragmentSearchBinding::bind)
     override val viewModel: SearchViewModel by viewModels()
+    private lateinit var myAdapter: SearchAdapter
 
     override fun initListeners() {
         super.initListeners()
-        myAdapter = SearchAdapter(users,this::onItemClick)
-        binding.rv.adapter = myAdapter
         onClickListeners()
     }
 
+    override fun initialize() {
+        super.initialize()
+        binding.rv.layoutManager = LinearLayoutManager(context)
+        myAdapter = SearchAdapter(this::onItemClick)
+        binding.rv.adapter = myAdapter
+
+        myAdapter.addLoadStateListener { loadStates ->
+            binding.rv.isVisible = loadStates.refresh is LoadState.NotLoading
+            binding.progressBar.isVisible = loadStates.refresh is LoadState.Loading
+            viewModel.setItemAmount(myAdapter.itemCount)
+        }
+
+        viewModel.doc.collectPaging {
+            myAdapter.submitData(it)
+        }
+        viewModel.count.observe(viewLifecycleOwner){count ->
+            binding.tvFound.text = "Найдено ${count.toString()}"
+        }
+    }
+
     private fun onItemClick(doctorUi: DoctorUi) {
-      findNavController().navigate(R.id.aboutDoctorFragment)
+        findNavController().navigate(R.id.aboutDoctorFragment, bundleOf( "about" to doctorUi))
     }
 
     private fun onClickListeners() {
-        binding.tvArrowBack.setOnClickListener {
-            findNavController().navigateUp()
-        }
-        binding.searview.setOnQueryTextListener(object :OnQueryTextListener {
+        binding.searview.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
-                return true
+                if (query!=null){
+                    binding.rv.scrollToPosition(0)
+                    viewModel.searchBy(query)
+                    binding.searview.clearFocus()
+                }
+                return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                //запрос на сервер поиск по серверу
-                return true
+                if (newText!=null){
+                    binding.rv.scrollToPosition(0)
+                    viewModel.searchBy(newText)
+                }
+                return false
             }
         })
+
+        binding.tvArrowBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
     }
 }

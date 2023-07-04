@@ -1,8 +1,10 @@
 package com.example.doctour.presentation.ui.fragments.main.aboutdoctor
 
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
@@ -11,6 +13,7 @@ import com.example.doctour.presentation.extensions.loadImage
 import com.example.doctour.presentation.extensions.showToast
 import com.example.doctour.presentation.ui.state.UIState
 import com.example.doctour.presentation.model.DoctorUi
+import com.example.doctour.presentation.model.ReviewUi
 import com.example.doctour.presentation.ui.fragments.main.aboutdoctor.adapter.FeedbacksAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -22,14 +25,16 @@ class AboutDoctorFragment
 
     override val binding: FragmentAboutDoctorBinding by viewBinding(FragmentAboutDoctorBinding::bind)
     override val viewModel: AboutDoctorViewModel by viewModels()
-    private val adapterFeedback: FeedbacksAdapter by lazy {
-        FeedbacksAdapter()
-    }
+    private lateinit var adapterFeedback: FeedbacksAdapter
     private var selectedList = arrayListOf<DoctorUi>()
+    private var reviewList = ArrayList<ReviewUi>()
 
     override fun initialize() {
         super.initialize()
+        binding.rvFeedbacks.layoutManager=LinearLayoutManager(context)
+        adapterFeedback=FeedbacksAdapter()
         binding.rvFeedbacks.adapter = adapterFeedback
+        getInfoAboutDoctor()
     }
 
     override fun initSubscribers() {
@@ -52,6 +57,7 @@ class AboutDoctorFragment
         }
         binding.tvAllReviews.setOnClickListener {
             findNavController().navigate(R.id.aboutDoctorReviewFragment)
+//                bundleOf( "listOfReview" to reviewList))
         }
         binding.btnRegister.setOnClickListener {
             findNavController().navigate(R.id.bookingToDoctorSecondFragment)
@@ -63,7 +69,6 @@ class AboutDoctorFragment
                 showToast("Удалено из избранных")
             }
         }
-        getInfoAboutDoctor()
     }
 
     private fun getInfoAboutDoctor() {
@@ -79,6 +84,8 @@ class AboutDoctorFragment
             binding.tvNumOfRating.text = data.average_rating
             binding.tvNumOfFeedback.text = data.num_reviews
             binding.tvInfoAboutDoc.text = data.summary
+            data.doctor_reviews?.let { adapterFeedback.addReview(it) }
+           // data.doctor_reviews?.let { reviewList.addAll(it) }
         }
 
     }
