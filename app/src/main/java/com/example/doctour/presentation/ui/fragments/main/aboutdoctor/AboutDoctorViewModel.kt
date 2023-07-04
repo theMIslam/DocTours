@@ -11,17 +11,12 @@ import javax.inject.Inject
 
 @HiltViewModel
 class AboutDoctorViewModel @Inject constructor(
-    //private val createFavDoctorUseCase: CreateFavDoctorUseCase
-)
-    : BaseViewModel() {
+
+): BaseViewModel() {
 
     private val _createFav = MutableStateFlow<UIState<Unit>>(UIState.Idle())
     val createFav = _createFav.asStateFlow()
 
     val loading = MutableLiveData<Boolean>()
-
-    fun addFavoriteDoctor(doctorUi: DoctorUi) {
-        //createFavDoctorUseCase.createFavoriteDoctors(doctorUi).collectData(_createFav)
-    }
 
 }
