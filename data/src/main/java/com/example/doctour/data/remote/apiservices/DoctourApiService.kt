@@ -25,6 +25,17 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface DoctourApiService {
+    @POST("/api/v1/users/register/")
+    suspend fun postRegister(
+        @Body data:UserRegisterDt
+    ):Response<UserRegisterDt>
+
+    @GET("/api/v1/src/doctors/")
+    suspend fun searchByTitle(
+        @Query("page")page: Int,
+        @Query("search")search:String?
+    ):Response<BaseResponse<DoctorDt>>
+
     @GET("/api/v1/src/doctors/")
    suspend fun getAllDoctors(
         @Query("page")page: Int,
@@ -35,16 +46,12 @@ interface DoctourApiService {
         @Query("search")search: String?,
         @Query("ordering")ordering: String?
     ):Response<BaseResponse<DoctorDt>>
-    @GET("api/v1/src/doctors/")
-    suspend fun getDoctors(
-        @Query("page")page: Int
-    ):BaseResponse<DoctorDt>
+
 
     @GET("/api/v1/src/clinics/")
    suspend fun getClinics(
         @Query("page")page: Int
     ):Response<BaseResponse<ClinicDt>>
-
 
     @GET("/api/v1/src/doctors/{id}")
    suspend fun getDoctorsById(
@@ -106,11 +113,6 @@ interface DoctourApiService {
     @POST("/api/v1/users/reset/")
    suspend fun postReset(
         @Body data:PasswordResetDt
-    ):ResponseBody
-
-    @POST("/api/v1/users/signin/")
-   suspend fun postSignIn(
-        @Body data:UserLoginDt
     ):ResponseBody
 
     @POST("/api/v1/users/signup/")

@@ -34,4 +34,8 @@ interface RemoteDoctorRepository {
 
     fun getReviews():Flow<PagingData<Review>>
 
+    fun searchByTitle(
+        search: String?
+    ):Flow<PagingData<Doctor>>
+
 }
