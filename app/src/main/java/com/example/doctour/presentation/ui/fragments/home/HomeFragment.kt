@@ -119,11 +119,11 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
     }
 
     private fun onSpecsClick() {
-        showToast("Speciality Click")
+        findNavController().navigate(R.id.aboutDoctorFragment)
     }
 
     private fun onClinicClick() {
-        showToast("Clinic Click")
+        showToast("Clinic")
     }
 
     companion object CREATOR : Parcelable.Creator<HomeFragment> {
