@@ -171,6 +171,8 @@
     <string name="Log_In">Войти</string>
     <string name="Number_of_phone">Номер телефона</string>
     <string name="Password">Пароль</string>
+    <string name="tv_verify_code">Проверка кода подтверждения</string>
+    <string name="repeat_send_code">Повторно отправить код через</string>
     <string name="Forgot_password">Забыли пароль?</string>
     <string name="Full_name">ФИО</string>
     <string name="Repeat_password">Повторите пароль</string>
