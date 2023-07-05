@@ -4,8 +4,9 @@ import com.example.doctour.data.utils.DataMapper
 import com.example.doctour.domain.model.Service
 data class ServiceDt(
     val description: String?,
-    val id: Int,
+    val id: String,
     val name: String?,
+    val slug:String?,
     val price: Int?,
     val subservice_service: List<SubServiceDt>?= emptyList()
 ):DataMapper<Service>{
@@ -13,6 +14,7 @@ data class ServiceDt(
        description,
         id,
         name,
+        slug=slug,
         price,
         subservice_service?.map { it.mapToDomain() }
     )

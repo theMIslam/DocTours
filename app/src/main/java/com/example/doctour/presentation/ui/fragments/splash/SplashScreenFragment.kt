@@ -22,24 +22,17 @@ class SplashScreenFragment :
     override val binding: FragmentSplashScreenBinding by viewBinding(FragmentSplashScreenBinding::bind)
     override val viewModel by viewModels<SplashScreenViewModel>()
 
-    @Inject
-    lateinit var userPreferences: UserPreferences
     override fun initialize() {
         Handler().postDelayed({
 
             if (!OnBoardingPreferences(requireContext()).isShowOnBoarding()){
                 findNavController().navigate(R.id.onBoardingFragment)
-            }else {
-                findNavController().navigate(R.id.SignInAndSignUpFragment)}
-//            when {
-//                userPreferences.isAuthenticated -> {
-//                      findNavController().navigateSafely(R.id.action_splashScreenFragment_to_homeFragment)
-//                }
-//
-//                !userPreferences.isAuthenticated -> {
-//                     findNavController().navigateSafely(R.id.action_splashScreenFragment_to_SignInAndSignUpFragment)
-//                }
-//            }
+            }else if (!UserPreferences(requireContext()).isOtpCodeRight()){
+                findNavController().navigate(R.id.SignInAndSignUpFragment)
+            }
+            else{
+                findNavController().navigate(R.id.homeFragment)
+            }
         }, 2000)
 
     }

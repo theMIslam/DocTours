@@ -1,10 +1,11 @@
 package com.example.doctour.domain.model
 
 data class SubService(
-    val id:Int,
+    val id:String,
     val name:String?,
+    val slug:String?,
     val price:Int?,
     val count_clinic:String?,
-    val service:Int?,
+    val service:String?,
     val clinic:List<Clinics>?= emptyList()
 )

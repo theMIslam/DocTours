@@ -5,7 +5,7 @@ import com.example.doctour.domain.model.Review
 
 data class ReviewDt(
     val doctor: Int?,
-    val id: Int,
+    val id: String,
     val stars: Int?,
     val text: String?
 ) : DataMapper<Review> {
