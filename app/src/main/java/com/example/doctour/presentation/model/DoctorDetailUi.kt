@@ -4,7 +4,7 @@ import com.example.doctour.base.IBaseDiffModel
 import com.example.doctour.domain.model.DoctorDetail
 
 data class DoctorDetailUi(
-    override val id: Int,
+    override val id: String,
     val doctor_reviews:List<ReviewUi>?= emptyList(),
     val average_rating:String?,
     val num_reviews:String?,
@@ -23,7 +23,7 @@ data class DoctorDetailUi(
     val price:Int?,
     val summary:String?,
     val phone:String?
-) : IBaseDiffModel<Int>
+) : IBaseDiffModel<String>
 
 fun DoctorDetail.toDoctorDetailUi() = DoctorDetailUi(
     id=id,

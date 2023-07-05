@@ -4,7 +4,7 @@ import com.example.doctour.data.utils.DataMapper
 import com.example.doctour.domain.model.DoctorDetail
 
 data class DoctorDetailDt(
-    val id: Int,
+    val id: String,
     val doctor_reviews: List<ReviewDt> ?= emptyList(),
     val average_rating: String?,
     val num_reviews: String?,

@@ -9,7 +9,7 @@ data class DoctorDt(
     val clinic: List<ClinicDt>?= emptyList(),
     val experience: Int?,
     val full_name: String?,
-    val id: Int,
+    val id: String,
     val num_reviews:String?,
     val photo: String?,
     val price: Int?,

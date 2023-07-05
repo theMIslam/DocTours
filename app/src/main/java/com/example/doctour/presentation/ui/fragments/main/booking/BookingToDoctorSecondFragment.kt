@@ -33,8 +33,8 @@ class BookingToDoctorSecondFragment :
         }
 
         binding.btnMakeAnAppointment.setOnClickListener {
-            val phoneNumber = "+996704848277" // Номер телефона WhatsApp, с которым вы хотите начать чат
-            val message = "Привет, я хотел бы записаться на прием!" // Сообщение, которое будет отправлено в WhatsApp
+            val phoneNumber = "+996704848277"
+            val message = "Привет, я хотел бы записаться на приём!"
 
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse("https://api.whatsapp.com/send?phone=$phoneNumber&text=$message")

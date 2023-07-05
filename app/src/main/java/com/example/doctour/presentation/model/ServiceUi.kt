@@ -5,12 +5,18 @@ import com.example.doctour.domain.model.Service
 
 data class ServiceUi(
     val description: String?,
-    override val id: Int,
+    override val id: String,
     val name: String?,
+    val slug:String?,
     val price: Int?,
     val subservice_service: List<SubServiceUi>?= emptyList()
-):IBaseDiffModel<Int>
+):IBaseDiffModel<String>
 
 fun Service.toServiceUi()= ServiceUi(
-    description=description, id=id, name=name, price=price, subservice_service?.map { it.toSubUi() }
+    description=description,
+    id=id,
+    name=name,
+    slug = slug,
+    price=price,
+    subservice_service?.map { it.toSubUi() }
 )

@@ -23,47 +23,20 @@ class CategoryCityFragment: BaseFragment<FragmentCategoryCityBinding, CategoryVi
     private var dataChangeListener: DataChangeListener? = null
     override val binding: FragmentCategoryCityBinding by viewBinding(FragmentCategoryCityBinding::bind)
     override val viewModel: CategoryViewModel by viewModels<CategoryViewModel>()
-    private var selectedCity: String = ""
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val view = binding.root
 
+    override fun initListeners() {
+        super.initListeners()
+        binding.arrowBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
         binding.tvBishkek.setOnClickListener {
-            selectCity("Бишкек")
+            findNavController().navigateUp()
         }
-
         binding.tvOsh.setOnClickListener {
-            selectCity("Ош")
+            EventBus.getDefault().post(TextUpdate(getString(R.string.osh)))
+            findNavController().navigateUp()
         }
-
-        return view
     }
 
-    fun setDataChangeListener(listener: DataChangeListener) {
-        dataChangeListener = listener
-    }
-
-    private fun selectCity(city: String) {
-        selectedCity = city
-    }
 }
-//
-//    override fun initListeners() {
-//        super.initListeners()
-//        binding.arrowBack.setOnClickListener {
-//            findNavController().navigateUp()
-//        }
-//        binding.tvBishkek.setOnClickListener {
-//            findNavController().navigateUp()
-//        }
-//        binding.tvOsh.setOnClickListener {
-//            EventBus.getDefault().post(TextUpdate(getString(R.string.osh)))
-//            findNavController().navigateUp()
-//        }
-//    }
-//
-//}

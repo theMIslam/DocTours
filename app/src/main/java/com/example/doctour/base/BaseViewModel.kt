@@ -8,7 +8,7 @@ import androidx.paging.map
 import com.example.doctour.domain.utils.Either
 import com.example.doctour.domain.utils.NetworkError
 import com.example.doctour.domain.utils.Resource
-import com.example.doctour.presentation.ui.state.UIState
+import com.example.doctour.common.UIState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

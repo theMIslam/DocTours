@@ -112,7 +112,7 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
             userPreferences.password = it.password
             findNavController().navigate(R.id.homeFragment)
            // activityNavController().navigateSafely(R.id.action_authAndRegFlowFragment_to_mainFlowFragment)
-            showToast("Вы успешно зашли")
+            showToast("Вы успешно авторизовались")
             initListeners()
         }, error = {
             showToast(getString(R.string.something_went_wrong))

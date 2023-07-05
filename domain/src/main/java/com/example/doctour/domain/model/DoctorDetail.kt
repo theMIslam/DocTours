@@ -1,7 +1,7 @@
 package com.example.doctour.domain.model
 
 data class DoctorDetail(
-    val id:Int,
+    val id:String,
     val doctor_reviews:List<Review>?= emptyList(),
     val average_rating:String?,
     val num_reviews:String?,

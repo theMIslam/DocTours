@@ -8,7 +8,7 @@ import com.example.doctour.domain.model.Review
 import com.example.doctour.domain.model.Speciality
 
 data class DoctorUi(
-    override val id: Int,
+    override val id: String,
     val average_rating: String?,
     val clinic:List<ClinicsUi>?= emptyList(),
     val experience: Int?,
@@ -21,10 +21,10 @@ data class DoctorUi(
     val instagram :String?,
     val doctor_reviews:List<ReviewUi>?= emptyList(),
     val isChoosen :Boolean = false,
-    val clinicObject: ClinicsUi?,
-    val specialtiesObject: SpecialityUi?,
-    val doctor_reviewsObject: ReviewUi?
-) : IBaseDiffModel<Int>,java.io.Serializable
+    val clinicObject:ClinicsUi?,
+    val specialtiesObject:SpecialityUi?,
+    val doctor_reviewsObject:ReviewUi?
+) : IBaseDiffModel<String>,java.io.Serializable
 fun Doctor.toDoctorUi() = DoctorUi(
     id=id,
     average_rating=average_rating,
@@ -46,19 +46,19 @@ fun Doctor.toDoctorUi() = DoctorUi(
 
 data class ReviewUi(
     val doctor: Int?,
-    override val id: Int,
+    override val id: String,
     val stars: Int?,
     val text: String?
-):IBaseDiffModel<Int>
+):IBaseDiffModel<String>
 
 fun Review.toReviewUi() = ReviewUi(
     id=id, text=text, stars=stars, doctor=doctor
 )
 
 data class SpecialityUi(
-    override val id: Int,
+    override val id: String,
     val name: String?
-):IBaseDiffModel<Int>
+):IBaseDiffModel<String>
 
 fun Speciality.toSpecialityUi() = SpecialityUi(
     id=id, name=name
@@ -69,15 +69,16 @@ data class ClinicsUi(
     val contacts2: Long?,
     val descriptions: String?,
     val ending_working_day: String?,
-    override val id: Int,
+    override val id: String,
     val link_2gis: String?,
     val link_clinic: String?,
     val photo: String?,
     val starting_working_day: String?,
     val title: String?,
     val weekday: String?,
-    val weekend: String?
-):IBaseDiffModel<Int>
+    val weekend: String?,
+    val slug:String?
+):IBaseDiffModel<String>
 
 fun Clinics.toClinicsUi() = ClinicsUi(
     id=id,
@@ -92,11 +93,12 @@ fun Clinics.toClinicsUi() = ClinicsUi(
     contacts2=contacts2,
     weekday=weekday,
     weekend=weekend,
-    title=title
+    title=title,
+    slug = slug
 )
 
 data class CityUi(
-    val id: Int,
+    val id: String,
     val name: String?
 )
 
