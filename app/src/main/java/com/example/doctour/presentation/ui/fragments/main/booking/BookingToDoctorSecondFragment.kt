@@ -1,6 +1,8 @@
 package com.example.doctour.presentation.ui.fragments.main.booking
 
 
+import android.content.Intent
+import android.net.Uri
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -29,10 +31,29 @@ class BookingToDoctorSecondFragment :
         binding.arrowBack.setOnClickListener {
             findNavController().navigateUp()
         }
+
         binding.btnMakeAnAppointment.setOnClickListener {
-            // TODO: make appoiment
-                binding.includeSuccessBooking.root.visibility = View.VISIBLE
+            val phoneNumber = "+996704848277" // Номер телефона WhatsApp, с которым вы хотите начать чат
+            val message = "Привет, я хотел бы записаться на прием!" // Сообщение, которое будет отправлено в WhatsApp
+
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://api.whatsapp.com/send?phone=$phoneNumber&text=$message")
+
+            if (intent.resolveActivity(requireContext().packageManager) != null) {
+                startActivity(intent)
+            } else {
+                showToast("WhatsApp не установлен на вашем устройстве")
+            }
+            binding.includeSuccessBooking.root.visibility = View.VISIBLE
         }
+
+
+//        binding.btnMakeAnAppointment.setOnClickListener {
+//            // TODO: make appoiment
+//
+//
+//                binding.includeSuccessBooking.root.visibility = View.VISIBLE
+//        }
         binding.includeSuccessBooking.btnDone.setOnClickListener {
             // TODO: action
             showToast("Success_appoiment")
