@@ -1,5 +1,9 @@
 package com.example.doctour.presentation.ui.fragments.main.category.cityCategory
 
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -19,23 +23,47 @@ class CategoryCityFragment: BaseFragment<FragmentCategoryCityBinding, CategoryVi
     private var dataChangeListener: DataChangeListener? = null
     override val binding: FragmentCategoryCityBinding by viewBinding(FragmentCategoryCityBinding::bind)
     override val viewModel: CategoryViewModel by viewModels<CategoryViewModel>()
+    private var selectedCity: String = ""
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        val view = binding.root
+
+        binding.tvBishkek.setOnClickListener {
+            selectCity("Бишкек")
+        }
+
+        binding.tvOsh.setOnClickListener {
+            selectCity("Ош")
+        }
+
+        return view
+    }
 
     fun setDataChangeListener(listener: DataChangeListener) {
         dataChangeListener = listener
     }
 
-    override fun initListeners() {
-        super.initListeners()
-        binding.arrowBack.setOnClickListener {
-            findNavController().navigateUp()
-        }
-        binding.tvBishkek.setOnClickListener {
-            findNavController().navigateUp()
-        }
-        binding.tvOsh.setOnClickListener {
-            EventBus.getDefault().post(TextUpdate(getString(R.string.osh)))
-            findNavController().navigateUp()
-        }
+    private fun selectCity(city: String) {
+        selectedCity = city
     }
-
 }
+//
+//    override fun initListeners() {
+//        super.initListeners()
+//        binding.arrowBack.setOnClickListener {
+//            findNavController().navigateUp()
+//        }
+//        binding.tvBishkek.setOnClickListener {
+//            findNavController().navigateUp()
+//        }
+//        binding.tvOsh.setOnClickListener {
+//            EventBus.getDefault().post(TextUpdate(getString(R.string.osh)))
+//            findNavController().navigateUp()
+//        }
+//    }
+//
+//}

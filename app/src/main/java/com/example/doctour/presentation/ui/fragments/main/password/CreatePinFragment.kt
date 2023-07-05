@@ -1,4 +1,4 @@
-package com.example.doctour.presentation.ui.fragments.authAndReg.signIn.pincode
+package com.example.doctour.presentation.ui.fragments.main.password
 
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
