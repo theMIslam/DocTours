@@ -1,5 +1,6 @@
 package com.example.doctour.presentation.ui.fragments.main.aboutdoctor
 
+import android.annotation.SuppressLint
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -70,6 +71,7 @@ class AboutDoctorFragment
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun getInfoAboutDoctor() {
         if (arguments != null) {
             val data = this.arguments?.getSerializable("about") as DoctorUi
