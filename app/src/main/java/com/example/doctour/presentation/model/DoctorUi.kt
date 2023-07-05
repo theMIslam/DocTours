@@ -45,14 +45,22 @@ fun Doctor.toDoctorUi() = DoctorUi(
 )
 
 data class ReviewUi(
-    val doctor: Int?,
+    val doctor: String?,
     override val id: String,
     val stars: Int?,
-    val text: String?
+    val text: String?,
+    val doctor_name:String?,
+    val user_name : String?,
+    val user :Int?,
+    val date:String?
 ):IBaseDiffModel<String>
 
 fun Review.toReviewUi() = ReviewUi(
-    id=id, text=text, stars=stars, doctor=doctor
+    id=id, text=text, stars=stars, doctor=doctor,
+    doctor_name = doctor_name,
+    user_name = user_name,
+    user =user,
+    date = date
 )
 
 data class SpecialityUi(

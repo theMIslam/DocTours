@@ -3,10 +3,13 @@ package com.example.doctour.di
 import androidx.lifecycle.MutableLiveData
 import com.example.doctour.data.remote.apiservices.DoctourApiService
 import com.example.doctour.data.remote.apiservices.UserRegisterApiService
+import com.example.doctour.data.remote.client.authenticator.TokenAuthenticator
+import com.example.doctour.data.remote.client.interceptors.AuthorizationInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.Authenticator
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -18,6 +21,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
     const val BASE_URL_v3 = "https://bekbolsun.pythonanywhere.com/"
+
     @Singleton
     @Provides
     fun provideTokenErrorListener() = MutableLiveData<String>()
@@ -31,6 +35,7 @@ object NetworkModule {
             .readTimeout(30, TimeUnit.SECONDS)
             .writeTimeout(30, TimeUnit.SECONDS)
             .connectTimeout(30, TimeUnit.SECONDS)
+            .addInterceptor(interceptor)
             .addInterceptor(interceptor)
             .build()
     }
