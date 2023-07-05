@@ -29,8 +29,12 @@ class CategoryServiceFragment :
     }
 
     private fun getInfoAboutClinics() {
-        val result: ServiceUi = arguments?.getSerializable("service") as ServiceUi
-        binding.tvServices.text = result.name
-        binding.rvServices.adapter = adapter
+        if (arguments != null){
+            val result: ServiceUi = arguments?.getSerializable("service") as ServiceUi
+            binding.tvServices.text = result.name
+            viewModel.x(result.name.toString())
+            viewModel.getServiceOfDoctors()
+            binding.rvServices.adapter = adapter
+        }
     }
 }
