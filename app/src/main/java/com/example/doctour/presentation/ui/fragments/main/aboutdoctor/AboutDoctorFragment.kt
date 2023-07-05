@@ -1,6 +1,5 @@
 package com.example.doctour.presentation.ui.fragments.main.aboutdoctor
 
-import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -11,7 +10,7 @@ import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentAboutDoctorBinding
 import com.example.doctour.presentation.extensions.loadImage
 import com.example.doctour.presentation.extensions.showToast
-import com.example.doctour.presentation.ui.state.UIState
+import com.example.doctour.common.UIState
 import com.example.doctour.presentation.model.DoctorUi
 import com.example.doctour.presentation.model.ReviewUi
 import com.example.doctour.presentation.ui.fragments.main.aboutdoctor.adapter.FeedbacksAdapter
