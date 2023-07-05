@@ -43,7 +43,7 @@ class AboutDoctorReviewFragment :
         binding.rvReviews.adapter = adapterAboutDoctorReview
         adapterAboutDoctorReview.addLoadStateListener { loadState ->
             binding.rvReviews.isVisible = loadState.refresh is LoadState.NotLoading
-            binding.progressBar.isVisible = loadState.refresh is LoadState.NotLoading
+            binding.progressBar.isVisible = loadState.refresh is LoadState.Loading
         }
         //getData()
     }

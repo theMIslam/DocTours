@@ -30,9 +30,9 @@ class AboutDoctorReviewAdapter
         private val binding: ItemFeedbacksBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(reviewUi: ReviewUi) {
-       binding.tvName.text=reviewUi.doctor.toString()
-            binding.tvStars.text=reviewUi.stars.toString()
-            binding.tvFeedback.text=reviewUi.text.toString()
+            binding.tvName.text = reviewUi.doctor_name
+            binding.tvStars.text = reviewUi.stars.toString()
+            binding.tvFeedback.text = reviewUi.text.toString()
         }
     }
 }

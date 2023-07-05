@@ -29,7 +29,7 @@ interface DoctourApiService {
     @POST("api/v1/users/login/")
     suspend fun postLogin(
         @Body data:UserLoginDt
-    ):UserLoginDt
+    ):TokenRefreshDt
 
     @POST("api/v1/users/register/")
     suspend fun postRegister(

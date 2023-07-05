@@ -65,8 +65,8 @@
         app:scv_symbolBorderColor="@color/grey"
         app:scv_symbolBorderCornerRadius="@dimen/_16dp"
         app:scv_symbolBorderWidth="@dimen/_1dp"
-        app:scv_symbolHeight="@dimen/_55dp"
-        app:scv_symbolWidth="@dimen/_55dp"
+        app:scv_symbolHeight="@dimen/_50dp"
+        app:scv_symbolWidth="@dimen/_50dp"
         app:scv_symbolsSpacing="@dimen/_10dp" />
 
     <TextView
