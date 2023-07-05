@@ -22,7 +22,8 @@ class AuthenticationRepositoryImpl @Inject constructor(
          phone_number: String?,
          password: String?
      )=makeNetworkRequest {
-         doctourApiService.postLogin(UserLoginDt(
+         doctourApiService.postLogin(
+             UserLoginDt(
              phone_number, password
          ))
      }

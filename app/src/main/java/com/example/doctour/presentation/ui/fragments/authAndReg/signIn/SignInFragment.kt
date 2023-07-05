@@ -42,7 +42,8 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
                     showToast("Пароль не может быть пустым")
                 }
                 else ->{
-                        viewModel.logInUser(binding.etNumber.text.toString(),binding.etPassword.text.toString())
+                        viewModel.logInUser(binding.etNumber.text.toString(),
+                            binding.etPassword.text.toString())
                 }
             }
         }
@@ -101,13 +102,13 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
 
     override fun initSubscribers() {
         viewModel.signIn.spectateUiState (success = {
-            //userPreferences.accessToken = getAuthenticationToken(it.tokens, true)
-           // userPreferences.refreshToken = getAuthenticationToken(it.tokens, true)
+             userPreferences.accessToken = getAuthenticationToken(it.access!!, true)
+            userPreferences.refreshToken = getAuthenticationToken(it.refresh!!, true)
             userPreferences.isAuthenticated = true
            // userPreferences.userID = it.id
             //userPreferences.username = it.username
-            userPreferences.userNumber = it.phone_number
-            userPreferences.password = it.password
+            userPreferences.accessToken= it.access
+            userPreferences.refreshToken = it.refresh
             findNavController().navigate(R.id.homeFragment)
            // activityNavController().navigateSafely(R.id.action_authAndRegFlowFragment_to_mainFlowFragment)
             showToast("Вы успешно зашли")

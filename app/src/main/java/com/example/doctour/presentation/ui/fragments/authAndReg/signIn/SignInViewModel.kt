@@ -1,6 +1,7 @@
 package com.example.doctour.presentation.ui.fragments.authAndReg.signIn
 
 import com.example.doctour.base.BaseViewModel
+import com.example.doctour.data.model.TokenRefreshDt
 import com.example.doctour.data.model.UserLoginDt
 import com.example.doctour.data.model.UserRegisterDt
 import com.example.doctour.data.remote.dtos.auth.SignInResultDto
@@ -14,15 +15,16 @@ class SignInViewModel @Inject constructor(
     private val authenticationRepository: AuthenticationRepositoryImpl
 ) : BaseViewModel() {
 
-    private val _signIn = mutableUiStateFlow<UserLoginDt>()
+    private val _signIn = mutableUiStateFlow<TokenRefreshDt>()
+        //mutableUiStateFlow<UserLoginDt>()
     val signIn = _signIn.asStateFlow()
 
     fun logInUser(
         phone_number: String?,
         password: String?
-    )=authenticationRepository.logInUser(
+    ) =authenticationRepository.logInUser(
         phone_number, password
-    )
+    ).gatherRequest(_signIn)
 
     private val _signInState = MutableUIStateFlow<SignInResultDto>()
     val signInState = _signInState.asStateFlow()
