@@ -56,7 +56,7 @@
     <string name="_2">2</string>
     <string name="_1">1</string>
     <string name="Name">Асанов Асан</string>
-    <string name="workexperience">Стаж работы 16 лет</string>
+    <string name="workexperience">Стаж работы от 16 лет</string>
     <string name="xirurg">Хирург |</string>
     <string name="nameClinic">Nova clinic</string>
     <string name="score">4.8</string>
@@ -211,5 +211,7 @@
     <string name="Delete_account">Удалить аккаунт</string>
     <string name="second">секунд</string>
     <string name="_55">55</string>
+    <string name="tv_verify_code">Проверка кода подтверждения</string>
+    <string name="repeat_send_code">Повторно отправить код через</string>
 
 </resources>

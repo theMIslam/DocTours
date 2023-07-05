@@ -8,7 +8,7 @@ import com.example.doctour.base.BaseDiffUtilItemCallback
 import com.example.doctour.databinding.ItemServicesBinding
 import com.example.doctour.presentation.model.ServiceUi
 
-class CategoryServicesAdapter
+class CategoryServicesAdapter(private val onClick:(ServiceUi)->Unit)
     : PagingDataAdapter<ServiceUi, CategoryServicesAdapter.CategoryServiceViewHolder>(
     BaseDiffUtilItemCallback()
 ) {
@@ -17,7 +17,9 @@ class CategoryServicesAdapter
             ):RecyclerView.ViewHolder(binding.root){
             fun bind(serviceUi: ServiceUi){
                 binding.tvServiceName.text=serviceUi.name
-
+                itemView.setOnClickListener{
+                    onClick.invoke(serviceUi)
+                }
             }
     }
 
