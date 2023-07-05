@@ -4,7 +4,7 @@ import com.example.doctour.data.utils.DataMapper
 import com.example.doctour.domain.model.Experience
 
 data class ExperienceDt(
-    val id: Int,
+    val id: String,
     val year: String?,
     val title: String?,
     val doctor: Int?

@@ -1,11 +1,13 @@
 package com.example.doctour.presentation.ui.fragments.authAndReg.signIn
 
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentSignInAndSignUpBinding
+import com.example.doctour.di.UserPreferences
 import com.example.doctour.presentation.ui.fragments.authAndReg.signIn.adapter.SignInAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator

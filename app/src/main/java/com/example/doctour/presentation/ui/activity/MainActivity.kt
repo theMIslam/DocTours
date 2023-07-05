@@ -1,13 +1,12 @@
 package com.example.doctour.presentation.ui.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.doctour.R
 import com.example.doctour.databinding.ActivityMainBinding
-import com.example.doctour.di.OnBoardingPreferences
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 

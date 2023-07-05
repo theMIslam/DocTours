@@ -4,16 +4,13 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Toast
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
-import com.example.doctour.data.viewmodels.UserRegisterVIewModel
 import com.example.doctour.databinding.FragmentSignUpBinding
 import com.example.doctour.di.UserPreferences
 import com.example.doctour.presentation.extensions.hideKeyboard
-import com.example.doctour.presentation.extensions.navigateSafely
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import dagger.hilt.android.AndroidEntryPoint
@@ -26,7 +23,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
 ) {
 
     override val binding: FragmentSignUpBinding by viewBinding(FragmentSignUpBinding::bind)
-    override val viewModel: SignUpViewModel by viewModels<SignUpViewModel>()
+    override val viewModel: SignUpViewModel by viewModels()
 
     @Inject
     lateinit var userPreferences: UserPreferences
@@ -35,9 +32,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
         super.initListeners()
         passwordFocusListener()
         passwordValidate()
-        binding.btnSignUp.setOnClickListener {
-            findNavController().navigate(R.id.homeFragment)
-        }
+
         binding.btnSignUp.setOnClickListener {
             when {
 
@@ -46,7 +41,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
                         requireContext(),
                         "Имя / Фамилия не должна быть пустой",
                         Toast.LENGTH_LONG
-                    ).show();
+                    ).show()
 
 
                 binding.etNumber.text.toString().isEmpty() ->
@@ -54,21 +49,21 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
                         requireContext(),
                         "Электронная почта не должна быть пустой",
                         Toast.LENGTH_LONG
-                    ).show();
+                    ).show()
 
                 binding.etRepeatPassword.text.toString() != binding.etPassword.text.toString() ->
                     Toast.makeText(
                         requireContext(),
                         "Повторный пароль не совпадает",
                         Toast.LENGTH_LONG
-                    ).show();
+                    ).show()
 
                 binding.etPassword.text.toString().isEmpty() ->
                     Toast.makeText(
                         requireContext(),
                         "Пароль не может быть пустым",
                         Toast.LENGTH_LONG
-                    ).show();
+                    ).show()
                 else -> {
                     hideKeyboard()
                     userPreferences.userNumber = binding.etNumber.text.toString()
@@ -185,21 +180,16 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
         return null
     }
 
-    fun initViewModel() {
-        val viewModel = ViewModelProvider(this)[UserRegisterVIewModel::class.java]
-    }
-
     override fun initSubscribers() {
         viewModel.signUpState.spectateUiState(success = {
-
-            findNavController().navigateSafely(R.id.action_signUpFragment_to_signInFragment)
+            findNavController().navigate(R.id.OTRCodeFragment)
             Toast.makeText(
                 requireContext(),
                 "Вы успешно зарегистрировались вам придет письмо на номер",
                 Toast.LENGTH_LONG
-            ).show();
+            ).show()
         }, error = {
-            Toast.makeText(requireContext(), "Что-то пошло не так", Toast.LENGTH_LONG).show();
+            Toast.makeText(requireContext(), "Что-то пошло не так", Toast.LENGTH_LONG).show()
 
             binding.etNumber.text!!.clear()
             binding.etPassword.text!!.clear()

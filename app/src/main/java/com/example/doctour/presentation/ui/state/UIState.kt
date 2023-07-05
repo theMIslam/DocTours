@@ -1,5 +1,4 @@
 package com.example.doctour.presentation.ui.state
-
 sealed class UIState<T> {
     class Idle<T> : UIState<T>()
     class Loading<T> : UIState<T>()
