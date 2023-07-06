@@ -9,7 +9,6 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentAboutDoctorReviewBinding
-import com.example.doctour.presentation.model.DoctorUi
 import com.example.doctour.presentation.ui.fragments.main.review.ReviewViewModel
 import com.example.doctour.presentation.ui.fragments.main.review.aboutDoctorReview.adapter.AboutDoctorReviewAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -45,15 +44,9 @@ class AboutDoctorReviewFragment :
             binding.rvReviews.isVisible = loadState.refresh is LoadState.NotLoading
             binding.progressBar.isVisible = loadState.refresh is LoadState.Loading
         }
-        //getData()
+
     }
 
-//    private fun getData() {
-//        if (arguments!=null){
-//            val data = arguments?.getSerializable("listOfReview") as DoctorUi
-//            adapterAboutDoctorReview.submitData(data.doctor_reviews)
-//        }
-//    }
 
     override fun initListeners() {
         super.initListeners()
