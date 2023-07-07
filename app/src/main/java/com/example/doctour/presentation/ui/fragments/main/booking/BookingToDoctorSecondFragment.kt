@@ -50,6 +50,7 @@ class BookingToDoctorSecondFragment :
                     "Дата рождения: ${userDateOfBirthday}\n" +
                     "Пол: ${gender}"
             goToWhatsApp(message = message,"+996704848277")
+            goToWhatsAppBusiness(message = message,"+996704848277")
         }
     }
 
@@ -69,4 +70,22 @@ class BookingToDoctorSecondFragment :
             Log.e("WhatsApp Error", e.toString())
         }
     }
+
+    private fun goToWhatsAppBusiness(message: String, phoneNumber: String) {
+        try {
+            val packageManager: PackageManager = requireActivity().packageManager
+            val i = Intent(Intent.ACTION_VIEW)
+            val url = "https://api.whatsapp.com/send?phone=$phoneNumber&text=${URLEncoder.encode(message, "UTF-8")}"
+            i.setPackage("com.whatsapp.w4b") // Package name for WhatsApp Business
+            i.setData(Uri.parse(url))
+            if (i.resolveActivity(packageManager) != null) {
+                startActivity(i)
+            } else {
+                showToast("WhatsApp Business Error")
+            }
+        } catch (e: Exception) {
+            Log.e("WhatsApp Business Error", e.toString())
+        }
+    }
+
 }
