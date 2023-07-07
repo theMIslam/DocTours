@@ -49,7 +49,7 @@ class BookingToDoctorSecondFragment :
                     "Номер телефона: ${userPhoneNumber}\n" +
                     "Дата рождения: ${userDateOfBirthday}\n" +
                     "Пол: ${gender}"
-            goToWhatsApp(message = message,"+996555720585")
+            goToWhatsApp(message = message,"+996704848277")
         }
     }
 
