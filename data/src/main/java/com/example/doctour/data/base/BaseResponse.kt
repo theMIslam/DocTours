@@ -1,6 +1,5 @@
 package com.example.doctour.data.base
 
-import com.example.doctour.data.utils.DataMapper
 import com.google.gson.annotations.SerializedName
 
 data class BaseResponse<T>(

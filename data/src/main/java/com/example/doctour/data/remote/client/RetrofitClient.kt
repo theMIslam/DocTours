@@ -2,7 +2,6 @@ package com.example.doctour.data.remote.client
 
 import com.example.doctour.data.BuildConfig
 import com.example.doctour.data.remote.apiservices.ApiService
-import com.example.doctour.data.remote.apiservices.UserRegisterApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

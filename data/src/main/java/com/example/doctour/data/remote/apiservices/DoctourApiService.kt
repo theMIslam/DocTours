@@ -10,7 +10,6 @@ import com.example.doctour.data.model.PasswordResetDt
 import com.example.doctour.data.model.ReviewDt
 import com.example.doctour.data.model.ServiceDt
 import com.example.doctour.data.model.SpecialtyDt
-import com.example.doctour.data.model.SubServiceClinicsDt
 import com.example.doctour.data.model.SubServiceDt
 import com.example.doctour.data.model.TokenRefreshDt
 import com.example.doctour.data.model.UserLoginDt

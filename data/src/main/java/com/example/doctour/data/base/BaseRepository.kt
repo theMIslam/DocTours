@@ -5,8 +5,6 @@ import android.webkit.MimeTypeMap
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import com.example.doctour.data.BuildConfig
-import com.example.doctour.data.model.ClinicDt
-import com.example.doctour.data.remote.dtos.auth.SignInDto
 import com.example.doctour.data.utils.DataMapper
 import com.example.doctour.data.utils.fromJson
 import com.example.doctour.domain.utils.Either
