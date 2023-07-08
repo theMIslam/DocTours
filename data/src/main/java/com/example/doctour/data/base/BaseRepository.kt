@@ -62,19 +62,6 @@ abstract class BaseRepository {
         }
     ).flow
 
-    protected fun <T> doRequest(request: suspend () -> T) = flow {
-        emit(Resource.Loading())
-        try {
-            emit(Resource.Success(request()))
-        } catch (ioException: IOException) {
-            emit(
-                Resource.Error(
-                    ioException.localizedMessage ?: "IoException error "
-                )
-            )
-        }
-    }.flowOn(Dispatchers.IO)
-
     private fun ResponseBody?.toApiError2(): MutableMap<String, List<String>> {
         return Gson().fromJson(
             this?.string(),
