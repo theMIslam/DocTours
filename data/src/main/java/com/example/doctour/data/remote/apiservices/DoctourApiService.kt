@@ -16,7 +16,9 @@ import com.example.doctour.data.model.TokenRefreshDt
 import com.example.doctour.data.model.UserLoginDt
 import com.example.doctour.data.model.UserRegisterDt
 import com.example.doctour.data.model.WhatsappSendDt
+import com.example.doctour.data.model.WriteReviewDt
 import okhttp3.ResponseBody
+import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -69,10 +71,10 @@ interface DoctourApiService {
         @Query("page")page: Int
     ):Response<BaseResponse<ReviewDt>>
 
-    @POST("/api/v1/src/reviews/")
+    @POST("/api/v1/src/reviews/")////////////////////////////////////////////////////////////////////////////
    suspend fun postReviews(
-        @Body data:ReviewDt
-    ):ResponseBody
+        @Body data:WriteReviewDt
+    ):ReviewDt
 
     @GET("/api/v1/src/service/")
    suspend fun getCategoryServicesOfDoctors(

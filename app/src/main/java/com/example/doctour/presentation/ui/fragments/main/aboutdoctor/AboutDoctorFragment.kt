@@ -1,5 +1,6 @@
 package com.example.doctour.presentation.ui.fragments.main.aboutdoctor
 
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -39,7 +40,6 @@ class AboutDoctorFragment
         }
         binding.tvAllReviews.setOnClickListener {
             findNavController().navigate(R.id.aboutDoctorReviewFragment)
-//                bundleOf( "listOfReview" to reviewList))
         }
         binding.btnRegister.setOnClickListener {
             findNavController().navigate(R.id.bookingToDoctorSecondFragment)
@@ -58,7 +58,7 @@ class AboutDoctorFragment
             val data = this.arguments?.getSerializable("about") as DoctorUi
             binding.tvNameOfDoctor.text = "Врач ${data.full_name}"
             data.photo?.let { binding.image.loadImage(it) }
-            binding.name.text = data.full_name
+            binding.tvDoctorName.text = data.full_name
             // binding.tvSurgeon.text = data.specialties
             //binding.tvClinic.text = data.clinic
             binding.tvPrice.text = data.price.toString()
