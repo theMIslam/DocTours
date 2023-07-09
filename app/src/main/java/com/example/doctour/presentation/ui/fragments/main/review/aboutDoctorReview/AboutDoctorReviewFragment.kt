@@ -4,11 +4,13 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
+import androidx.paging.PagingData
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentAboutDoctorReviewBinding
+import com.example.doctour.presentation.model.DoctorUi
 import com.example.doctour.presentation.ui.fragments.main.review.ReviewViewModel
 import com.example.doctour.presentation.ui.fragments.main.review.aboutDoctorReview.adapter.AboutDoctorReviewAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -44,7 +46,6 @@ class AboutDoctorReviewFragment :
             binding.rvReviews.isVisible = loadState.refresh is LoadState.NotLoading
             binding.progressBar.isVisible = loadState.refresh is LoadState.Loading
         }
-
     }
 
 
@@ -52,7 +53,7 @@ class AboutDoctorReviewFragment :
         super.initListeners()
 
         binding.btnWriteFb.setOnClickListener {
-            findNavController().navigate(R.id.aboutDoctorFragment)
+            findNavController().navigate(R.id.writeReviewFragment)
         }
 
         binding.tvArrowBack.setOnClickListener {

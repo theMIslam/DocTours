@@ -95,7 +95,7 @@
                             app:shapeAppearanceOverlay="@style/rounded_corners" />
 
                         <TextView
-                            android:id="@id/name"
+                            android:id="@id/tv_doctor_name"
                             style="@style/simple_black_text"
                             android:layout_width="@dimen/_180dp"
                             android:layout_height="@dimen/_24dp"
@@ -115,7 +115,7 @@
                             android:background="@color/grey"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@id/image"
-                            app:layout_constraintTop_toBottomOf="@id/name" />
+                            app:layout_constraintTop_toBottomOf="@id/tv_doctor_name" />
 
                         <TextView
                             android:id="@+id/tv_surgeon"

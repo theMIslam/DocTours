@@ -26,3 +26,7 @@ data class ReviewDt(
         doctor, id, stars, text,doctor_name, user_name, user, date
     )
 }
+
+fun Review.toReviewDt ()=ReviewDt(
+    doctor, id, stars, text, doctor_name, user_name, user, date
+)
