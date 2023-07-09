@@ -57,8 +57,8 @@
         <TextView
             android:id="@+id/tv_work_experience"
             style="@style/small_black_text_without_bold"
-            android:layout_width="@dimen/_114dp"
-            android:layout_height="@dimen/_16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10dp"
             android:text="@string/workexperience"
             app:layout_constraintStart_toStartOf="@id/tv_doctor_name"
@@ -67,8 +67,8 @@
         <TextView
             android:id="@+id/tv_work_speciality"
             style="@style/small_black_text_without_bold"
-            android:layout_width="@dimen/_60dp"
-            android:layout_height="@dimen/_16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_6dp"
             android:text="@string/xirurg"
             app:layout_constraintStart_toStartOf="@id/tv_work_experience"
@@ -80,6 +80,7 @@
             android:layout_width="@dimen/_80dp"
             android:layout_height="@dimen/_20dp"
             android:text="@string/nameClinic"
+            android:layout_marginStart="@dimen/_8dp"
             app:layout_constraintStart_toEndOf="@id/tv_work_speciality"
             app:layout_constraintTop_toTopOf="@id/tv_work_speciality" />
 
@@ -150,10 +151,11 @@
         <TextView
             android:id="@+id/tv_summa"
             style="@style/simple_parl_text"
-            android:layout_width="@dimen/_40dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
             android:text="@string/sum"
+
             app:layout_constraintBottom_toBottomOf="@id/tv_ot"
             app:layout_constraintStart_toStartOf="@id/tv_ot" />
 
