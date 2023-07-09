@@ -12,6 +12,7 @@ import com.example.doctour.common.UIState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
@@ -21,6 +22,21 @@ import kotlinx.coroutines.launch
  * @author London
  */
 abstract class BaseViewModel : ViewModel() {
+
+    protected fun <T ,S> Flow< Either<String,T>>.collectRequest(
+        state:MutableStateFlow<UIState<S>>,
+        mappedData:(T) ->S
+    ){
+        viewModelScope.launch(Dispatchers.IO){
+            state.value = UIState.Loading()
+            this@collectRequest.collect{
+                when (it){
+                    is Either.Left -> state.value = UIState.Error(it.value)
+                    is Either.Right -> state.value = UIState.Success(mappedData(it.value))
+                }
+            }
+        }
+    }
 
     protected fun <T> mutableUiStateFlow() = MutableStateFlow<UIState<T>>(UIState.Idle())
     protected fun <T>Flow<Resource<T>>.collectData(

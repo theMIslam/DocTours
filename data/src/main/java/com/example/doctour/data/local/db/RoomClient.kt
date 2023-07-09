@@ -2,7 +2,8 @@ package com.example.doctour.data.local.db
 
 import android.content.Context
 import androidx.room.Room
-import com.example.doctour.data.local.db.daos.DoctourDao
+import com.example.doctour.data.local.daos.DoctourDao
+
 
 class RoomClient {
     fun provideAppDatabase(context: Context) = Room

@@ -36,10 +36,10 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
         binding.btnLogIn.setOnClickListener {
             when{
                 binding.etNumber.text.toString().isEmpty() ->{
-                    showToast("Имя / Фамилия не должна быть пустой")
+                    showToast(getString(R.string.Field_must_not_be_empty))
                 }
                 binding.etPassword.text.toString().isEmpty()->{
-                    showToast("Пароль не может быть пустым")
+                    showToast(getString(R.string.Password_should_not_be_empty))
                 }
                 else ->{
                         viewModel.logInUser(binding.etNumber.text.toString(),
@@ -70,10 +70,10 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
     private fun validPhoneNumber(): String? {
         val phone = binding.etNumber.text.toString()
         if (!phone.matches(".*[0-9]*.".toRegex())){
-            return "Должны быть цифры"
+            return getString(R.string.Should_be_numbers)
         }
         if (phone.length < 10){
-            return  "Должно быть 10 цифр "
+            return  getString(R.string.Should_be_10_dijits)
         }
         return null
     }
@@ -86,18 +86,16 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
         }
     }
 
-
-
     private fun validPassword(): String? {
         val password = binding.etPassword.text.toString()
         if (password.length < 8){
-            return  "Минимальное количество символов 8"
+            return  getString(R.string.Minimum_number_of_characters_8)
         }
         if (!password.matches(".*[A-Z]*.".toRegex())){
-            return "Должен содержать 1 символ верхнего регистра"
+            return getString(R.string.Should_contain_1_upper_case_character)
         }
         if (!password.matches(".*[a-z]*.".toRegex())){
-            return "Должен содержать 1 символ нижнего регистра"
+            return getString(R.string.Should_contain_1_lowercase_character)
         }
         return null
     }
@@ -107,17 +105,13 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
              userPreferences.accessToken = getAuthenticationToken(it.access!!, true)
             userPreferences.refreshToken = getAuthenticationToken(it.refresh!!, true)
             userPreferences.isAuthenticated = true
-           // userPreferences.userID = it.id
-            //userPreferences.username = it.username
             userPreferences.accessToken= it.access
             userPreferences.refreshToken = it.refresh
             findNavController().navigate(R.id.homeFragment)
-           // activityNavController().navigateSafely(R.id.action_authAndRegFlowFragment_to_mainFlowFragment)
-            showToast("Вы успешно авторизовались")
+            showToast(getString(R.string.You_successfully_logged_in))
             initListeners()
         }, error = {
             showToast(getString(R.string.something_went_wrong))
-            //Toast.makeText(requireContext(), getString(R.string.something_went_wrong), Toast.LENGTH_SHORT).show()
         })
     }
 

@@ -5,7 +5,6 @@ import com.example.doctour.data.remote.dtos.auth.SignInResultDto
 import com.example.doctour.data.remote.dtos.auth.SignUpDto
 import com.example.doctour.data.remote.dtos.tokens.RefreshToken
 import com.example.doctour.data.remote.dtos.tokens.Tokens
-import okhttp3.Response
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST

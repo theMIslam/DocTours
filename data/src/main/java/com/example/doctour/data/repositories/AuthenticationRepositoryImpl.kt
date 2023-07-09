@@ -17,7 +17,6 @@ class AuthenticationRepositoryImpl @Inject constructor(
     private val authenticationApiService: UserRegisterApiService,
     private val doctourApiService: DoctourApiService
 ) {
-
      fun logInUser(
          phone_number: String?,
          password: String?

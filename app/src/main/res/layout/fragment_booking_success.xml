@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_success" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_done"
+        android:id="@+id/btn_ready"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_48dp"
         android:layout_marginHorizontal="@dimen/_16dp"

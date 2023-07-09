@@ -1,9 +1,9 @@
 package com.example.doctour.di
 
 import android.content.Context
+import com.example.doctour.data.local.daos.DoctourDao
 import com.example.doctour.data.local.db.AppDatabase
 import com.example.doctour.data.local.db.RoomClient
-import com.example.doctour.data.local.db.daos.DoctourDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

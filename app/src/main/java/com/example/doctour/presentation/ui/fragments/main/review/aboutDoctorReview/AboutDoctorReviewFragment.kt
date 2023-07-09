@@ -4,6 +4,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
+import androidx.paging.PagingData
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
@@ -45,21 +46,14 @@ class AboutDoctorReviewFragment :
             binding.rvReviews.isVisible = loadState.refresh is LoadState.NotLoading
             binding.progressBar.isVisible = loadState.refresh is LoadState.Loading
         }
-        //getData()
     }
 
-//    private fun getData() {
-//        if (arguments!=null){
-//            val data = arguments?.getSerializable("listOfReview") as DoctorUi
-//            adapterAboutDoctorReview.submitData(data.doctor_reviews)
-//        }
-//    }
 
     override fun initListeners() {
         super.initListeners()
 
         binding.btnWriteFb.setOnClickListener {
-            findNavController().navigate(R.id.aboutDoctorFragment)
+            findNavController().navigate(R.id.writeReviewFragment)
         }
 
         binding.tvArrowBack.setOnClickListener {

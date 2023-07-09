@@ -1,4 +1,4 @@
-package com.example.doctour.data.local.db.entities.doctour
+package com.example.doctour.data.local.entities.doctour
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

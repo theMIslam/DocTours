@@ -41,6 +41,7 @@ class FillProfileFragment : BaseFragment<FragmentProfileFillBinding, SignInViewM
             profilePreferences.saveName(binding.etFio.text.toString())
             profilePreferences.savePhone(binding.etNumber.text.toString())
             profilePreferences.saveBirthday(binding.etData.text.toString())
+            profilePreferences.saveGender(binding.actvGender.text.toString())
             showToast("Сохранено")
 
             putSharedData()
@@ -64,6 +65,7 @@ class FillProfileFragment : BaseFragment<FragmentProfileFillBinding, SignInViewM
         val gender = arrayOf("Женский", "Мужской", "Другое")
         val arrayAdapter = ArrayAdapter(requireActivity(), R.layout.item_dropdown, gender)
         binding.actvGender.setAdapter(arrayAdapter)
+
     }
 
     private fun checking() {

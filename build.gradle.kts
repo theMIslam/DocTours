@@ -1,6 +1,7 @@
 buildscript {
     dependencies {
         classpath(Libraries.GoogleServices.google)
+        classpath("com.android.tools.build:gradle:8.0.2")
     }
 }
 plugins {

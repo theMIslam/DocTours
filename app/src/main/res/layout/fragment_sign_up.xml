@@ -141,8 +141,6 @@
                 app:counterOverflowTextColor="@color/blue"
                 app:hintTextColor="@color/blue"
                 app:layout_constraintTop_toBottomOf="@id/linear"
-                app:counterEnabled="true"
-                app:counterMaxLength="16"
                 app:passwordToggleEnabled="true"
                 >
 
@@ -173,8 +171,6 @@
                 app:counterOverflowTextColor="@color/blue"
                 app:hintTextColor="@color/blue"
                 app:layout_constraintTop_toBottomOf="@id/til_password"
-                app:counterEnabled="true"
-                app:counterMaxLength="16"
                 app:passwordToggleEnabled="true"
                 >
 

@@ -213,5 +213,18 @@
     <string name="Delete_account">Удалить аккаунт</string>
     <string name="second">секунд</string>
     <string name="_55">55</string>
-
+    <string name="Password_should_not_be_empty">Пароль не может быть пустым</string>
+    <string name="Reset_password_does_not_math">Повторный пароль не совпадает</string>
+    <string name="Field_must_not_be_empty">"Поле не должно быть пустым"</string>
+    <string name="Helper_text">"Подсказка:"</string>
+    <string name="Password_should_be_between_8_and_16_characters">"Пароль должен быть от 8 до 16 символов"</string>
+    <string name="Password_does_not_match">Пароль не совпадает</string>
+    <string name="Minimum_number_of_characters_8">"Минимальное количество символов 8"</string>
+    <string name="Should_contain_1_upper_case_character">"Должен содержать 1 символ верхнего регистра"</string>
+    <string name="Should_contain_1_lowercase_character">"Должен содержать 1 символ нижнего регистра"</string>
+    <string name="You_have_successfully_registered_you_will_receive_a_letter_to_the_number">"Вы успешно зарегистрировались вам придет письмо на номер"</string>
+<string name="Something_went_wrong">"Что-то пошло не так"</string>
+    <string name="Should_be_numbers">"Должны быть цифры"</string>
+    <string name="Should_be_10_dijits">"Должно быть 10 цифр"</string>
+    <string name="You_successfully_logged_in">"Вы успешно зашли"</string>
 </resources>

@@ -1,0 +1,1 @@
+package com.example.doctour.data.remote.dto.doctour.reviewsdata class ReviewsCreate(    val doctor: Int,    val stars: Int,    val text: String)
