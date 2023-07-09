@@ -1,7 +1,5 @@
 package com.example.doctour.presentation.ui.fragments.main.aboutdoctor
 
-import android.annotation.SuppressLint
-import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,9 +9,7 @@ import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentAboutDoctorBinding
 import com.example.doctour.presentation.extensions.loadImage
 import com.example.doctour.presentation.extensions.showToast
-import com.example.doctour.common.UIState
 import com.example.doctour.presentation.model.DoctorUi
-import com.example.doctour.presentation.model.ReviewUi
 import com.example.doctour.presentation.ui.fragments.main.aboutdoctor.adapter.FeedbacksAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,8 +22,6 @@ class AboutDoctorFragment
     override val binding: FragmentAboutDoctorBinding by viewBinding(FragmentAboutDoctorBinding::bind)
     override val viewModel: AboutDoctorViewModel by viewModels()
     private lateinit var adapterFeedback: FeedbacksAdapter
-    private var selectedList = arrayListOf<DoctorUi>()
-    private var reviewList = ArrayList<ReviewUi>()
 
     override fun initialize() {
         super.initialize()
@@ -35,18 +29,6 @@ class AboutDoctorFragment
         adapterFeedback=FeedbacksAdapter()
         binding.rvFeedbacks.adapter = adapterFeedback
         getInfoAboutDoctor()
-    }
-
-    override fun initSubscribers() {
-        super.initSubscribers()
-        viewModel.createFav.collectUIState(
-            uiState = {
-                binding.progressBar.isVisible = it is UIState.Loading
-            },
-            onSuccess = {
-                viewModel.loading.postValue(false)
-            }
-        )
     }
 
     override fun initListeners() {
@@ -63,15 +45,14 @@ class AboutDoctorFragment
             findNavController().navigate(R.id.bookingToDoctorSecondFragment)
         }
         binding.checkboxHeart.setOnCheckedChangeListener { checkbox, isChecked ->
-            if (isChecked) {
-                showToast("Добавлено в избранные")
-            } else {
-                showToast("Удалено из избранных")
-            }
+                if (isChecked) {
+                    showToast("Добавлено в избранные")
+                } else {
+                    showToast("Удалено из избранных")
+                }
         }
     }
 
-    @SuppressLint("SetTextI18n")
     private fun getInfoAboutDoctor() {
         if (arguments != null) {
             val data = this.arguments?.getSerializable("about") as DoctorUi

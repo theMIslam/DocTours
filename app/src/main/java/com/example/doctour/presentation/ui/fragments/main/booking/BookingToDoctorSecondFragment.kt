@@ -19,8 +19,8 @@ import java.net.URLEncoder
 @AndroidEntryPoint
 class BookingToDoctorSecondFragment :
     BaseFragment<FragmentBookingToDoctorSecondBinding, BookingToDoctorViewModel>(
-        R.layout.fragment_booking_to_doctor_second
-    ){
+    R.layout.fragment_booking_to_doctor_second
+){
 
     override val binding: FragmentBookingToDoctorSecondBinding by viewBinding(FragmentBookingToDoctorSecondBinding::bind)
     override val viewModel: BookingToDoctorViewModel by viewModels()
@@ -42,15 +42,15 @@ class BookingToDoctorSecondFragment :
             if (binding.btnFemale.isChecked) gender="Женский"
             if (binding.btnMale.isChecked) gender = "Мужской"
 
-            val message = "Здравствуйте," +
-                    "Я хотел(а) бы записаться к Вам .\n" +
-                    "Немного информации обо мне⬇️\n" +
-                    "Фио: ${fio}\n" +
-                    "Номер телефона: ${userPhoneNumber}\n" +
-                    "Дата рождения: ${userDateOfBirthday}\n" +
-                    "Пол: ${gender}"
+             val message = "Здравствуйте," +
+                     "Я хотел(а) бы записаться к Вам .\n" +
+                     "Немного информации обо мне⬇️\n" +
+                     "Фио: ${fio}\n" +
+                     "Номер телефона: ${userPhoneNumber}\n" +
+                     "Дата рождения: ${userDateOfBirthday}\n" +
+                     "Пол: ${gender}"
             goToWhatsApp(message = message,"+996704848277")
-            goToWhatsAppBusiness(message = message,"+996704848277")
+            goToWhatsAppBusiness(message = message, "+996704848277")
         }
     }
 

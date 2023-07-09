@@ -20,10 +20,7 @@ data class DoctorUi(
     val summary: String?,
     val instagram :String?,
     val doctor_reviews:List<ReviewUi>?= emptyList(),
-    val isChoosen :Boolean = false,
-    val clinicObject:ClinicsUi?,
-    val specialtiesObject:SpecialityUi?,
-    val doctor_reviewsObject:ReviewUi?
+    val isChoosen :Boolean = false
 ) : IBaseDiffModel<String>,java.io.Serializable
 fun Doctor.toDoctorUi() = DoctorUi(
     id=id,
@@ -38,10 +35,31 @@ fun Doctor.toDoctorUi() = DoctorUi(
     summary=summary,
     instagram=instagram,
     doctor_reviews?.map { it.toReviewUi() },
-    isChoosen,
-    specialtiesObject=specialtiesObject?.toSpecialityUi(),
-    clinicObject = clinicObject?.toClinicsUi(),
-    doctor_reviewsObject = doctor_reviewsObject?.toReviewUi()
+    isChoosen
+)
+fun  DoctorUi.toDoctorDmn()=Doctor(
+    id,
+    clinic?.map { it.toClinicDmn() },
+    experience,
+    full_name,
+    id,
+    num_reviews,
+    photo,
+    price,
+    specialties?.map { it.toSpecialityDmn() },
+    summary,
+    instagram
+)
+fun SpecialityUi.toSpecialityDmn()=Speciality(
+    id, name
+)
+fun ClinicsUi.toClinicDmn()=Clinics(
+    address, contacts1,
+    contacts2, descriptions,
+    ending_working_day, id, link_2gis,
+    link_clinic, photo,
+    starting_working_day, title,
+    weekday, weekend, slug
 )
 
 data class ReviewUi(
