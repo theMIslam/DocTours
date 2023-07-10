@@ -70,6 +70,7 @@
             android:textOn="On"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:gravity="start|center"
             app:thumbTint="@drawable/switch_color"
             app:trackTint="@drawable/switch_bg" />
 
@@ -84,13 +85,15 @@
         app:cardCornerRadius="16dp"
         app:cardElevation="8dp">
 
-        <com.google.android.material.button.MaterialButton
+        <TextView
             android:id="@+id/btn_exit"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:backgroundTint="@color/white"
             android:drawableEnd="@drawable/ic_next"
             android:text="@string/exit"
+            android:gravity="start|center"
+            android:paddingHorizontal="@dimen/_16dp"
             android:textAlignment="textStart"
             android:textColor="@color/black"
             android:textSize="20sp"
@@ -105,14 +108,16 @@
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="24dp"
         app:cardCornerRadius="16dp"
-        app:cardElevation="8dp">
+        app:cardElevation="8dp"  >
 
-        <com.google.android.material.button.MaterialButton
+        <TextView
             android:id="@+id/btn_delete_account"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:backgroundTint="@color/white"
             android:drawableEnd="@drawable/ic_next"
+            android:gravity="start|center"
+            android:paddingHorizontal="@dimen/_16dp"
             android:text="@string/Delete_account"
             android:textAlignment="textStart"
             android:textColor="@color/black"

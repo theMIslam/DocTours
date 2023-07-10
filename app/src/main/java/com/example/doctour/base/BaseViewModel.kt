@@ -8,7 +8,7 @@ import androidx.paging.map
 import com.example.doctour.domain.utils.Either
 import com.example.doctour.domain.utils.NetworkError
 import com.example.doctour.domain.utils.Resource
-import com.example.doctour.presentation.ui.state.UIState
+import com.example.doctour.common.UIState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -60,22 +60,6 @@ abstract class BaseViewModel : ViewModel() {
             }
         }
 
-    }
-
-    protected fun <T> Flow<Either<String, T>>.gatherRequest(
-        state: MutableStateFlow<UIState<T>>,
-    ) {
-        viewModelScope.launch(Dispatchers.IO) {
-            state.value = UIState.Loading()
-            this@gatherRequest.collect {
-                when (it) {
-                    is Either.Left -> state.value = UIState.Error(it.value)
-                    is Either.Right -> state.value =
-                        UIState.Success(it.value)
-                }
-            }
-
-        }
     }
 
     /**
@@ -186,6 +170,23 @@ abstract class BaseViewModel : ViewModel() {
      * @see cachedIn
      * @see viewModelScope
      */
+
+    protected fun <T> Flow<Either<String, T>>.gatherRequest(
+        state: MutableStateFlow<UIState<T>>,
+    ) {
+        viewModelScope.launch(Dispatchers.IO) {
+            state.value = UIState.Loading()
+            this@gatherRequest.collect {
+                when (it) {
+                    is Either.Left -> state.value = UIState.Error(it.value)
+                    is Either.Right -> state.value =
+                        UIState.Success(it.value)
+                }
+            }
+
+        }
+    }
+
     protected fun <T : Any, S : Any> Flow<PagingData<T>>.collectPagingRequest(
         mappedData: (T) -> S
     ) = map { it.map { data -> mappedData(data) } }.cachedIn(viewModelScope)

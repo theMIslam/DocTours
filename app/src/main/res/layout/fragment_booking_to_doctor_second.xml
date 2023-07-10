@@ -79,7 +79,7 @@
             android:paddingHorizontal="@dimen/_6dp"
             android:textColor="@color/black"
             android:textColorHint="@color/grey"
-           />
+            />
 
         <TextView
             android:id="@+id/tv_describe_your_problem"

@@ -32,6 +32,7 @@ class CategoryClinicAdapter(
         fun bind(clinicsUi: ClinicsUi) {
             clinicsUi.photo?.let { binding.ivClinicAvatar.loadImage(it) }
             binding.tvClinicName.text = clinicsUi.title
+
             ///tupik
             //????????
         }

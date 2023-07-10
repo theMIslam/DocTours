@@ -3,7 +3,6 @@ package com.example.doctour.presentation.ui.fragments.home
 import android.content.Context
 import android.os.Parcel
 import android.os.Parcelable
-import android.view.View
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
@@ -14,8 +13,8 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentHomeBinding
-import com.example.doctour.presentation.extensions.showToast
 import com.example.doctour.presentation.model.DoctorUi
+import com.example.doctour.presentation.extensions.showToast
 import com.example.doctour.presentation.ui.fragments.home.adapter.HomeClinicAdapter
 import com.example.doctour.presentation.ui.fragments.home.adapter.HomeDoctorSpecsAdapter
 import com.example.doctour.presentation.ui.fragments.home.adapter.HomeInfoDoctorAdapter

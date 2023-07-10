@@ -10,13 +10,13 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface AuthenticatorApiService {
-
     @POST("/api/refreshtoken")
     fun refreshToken(@Body refreshToken: RefreshToken): Call<Tokens>
 
-    @POST("users/register/")
-    suspend fun signUp(@Body signUpDto: SignUpDto)
+    @POST("/users/register/")
+    suspend fun signUp(@Body signUpDto: SignUpDto):List<SignInResultDto>
 
-    @POST("users/login/")
-    suspend fun login(@Body signInDto: SignInDto): SignInResultDto
+    @POST("/api/v1/users/login/")
+    suspend fun signIn(@Body signInDto: SignInDto): SignInResultDto
+
 }

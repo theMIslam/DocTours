@@ -5,49 +5,43 @@ import com.example.doctour.domain.model.Clinics
 import com.google.gson.annotations.SerializedName
 
 data class ClinicDt(
-    @SerializedName("address")
-    val address: String?,
-    @SerializedName("contacts1")
-    val contacts1: Long?,
-     @SerializedName("contacts2")
-    val contacts2: Long?,
-     @SerializedName("descriptions")
-    val descriptions: String?,
-     @SerializedName("ending_working_day")
-    val ending_working_day: String?,
-     @SerializedName("id")
     val id: String,
-     @SerializedName("link_2gis")
-    val link_2gis: String?,
-     @SerializedName("link_clinic")
-    val link_clinic: String?,
-     @SerializedName("photo")
+    val is_deleted :Boolean? ,
+    val created_at :String?,
+    val updated_at :String?,
     val photo: String?,
-     @SerializedName("starting_working_day")
-    val starting_working_day: String?,
-     @SerializedName("title")
     val title: String?,
-     @SerializedName("weekday")
+    val slug:String?,
+    val link_clinic: String?,
+    val link_2gis: String?,
+    val descriptions: String?,
+    val starting_working_day: String?,
+    val ending_working_day: String?,
+    val address: String?,
+    val contacts1: Long?,
+    val contacts2: Long?,
     val weekday: String?,
-     @SerializedName("weekend")
     val weekend: String?,
-     @SerializedName("slug")
-    val slug:String?
+    val  city:String?
 ) : DataMapper<Clinics> {
     override fun mapToDomain() = Clinics(
+        id,
+        is_deleted,
+        created_at,
+        updated_at,
+        photo,
+        title,
+        slug,
+        link_clinic,
+        link_2gis,
+        descriptions,
+        starting_working_day,
+        ending_working_day,
         address,
         contacts1,
         contacts2,
-        descriptions,
-        ending_working_day,
-        id,
-        link_2gis,
-        link_clinic,
-        photo,
-        starting_working_day,
-        title,
         weekday,
         weekend,
-        slug
+        city
     )
 }
