@@ -3,13 +3,11 @@ package com.example.doctour.di
 import androidx.lifecycle.MutableLiveData
 import com.example.doctour.data.remote.apiservices.DoctourApiService
 import com.example.doctour.data.remote.apiservices.UserRegisterApiService
-import com.example.doctour.data.remote.client.authenticator.TokenAuthenticator
-import com.example.doctour.data.remote.client.interceptors.AuthorizationInterceptor
+import com.example.doctour.presentation.ui.fragments.authAndReg.signUp.AuthInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import okhttp3.Authenticator
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -36,7 +34,6 @@ object NetworkModule {
             .writeTimeout(30, TimeUnit.SECONDS)
             .connectTimeout(30, TimeUnit.SECONDS)
             .addInterceptor(interceptor)
-            .addInterceptor(interceptor)
             .build()
     }
 
@@ -55,10 +52,11 @@ object NetworkModule {
     fun provideDoctorApiService(retrofit: Retrofit): DoctourApiService {
         return retrofit.create(DoctourApiService::class.java)
     }
+
     @Singleton
     @Provides
-    fun provideUserRegisterApiService(retrofit: Retrofit) :UserRegisterApiService{
-       return retrofit.create(UserRegisterApiService::class.java)
+    fun provideUserRegisterApiService(retrofit: Retrofit): UserRegisterApiService {
+        return retrofit.create(UserRegisterApiService::class.java)
     }
 
 

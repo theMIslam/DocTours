@@ -19,8 +19,8 @@ import java.net.URLEncoder
 @AndroidEntryPoint
 class BookingToDoctorSecondFragment :
     BaseFragment<FragmentBookingToDoctorSecondBinding, BookingToDoctorViewModel>(
-    R.layout.fragment_booking_to_doctor_second
-){
+        R.layout.fragment_booking_to_doctor_second
+    ){
 
     override val binding: FragmentBookingToDoctorSecondBinding by viewBinding(FragmentBookingToDoctorSecondBinding::bind)
     override val viewModel: BookingToDoctorViewModel by viewModels()
@@ -49,8 +49,9 @@ class BookingToDoctorSecondFragment :
                      "Номер телефона: ${userPhoneNumber}\n" +
                      "Дата рождения: ${userDateOfBirthday}\n" +
                      "Пол: ${gender}"
-            goToWhatsApp(message = message,"+996704848277")
-            goToWhatsAppBusiness(message = message, "+996704848277")
+            goToWhatsApp(message = message,"+996702111582")
+            goToWhatsAppBusiness(message = message,"+996704848277")
+
         }
     }
 

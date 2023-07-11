@@ -5,13 +5,13 @@ import com.example.doctour.domain.model.Speciality
 import com.google.gson.annotations.SerializedName
 
 data class SpecialtyDt(
-    @SerializedName("id")
     val id: String,
-    @SerializedName("name")
-    val name: String?
+    val name: String?,
+    val doctors_count:String?
 ) : DataMapper<Speciality> {
     override fun mapToDomain() = Speciality(
         id,
-        name
+        name,
+        doctors_count
     )
 }

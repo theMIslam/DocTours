@@ -13,8 +13,8 @@ import retrofit2.http.POST
 @ProvidedTypeConverter
 interface UserRegisterApiService {
 
-    @POST("/api/v1/register")
-    fun usersRegister(@Body usersRegister: UserRegisterDto): Call<UserRegister>
+//    @POST("/api/v1/register")
+//    fun usersRegister(@Body usersRegister: UserRegisterDto): Call<UserRegister>
 
     @POST("api/v1/users/login/")
     suspend fun login(@Body signInDto: SignInDto): SignInResultDto
