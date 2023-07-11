@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName
 data class SpecialtyDt(
     val id: String,
     val name: String?,
-    val doctors_count:String?
+    val doctors_count:Int?
 ) : DataMapper<Speciality> {
     override fun mapToDomain() = Speciality(
         id,

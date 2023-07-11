@@ -6,8 +6,8 @@ import com.google.gson.annotations.SerializedName
 
 data class TokenRefreshDt(
     @SerializedName("token")
-    val refresh: String?,
-    val access: String?
+    val refresh: String,
+    val access: String
 ) : DataMapper<TokenRefresh> {
     override fun mapToDomain() = TokenRefresh(
       refresh,

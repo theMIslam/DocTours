@@ -22,7 +22,6 @@ class FavoriteDoctorsFragment
     : BaseFragment<FragmentFavoriteDoctorsBinding, FavoriteDoctorsViewModel>(
     R.layout.fragment_favorite_doctors
 ) {
-
     override val binding: FragmentFavoriteDoctorsBinding by viewBinding(
         FragmentFavoriteDoctorsBinding::bind
     )

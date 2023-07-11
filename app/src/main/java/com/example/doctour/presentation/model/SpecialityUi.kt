@@ -6,7 +6,7 @@ import com.example.doctour.domain.model.Speciality
 data class SpecialityUi(
     override val id: String,
     val name: String?,
-    val doctors_count:String?
+    val doctors_count:Int?
 ): IBaseDiffModel<String>
 
 fun Speciality.toSpecialityUi() = SpecialityUi(

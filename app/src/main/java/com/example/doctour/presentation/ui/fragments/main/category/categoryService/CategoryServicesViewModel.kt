@@ -23,11 +23,14 @@ class CategoryServicesViewModel @Inject constructor(
     val search = _search.asStateFlow()
 
     fun getServiceOfDoctors() = getCategoryServiceUseCase(
-        name.value,
-        price.value,
-        search.value
+        _name.value,
+        _price.value,
+        _search.value
     ).collectPagingRequest {
         it.toServiceUi()
+    }
+    fun  x (name: String){
+        _name.value = name
     }
 
 }

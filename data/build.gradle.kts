@@ -71,4 +71,7 @@ dependencies {
     // Gson
     implementation(Libraries.Gson.gson)
     implementation(Libraries.Retrofit.gsonConverter)
+
+    //dataStore
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
 }

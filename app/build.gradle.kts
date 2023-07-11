@@ -131,5 +131,8 @@ android {
 
         // LibPhoneNumber
         implementation(Libraries.LibPhoneNumber.libphonenumber)
+
+        //dataStore
+        implementation("androidx.datastore:datastore-preferences:1.0.0")
     }
 }
