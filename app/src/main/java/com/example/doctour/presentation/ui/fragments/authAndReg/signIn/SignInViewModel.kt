@@ -20,7 +20,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SignInViewModel @Inject constructor(
-    private val authenticationRepository: AuthenticationRepositoryImpl,
+    //private val authenticationRepository: AuthenticationRepositoryImpl,
     private val signInUseCase: SignInUseCase
 ) : BaseViewModel() {
 
@@ -29,9 +29,14 @@ class SignInViewModel @Inject constructor(
 
     fun signIn (phone_number:String,
                 password:String)
-    = signInUseCase(phone_number, password).collectRequest(_signIn){
+    = signInUseCase(phone_number, password).collectNetworkRequest(_signIn){
         it.toTokenRefreshUI()
     }
+
+//
+//    collectRequest(_signIn){
+//        it.toTokenRefreshUI()
+//    }
 
 //    private val _signIn = mutableUiStateFlow<TokenRefreshDt>()
 //        //mutableUiStateFlow<UserLoginDt>()

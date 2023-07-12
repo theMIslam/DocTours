@@ -7,6 +7,8 @@ import com.example.doctour.base.BaseViewModel
 import com.example.doctour.domain.usecases.GetAllDoctorsUseCase
 import com.example.doctour.domain.usecases.GetCategoryDoctorsUseCase
 import com.example.doctour.domain.usecases.GetClinicUseCase
+import com.example.doctour.presentation.model.DoctorUi
+import com.example.doctour.presentation.model.TokenRefreshUI
 import com.example.doctour.presentation.model.toClinicsUi
 import com.example.doctour.presentation.model.toDoctorUi
 import com.example.doctour.presentation.model.toSpecialityUi
@@ -23,9 +25,8 @@ class HomeViewModel @Inject constructor(
     private  val getClinicUseCase: GetClinicUseCase
 ) : BaseViewModel() {
 
-    fun heartClick(){
-
-    }
+    private val _doctorUiState = MutableUIStateFlow<DoctorUi>()
+    val doctorUIState = _doctorUiState.asStateFlow()
 
     private val _speciality = MutableStateFlow<String?>(null)
     val speciality = _speciality.asStateFlow()
@@ -57,10 +58,4 @@ class HomeViewModel @Inject constructor(
 
     fun getTheBestClinics() = getClinicUseCase().collectPagingRequest { it.toClinicsUi() }
 
-    private val _notification = MutableLiveData<List<Notification>>()
-    val notification: LiveData<List<Notification>> get() = _notification
-
-    fun getNotification() {
-        _notification.value = listOf(Notification("asd", "asd", "asd", "asd"))
-    }
 }
