@@ -15,7 +15,6 @@ import com.example.doctour.presentation.ui.fragments.authAndReg.signIn.SignInVie
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-
 @AndroidEntryPoint
 
 class ProfileFragment : BaseFragment<FragmentProfileBinding, SignInViewModel>(

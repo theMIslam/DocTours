@@ -312,5 +312,14 @@
         android:name="com.example.doctour.presentation.ui.fragments.main.onboarding.OnBoardPageFragment"
         android:label="fragment_on_board_page"
         tools:layout="@layout/fragment_on_board_page" />
+    <fragment
+        android:id="@+id/verificationCodeFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.password.VerificationCodeFragment"
+        android:label="VerificationCodeFragment" />
+    <fragment
+        android:id="@+id/categoryServiceFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.category.categoryService.CategoryServiceFragment"
+        android:label="fragment_category_service"
+        tools:layout="@layout/fragment_category_service" />
 
 </navigation>

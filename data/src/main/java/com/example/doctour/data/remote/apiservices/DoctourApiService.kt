@@ -16,10 +16,14 @@ import com.example.doctour.data.model.UserLoginDt
 import com.example.doctour.data.model.UserRegisterDt
 import com.example.doctour.data.model.WhatsappSendDt
 import com.example.doctour.data.model.WriteReviewDt
+import com.example.doctour.data.remote.dtos.auth.UserRegisterDto
+import com.example.doctour.domain.model.UserRegister
 import okhttp3.ResponseBody
+import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -29,12 +33,22 @@ interface DoctourApiService {
     @POST("api/v1/users/login/")
     suspend fun postLogin(
         @Body data:UserLoginDt
-    ):TokenRefreshDt
+    ):Response<TokenRefreshDt>
+
+    @GET("api/v1/users/login/token/refresh/")
+    suspend fun refreshToken(
+        @Header("Authorization") token: String
+    ): Response<TokenRefreshDt>
+
 
     @POST("api/v1/users/register/")
     suspend fun postRegister(
         @Body data:UserRegisterDt
-    ):UserRegisterDt
+    ):Response<UserRegisterDt>
+
+
+
+
 
     @GET("/api/v1/src/doctors/")
     suspend fun searchByTitle(

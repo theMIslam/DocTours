@@ -1,6 +1,5 @@
 package com.example.doctour.presentation.ui.fragments.main.aboutdoctor
 
-import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager

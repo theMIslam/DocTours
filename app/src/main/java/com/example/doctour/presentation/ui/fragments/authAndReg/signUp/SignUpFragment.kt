@@ -167,11 +167,13 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
     }
 
     override fun initSubscribers() {
-        viewModel.signUpState.spectateUiState(success = {
+        viewModel.signUpState.spectateUiState(
+            success = {
             findNavController().navigate(R.id.OTRCodeFragment)
             showToast(getString(R.string.You_have_successfully_registered_you_will_receive_a_letter_to_the_number))
         }, error = {
-            showToast(getString(R.string.Something_went_wrong))
+                showToast(it)
+           // showToast(getString(R.string.Something_went_wrong))
 
             binding.etNumber.text!!.clear()
             binding.etPassword.text!!.clear()

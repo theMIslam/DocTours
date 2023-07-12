@@ -5,6 +5,7 @@ import android.os.Parcel
 import android.os.Parcelable
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
@@ -15,6 +16,7 @@ import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentHomeBinding
 import com.example.doctour.presentation.model.DoctorUi
 import com.example.doctour.presentation.extensions.showToast
+import com.example.doctour.presentation.ui.fragments.authAndReg.TokenViewModel
 import com.example.doctour.presentation.ui.fragments.home.adapter.HomeClinicAdapter
 import com.example.doctour.presentation.ui.fragments.home.adapter.HomeDoctorSpecsAdapter
 import com.example.doctour.presentation.ui.fragments.home.adapter.HomeInfoDoctorAdapter
@@ -32,6 +34,8 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
 
     override val binding by viewBinding(FragmentHomeBinding::bind)
     override val viewModel: HomeViewModel by viewModels()
+    private val tokenViewModel :TokenViewModel by activityViewModels()
+    private var token :String ?=null
 
     private val adapterHomeDoctorSpecs = HomeDoctorSpecsAdapter(this::onSpecsClick)
     private val adapterHomeClinic = HomeClinicAdapter(this::onClinicClick)
@@ -61,6 +65,16 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
         }
     }
 
+    override fun initSubscribers() {
+        super.initSubscribers()
+        tokenViewModel.token.observe(viewLifecycleOwner){token ->
+            this.token = token
+            if (token == null){
+                //findNavController().navigate(R.id.SignInAndSignUpFragment)
+                showToast("Token is Null")
+            }
+        }
+    }
     private fun onDoctorInfoClick(doctorUi: DoctorUi) {
         findNavController().navigate(
             R.id.aboutDoctorFragment, bundleOf(
@@ -71,7 +85,19 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
 
     override fun initRequest() {
         super.initRequest()
-        fetchDoctorInfo()
+
+        viewModel.doctorUIState.collectUiStateBema(
+            onSuccess = {
+                fetchDoctorInfo()
+                binding.progressBar.isVisible = false
+             showToast("Successfully")
+            },
+            onError = {
+                binding.progressBar.isVisible = true
+                showToast(it)
+            }
+        )
+
     }
 
     private fun fetchDoctorInfo() {

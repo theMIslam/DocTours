@@ -6,6 +6,9 @@ import com.example.doctour.domain.model.Doctor
 import com.example.doctour.domain.model.Review
 import com.example.doctour.domain.model.Service
 import com.example.doctour.domain.model.Speciality
+import com.example.doctour.domain.model.TokenRefresh
+import com.example.doctour.domain.model.UserLogin
+import com.example.doctour.domain.model.UserRegister
 import com.example.doctour.domain.model.WriteReview
 import com.example.doctour.domain.utils.Either
 import com.example.doctour.domain.utils.NetworkError
@@ -13,6 +16,14 @@ import com.example.doctour.domain.utils.Resource
 import kotlinx.coroutines.flow.Flow
 
 interface RemoteDoctorRepository {
+
+    fun postRegister(phone_number: String?,
+                     fullname: String?,
+                     gender: String?,
+                     birthday: String?,
+                     password: String?):Flow<Either<NetworkError,UserRegister>>
+
+    fun postLogin( phone_number:String,password:String):Flow<Either<NetworkError,TokenRefresh>>
 
     fun writeReview(data:WriteReview):Flow<Either<String,Review>>
 

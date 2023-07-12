@@ -26,6 +26,7 @@ class AuthenticationRepositoryImpl @Inject constructor(
              phone_number, password
          ))
      }
+
     fun registerUser(
         phone_number: String?,
         fullname: String?,
@@ -40,7 +41,7 @@ class AuthenticationRepositoryImpl @Inject constructor(
         )
     }
 
-    fun signUp(
+    fun signUp (
         username: String,
         number: String,
         password: String,

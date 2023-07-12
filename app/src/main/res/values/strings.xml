@@ -56,7 +56,7 @@
     <string name="_2">2</string>
     <string name="_1">1</string>
     <string name="Name">Асанов Асан</string>
-    <string name="workexperience">Стаж работы 16 лет</string>
+    <string name="workexperience">Стаж работы от 16 лет</string>
     <string name="xirurg">Хирург |</string>
     <string name="nameClinic">Nova clinic</string>
     <string name="score">4.8</string>
@@ -216,7 +216,7 @@
     <string name="Password_should_not_be_empty">Пароль не может быть пустым</string>
     <string name="Reset_password_does_not_math">Повторный пароль не совпадает</string>
     <string name="Field_must_not_be_empty">"Поле не должно быть пустым"</string>
-    <string name="Helper_text">"Подсказка:"</string>
+    <string name="Helper_text">"Error:"</string>
     <string name="Password_should_be_between_8_and_16_characters">"Пароль должен быть от 8 до 16 символов"</string>
     <string name="Password_does_not_match">Пароль не совпадает</string>
     <string name="Minimum_number_of_characters_8">"Минимальное количество символов 8"</string>

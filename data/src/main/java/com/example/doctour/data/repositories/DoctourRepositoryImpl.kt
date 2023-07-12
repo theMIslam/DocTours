@@ -2,7 +2,10 @@ package com.example.doctour.data.repositories
 
 import androidx.paging.PagingData
 import com.example.doctour.data.base.BaseRepository
+import com.example.doctour.data.model.UserLoginDt
+import com.example.doctour.data.model.UserRegisterDt
 import com.example.doctour.data.model.toReviewDt
+import com.example.doctour.data.model.toUserLoginDt
 import com.example.doctour.data.model.toWriteReviewDt
 import com.example.doctour.data.remote.apiservices.DoctourApiService
 import com.example.doctour.data.remote.pagingsources.сategory.CategoryClinicsPaging
@@ -15,6 +18,9 @@ import com.example.doctour.domain.model.Clinics
 import com.example.doctour.domain.model.Doctor
 import com.example.doctour.domain.model.Review
 import com.example.doctour.domain.model.Service
+import com.example.doctour.domain.model.TokenRefresh
+import com.example.doctour.domain.model.UserLogin
+import com.example.doctour.domain.model.UserRegister
 import com.example.doctour.domain.model.WriteReview
 import com.example.doctour.domain.repositories.RemoteDoctorRepository
 import com.example.doctour.domain.utils.Either
@@ -25,6 +31,33 @@ import javax.inject.Inject
 class DoctourRepositoryImpl @Inject constructor(
     private val doctourApiService: DoctourApiService
 ) : RemoteDoctorRepository, BaseRepository() {
+
+    override fun postRegister(
+        phone_number: String?,
+        fullname: String?,
+        gender: String?,
+        birthday: String?,
+        password: String?)
+    = doNetworkRequestWithMapping {
+        doctourApiService.postRegister(
+            UserRegisterDt(
+                phone_number = phone_number,
+                fullname,
+                gender,
+                birthday,
+                password
+            )
+        )
+    }
+
+    override fun postLogin(phone_number:String, password:String)
+    = doNetworkRequestWithMapping {
+        doctourApiService.postLogin(
+        UserLoginDt(
+            phone_number,
+            password
+        )
+    ) }
 
     override fun writeReview(data: WriteReview): Flow<Either<String, Review>>
     = makeNetworkRequest { doctourApiService.postReviews(data.toWriteReviewDt()).mapToDomain() }
