@@ -24,16 +24,30 @@ object NetworkModule {
     @Provides
     fun provideTokenErrorListener() = MutableLiveData<String>()
 
+    @Singleton
+    @Provides
+    fun provideIntercept(userPreferences: UserPreferences): AuthInterceptor {
+        return AuthInterceptor(userPreferences)
+    }
+
+    @Singleton
+    @Provides
+    fun provideInterceptor(): HttpLoggingInterceptor {
+        return HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+    }
+
     @Provides
     @Singleton
-    fun provideOkHttpClient(): OkHttpClient {
-        val interceptor = HttpLoggingInterceptor()
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+    fun provideOkHttpClient(
+        interceptor: AuthInterceptor,
+        loggingInterceptor: HttpLoggingInterceptor
+    ): OkHttpClient {
         return OkHttpClient.Builder()
             .readTimeout(30, TimeUnit.SECONDS)
             .writeTimeout(30, TimeUnit.SECONDS)
             .connectTimeout(30, TimeUnit.SECONDS)
             .addInterceptor(interceptor)
+            .addInterceptor(loggingInterceptor)
             .build()
     }
 

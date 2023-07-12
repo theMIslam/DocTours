@@ -111,11 +111,12 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
     override fun initSubscribers() {
         viewModel.signIn.collectUiStateBema(
             onSuccess = {
-                userPreferences.accessToken = getAuthenticationToken(it.access!!, true)
+                userPreferences.accessToken = it.access
                 userPreferences.refreshToken = getAuthenticationToken(it.refresh!!, true)
                 userPreferences.isAuthenticated = true
                 userPreferences.accessToken = it.access
                  userPreferences.refreshToken = it.refresh
+                showToast(userPreferences.accessToken.toString())
                 showToast(getString(R.string.You_successfully_logged_in))
                 findNavController().navigate(R.id.homeFragment)
                 initListeners()
