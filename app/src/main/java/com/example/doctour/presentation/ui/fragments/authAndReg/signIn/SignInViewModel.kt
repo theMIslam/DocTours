@@ -1,36 +1,37 @@
 package com.example.doctour.presentation.ui.fragments.authAndReg.signIn
 
-import androidx.lifecycle.viewModelScope
 import com.example.doctour.base.BaseViewModel
-import com.example.doctour.data.model.TokenRefreshDt
-import com.example.doctour.data.model.UserLoginDt
-import com.example.doctour.data.model.UserRegisterDt
-import com.example.doctour.data.remote.dtos.auth.SignInResultDto
-import com.example.doctour.data.repositories.AuthenticationRepositoryImpl
+import com.example.doctour.domain.model.TokenRefresh
 import com.example.doctour.domain.model.UserLogin
+import com.example.doctour.domain.usecases.RefreshTokenUseCase
 import com.example.doctour.domain.usecases.SignInUseCase
-import com.example.doctour.presentation.model.TokenRefreshUI
-import com.example.doctour.presentation.model.UserLoginUi
-import com.example.doctour.presentation.model.toTokenRefreshUI
+import com.example.doctour.presentation.model.UserLoginUI
+import com.example.doctour.presentation.model.toUserLoginUI
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class SignInViewModel @Inject constructor(
     //private val authenticationRepository: AuthenticationRepositoryImpl,
-    private val signInUseCase: SignInUseCase
+    private val signInUseCase: SignInUseCase,
+    private val refreshTokenUseCase: RefreshTokenUseCase
 ) : BaseViewModel() {
 
-    private val _signIn = MutableUIStateFlow<TokenRefreshUI>()
+    private val _signIn = MutableUIStateFlow<UserLoginUI>()
     val signIn = _signIn.asStateFlow()
+
+    private val _tokenRefresh = MutableUIStateFlow<TokenRefresh>()
+    val tokenRefresh = _tokenRefresh.asStateFlow()
 
     fun signIn (phone_number:String,
                 password:String)
-    = signInUseCase(phone_number, password).collectNetworkRequest(_signIn){
-        it.toTokenRefreshUI()
+    = signInUseCase(
+        UserLogin(
+        phone_number,
+        password
+    )).collectNetworkRequest(_signIn){
+        it.toUserLoginUI()
     }
 
 //

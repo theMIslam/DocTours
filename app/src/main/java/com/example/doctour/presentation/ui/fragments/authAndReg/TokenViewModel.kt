@@ -19,7 +19,7 @@ private val tokenManager: TokenManager
 ) :ViewModel(){
 
     private val _token = MutableLiveData<String?>()
-    val token :LiveData< String? > =_token
+    val token :LiveData<String?> =_token
 
     init {
         viewModelScope.launch ( Dispatchers.IO){

@@ -6,10 +6,10 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.base.BaseDiffUtilItemCallback
 import com.example.doctour.databinding.ItemFeedbacksBinding
-import com.example.doctour.presentation.model.ReviewUi
+import com.example.doctour.presentation.model.ReviewUI
 
 class AboutDoctorReviewAdapter
-    : PagingDataAdapter<ReviewUi, AboutDoctorReviewAdapter.AboutDoctorViewHolder>(
+    : PagingDataAdapter<ReviewUI, AboutDoctorReviewAdapter.AboutDoctorViewHolder>(
     BaseDiffUtilItemCallback()
 ) {
     override fun onBindViewHolder(holder: AboutDoctorViewHolder, position: Int) {
@@ -29,7 +29,7 @@ class AboutDoctorReviewAdapter
     inner class AboutDoctorViewHolder(
         private val binding: ItemFeedbacksBinding
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(reviewUi: ReviewUi) {
+        fun bind(reviewUi: ReviewUI) {
             binding.tvName.text = reviewUi.doctor_name
             binding.tvStars.text = reviewUi.stars.toString()
             binding.tvFeedback.text = reviewUi.text.toString()

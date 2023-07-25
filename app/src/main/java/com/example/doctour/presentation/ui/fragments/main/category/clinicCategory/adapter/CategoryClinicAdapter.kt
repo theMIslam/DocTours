@@ -6,11 +6,11 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.base.BaseDiffUtilItemCallback
 import com.example.doctour.databinding.ItemClinicInfoBinding
-import com.example.doctour.presentation.model.ClinicsUi
 import com.example.doctour.presentation.extensions.loadImage
+import com.example.doctour.presentation.model.ClinicUI
 
 class CategoryClinicAdapter(
-) : PagingDataAdapter<ClinicsUi, CategoryClinicAdapter.ClinicsViewHolder>(
+) : PagingDataAdapter<ClinicUI, CategoryClinicAdapter.ClinicsViewHolder>(
     BaseDiffUtilItemCallback()
 ) {
     override fun onBindViewHolder(holder: ClinicsViewHolder, position: Int) {
@@ -29,7 +29,7 @@ class CategoryClinicAdapter(
 
     inner class ClinicsViewHolder(private val binding: ItemClinicInfoBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(clinicsUi: ClinicsUi) {
+        fun bind(clinicsUi: ClinicUI) {
             clinicsUi.photo?.let { binding.ivClinicAvatar.loadImage(it) }
             binding.tvClinicName.text = clinicsUi.title
 

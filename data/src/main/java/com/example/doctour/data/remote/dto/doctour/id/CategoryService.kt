@@ -1,1 +1,0 @@
-package com.example.doctour.data.remote.dto.doctour.iddata class CategoryService(    val description: String,    val id: Int,    val name: String,    val price: Int,    val subservice_service: List<Any>)

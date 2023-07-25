@@ -2,8 +2,10 @@ package com.example.doctour.presentation.ui.fragments.main.category.doctorCatego
 
 import com.example.doctour.base.BaseViewModel
 import com.example.doctour.domain.usecases.GetCategoryDoctorsUseCase
-import com.example.doctour.presentation.model.toSpecialityUi
+import com.example.doctour.presentation.model.toSpecialtyUI
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import javax.inject.Inject
 
 @HiltViewModel
@@ -11,6 +13,10 @@ class CategoryDoctorsViewModel @Inject constructor(
     private val getCategoryUseCase:GetCategoryDoctorsUseCase
 ) :BaseViewModel(){
 
-    fun getSpecialityOfDoctors()=getCategoryUseCase().collectPagingRequest { it.toSpecialityUi() }
+    private val _search = MutableStateFlow<String>("")
+    val search = _search.asStateFlow()
+    fun getSpecialityOfDoctors()=getCategoryUseCase(
+        _search.value
+    ).collectPagingRequest { it.toSpecialtyUI() }
 
 }

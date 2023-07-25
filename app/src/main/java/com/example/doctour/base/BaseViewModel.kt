@@ -7,7 +7,6 @@ import androidx.paging.cachedIn
 import androidx.paging.map
 import com.example.doctour.domain.utils.Either
 import com.example.doctour.domain.utils.NetworkError
-import com.example.doctour.domain.utils.Resource
 import com.example.doctour.common.UIState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -39,29 +38,6 @@ abstract class BaseViewModel : ViewModel() {
     }
 
     protected fun <T> mutableUiStateFlow() = MutableStateFlow<UIState<T>>(UIState.Idle())
-    protected fun <T>Flow<Resource<T>>.collectData(
-        _state:MutableStateFlow<UIState<T>>
-    ){
-        viewModelScope.launch {
-            collect{
-                when(it){
-                    is Resource.Error -> {
-                        _state.value= UIState.Error(it.message!!)
-                    }
-                    is Resource.Loading -> {
-                        _state.value= UIState.Loading()
-                    }
-                    is Resource.Success -> {
-                        if (it.data!=null){
-                            _state.value= UIState.Success(it.data!!)
-                        }
-                    }
-                }
-            }
-        }
-
-    }
-
     /**
      * Creates a [MutableStateFlow] with [UIState] and the given initial value [UIState.Idle]
      */

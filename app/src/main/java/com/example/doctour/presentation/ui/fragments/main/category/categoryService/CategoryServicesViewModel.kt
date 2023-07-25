@@ -2,7 +2,7 @@ package com.example.doctour.presentation.ui.fragments.main.category.categoryServ
 
 import com.example.doctour.base.BaseViewModel
 import com.example.doctour.domain.usecases.GetCategoryServiceUseCase
-import com.example.doctour.presentation.model.toServiceUi
+import com.example.doctour.presentation.model.toServiceUI
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -19,15 +19,13 @@ class CategoryServicesViewModel @Inject constructor(
     private val _price = MutableStateFlow<String?>(null)
     val price= _price.asStateFlow()
 
-    private val _search = MutableStateFlow<String?>(null)
+    private val _search = MutableStateFlow<String>("")
     val search = _search.asStateFlow()
 
     fun getServiceOfDoctors() = getCategoryServiceUseCase(
-        _name.value,
-        _price.value,
-        _search.value
+      _search.value
     ).collectPagingRequest {
-        it.toServiceUi()
+        it.toServiceUI()
     }
     fun  x (name: String){
         _name.value = name

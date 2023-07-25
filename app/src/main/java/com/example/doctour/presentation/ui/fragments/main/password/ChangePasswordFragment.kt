@@ -10,13 +10,12 @@ import com.example.doctour.databinding.FragmentChangePasswordBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-
 class ChangePasswordFragment : BaseFragment<FragmentChangePasswordBinding, PasswordViewModel>(
     R.layout.fragment_change_password
-){
+) {
 
     override val binding: FragmentChangePasswordBinding by viewBinding(FragmentChangePasswordBinding::bind)
-    override val viewModel: PasswordViewModel by viewModels<PasswordViewModel>()
+    override val viewModel: PasswordViewModel by viewModels()
 
     override fun initListeners() {
         super.initListeners()
@@ -29,10 +28,11 @@ class ChangePasswordFragment : BaseFragment<FragmentChangePasswordBinding, Passw
     private fun clickers() {
         with(binding) {
             btnNext.setOnClickListener {
-                if (etCurrentPassword.text!!.isEmpty() || etNewPassword.text!!.isEmpty() || etRepeatNewPassword.text!!.isEmpty()) {
-                    Toast.makeText(requireContext(), getString(R.string.line_), Toast.LENGTH_SHORT).show()
+                if (etNewPassword.text!!.isEmpty() || etRepeatNewPassword.text!!.isEmpty()) {
+                    Toast.makeText(requireContext(), getString(R.string.line_), Toast.LENGTH_SHORT)
+                        .show()
                 }
-                if (etCurrentPassword.text != etNewPassword.text) {
+                if (etRepeatNewPassword.text != etNewPassword.text) {
                     Toast.makeText(
                         requireContext(),
                         getString(R.string.change_password),
@@ -42,6 +42,9 @@ class ChangePasswordFragment : BaseFragment<FragmentChangePasswordBinding, Passw
                 when (etNewPassword.text) {
                     etRepeatNewPassword -> {
                         // TODO: change password in server
+                        viewModel.resetNewPassword(
+                            password = etNewPassword.text.toString()
+                        )
                     }
                 }
             }

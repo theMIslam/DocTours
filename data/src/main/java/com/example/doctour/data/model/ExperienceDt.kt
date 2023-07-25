@@ -5,14 +5,20 @@ import com.example.doctour.domain.model.Experience
 
 data class ExperienceDt(
     val id: String,
-    val year: String?,
+    val is_deleted:Boolean,
+    val created_at:String?,
+    val updated_at:String?,
     val title: String?,
-    val doctor: Int?
+    val year: String?,
+    val doctor: String?
 ) : DataMapper<Experience> {
     override fun mapToDomain() = Experience(
-        id,
-        year,
+       id,
+        is_deleted,
+        created_at,
+        updated_at,
         title,
+        year,
         doctor
     )
 }

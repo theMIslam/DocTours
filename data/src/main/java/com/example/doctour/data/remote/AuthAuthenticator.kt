@@ -1,12 +1,11 @@
 package com.example.doctour.data.remote
 
+import com.example.doctour.data.model.TokenRefreshBodyDt
 import com.example.doctour.data.model.TokenRefreshDt
-import com.example.doctour.data.remote.apiservices.DoctourApiService
-import com.example.doctour.data.remote.dtos.auth.RefreshTokenDto
+import com.example.doctour.data.remote.apiservices.AuthenticationApiService
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import okhttp3.Authenticator
-import okhttp3.OkHttp
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
@@ -32,17 +31,18 @@ class AuthAuthenticator @Inject constructor(
                 tokenManager.deleteToken()
             }
 
-            newToken.body()?.let { tokenRefreshDt ->
-                tokenManager.saveToken(tokenRefreshDt.refresh)
-                response.request.newBuilder()
-                    .addHeader("Authorization","Bearer ${tokenRefreshDt.refresh}")
+            newToken.body()?.let {token ->
+                tokenManager.saveToken(token.access)
+                response.request
+                    .newBuilder()
+                    .header("Authorization","Bearer ${token.access}")
                     .build()
             }
         }
     }
 
 
-    suspend fun getNewToken(refreshToken: String?): retrofit2.Response<TokenRefreshDt> {
+    private suspend fun getNewToken(refreshToken: String?): retrofit2.Response<TokenRefreshDt> {
         val loggingInterceptor = HttpLoggingInterceptor()
         loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
 
@@ -51,12 +51,12 @@ class AuthAuthenticator @Inject constructor(
             .build()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://bekbolsun.pythonanywhere.com/")
+            .baseUrl("http://15.152.44.148/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttp)
             .build()
 
-        val service = retrofit.create(DoctourApiService::class.java)
-        return service.refreshToken("Bearer $refreshToken")
+        val service = retrofit.create(AuthenticationApiService::class.java)
+        return service.tokenRefresh(TokenRefreshBodyDt("Bearer $refreshToken"))
     }
 }

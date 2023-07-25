@@ -4,6 +4,6 @@ data class UserRegistration(
     val phone_number: String,
     val fullname: String,
     val gender: String,
-    val birthday: String,
+    val birthday:String,
     val password: String
 )

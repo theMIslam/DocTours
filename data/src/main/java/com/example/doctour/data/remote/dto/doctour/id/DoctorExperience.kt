@@ -1,1 +1,0 @@
-package com.example.doctour.data.remote.dto.doctour.iddata class DoctorExperience(    val doctor: Int,    val id: Int,    val title: String,    val year: String)

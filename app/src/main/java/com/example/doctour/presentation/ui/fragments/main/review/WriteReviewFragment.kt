@@ -5,8 +5,8 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentWriteReviewBinding
-import com.example.doctour.domain.model.WriteReview
 import com.example.doctour.presentation.extensions.showToast
+import com.example.doctour.presentation.model.ReviewBodyUI
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -37,11 +37,10 @@ class WriteReviewFragment : BaseFragment<FragmentWriteReviewBinding, ReviewViewM
 
     private fun sendReview() {
             viewModel.writeReview(
-                WriteReview(
-                    doctor = "Афанасий Никитич",
-                    stars = binding.rtbRating.numStars,
+                ReviewBodyUI(
                     text = binding.etYourReview.text.toString(),
-                   user = 996705111582
+                    stars = binding.rtbRating.numStars,
+                    doctor = "Афанасий Никитич"
                 )
             )
     }

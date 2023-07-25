@@ -1,12 +1,12 @@
 package com.example.doctour.domain.usecases
 
-import com.example.doctour.domain.model.Review
-import com.example.doctour.domain.model.WriteReview
-import com.example.doctour.domain.repositories.RemoteDoctorRepository
+import com.example.doctour.domain.model.ReviewBody
+import com.example.doctour.domain.repositories.DoctourRepository
 import javax.inject.Inject
 
 class WriteReviewUseCase @Inject constructor(
-    private val remoteDoctorRepository: RemoteDoctorRepository
+    private val doctorRepository: DoctourRepository
 ) {
-    operator fun invoke(data:WriteReview) = remoteDoctorRepository.writeReview(data)
+    operator fun invoke(data: ReviewBody)
+    = doctorRepository.postReviews(data)
 }

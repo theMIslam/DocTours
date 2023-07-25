@@ -7,14 +7,14 @@ import com.example.doctour.domain.model.Doctor
 
 class DoctourPagingSource(
     private val doctourApiService: DoctourApiService,
+   private val pageSize:Int,
     private val specialties: String?,
-    private val clinic: String?,
     private val categoryService: String?,
     private val city: String?,
     private val  search: String?,
     private val ordering: String?
 ) : BasePagingSource<DoctorDt,Doctor>(
-    {
-        doctourApiService.getAllDoctors(it,specialties, clinic, categoryService, city, search, ordering)
+    {page ->
+        doctourApiService.getDoctors(page,pageSize,search, ordering, city, categoryService, specialties)
     }
 )

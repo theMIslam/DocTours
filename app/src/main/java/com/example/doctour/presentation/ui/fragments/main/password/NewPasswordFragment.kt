@@ -12,10 +12,10 @@ import dagger.hilt.android.AndroidEntryPoint
 
 class NewPasswordFragment : BaseFragment<FragmentNewPasswordBinding, PasswordViewModel>(
     R.layout.fragment_new_password
-        ) {
+) {
 
     override val binding: FragmentNewPasswordBinding by viewBinding(FragmentNewPasswordBinding::bind)
-    override val viewModel: PasswordViewModel by viewModels<PasswordViewModel>()
+    override val viewModel: PasswordViewModel by viewModels()
     override fun initListeners() {
         super.initListeners()
         onClick()

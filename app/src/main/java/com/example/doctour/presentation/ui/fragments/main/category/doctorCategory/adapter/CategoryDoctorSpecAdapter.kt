@@ -6,12 +6,12 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.base.BaseDiffUtilItemCallback
 import com.example.doctour.databinding.ItemCategoryDoctorsBinding
-import com.example.doctour.presentation.model.SpecialityUi
+import com.example.doctour.presentation.model.SpecialtyUI
 
 class CategoryDoctorSpecAdapter(
-    private val onCLick:(SpecialityUi)->Unit
+    private val onCLick:(SpecialtyUI)->Unit
 ) :
-    PagingDataAdapter<SpecialityUi, CategoryDoctorSpecAdapter.ViewHolderCategoryDoctor>(
+    PagingDataAdapter<SpecialtyUI, CategoryDoctorSpecAdapter.ViewHolderCategoryDoctor>(
       BaseDiffUtilItemCallback()
     ){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderCategoryDoctor {
@@ -25,7 +25,7 @@ class CategoryDoctorSpecAdapter(
     inner class ViewHolderCategoryDoctor(
        private val binding:ItemCategoryDoctorsBinding
    ):RecyclerView.ViewHolder(binding.root) {
-        fun bind(specialityUi: SpecialityUi) {
+        fun bind(specialityUi: SpecialtyUI) {
             binding.tvProf.text=specialityUi.name
             itemView.setOnClickListener {
                 onCLick(specialityUi)

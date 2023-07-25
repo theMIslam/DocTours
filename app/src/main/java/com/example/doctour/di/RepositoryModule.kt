@@ -1,7 +1,9 @@
 package com.example.doctour.di
 
+import com.example.doctour.data.repositories.AuthenticationRepositoryImpl
 import com.example.doctour.data.repositories.DoctourRepositoryImpl
-import com.example.doctour.domain.repositories.RemoteDoctorRepository
+import com.example.doctour.domain.repositories.AuthenticationRepository
+import com.example.doctour.domain.repositories.DoctourRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -11,6 +13,10 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 abstract class RepositoryModule {
     @Binds
-    abstract fun bindRemoteDoctorRepository(doctourRepositoryImpl: DoctourRepositoryImpl)
-    :RemoteDoctorRepository
+    abstract fun bindDoctorRepository(doctourRepositoryImpl: DoctourRepositoryImpl)
+    :DoctourRepository
+
+    @Binds
+    abstract fun bindAuthenticationRepository(authenticationRepositoryImpl: AuthenticationRepositoryImpl)
+            :AuthenticationRepository
 }

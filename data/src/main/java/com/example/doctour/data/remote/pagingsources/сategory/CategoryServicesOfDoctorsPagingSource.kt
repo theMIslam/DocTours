@@ -7,10 +7,7 @@ import com.example.doctour.domain.model.Service
 
 class CategoryServicesOfDoctorsPagingSource(
     private val doctourApiService: DoctourApiService,
-    private val name:String?,
-    private val price:String?,
-    private val search:String?
-)
-    :BasePagingSource< ServiceDt,Service>({
-        doctourApiService.getCategoryServicesOfDoctors(it,name, price, search)
+    private val search:String
+) :BasePagingSource< ServiceDt,Service>({page ->
+        doctourApiService.getServiceOfDoctor(search,page)
 })

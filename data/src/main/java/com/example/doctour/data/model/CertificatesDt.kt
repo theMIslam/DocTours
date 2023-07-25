@@ -5,14 +5,20 @@ import com.example.doctour.domain.model.Certificates
 
 data class CertificatesDt(
     val id: Int,
-    val year: String?,
+    val is_deleted:Boolean,
+    val created_at:String?,
+    val updated_at:String?,
     val title: String?,
-    val doctor: Int?
+    val year: String?,
+    val doctor: String?
 ) : DataMapper<Certificates> {
     override fun mapToDomain() = Certificates(
         id,
-        year,
+        is_deleted,
+        created_at,
+        updated_at,
         title,
+        year,
         doctor
     )
 }

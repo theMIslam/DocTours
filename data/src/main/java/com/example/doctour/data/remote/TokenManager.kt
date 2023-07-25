@@ -9,13 +9,12 @@ import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
-
+val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "data_store")
 class TokenManager(
     private val context: Context
 ) {
     companion object {
-         val TOKEN_KEY = stringPreferencesKey("token_doc")
+         val TOKEN_KEY = stringPreferencesKey("token_doctour")
     }
 
     fun getToken(): Flow<String?> {

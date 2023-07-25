@@ -2,15 +2,18 @@ package com.example.doctour.presentation.ui.fragments.authAndReg.signUp
 
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentSignUpBinding
-import com.example.doctour.di.UserPreferences
+import com.example.doctour.preferences.UserPreferences
 import com.example.doctour.presentation.extensions.hideKeyboard
 import com.example.doctour.presentation.extensions.showToast
+import com.example.doctour.presentation.ui.fragments.authAndReg.TokenViewModel
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,6 +27,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
 
     override val binding: FragmentSignUpBinding by viewBinding(FragmentSignUpBinding::bind)
     override val viewModel: SignUpViewModel by viewModels()
+    private val tokenViewModel: TokenViewModel by activityViewModels()
 
     @Inject
     lateinit var userPreferences: UserPreferences
@@ -102,10 +106,10 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
                 false
             }
 
-            etRepeatPassword.text.toString().trim().length < 8
-                    || etRepeatPassword.text.toString().trim().length > 16 -> {
+            etRepeatPassword.text.toString().trim().length < 4
+                    || etRepeatPassword.text.toString().trim().length > 10 -> {
                 tilRepeatPassword.error =
-                    getString(R.string.Password_should_be_between_8_and_16_characters)
+                    getString(R.string.Password_should_be_between_4_and_10_characters)
                 false
             }
 
@@ -129,10 +133,10 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
                 false
             }
 
-            etPassword.text.toString().trim().length < 8
-                    || etPassword.text.toString().trim().length > 16 -> {
+            etPassword.text.toString().trim().length < 4
+                    || etPassword.text.toString().trim().length > 10 -> {
                 tilPassword.error =
-                    getString(R.string.Password_should_be_between_8_and_16_characters)
+                    getString(R.string.Password_should_be_between_4_and_10_characters)
                 false
             }
 
@@ -154,8 +158,8 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
 
     private fun validPassword(): String? {
         val password = binding.etPassword.text.toString()
-        if (password.length < 8) {
-            return getString(R.string.Minimum_number_of_characters_8)
+        if (password.length < 4) {
+            return getString(R.string.Minimum_number_of_characters_4)
         }
         if (!password.matches(".*[A-Z]*.".toRegex())) {
             return getString(R.string.Should_contain_1_upper_case_character)
@@ -167,18 +171,38 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>(
     }
 
     override fun initSubscribers() {
+
+        tokenViewModel.token.observe(viewLifecycleOwner) { token ->
+            if (token != null) {
+                findNavController().navigate(R.id.homeFragment)
+            }else{
+                showToast("Token is null")
+            }
+        }
+
+        viewModel.tokenRefresh.collectUiStateBema(
+            onSuccess = {
+                tokenViewModel.saveToken(it.refresh)
+                showToast(getString(R.string.You_successfully_logged_in))
+            },
+            onError = {
+                showToast(it)
+                Log.e("TAG", it)
+            }
+        )
+
         viewModel.signUpState.spectateUiState(
             success = {
-            findNavController().navigate(R.id.OTRCodeFragment)
-            showToast(getString(R.string.You_have_successfully_registered_you_will_receive_a_letter_to_the_number))
-        }, error = {
+                findNavController().navigate(R.id.homeFragment)
+                //showToast(getString(R.string.You_have_successfully_registered_you_will_receive_a_letter_to_the_number))
+            showToast("Вы успешно зарегистрировались")
+                      }, error = {
                 showToast(it)
-           // showToast(getString(R.string.Something_went_wrong))
-
-            binding.etNumber.text!!.clear()
-            binding.etPassword.text!!.clear()
-            binding.etRepeatPassword.text!!.clear()
-            binding.etFullName.text!!.clear()
-        })
+                // showToast(getString(R.string.Something_went_wrong))
+                binding.etNumber.text!!.clear()
+                binding.etPassword.text!!.clear()
+                binding.etRepeatPassword.text!!.clear()
+                binding.etFullName.text!!.clear()
+            })
     }
 }

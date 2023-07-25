@@ -10,7 +10,7 @@ import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentCategoryDoctorsBinding
 import com.example.doctour.presentation.extensions.showToast
-import com.example.doctour.presentation.model.SpecialityUi
+import com.example.doctour.presentation.model.SpecialtyUI
 import com.example.doctour.presentation.ui.fragments.main.category.doctorCategory.adapter.CategoryDoctorSpecAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -51,7 +51,7 @@ class CategoryDoctorsFragment : BaseFragment<FragmentCategoryDoctorsBinding, Cat
         }
     }
 
-    private fun onItemClick(specialityUi: SpecialityUi) {
+    private fun onItemClick(specialityUi: SpecialtyUI) {
         showToast("Click CLick")
     }
 
