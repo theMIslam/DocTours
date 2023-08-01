@@ -133,7 +133,7 @@
     <string name="You_have_an_appoiment">Вы записались к хирургу Асанов Асан</string>
     <string name="write_your_review_toast">Напишите ваш отзыв</string>
     <string name="line_">Заполните поле</string>
-    <string name="change_password">Новый пароль не должен совпадать с предыдущим</string>
+    <string name="change_password">Новый пароль должен совпадать с предыдущим</string>
     <string name="fio_">Введите ваше ФИО</string>
     <string name="change_passwordd">Изменить пароль</string>
     <string name="delete_account">Удалить аккаунт</string>
@@ -217,9 +217,9 @@
     <string name="Reset_password_does_not_math">Повторный пароль не совпадает</string>
     <string name="Field_must_not_be_empty">"Поле не должно быть пустым"</string>
     <string name="Helper_text">"Error:"</string>
-    <string name="Password_should_be_between_8_and_16_characters">"Пароль должен быть от 8 до 16 символов"</string>
+    <string name="Password_should_be_between_4_and_10_characters">"Пароль должен быть от 4 до 10 символов"</string>
     <string name="Password_does_not_match">Пароль не совпадает</string>
-    <string name="Minimum_number_of_characters_8">"Минимальное количество символов 8"</string>
+    <string name="Minimum_number_of_characters_4">"Минимальное количество символов 4"</string>
     <string name="Should_contain_1_upper_case_character">"Должен содержать 1 символ верхнего регистра"</string>
     <string name="Should_contain_1_lowercase_character">"Должен содержать 1 символ нижнего регистра"</string>
     <string name="You_have_successfully_registered_you_will_receive_a_letter_to_the_number">"Вы успешно зарегистрировались вам придет письмо на номер"</string>

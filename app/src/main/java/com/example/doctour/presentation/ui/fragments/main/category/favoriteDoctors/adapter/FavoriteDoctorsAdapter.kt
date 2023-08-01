@@ -7,12 +7,13 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.databinding.ItemDoctorsInfoBinding
 import com.example.doctour.presentation.extensions.loadImage
-import com.example.doctour.presentation.model.DoctorUi
+import com.example.doctour.presentation.model.DoctorUI
+import com.example.doctour.presentation.model.FavoriteDoctorUI
 
 class FavoriteDoctorsAdapter(
-    private val onClick:(DoctorUi)-> Unit,
-    private val onLongClick:(DoctorUi)->Unit
-) : PagingDataAdapter< DoctorUi,FavoriteDoctorsAdapter.FavoriteDoctorsViewHolder>(
+    private val onClick:(FavoriteDoctorUI)-> Unit,
+    private val onLongClick:(FavoriteDoctorUI)->Unit
+) : PagingDataAdapter< FavoriteDoctorUI,FavoriteDoctorsAdapter.FavoriteDoctorsViewHolder>(
     DFUtilFavDoctor()
 ) {
 
@@ -31,15 +32,15 @@ class FavoriteDoctorsAdapter(
     inner class FavoriteDoctorsViewHolder(
         private val binding: ItemDoctorsInfoBinding
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(doctor: DoctorUi) {
-            doctor.photo?.let { binding.ivDoctorAvatar.loadImage(it) }
-            binding.tvDoctorName.text = doctor.full_name
-            binding.tvWorkExperience.text = doctor.experience.toString()
-            binding.tvWorkSpeciality.text = doctor.specialties.toString()
-            binding.tvWorkClinic.text = doctor.clinic.toString()
-            binding.tvRecommendation.text = "${doctor.num_reviews} рекомендаций"
-            binding.tvPoints.text =  doctor.average_rating.toString()
-            binding.tvSumma.text = doctor.num_reviews.toString()
+        fun bind(doctor: FavoriteDoctorUI) {
+//            doctor.photo?.let { binding.ivDoctorAvatar.loadImage(it) }
+//            binding.tvDoctorName.text = doctor.full_name
+//            binding.tvWorkExperience.text = doctor.experience.toString()
+//            binding.tvWorkSpeciality.text = doctor.specialties.toString()
+//            binding.tvWorkClinic.text = doctor.clinic.toString()
+//            binding.tvRecommendation.text = "${doctor.num_reviews} рекомендаций"
+//            binding.tvPoints.text =  doctor.average_rating.toString()
+//            binding.tvSumma.text = doctor.num_reviews.toString()
 
             itemView.setOnClickListener {
                 onClick(doctor)
@@ -52,12 +53,12 @@ class FavoriteDoctorsAdapter(
 
     }
 }
-private class DFUtilFavDoctor : DiffUtil.ItemCallback<DoctorUi>() {
-    override fun areItemsTheSame(oldItem: DoctorUi, newItem: DoctorUi): Boolean {
+private class DFUtilFavDoctor : DiffUtil.ItemCallback<FavoriteDoctorUI>() {
+    override fun areItemsTheSame(oldItem: FavoriteDoctorUI, newItem: FavoriteDoctorUI): Boolean {
         return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: DoctorUi, newItem: DoctorUi): Boolean {
+    override fun areContentsTheSame(oldItem: FavoriteDoctorUI, newItem: FavoriteDoctorUI): Boolean {
         return oldItem == newItem
     }
 }

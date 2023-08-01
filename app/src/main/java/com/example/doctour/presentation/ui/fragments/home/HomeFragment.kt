@@ -14,8 +14,8 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentHomeBinding
-import com.example.doctour.presentation.model.DoctorUi
 import com.example.doctour.presentation.extensions.showToast
+import com.example.doctour.presentation.model.DoctorUI
 import com.example.doctour.presentation.ui.fragments.authAndReg.TokenViewModel
 import com.example.doctour.presentation.ui.fragments.home.adapter.HomeClinicAdapter
 import com.example.doctour.presentation.ui.fragments.home.adapter.HomeDoctorSpecsAdapter
@@ -26,7 +26,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home),
     HomeInfoDoctorAdapter.ClickListener {
 
-    override fun onClick(doctorUi: DoctorUi) {
+    override fun onClick(doctorUi: DoctorUI) {
         findNavController().navigate(R.id.aboutDoctorFragment, bundleOf(
                 "about" to doctorUi
             ))
@@ -70,12 +70,14 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
         tokenViewModel.token.observe(viewLifecycleOwner){token ->
             this.token = token
             if (token == null){
-                //findNavController().navigate(R.id.SignInAndSignUpFragment)
-                showToast("Token is Null")
+                findNavController().navigate(R.id.SignInAndSignUpFragment)
+                //showToast("Token is Null")
+            }else{
+                fetchDoctorInfo()
             }
         }
     }
-    private fun onDoctorInfoClick(doctorUi: DoctorUi) {
+    private fun onDoctorInfoClick(doctorUi: DoctorUI) {
         findNavController().navigate(
             R.id.aboutDoctorFragment, bundleOf(
                 "about" to doctorUi
@@ -88,7 +90,6 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
 
         viewModel.doctorUIState.collectUiStateBema(
             onSuccess = {
-                fetchDoctorInfo()
                 binding.progressBar.isVisible = false
              showToast("Successfully")
             },

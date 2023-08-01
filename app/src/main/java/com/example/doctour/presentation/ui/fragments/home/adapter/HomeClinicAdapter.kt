@@ -7,12 +7,12 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.databinding.ItemClinicBinding
 import com.example.doctour.presentation.extensions.loadImage
-import com.example.doctour.presentation.model.ClinicsUi
+import com.example.doctour.presentation.model.ClinicUI
 
 class HomeClinicAdapter(
     private val onCLick: () -> Unit
-) : PagingDataAdapter<ClinicsUi, HomeClinicAdapter.ViewHolderHomeClinic>(
-    DFUtilHomeClinicsUi()
+) : PagingDataAdapter<ClinicUI, HomeClinicAdapter.ViewHolderHomeClinic>(
+    DFUtilHomeClinicUI()
 ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderHomeClinic {
         return ViewHolderHomeClinic(
@@ -29,7 +29,7 @@ class HomeClinicAdapter(
     }
     inner class ViewHolderHomeClinic(private val binding: ItemClinicBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(clinics: ClinicsUi) {
+        fun bind(clinics: ClinicUI) {
             clinics.photo?.let { binding.imgClinicAvatar.loadImage(it) }
             binding.tvClinicName.text=clinics.title
 
@@ -40,12 +40,12 @@ class HomeClinicAdapter(
 
     }
 }
-private class DFUtilHomeClinicsUi : DiffUtil.ItemCallback<ClinicsUi>() {
-    override fun areItemsTheSame(oldItem: ClinicsUi, newItem: ClinicsUi): Boolean {
+private class DFUtilHomeClinicUI : DiffUtil.ItemCallback<ClinicUI>() {
+    override fun areItemsTheSame(oldItem: ClinicUI, newItem: ClinicUI): Boolean {
         return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: ClinicsUi, newItem: ClinicsUi): Boolean {
+    override fun areContentsTheSame(oldItem: ClinicUI, newItem: ClinicUI): Boolean {
         return oldItem == newItem
     }
 }

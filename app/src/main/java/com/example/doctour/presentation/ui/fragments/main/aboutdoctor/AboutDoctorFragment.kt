@@ -9,7 +9,7 @@ import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentAboutDoctorBinding
 import com.example.doctour.presentation.extensions.loadImage
 import com.example.doctour.presentation.extensions.showToast
-import com.example.doctour.presentation.model.DoctorUi
+import com.example.doctour.presentation.model.DoctorUI
 import com.example.doctour.presentation.ui.fragments.main.aboutdoctor.adapter.FeedbacksAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -54,7 +54,7 @@ class AboutDoctorFragment
 
     private fun getInfoAboutDoctor() {
         if (arguments != null) {
-            val data = this.arguments?.getSerializable("about") as DoctorUi
+            val data = this.arguments?.getSerializable("about") as DoctorUI
             binding.tvNameOfDoctor.text = "Врач ${data.full_name}"
             data.photo?.let { binding.image.loadImage(it) }
             binding.tvDoctorName.text = data.full_name
@@ -65,7 +65,7 @@ class AboutDoctorFragment
             binding.tvNumOfRating.text = data.average_rating
             binding.tvNumOfFeedback.text = data.num_reviews
             binding.tvInfoAboutDoc.text = data.summary
-            data.doctor_reviews?.let { adapterFeedback.addReview(it) }
+           // data.doctor_reviews?.let { adapterFeedback.addReview(it) }
            // data.doctor_reviews?.let { reviewList.addAll(it) }
         }
 

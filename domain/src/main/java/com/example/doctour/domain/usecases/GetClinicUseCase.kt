@@ -1,11 +1,18 @@
 package com.example.doctour.domain.usecases
 
-import com.example.doctour.domain.repositories.RemoteDoctorRepository
+import com.example.doctour.domain.repositories.DoctourRepository
 import javax.inject.Inject
 
 class GetClinicUseCase @Inject constructor(
-    private val remoteDoctorRepository: RemoteDoctorRepository
+    private val doctorRepository: DoctourRepository
 ){
-    operator fun invoke()= remoteDoctorRepository.getClinics()
-
+    operator fun invoke(
+        search: String,
+        subServiceClinic: String,
+        city: String
+    )= doctorRepository.getClinics(
+        search,
+        subServiceClinic,
+        city
+    )
 }

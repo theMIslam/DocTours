@@ -8,6 +8,6 @@ import com.example.doctour.domain.model.Doctor
 class SearchPagingSource(
     private val doctourApiService: DoctourApiService,
     private val search: String?
-) : BasePagingSource<DoctorDt, Doctor>({
-    doctourApiService.searchByTitle(it,search)
+) : BasePagingSource<DoctorDt, Doctor>({page ->
+    doctourApiService.search(page,search)
 })

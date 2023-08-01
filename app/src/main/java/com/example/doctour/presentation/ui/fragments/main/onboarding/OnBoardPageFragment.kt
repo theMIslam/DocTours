@@ -8,8 +8,7 @@ import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.base.BaseViewModel
 import com.example.doctour.databinding.FragmentOnBoardPageBinding
-import com.example.doctour.di.OnBoardingPreferences
-import com.example.doctour.di.UserPreferences
+import com.example.doctour.preferences.OnBoardingPreferences
 import com.example.doctour.presentation.ui.fragments.main.onboarding.model.OnBoard
 
 class OnBoardPageFragment (

@@ -1,17 +1,16 @@
 package com.example.doctour.domain.model
 
 data class Doctor(
-    val average_rating: String?,
-    val clinic: List<Clinics>?= emptyList(),
-    val experience: Int?,
-    val full_name: String?,
     val id: String,
-    val num_reviews:String?,
+    val full_name: String?,
     val photo: String?,
-    val price: Int?,
-    val specialties:List<Speciality>?= emptyList(),
     val summary: String?,
+    val experience: Int?,
+    val price: Int?,
     val instagram :String?,
-    val doctor_reviews:List<Review> ?= emptyList(),
+    val average_rating: String?,
+    val num_reviews:String?,
+    val specialties:List<SpecialitySerializerFields>?= emptyList(),
+    val clinic: List<ClinicSerializerFields>?= emptyList(),
     val isChoosen :Boolean = false
 )

@@ -3,7 +3,10 @@ package com.example.doctour.di
 import android.content.Context
 import android.content.SharedPreferences
 import com.example.doctour.data.local.preferences.PreferencesHelper
-import com.example.doctour.di.PreferencesKeys.DOCTOUR_SHARED_PREFERENCES
+import com.example.doctour.preferences.OnBoardingPreferences
+import com.example.doctour.preferences.PreferencesKeys.DOCTOUR_SHARED_PREFERENCES
+import com.example.doctour.preferences.ProfilePreferences
+import com.example.doctour.preferences.UserPreferences
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

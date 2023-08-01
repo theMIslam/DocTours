@@ -6,12 +6,12 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.databinding.ItemHomeBinding
-import com.example.doctour.presentation.model.SpecialityUi
+import com.example.doctour.presentation.model.SpecialtyUI
 
 
 class HomeDoctorSpecsAdapter(
     private val onClick: () -> Unit
-) : PagingDataAdapter<SpecialityUi, HomeDoctorSpecsAdapter.ViewHolder>(
+) : PagingDataAdapter<SpecialtyUI, HomeDoctorSpecsAdapter.ViewHolder>(
     DFUtilHomeDoctorSpec()
 ) {
 
@@ -30,7 +30,7 @@ class HomeDoctorSpecsAdapter(
 
     inner class ViewHolder(private val binding: ItemHomeBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(specializationUI: SpecialityUi) {
+        fun bind(specializationUI: SpecialtyUI) {
             binding.tvDoctorSpecs.text = specializationUI.name
 
             itemView.setOnClickListener {
@@ -43,17 +43,17 @@ class HomeDoctorSpecsAdapter(
         getItem(position)?.let { holder.bind(it) }
     }
 
-    private class DFUtilHomeDoctorSpec : DiffUtil.ItemCallback<SpecialityUi>() {
+    private class DFUtilHomeDoctorSpec : DiffUtil.ItemCallback<SpecialtyUI>() {
         override fun areItemsTheSame(
-            oldItem: SpecialityUi,
-            newItem: SpecialityUi
+            oldItem: SpecialtyUI,
+            newItem: SpecialtyUI
         ): Boolean {
             return oldItem.id == newItem.id
         }
 
         override fun areContentsTheSame(
-            oldItem: SpecialityUi,
-            newItem: SpecialityUi
+            oldItem: SpecialtyUI,
+            newItem: SpecialtyUI
         ): Boolean {
             return oldItem == newItem
         }

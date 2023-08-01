@@ -8,16 +8,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.base.BaseDiffUtilItemCallback
 import com.example.doctour.databinding.ItemDoctorsInfoBinding
 import com.example.doctour.presentation.extensions.loadImage
-import com.example.doctour.presentation.model.DoctorUi
+import com.example.doctour.presentation.model.DoctorUI
 
 class HomeInfoDoctorAdapter (
     private val onCLick: ClickListener
-        ) : PagingDataAdapter<DoctorUi, HomeInfoDoctorAdapter.ViewHolderHomeInfoDoctor>(
+        ) : PagingDataAdapter<DoctorUI, HomeInfoDoctorAdapter.ViewHolderHomeInfoDoctor>(
     BaseDiffUtilItemCallback())
     , View.OnClickListener {
 
     override fun onClick(v: View) {
-        val doctorUi = v.tag as DoctorUi
+        val doctorUi = v.tag as DoctorUI
         onCLick.onClick(doctorUi)
     }
 
@@ -35,7 +35,7 @@ class HomeInfoDoctorAdapter (
 
     inner class ViewHolderHomeInfoDoctor(private val binding: ItemDoctorsInfoBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(doctor: DoctorUi) {
+        fun bind(doctor: DoctorUI) {
             binding.root.tag = doctor
 
             doctor.photo?.let { binding.ivDoctorAvatar.loadImage(it) }
@@ -51,6 +51,6 @@ class HomeInfoDoctorAdapter (
     }
 
     interface ClickListener {
-        fun onClick(doctorUi: DoctorUi)
+        fun onClick(doctorUi: DoctorUI)
     }
 }

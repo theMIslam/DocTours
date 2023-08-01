@@ -4,145 +4,132 @@ import com.example.doctour.data.base.BaseResponse
 import com.example.doctour.data.model.ClinicDt
 import com.example.doctour.data.model.DoctorDetailDt
 import com.example.doctour.data.model.DoctorDt
-import com.example.doctour.data.model.FavoriteDt
-import com.example.doctour.data.model.PasswordConfirmResetDt
-import com.example.doctour.data.model.PasswordResetDt
+import com.example.doctour.data.model.FavoriteClinicBodyDt
+import com.example.doctour.data.model.FavoriteClinicDt
+import com.example.doctour.data.model.FavoriteDoctorDt
+import com.example.doctour.data.model.ReviewBodyDt
 import com.example.doctour.data.model.ReviewDt
 import com.example.doctour.data.model.ServiceDt
 import com.example.doctour.data.model.SpecialtyDt
 import com.example.doctour.data.model.SubServiceDt
-import com.example.doctour.data.model.TokenRefreshDt
-import com.example.doctour.data.model.UserLoginDt
-import com.example.doctour.data.model.UserRegisterDt
-import com.example.doctour.data.model.WhatsappSendDt
-import com.example.doctour.data.model.WriteReviewDt
-import com.example.doctour.data.remote.dtos.auth.UserRegisterDto
-import com.example.doctour.domain.model.UserRegister
-import okhttp3.ResponseBody
-import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
-import retrofit2.http.Header
 import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface DoctourApiService {
-
-    @POST("api/v1/users/login/")
-    suspend fun postLogin(
-        @Body data:UserLoginDt
-    ):Response<TokenRefreshDt>
-
-    @GET("api/v1/users/login/token/refresh/")
-    suspend fun refreshToken(
-        @Header("Authorization") token: String
-    ): Response<TokenRefreshDt>
-
-
-    @POST("api/v1/users/register/")
-    suspend fun postRegister(
-        @Body data:UserRegisterDt
-    ):Response<UserRegisterDt>
-
-
-
-
-
     @GET("/api/v1/src/doctors/")
-    suspend fun searchByTitle(
-        @Query("page")page: Int,
-        @Query("search")search:String?
-    ):Response<BaseResponse<DoctorDt>>
-
-    @GET("/api/v1/src/doctors/")
-   suspend fun getAllDoctors(
-        @Query("page")page: Int,
-        @Query("specialties")specialties:String?,
-        @Query("clinic")clinic: String?,
-        @Query("category_service")categoryService:String?,
-        @Query("city")city:String?,
-        @Query("search")search: String?,
-        @Query("ordering")ordering: String?
-    ):Response<BaseResponse<DoctorDt>>
-
+    suspend fun getDoctors(
+        @Query("page") page: Int,
+        @Query("page_size")pageSize:Int,
+        @Query("search") search: String?,
+        @Query("ordering") ordering: String?,
+        @Query("city") city: String?,
+        @Query("category_service") categoryService: String?,
+        @Query("specialties") specialties: String?
+    ): Response<BaseResponse<DoctorDt>>
 
     @GET("/api/v1/src/clinics/")
-   suspend fun getClinics(
-        @Query("page")page: Int
-    ):Response<BaseResponse<ClinicDt>>
+    suspend fun getClinics(
+        @Query("page") page: Int,
+        @Query("page_size")pageSize:Int,
+        @Query("search") search: String?,
+        @Query("subservice_clinic") subServiceClinic: String?,
+        @Query("city") city: String?
+    ): Response<BaseResponse<ClinicDt>>
 
     @GET("/api/v1/src/doctors/{id}")
-   suspend fun getDoctorsById(
-        @Path("id")id:Int
-    ):DoctorDetailDt
+    suspend fun getDoctorsByID(
+        @Path("id") id :String
+    ):Response<DoctorDetailDt>
 
-    @GET("/api/v1/src/reviews/")
-   suspend fun getReviews(
+    //////  FAVORITE CLINIC
+    @GET("/api/v1/src/favorites-clinics/")
+    suspend fun getFavoriteClinics(
         @Query("page")page: Int
+    ):Response<BaseResponse<FavoriteClinicDt>>
+
+    @POST("/api/v1/src/favorites-clinics/")
+    suspend fun postFavoriteClinics(
+        @Body data :FavoriteClinicBodyDt
+    ):Response<FavoriteClinicDt>
+
+    @GET("/api/v1/src/favorites-clinics/{id}/")
+    suspend fun getFavoriteClinicsByID(
+        @Path("id") id :Int
+    ):Response<FavoriteDoctorDt>
+
+    @DELETE("/api/v1/src/favorites-clinics/{id}/")
+    suspend fun deleteFavoriteClinicsByID(
+        @Path("id")id:Int
+    )
+
+    /////  FAVORITE DOCTOR
+    @GET("/api/v1/src/favorites-doctors/")
+    suspend fun getFavoriteDoctors(
+        @Query("page")page:Int
+    ):Response<BaseResponse<FavoriteDoctorDt>>
+
+    @POST("/api/v1/src/favorites-doctors/")
+    suspend fun postFavoriteDoctors(
+        @Body data:FavoriteClinicBodyDt
+    ):Response<FavoriteDoctorDt>
+
+    @GET("/api/v1/src/favorites-doctors/{id}/")
+    suspend fun getFavoriteDoctorsByID(
+        @Path("id")id: Int
+    ):Response<FavoriteDoctorDt>
+
+    @DELETE("/api/v1/src/favorites-doctors/{id}/")
+    suspend fun deleteFavoriteDoctorsByID(
+        @Path("id")id: Int
+    )
+    //////REVIEW
+    @GET("/api/v1/src/reviews/")
+    suspend fun getReviews(
+       @Query("page")page: Int
     ):Response<BaseResponse<ReviewDt>>
 
     @POST("/api/v1/src/reviews/")
-   suspend fun postReviews(
-        @Body data:WriteReviewDt
-    ):ReviewDt
+    suspend fun postReviews(
+        @Body data:ReviewBodyDt
+    ):Response<ReviewDt>
 
+    /////////SEARCH BY CITY
+    @GET("/api/v1/src/search-by-city/{id}/")
+    suspend fun searchByID(
+        @Path("id")id:String)
+
+    //////SERVICE
     @GET("/api/v1/src/service/")
-   suspend fun getCategoryServicesOfDoctors(
-        @Query("id")id:Int,
-        @Query("name")name:String?,
-        @Query("price")price:String?,
-        @Query("search")search:String?,
+    suspend fun getServiceOfDoctor(
+        @Query("search")search:String,
+        @Query("page")page: Int
     ):Response<BaseResponse<ServiceDt>>
 
-    @GET("api/v1/src/service/clinics/")
-   suspend fun getCategoryServicesOfClinics(
-        @Query("id")id:Int
+    @GET("/api/v1/src/sub-service/")
+    suspend fun getSubService(
+        @Query("clinic")clinic:String,
+        @Query("service")service:String,
+        @Query("search")search:String,
+        @Query("page")page:Int,
     ):Response<BaseResponse<SubServiceDt>>
 
-    @GET("api/v1/src/speciality/")
-   suspend fun getSpecialityOfDoctors(
-        @Query("page")page:Int
+    ///SPECIALITY
+    @GET("/api/v1/src/speciality/")
+    suspend fun getSpeciality(
+        @Query("search") search:String,
+        @Query("page") page:Int,
+        @Query("page_size") page_size:Int
     ):Response<BaseResponse<SpecialtyDt>>
 
-    @POST("/api/v1/src/whatsapp-send/")
-    fun postWhatsappSend(
-        @Body data:WhatsappSendDt
-    ):ResponseBody
-
-    @GET("api/v1/users/favorites/")
-   suspend fun getFavorites(
-        @Query("page")page: Int
-    ):BaseResponse<FavoriteDt>
-
-    @POST("/api/v1/users/favorites/")
-   suspend fun postFavorites(
-        @Body data:FavoriteDt
-    ):ResponseBody
-
-    @GET("/api/v1/users/logout/")
-   suspend fun logOut()
-
-    @POST("/api/v1/users/password-reset/confirm/{token}/api_v1_users_password-reset_confirm_create")
-   suspend fun postPasswordConfirmReset(
-        @Body data:PasswordConfirmResetDt,
-        @Path("token") token:String
-    ):ResponseBody
-
-    @POST("/api/v1/users/reset/")
-   suspend fun postReset(
-        @Body data:PasswordResetDt
-    ):ResponseBody
-
-    @POST("/api/v1/users/signup/")
-   suspend fun postFavorites(
-        @Body data:UserRegisterDt
-    ):ResponseBody
-
-    @POST("/api/v1/users/token-refresh/")
-   suspend fun postTokenRefresh(
-        @Body data:TokenRefreshDt
-    ):ResponseBody
-
+    ////////////// SEARCH
+    @GET("/search/")
+    suspend fun search(
+        @Query("page") page: Int,
+        @Query("search") search: String?
+        ): Response<BaseResponse<DoctorDt>>
 }

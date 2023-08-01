@@ -1,6 +1,5 @@
 package com.example.doctour.presentation.ui.fragments.main.category.categoryService
 
-import android.widget.Adapter
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels

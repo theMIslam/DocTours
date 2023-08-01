@@ -4,25 +4,13 @@ import com.example.doctour.data.utils.DataMapper
 import com.example.doctour.domain.model.WhatsappSend
 
 data class WhatsappSendDt(
-    val doctor: Int?,
-    val surname: String?,
-    val firstname: String?,
-    val lastname: String?,
-    val gender: String?,
-    val age: Int?,
-    val number: String?,
-    val email: String?,
-    val problem: String?
+    val doctor: String,
+    val fullname:String,
+    val birthday:String,
+    val gender: String,
+    val phone_number:String
 ) : DataMapper<WhatsappSend> {
     override fun mapToDomain() = WhatsappSend(
-        doctor,
-        surname,
-        firstname,
-        lastname,
-        gender,
-        age,
-        number,
-        email,
-        problem
+        doctor, fullname, birthday, gender, phone_number
     )
 }

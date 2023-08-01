@@ -8,4 +8,6 @@ import javax.inject.Inject
 class SplashScreenViewModel @Inject constructor(
 ) : BaseViewModel() {
 
+    val delayMills = 2000
+
 }

@@ -1,19 +1,16 @@
 package com.example.doctour.presentation.ui.fragments.main.password
 
-import android.annotation.SuppressLint
-import android.os.CountDownTimer
+import android.content.ContentValues.TAG
 import android.text.format.DateUtils
-import androidx.core.graphics.colorSpace
-import androidx.core.graphics.toColorInt
+import android.util.Log
 import androidx.core.view.isEmpty
-import androidx.core.view.isNotEmpty
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentOTRCodeBinding
-import com.example.doctour.di.UserPreferences
+import com.example.doctour.preferences.UserPreferences
 import com.example.doctour.presentation.extensions.showToast
 import com.fraggjkee.smsconfirmationview.SmsConfirmationView
 import dagger.hilt.android.AndroidEntryPoint
@@ -36,10 +33,13 @@ class OTRCodeFragment(
             val view: SmsConfirmationView = binding.smsView
 
             view.onChangeListener = SmsConfirmationView.OnChangeListener { code, isComplete ->
-               if (code == "202302"){
-                    findNavController().navigate(R.id.homeFragment)
-                    userPreferences.setOTPKode(true)
+                viewModel.code.observe(viewLifecycleOwner){
+                    if (code == it){
+                        viewModel.confirmUserCode()
+                        userPreferences.setOTPKode(true)
+                    }
                 }
+                viewModel.resetPasswordCodeToken(code=code)
             }
 
     }
@@ -47,6 +47,16 @@ class OTRCodeFragment(
     override fun initSubscribers() {
         super.initSubscribers()
         countDownTimer()
+
+        viewModel.confirmUser.collectUiStateBema(
+            onSuccess = {
+                findNavController().navigate(R.id.newPasswordFragment)
+            },
+            onError = {
+                showToast(getString(R.string.Something_went_wrong))
+                Log.e(TAG , "Error ------- $it")
+            }
+        )
     }
 
     private fun countDownTimer() {
@@ -56,6 +66,7 @@ class OTRCodeFragment(
         viewModel.snackBar.observe(viewLifecycleOwner){text->
             if (binding.smsView.isEmpty()) {
                 ///send code
+                viewModel.searchUserAndCreateCode(binding.tvNumber.text.toString())
                 showToast("Отправили еще 1 код")
             }
             showToast(text)

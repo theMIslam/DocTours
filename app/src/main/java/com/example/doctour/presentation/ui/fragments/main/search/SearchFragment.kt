@@ -12,7 +12,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentSearchBinding
-import com.example.doctour.presentation.model.DoctorUi
+import com.example.doctour.presentation.model.DoctorUI
 import com.example.doctour.presentation.ui.fragments.main.search.adapter.SearchAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -51,7 +51,7 @@ class SearchFragment :
         }
     }
 
-    private fun onItemClick(doctorUi: DoctorUi) {
+    private fun onItemClick(doctorUi: DoctorUI) {
         findNavController().navigate(R.id.aboutDoctorFragment, bundleOf( "about" to doctorUi))
     }
 

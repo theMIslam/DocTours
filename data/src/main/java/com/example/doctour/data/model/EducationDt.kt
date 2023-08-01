@@ -5,16 +5,22 @@ import com.example.doctour.domain.model.Education
 
 data class EducationDt(
     val id: String,
-    val year: String?,
+    val is_deleted:Boolean,
+    val created_at:String?,
+    val updated_at:String?,
     val title: String?,
     val specialization: String?,
-    val doctor: Int?
+    val year: String?,
+    val doctor: String?
 ) : DataMapper<Education> {
     override fun mapToDomain() = Education(
         id,
-        year,
+        is_deleted,
+        created_at,
+        updated_at,
         title,
         specialization,
+        year,
         doctor
     )
 }

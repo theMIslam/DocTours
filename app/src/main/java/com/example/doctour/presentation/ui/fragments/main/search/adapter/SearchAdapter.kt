@@ -6,12 +6,12 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.doctour.base.BaseDiffUtilItemCallback
 import com.example.doctour.databinding.ItemFoundVecanciesBinding
-import com.example.doctour.presentation.model.DoctorUi
 import com.example.doctour.presentation.extensions.loadImage
+import com.example.doctour.presentation.model.DoctorUI
 
 class SearchAdapter(
-    private var onClickListener: (DoctorUi) -> Unit
-) : PagingDataAdapter<DoctorUi,SearchAdapter.SearchViewHolder>(
+    private var onClickListener: (DoctorUI) -> Unit
+) : PagingDataAdapter<DoctorUI,SearchAdapter.SearchViewHolder>(
     BaseDiffUtilItemCallback()
 ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchViewHolder {
@@ -31,7 +31,7 @@ class SearchAdapter(
 
     inner class SearchViewHolder(private var binding: ItemFoundVecanciesBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(doctorUi: DoctorUi) {
+        fun bind(doctorUi: DoctorUI) {
             doctorUi.photo?.let { binding.ivDoctorAvatar.loadImage(it) }
             binding.tvDoctorName.text = doctorUi.full_name
             binding.tvWorkExperience.text = doctorUi.experience.toString()

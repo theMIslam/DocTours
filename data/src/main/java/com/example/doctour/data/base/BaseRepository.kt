@@ -9,7 +9,6 @@ import com.example.doctour.data.utils.DataMapper
 import com.example.doctour.data.utils.fromJson
 import com.example.doctour.domain.utils.Either
 import com.example.doctour.domain.utils.NetworkError
-import com.example.doctour.domain.utils.Resource
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.Dispatchers

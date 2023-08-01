@@ -12,7 +12,8 @@ import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentFavoriteDoctorsBinding
 import com.example.doctour.presentation.extensions.showToast
-import com.example.doctour.presentation.model.DoctorUi
+import com.example.doctour.presentation.model.DoctorUI
+import com.example.doctour.presentation.model.FavoriteDoctorUI
 import com.example.doctour.presentation.ui.fragments.main.category.favoriteDoctors.adapter.FavoriteDoctorsAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
@@ -27,7 +28,7 @@ class FavoriteDoctorsFragment
     )
     override val viewModel: FavoriteDoctorsViewModel by viewModels()
     private lateinit var adapterFavoriteDoctor: FavoriteDoctorsAdapter
-    private var list = arrayListOf<DoctorUi>()
+    private var list = arrayListOf<DoctorUI>()
 
     override fun initListeners() {
         super.initListeners()
@@ -41,6 +42,10 @@ class FavoriteDoctorsFragment
         adapterFavoriteDoctor = FavoriteDoctorsAdapter(this::onClick,this::onLongClick)
         binding.rv.adapter = adapterFavoriteDoctor
 
+        viewModel.getFavoriteDoctors().collectPaging {
+            adapterFavoriteDoctor.submitData(it)
+        }
+
         adapterFavoriteDoctor.addLoadStateListener {loadState ->
             binding.rv.isVisible= loadState.refresh is  LoadState.NotLoading
             binding.progressBar.isVisible= loadState.refresh is  LoadState.Loading
@@ -48,11 +53,11 @@ class FavoriteDoctorsFragment
     }
 
 
-    private fun onClick(doctorUi: DoctorUi) {
+    private fun onClick(doctorUi: FavoriteDoctorUI) {
         showToast("onClick")
     }
 
-    private fun onLongClick(doctor: DoctorUi) {
+    private fun onLongClick(doctor: FavoriteDoctorUI) {
         val view: View = layoutInflater.inflate(R.layout.remove_favorite_bottom_sheet, null)
         val dialog = BottomSheetDialog(requireActivity())
         dialog.setContentView(view)
