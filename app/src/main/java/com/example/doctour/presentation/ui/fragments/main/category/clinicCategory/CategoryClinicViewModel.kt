@@ -1,8 +1,8 @@
 package com.example.doctour.presentation.ui.fragments.main.category.clinicCategory
 
 import com.example.doctour.base.BaseViewModel
-import com.example.doctour.domain.usecases.GetClinicUseCase
-import com.example.doctour.presentation.model.toClinicUI
+import com.example.doctour.domain.usecases.clinics.GetClinicUseCase
+import com.example.doctour.presentation.model.clinic.toClinicUI
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

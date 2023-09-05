@@ -14,12 +14,12 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentHomeBinding
-import com.example.doctour.presentation.extensions.showToast
-import com.example.doctour.presentation.model.DoctorUI
+import com.example.doctour.presentation.module.showToast
+import com.example.doctour.presentation.model.doctour.DoctorUI
 import com.example.doctour.presentation.ui.fragments.authAndReg.TokenViewModel
-import com.example.doctour.presentation.ui.fragments.home.adapter.HomeClinicAdapter
-import com.example.doctour.presentation.ui.fragments.home.adapter.HomeDoctorSpecsAdapter
-import com.example.doctour.presentation.ui.fragments.home.adapter.HomeInfoDoctorAdapter
+import com.example.doctour.presentation.ui.adapter.home.homeClinic.HomeClinicAdapter
+import com.example.doctour.presentation.ui.adapter.home.homeDoctor.HomeDoctorSpecsAdapter
+import com.example.doctour.presentation.ui.adapter.home.homeInfo.HomeInfoDoctorAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

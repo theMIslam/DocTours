@@ -6,7 +6,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentSuccessPasswordBinding
-import com.example.doctour.presentation.ui.fragments.main.password.PasswordViewModel
+import com.example.doctour.presentation.ui.fragments.main.password.passwordViewmodel.PasswordViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

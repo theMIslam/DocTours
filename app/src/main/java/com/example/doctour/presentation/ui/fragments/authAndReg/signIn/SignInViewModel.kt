@@ -4,9 +4,9 @@ import com.example.doctour.base.BaseViewModel
 import com.example.doctour.domain.model.TokenRefresh
 import com.example.doctour.domain.model.UserLogin
 import com.example.doctour.domain.usecases.RefreshTokenUseCase
-import com.example.doctour.domain.usecases.SignInUseCase
-import com.example.doctour.presentation.model.UserLoginUI
-import com.example.doctour.presentation.model.toUserLoginUI
+import com.example.doctour.domain.usecases.category.signIn.SignInUseCase
+import com.example.doctour.presentation.model.login.UserLoginUI
+import com.example.doctour.presentation.model.login.toUserLoginUI
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.asStateFlow
 import javax.inject.Inject

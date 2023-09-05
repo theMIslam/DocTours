@@ -2,13 +2,13 @@ package com.example.doctour.presentation.ui.fragments.home
 
 
 import com.example.doctour.base.BaseViewModel
-import com.example.doctour.domain.usecases.GetDoctorsUseCase
-import com.example.doctour.domain.usecases.GetCategoryDoctorsUseCase
-import com.example.doctour.domain.usecases.GetClinicUseCase
-import com.example.doctour.presentation.model.DoctorUI
-import com.example.doctour.presentation.model.toClinicUI
-import com.example.doctour.presentation.model.toDoctorUI
-import com.example.doctour.presentation.model.toSpecialtyUI
+import com.example.doctour.domain.usecases.doctors.GetDoctorsUseCase
+import com.example.doctour.domain.usecases.category.categoryDoctors.GetCategoryDoctorsUseCase
+import com.example.doctour.domain.usecases.clinics.GetClinicUseCase
+import com.example.doctour.presentation.model.doctour.DoctorUI
+import com.example.doctour.presentation.model.clinic.toClinicUI
+import com.example.doctour.presentation.model.doctour.toDoctorUI
+import com.example.doctour.presentation.model.speciality.toSpecialtyUI
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

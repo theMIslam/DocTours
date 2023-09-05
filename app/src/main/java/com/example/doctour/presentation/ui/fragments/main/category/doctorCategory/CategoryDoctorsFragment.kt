@@ -9,9 +9,9 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentCategoryDoctorsBinding
-import com.example.doctour.presentation.extensions.showToast
-import com.example.doctour.presentation.model.SpecialtyUI
-import com.example.doctour.presentation.ui.fragments.main.category.doctorCategory.adapter.CategoryDoctorSpecAdapter
+import com.example.doctour.presentation.module.showToast
+import com.example.doctour.presentation.model.speciality.SpecialtyUI
+import com.example.doctour.presentation.ui.adapter.category.categoryDoctor.CategoryDoctorSpecAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

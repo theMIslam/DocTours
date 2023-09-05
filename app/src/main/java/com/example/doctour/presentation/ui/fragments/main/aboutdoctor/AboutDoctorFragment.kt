@@ -7,10 +7,10 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentAboutDoctorBinding
-import com.example.doctour.presentation.extensions.loadImage
-import com.example.doctour.presentation.extensions.showToast
-import com.example.doctour.presentation.model.DoctorUI
-import com.example.doctour.presentation.ui.fragments.main.aboutdoctor.adapter.FeedbacksAdapter
+import com.example.doctour.presentation.module.loadImage
+import com.example.doctour.presentation.module.showToast
+import com.example.doctour.presentation.model.doctour.DoctorUI
+import com.example.doctour.presentation.ui.adapter.aboutdoctor.AboutFeedbacksAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -21,12 +21,12 @@ class AboutDoctorFragment
 
     override val binding: FragmentAboutDoctorBinding by viewBinding(FragmentAboutDoctorBinding::bind)
     override val viewModel: AboutDoctorViewModel by viewModels()
-    private lateinit var adapterFeedback: FeedbacksAdapter
+    private lateinit var adapterFeedback: AboutFeedbacksAdapter
 
     override fun initialize() {
         super.initialize()
         binding.rvFeedbacks.layoutManager=LinearLayoutManager(context)
-        adapterFeedback=FeedbacksAdapter()
+        adapterFeedback= AboutFeedbacksAdapter()
         binding.rvFeedbacks.adapter = adapterFeedback
         getInfoAboutDoctor()
     }

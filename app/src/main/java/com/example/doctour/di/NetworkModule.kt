@@ -2,9 +2,9 @@ package com.example.doctour.di
 
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
-import com.example.doctour.data.remote.AuthAuthenticator
-import com.example.doctour.data.remote.AuthInterceptor
-import com.example.doctour.data.remote.TokenManager
+import com.example.doctour.data.remote.authentifications.AuthAuthenticator
+import com.example.doctour.data.remote.authentifications.AuthInterceptor
+import com.example.doctour.data.remote.authentifications.token.TokenManager
 import com.example.doctour.data.remote.apiservices.AuthenticationApiService
 import com.example.doctour.data.remote.apiservices.DoctourApiService
 import dagger.Module

@@ -6,7 +6,7 @@ import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.base.BaseViewModel
 import com.example.doctour.databinding.FragmentOnBoardingBinding
-import com.example.doctour.presentation.ui.fragments.main.onboarding.adapter.AdapterBoardingFragment
+import com.example.doctour.presentation.ui.adapter.onBoarding.AdapterBoardingFragment
 
 class OnBoardingFragment : BaseFragment<FragmentOnBoardingBinding,BaseViewModel> (R.layout.fragment_on_boarding) {
 

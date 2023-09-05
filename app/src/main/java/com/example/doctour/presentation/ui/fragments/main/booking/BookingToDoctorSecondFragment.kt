@@ -5,14 +5,13 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.util.Log
-import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentBookingToDoctorSecondBinding
-import com.example.doctour.presentation.extensions.showToast
+import com.example.doctour.presentation.module.showToast
 import dagger.hilt.android.AndroidEntryPoint
 import java.net.URLEncoder
 

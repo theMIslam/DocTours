@@ -2,8 +2,6 @@ package com.example.doctour.preferences
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.example.doctour.di.clear
-import com.example.doctour.di.put
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 import javax.inject.Inject

@@ -1,7 +1,7 @@
 package com.example.doctour.data.model
 
 import com.example.doctour.data.utils.DataMapper
-import com.example.doctour.domain.model.PasswordResetSearchUser
+import com.example.doctour.domain.model.password.resetSearch.PasswordResetSearchUser
 
 data class PasswordResetSearchUserDt(
     val phone_number: String

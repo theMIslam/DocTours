@@ -1,7 +1,7 @@
 package com.example.doctour.di
 
-import com.example.doctour.data.repositories.AuthenticationRepositoryImpl
-import com.example.doctour.data.repositories.DoctourRepositoryImpl
+import com.example.doctour.data.repositories.authRepoImpl.AuthenticationRepositoryImpl
+import com.example.doctour.data.repositories.doctourRepoImpl.DoctourRepositoryImpl
 import com.example.doctour.domain.repositories.AuthenticationRepository
 import com.example.doctour.domain.repositories.DoctourRepository
 import dagger.Binds

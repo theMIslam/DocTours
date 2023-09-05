@@ -1,7 +1,7 @@
 package com.example.doctour.data.model
 
 import com.example.doctour.data.utils.DataMapper
-import com.example.doctour.domain.model.WhatsappSend
+import com.example.doctour.domain.model.whatsappSend.WhatsappSend
 
 data class WhatsappSendDt(
     val doctor: String,

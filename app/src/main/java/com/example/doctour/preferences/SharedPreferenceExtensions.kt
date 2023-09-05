@@ -1,4 +1,4 @@
-package com.example.doctour.di
+package com.example.doctour.preferences
 
 import android.annotation.SuppressLint
 import android.content.SharedPreferences

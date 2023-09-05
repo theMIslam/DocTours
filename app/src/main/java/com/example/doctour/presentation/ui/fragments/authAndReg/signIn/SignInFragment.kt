@@ -10,7 +10,7 @@ import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentSignInBinding
 import com.example.doctour.preferences.UserPreferences
-import com.example.doctour.presentation.extensions.showToast
+import com.example.doctour.presentation.module.showToast
 import com.example.doctour.presentation.ui.fragments.authAndReg.TokenViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject

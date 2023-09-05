@@ -1,12 +1,12 @@
 package com.example.doctour.presentation.ui.fragments.main.category.favoriteDoctors
 
 import com.example.doctour.base.BaseViewModel
-import com.example.doctour.domain.usecases.GetFavoriteClinicsUseCase
-import com.example.doctour.domain.usecases.GetFavoriteDoctorsUseCase
-import com.example.doctour.presentation.model.FavoriteClinicUI
-import com.example.doctour.presentation.model.FavoriteDoctorUI
-import com.example.doctour.presentation.model.toFavoriteClinicUI
-import com.example.doctour.presentation.model.toFavoriteDoctorUI
+import com.example.doctour.domain.usecases.favorite.favoriteClinics.GetFavoriteClinicsUseCase
+import com.example.doctour.domain.usecases.favorite.favoriteDoctors.GetFavoriteDoctorsUseCase
+import com.example.doctour.presentation.model.favorite.FavoriteClinicUI
+import com.example.doctour.presentation.model.favorite.FavoriteDoctorUI
+import com.example.doctour.presentation.model.favorite.toFavoriteClinicUI
+import com.example.doctour.presentation.model.favorite.toFavoriteDoctorUI
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.asStateFlow
 import javax.inject.Inject

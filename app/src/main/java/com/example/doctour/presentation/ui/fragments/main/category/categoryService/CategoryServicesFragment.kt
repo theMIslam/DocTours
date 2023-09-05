@@ -10,8 +10,8 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentCategoryServicesBinding
-import com.example.doctour.presentation.model.ServiceUi
-import com.example.doctour.presentation.ui.fragments.main.category.categoryService.adapter.CategoryServicesAdapter
+import com.example.doctour.presentation.model.service.ServiceUi
+import com.example.doctour.presentation.ui.adapter.category.categoryService.CategoryServicesAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -20,7 +20,7 @@ class CategoryServicesFragment : BaseFragment<FragmentCategoryServicesBinding, C
 ) {
     override val binding: FragmentCategoryServicesBinding by viewBinding(FragmentCategoryServicesBinding::bind)
     override val viewModel: CategoryServicesViewModel by viewModels()
-    private val adapterCategoryServices=CategoryServicesAdapter(this::onClick)
+    private val adapterCategoryServices= CategoryServicesAdapter(this::onClick)
 
     override fun initListeners() {
         super.initListeners()

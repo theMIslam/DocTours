@@ -1,7 +1,7 @@
 package com.example.doctour.data.model
 
 import com.example.doctour.data.utils.DataMapper
-import com.example.doctour.domain.model.FavoriteClinic
+import com.example.doctour.domain.model.favoriteClinics.FavoriteClinic
 
 data class FavoriteClinicDt(
     val id:Int,

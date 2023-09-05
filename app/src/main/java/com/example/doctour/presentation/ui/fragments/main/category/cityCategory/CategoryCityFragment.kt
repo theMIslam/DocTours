@@ -6,7 +6,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentCategoryCityBinding
-import com.example.doctour.presentation.ui.fragments.main.category.CategoryViewModel
+import com.example.doctour.presentation.ui.fragments.main.category.category.CategoryViewModel
 import com.example.doctour.presentation.ui.fragments.main.category.observer.DataChangeListener
 import com.example.doctour.presentation.ui.fragments.main.category.observer.TextUpdate
 import dagger.hilt.android.AndroidEntryPoint

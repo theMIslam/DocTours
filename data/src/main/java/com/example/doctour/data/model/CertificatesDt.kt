@@ -1,7 +1,7 @@
 package com.example.doctour.data.model
 
 import com.example.doctour.data.utils.DataMapper
-import com.example.doctour.domain.model.Certificates
+import com.example.doctour.domain.model.certificates.Certificates
 
 data class CertificatesDt(
     val id: Int,

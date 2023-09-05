@@ -1,7 +1,7 @@
 package com.example.doctour.data.model
 
 import com.example.doctour.data.utils.DataMapper
-import com.example.doctour.domain.model.DoctorDetail
+import com.example.doctour.domain.model.doctorDetail.DoctorDetail
 
 data class DoctorDetailDt(
     val id: String,

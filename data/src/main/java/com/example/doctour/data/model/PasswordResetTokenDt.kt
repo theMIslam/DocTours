@@ -1,7 +1,7 @@
 package com.example.doctour.data.model
 
 import com.example.doctour.data.utils.DataMapper
-import com.example.doctour.domain.model.PasswordResetToken
+import com.example.doctour.domain.model.password.resetToken.PasswordResetToken
 
 data class PasswordResetTokenDt(
     val code:String

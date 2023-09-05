@@ -1,8 +1,7 @@
 package com.example.doctour.data.model
 
 import com.example.doctour.data.utils.DataMapper
-import com.example.doctour.domain.model.Review
-import com.google.gson.annotations.SerializedName
+import com.example.doctour.domain.model.reviews.Review
 
 data class ReviewDt(
     val id: String,

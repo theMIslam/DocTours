@@ -29,7 +29,7 @@
 
     <fragment
         android:id="@+id/categoryFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.category.CategoryFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.category.category.CategoryFragment"
         android:label="fragment_category"
         tools:layout="@layout/fragment_category">
         <action
@@ -59,12 +59,12 @@
 
     <fragment
         android:id="@+id/fragment_review_success"
-        android:name="com.example.doctour.presentation.ui.fragments.main.review.ReviewSuccessFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.review.reviewSuccess.ReviewSuccessFragment"
         android:label="fragment_failed"
         tools:layout="@layout/fragment_review_success" />
     <fragment
         android:id="@+id/fragment_review_failed"
-        android:name="com.example.doctour.presentation.ui.fragments.main.review.ReviewFailedFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.review.reviewFailed.ReviewFailedFragment"
         android:label="fragment_success"
         tools:layout="@layout/fragment_review_failed" />
 
@@ -106,7 +106,7 @@
 
     <fragment
         android:id="@+id/writeReviewFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.review.WriteReviewFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.review.writeReview.WriteReviewFragment"
         android:label="fragment_write_review"
         tools:layout="@layout/fragment_write_review"/>
 
@@ -125,7 +125,7 @@
 
     <fragment
         android:id="@+id/aboutDoctorReviewFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.review.aboutDoctorReview.AboutDoctorReviewFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.aboutdoctor.aboutDoctorReview.AboutDoctorReviewFragment"
         android:label="fragment_about_doctor_review"
         tools:layout="@layout/fragment_about_doctor_review">
         <action
@@ -143,19 +143,19 @@
 
     <fragment
         android:id="@+id/changePasswordFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.password.ChangePasswordFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.password.change.ChangePasswordFragment"
         android:label="fragment_change_password"
         tools:layout="@layout/fragment_change_password" />
 
     <fragment
         android:id="@+id/createPinFragment2"
-        android:name="com.example.doctour.presentation.ui.fragments.main.password.CreatePinFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.password.createPIN.CreatePinFragment"
         android:label="fragment_create_pin"
         tools:layout="@layout/fragment_create_pin"/>
 
     <fragment
         android:id="@+id/failedPasswordFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.password.success.failed.FailedPasswordFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.password.failed.FailedPasswordFragment"
         android:label="fragment_failed_password"
         tools:layout="@layout/fragment_failed_password" />
     <fragment
@@ -170,12 +170,12 @@
 
     <fragment
         android:id="@+id/newPasswordFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.password.NewPasswordFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.password.newPassword.NewPasswordFragment"
         android:label="fragment_new_password"
         tools:layout="@layout/fragment_new_password" />
     <fragment
         android:id="@+id/fillProfileFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.profile.FillProfileFragment"
+        android:name="FillProfileFragment"
         android:label="fragment_profile_fill"
         tools:layout="@layout/fragment_profile_fill"/>
 
@@ -223,7 +223,7 @@
 
     <fragment
         android:id="@+id/OTRCodeFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.password.OTRCodeFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.password.OTRCode.OTRCodeFragment"
         android:label="fragment_o_t_r_code"
         tools:layout="@layout/fragment_o_t_r_code">
         <action
@@ -252,7 +252,7 @@
         tools:layout="@layout/fragment_category_services" />
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.password.ForgotPasswordFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.password.forgot.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password">
         <action
@@ -314,7 +314,7 @@
         tools:layout="@layout/fragment_on_board_page" />
     <fragment
         android:id="@+id/verificationCodeFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.password.VerificationCodeFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.password.verification.VerificationCodeFragment"
         android:label="VerificationCodeFragment" />
     <fragment
         android:id="@+id/categoryServiceFragment"

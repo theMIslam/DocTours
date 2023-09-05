@@ -11,10 +11,10 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentFavoriteDoctorsBinding
-import com.example.doctour.presentation.extensions.showToast
-import com.example.doctour.presentation.model.DoctorUI
-import com.example.doctour.presentation.model.FavoriteDoctorUI
-import com.example.doctour.presentation.ui.fragments.main.category.favoriteDoctors.adapter.FavoriteDoctorsAdapter
+import com.example.doctour.presentation.module.showToast
+import com.example.doctour.presentation.model.doctour.DoctorUI
+import com.example.doctour.presentation.model.favorite.FavoriteDoctorUI
+import com.example.doctour.presentation.ui.adapter.favorite.FavoriteDoctorsAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
 

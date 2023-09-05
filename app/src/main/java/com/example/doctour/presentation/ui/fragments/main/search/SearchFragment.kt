@@ -12,8 +12,8 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentSearchBinding
-import com.example.doctour.presentation.model.DoctorUI
-import com.example.doctour.presentation.ui.fragments.main.search.adapter.SearchAdapter
+import com.example.doctour.presentation.model.doctour.DoctorUI
+import com.example.doctour.presentation.ui.adapter.search.SearchAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
