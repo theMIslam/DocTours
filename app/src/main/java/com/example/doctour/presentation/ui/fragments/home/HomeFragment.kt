@@ -16,7 +16,7 @@ import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentHomeBinding
 import com.example.doctour.presentation.module.showToast
 import com.example.doctour.presentation.model.doctour.DoctorUI
-import com.example.doctour.presentation.ui.fragments.authAndReg.TokenViewModel
+import com.example.doctour.presentation.ui.fragments.authAndReg.auth.TokenViewModel
 import com.example.doctour.presentation.ui.adapter.home.homeClinic.HomeClinicAdapter
 import com.example.doctour.presentation.ui.adapter.home.homeDoctor.HomeDoctorSpecsAdapter
 import com.example.doctour.presentation.ui.adapter.home.homeInfo.HomeInfoDoctorAdapter
@@ -34,7 +34,7 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout
 
     override val binding by viewBinding(FragmentHomeBinding::bind)
     override val viewModel: HomeViewModel by viewModels()
-    private val tokenViewModel :TokenViewModel by activityViewModels()
+    private val tokenViewModel : TokenViewModel by activityViewModels()
     private var token :String ?=null
 
     private val adapterHomeDoctorSpecs = HomeDoctorSpecsAdapter(this::onSpecsClick)

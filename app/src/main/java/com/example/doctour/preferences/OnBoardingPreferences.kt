@@ -10,13 +10,14 @@ class OnBoardingPreferences @Inject constructor(
 ) {
     private val sharedPreferences: SharedPreferences = context.getSharedPreferences(
         PreferencesKeys.PREFERENCE_ON_BOARDING,
-        Context.MODE_PRIVATE)
+        Context.MODE_PRIVATE
+    )
 
-    fun setOnBoarding(isShow:Boolean){
-        sharedPreferences.edit().putBoolean(PreferencesKeys.BOARD,isShow).apply()
+    fun setOnBoarding(isShow: Boolean) {
+        sharedPreferences.edit().putBoolean(PreferencesKeys.BOARD, isShow).apply()
     }
 
-    fun isShowOnBoarding():Boolean{
-        return  sharedPreferences.getBoolean(PreferencesKeys.BOARD,false)
+    fun isShowOnBoarding(): Boolean {
+        return sharedPreferences.getBoolean(PreferencesKeys.BOARD, false)
     }
 }

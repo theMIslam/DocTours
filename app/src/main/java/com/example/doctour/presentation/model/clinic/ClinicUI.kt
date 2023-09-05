@@ -5,11 +5,11 @@ import com.example.doctour.domain.model.clinics.Clinic
 
 data class ClinicUI(
     override val id: String,
-    val is_deleted :Boolean,
-    val created_at :String?,
-    val updated_at :String?,
+    val is_deleted: Boolean,
+    val created_at: String?,
+    val updated_at: String?,
     val title: String?,
-    val descriptions:String?,
+    val descriptions: String?,
     val photo: String?,
     val address: String?,
     val link_clinic: String?,
@@ -20,10 +20,10 @@ data class ClinicUI(
     val ending_working_day: String?,
     val weekday: String?,
     val weekend: String?,
-    val  city:Int?
-): IBaseDiffModel<String>
+    val city: Int?
+) : IBaseDiffModel<String>
 
-fun Clinic.toClinicUI()= ClinicUI(
+fun Clinic.toClinicUI() = ClinicUI(
     id,
     is_deleted,
     created_at,

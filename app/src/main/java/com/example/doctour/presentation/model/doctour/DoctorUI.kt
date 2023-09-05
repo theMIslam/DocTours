@@ -14,15 +14,15 @@ data class DoctorUI(
     val summary: String?,
     val experience: Int?,
     val price: Int?,
-    val instagram :String?,
+    val instagram: String?,
     val average_rating: String?,
-    val num_reviews:String?,
-    val specialties:List<SpecialitySerializerFieldsUI>?= emptyList(),
-    val clinic: List<ClinicSerializerFieldsUI>?= emptyList(),
-    val isChoosen :Boolean = false
-): IBaseDiffModel<String>
+    val num_reviews: String?,
+    val specialties: List<SpecialitySerializerFieldsUI>? = emptyList(),
+    val clinic: List<ClinicSerializerFieldsUI>? = emptyList(),
+    val isChoosen: Boolean = false
+) : IBaseDiffModel<String>
 
-fun Doctor.toDoctorUI()= DoctorUI(
+fun Doctor.toDoctorUI() = DoctorUI(
     id,
     full_name,
     photo,

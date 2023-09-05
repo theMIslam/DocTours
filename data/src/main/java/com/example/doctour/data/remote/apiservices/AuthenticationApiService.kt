@@ -1,21 +1,20 @@
 package com.example.doctour.data.remote.apiservices
 
 import com.example.doctour.data.base.BaseResponse
-import com.example.doctour.data.model.PasswordResetNewPasswordDt
-import com.example.doctour.data.model.PasswordResetSearchUserDt
-import com.example.doctour.data.model.PasswordResetTokenDt
-import com.example.doctour.data.model.ProfileDt
-import com.example.doctour.data.model.TokenRefreshBodyDt
-import com.example.doctour.data.model.TokenRefreshDt
-import com.example.doctour.data.model.UserConfirmDt
-import com.example.doctour.data.model.UserLoginDt
-import com.example.doctour.data.model.UserRegistrationDt
-import com.example.doctour.data.model.WhatsappSendDt
+import com.example.doctour.data.model.password.resetNewPassword.PasswordResetNewPasswordDt
+import com.example.doctour.data.model.password.resetSearch.PasswordResetSearchUserDt
+import com.example.doctour.data.model.password.resetToken.PasswordResetTokenDt
+import com.example.doctour.data.model.profile.ProfileDt
+import com.example.doctour.data.model.tokenRefresh.TokenRefreshBodyDt
+import com.example.doctour.data.model.tokenRefresh.TokenRefreshDt
+import com.example.doctour.data.model.confirm.UserConfirmDt
+import com.example.doctour.data.model.login.UserLoginDt
+import com.example.doctour.data.model.register.UserRegistrationDt
+import com.example.doctour.data.model.whatsappSend.WhatsappSendDt
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
-import retrofit2.http.Header
 import retrofit2.http.PATCH
 import retrofit2.http.POST
 import retrofit2.http.PUT
@@ -33,19 +32,19 @@ interface AuthenticationApiService {
     /////////// REGISTER USER
     @POST("/api/v1/users/register/")
     suspend fun  registerUser(
-        @Body data :UserRegistrationDt
+        @Body data : UserRegistrationDt
     ):Response<UserRegistrationDt>
 
     /////////TOKEN REFRESH
     @POST("/api/v1/users/login/token/refresh/")
     suspend fun tokenRefresh(
-        @Body data:TokenRefreshBodyDt
+        @Body data: TokenRefreshBodyDt
     ):Response<TokenRefreshDt>
 
     ////////// ДЛЯ ВВЕДЕНИЯ ТОКЕНА
     @POST("/api/v1/users/reset-password-code/")
     suspend fun resetPasswordCode(
-        @Body data :PasswordResetTokenDt
+        @Body data : PasswordResetTokenDt
     ):Response<PasswordResetTokenDt>
 
     ////////WHATS APP
@@ -79,14 +78,14 @@ interface AuthenticationApiService {
     ////////// PUT USER PROFILE BY ID
     @PUT("/api/v1/users/profile/{id}/")
     suspend fun putUsersProfileByID(
-        @Body data:ProfileDt,
+        @Body data: ProfileDt,
         @Path ("id")id:String
     ):Response<ProfileDt>
 
     //////// PATCH USER PROFILE BY ID
     @PATCH("/api/v1/users/profile/{id}/")
     suspend fun patchUsersProfileByID(
-        @Body data:ProfileDt,
+        @Body data: ProfileDt,
         @Path ("id") id:String
     ):Response<ProfileDt>
 
@@ -105,7 +104,7 @@ interface AuthenticationApiService {
     ///////////  ДЛЯ ПОИСКА USER  И СОЗДАНИЕ КОДА
     @POST("api/v1/users/reset-password-phone_number/")
     suspend fun searchUserAndCreateCode(
-        @Body data :PasswordResetSearchUserDt
+        @Body data : PasswordResetSearchUserDt
     ):Response<PasswordResetSearchUserDt>
 
 

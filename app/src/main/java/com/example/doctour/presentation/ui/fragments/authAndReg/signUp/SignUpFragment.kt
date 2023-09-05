@@ -13,7 +13,7 @@ import com.example.doctour.databinding.FragmentSignUpBinding
 import com.example.doctour.preferences.UserPreferences
 import com.example.doctour.presentation.module.hideKeyboard
 import com.example.doctour.presentation.module.showToast
-import com.example.doctour.presentation.ui.fragments.authAndReg.TokenViewModel
+import com.example.doctour.presentation.ui.fragments.authAndReg.auth.TokenViewModel
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import dagger.hilt.android.AndroidEntryPoint

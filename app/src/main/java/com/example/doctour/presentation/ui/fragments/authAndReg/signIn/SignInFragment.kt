@@ -11,7 +11,7 @@ import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentSignInBinding
 import com.example.doctour.preferences.UserPreferences
 import com.example.doctour.presentation.module.showToast
-import com.example.doctour.presentation.ui.fragments.authAndReg.TokenViewModel
+import com.example.doctour.presentation.ui.fragments.authAndReg.auth.TokenViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import com.google.i18n.phonenumbers.PhoneNumberUtil

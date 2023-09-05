@@ -8,6 +8,6 @@ data class UserLoginUI(
     val password: String
 )
 
-fun UserLogin.toUserLoginUI()= UserLoginUI(
+fun UserLogin.toUserLoginUI() = UserLoginUI(
     phone_number, password
 )

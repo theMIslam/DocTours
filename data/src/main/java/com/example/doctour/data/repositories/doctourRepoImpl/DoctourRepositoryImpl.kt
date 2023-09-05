@@ -2,8 +2,8 @@ package com.example.doctour.data.repositories.doctourRepoImpl
 
 import androidx.paging.PagingData
 import com.example.doctour.data.base.BaseRepository
-import com.example.doctour.data.model.toFavoriteClinicBodyDt
-import com.example.doctour.data.model.toReviewBodyDt
+import com.example.doctour.data.model.favoriteClinic.toFavoriteClinicBodyDt
+import com.example.doctour.data.model.reviews.toReviewBodyDt
 import com.example.doctour.data.remote.apiservices.DoctourApiService
 import com.example.doctour.data.remote.pagingsources.doctour.DoctourPagingSource
 import com.example.doctour.data.remote.pagingsources.favorite.FavoriteClinicsPagingSource

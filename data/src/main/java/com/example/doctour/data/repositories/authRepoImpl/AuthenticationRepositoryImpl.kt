@@ -1,13 +1,13 @@
 package com.example.doctour.data.repositories.authRepoImpl
 
 import com.example.doctour.data.base.BaseRepository
-import com.example.doctour.data.model.toPasswordResetNewPasswordDt
-import com.example.doctour.data.model.toPasswordResetSearchUserDt
-import com.example.doctour.data.model.toPasswordResetTokenDt
-import com.example.doctour.data.model.toTokenRefreshBodyDt
-import com.example.doctour.data.model.toUserConfirmDt
-import com.example.doctour.data.model.toUserLoginDt
-import com.example.doctour.data.model.toUserRegisterDt
+import com.example.doctour.data.model.password.resetNewPassword.toPasswordResetNewPasswordDt
+import com.example.doctour.data.model.password.resetSearch.toPasswordResetSearchUserDt
+import com.example.doctour.data.model.password.resetToken.toPasswordResetTokenDt
+import com.example.doctour.data.model.tokenRefresh.toTokenRefreshBodyDt
+import com.example.doctour.data.model.confirm.toUserConfirmDt
+import com.example.doctour.data.model.login.toUserLoginDt
+import com.example.doctour.data.model.register.toUserRegisterDt
 import com.example.doctour.data.remote.apiservices.AuthenticationApiService
 import com.example.doctour.domain.model.password.resetNew.PasswordResetNewPassword
 import com.example.doctour.domain.model.password.resetSearch.PasswordResetSearchUser

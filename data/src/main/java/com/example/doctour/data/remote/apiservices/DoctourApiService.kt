@@ -2,16 +2,16 @@ package com.example.doctour.data.remote.apiservices
 
 import com.example.doctour.data.base.BaseResponse
 import com.example.doctour.data.model.ClinicDt
-import com.example.doctour.data.model.DoctorDetailDt
-import com.example.doctour.data.model.DoctorDt
-import com.example.doctour.data.model.FavoriteClinicBodyDt
-import com.example.doctour.data.model.FavoriteClinicDt
-import com.example.doctour.data.model.FavoriteDoctorDt
-import com.example.doctour.data.model.ReviewBodyDt
-import com.example.doctour.data.model.ReviewDt
-import com.example.doctour.data.model.ServiceDt
-import com.example.doctour.data.model.SpecialtyDt
-import com.example.doctour.data.model.SubServiceDt
+import com.example.doctour.data.model.doctor.DoctorDetailDt
+import com.example.doctour.data.model.doctor.DoctorDt
+import com.example.doctour.data.model.favoriteClinic.FavoriteClinicBodyDt
+import com.example.doctour.data.model.favoriteClinic.FavoriteClinicDt
+import com.example.doctour.data.model.favoriteDoctor.FavoriteDoctorDt
+import com.example.doctour.data.model.reviews.ReviewBodyDt
+import com.example.doctour.data.model.reviews.ReviewDt
+import com.example.doctour.data.model.service.ServiceDt
+import com.example.doctour.data.model.speciality.SpecialtyDt
+import com.example.doctour.data.model.subService.SubServiceDt
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE
@@ -54,7 +54,7 @@ interface DoctourApiService {
 
     @POST("/api/v1/src/favorites-clinics/")
     suspend fun postFavoriteClinics(
-        @Body data :FavoriteClinicBodyDt
+        @Body data : FavoriteClinicBodyDt
     ):Response<FavoriteClinicDt>
 
     @GET("/api/v1/src/favorites-clinics/{id}/")
@@ -75,7 +75,7 @@ interface DoctourApiService {
 
     @POST("/api/v1/src/favorites-doctors/")
     suspend fun postFavoriteDoctors(
-        @Body data:FavoriteClinicBodyDt
+        @Body data: FavoriteClinicBodyDt
     ):Response<FavoriteDoctorDt>
 
     @GET("/api/v1/src/favorites-doctors/{id}/")
@@ -95,7 +95,7 @@ interface DoctourApiService {
 
     @POST("/api/v1/src/reviews/")
     suspend fun postReviews(
-        @Body data:ReviewBodyDt
+        @Body data: ReviewBodyDt
     ):Response<ReviewDt>
 
     /////////SEARCH BY CITY

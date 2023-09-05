@@ -22,14 +22,14 @@ import kotlinx.coroutines.launch
  */
 abstract class BaseViewModel : ViewModel() {
 
-    protected fun <T ,S> Flow< Either<String,T>>.collectRequest(
-        state:MutableStateFlow<UIState<S>>,
-        mappedData:(T) ->S
-    ){
-        viewModelScope.launch(Dispatchers.IO){
+    protected fun <T, S> Flow<Either<String, T>>.collectRequest(
+        state: MutableStateFlow<UIState<S>>,
+        mappedData: (T) -> S
+    ) {
+        viewModelScope.launch(Dispatchers.IO) {
             state.value = UIState.Loading()
-            this@collectRequest.collect{
-                when (it){
+            this@collectRequest.collect {
+                when (it) {
                     is Either.Left -> state.value = UIState.Error(it.value)
                     is Either.Right -> state.value = UIState.Success(mappedData(it.value))
                 }
@@ -38,6 +38,7 @@ abstract class BaseViewModel : ViewModel() {
     }
 
     protected fun <T> mutableUiStateFlow() = MutableStateFlow<UIState<T>>(UIState.Idle())
+
     /**
      * Creates a [MutableStateFlow] with [UIState] and the given initial value [UIState.Idle]
      */

@@ -12,12 +12,12 @@ class ProfilePreferences @Inject constructor(
         Context.MODE_PRIVATE
     )
 
-    fun  getId():String{
-        return  sharedPreferences.getString(PreferencesKeys.ID_PROFILE,"").toString()
+    fun getId(): String {
+        return sharedPreferences.getString(PreferencesKeys.ID_PROFILE, "").toString()
     }
 
-    fun  saveID(id:String){
-        sharedPreferences.edit().putString(PreferencesKeys.ID_PROFILE,id).apply()
+    fun saveID(id: String) {
+        sharedPreferences.edit().putString(PreferencesKeys.ID_PROFILE, id).apply()
     }
 
     fun getName(): String {

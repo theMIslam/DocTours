@@ -12,25 +12,28 @@ class UserPreferences @Inject constructor(
 ) {
     private val sharedPreferences: SharedPreferences = context.getSharedPreferences(
         "preference",
-        Context.MODE_PRIVATE)
-   private val editor :SharedPreferences.Editor = sharedPreferences.edit()
+        Context.MODE_PRIVATE
+    )
+    private val editor: SharedPreferences.Editor = sharedPreferences.edit()
 
 
-    fun setOTPKode(isShow:Boolean){
-        sharedPreferences.edit().putBoolean("codeOtp",isShow).apply()
+    fun setOTPKode(isShow: Boolean) {
+        sharedPreferences.edit().putBoolean("codeOtp", isShow).apply()
     }
 
-    fun isOtpCodeRight():Boolean{
-        return  sharedPreferences.getBoolean("codeOtp",false)
+    fun isOtpCodeRight(): Boolean {
+        return sharedPreferences.getBoolean("codeOtp", false)
     }
 
-    fun setLogin (isLogin:Boolean){
-        editor.putBoolean("Login",isLogin).commit()
+    fun setLogin(isLogin: Boolean) {
+        editor.putBoolean("Login", isLogin).commit()
     }
-    fun isLogin():Boolean{
-        return sharedPreferences.getBoolean("Login",false)
+
+    fun isLogin(): Boolean {
+        return sharedPreferences.getBoolean("Login", false)
     }
-    fun removeData(){
+
+    fun removeData() {
         editor.clear()
         editor.commit()
     }

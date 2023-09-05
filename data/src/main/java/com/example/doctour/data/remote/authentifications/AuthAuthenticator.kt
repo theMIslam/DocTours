@@ -1,7 +1,7 @@
 package com.example.doctour.data.remote.authentifications
 
-import com.example.doctour.data.model.TokenRefreshBodyDt
-import com.example.doctour.data.model.TokenRefreshDt
+import com.example.doctour.data.model.tokenRefresh.TokenRefreshBodyDt
+import com.example.doctour.data.model.tokenRefresh.TokenRefreshDt
 import com.example.doctour.data.remote.apiservices.AuthenticationApiService
 import com.example.doctour.data.remote.authentifications.token.TokenManager
 import kotlinx.coroutines.flow.first

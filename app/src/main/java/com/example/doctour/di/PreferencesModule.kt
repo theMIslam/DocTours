@@ -48,5 +48,5 @@ object PreferencesModule {
     @Provides
     fun provideOnBoardingSharedPreferences(
         @ApplicationContext context: Context
-    )= OnBoardingPreferences(context)
+    ) = OnBoardingPreferences(context)
 }

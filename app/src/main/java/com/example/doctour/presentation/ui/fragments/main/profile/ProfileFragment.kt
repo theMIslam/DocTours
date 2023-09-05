@@ -13,7 +13,7 @@ import com.example.doctour.databinding.FragmentProfileBinding
 import com.example.doctour.preferences.ProfilePreferences
 import com.example.doctour.preferences.UserPreferences
 import com.example.doctour.presentation.module.showToast
-import com.example.doctour.presentation.ui.fragments.authAndReg.TokenViewModel
+import com.example.doctour.presentation.ui.fragments.authAndReg.auth.TokenViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject

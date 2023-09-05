@@ -9,8 +9,8 @@ data class ProfileUI(
     val phone_number: String,
     val birthday: String,
     val gender: String
-): IBaseDiffModel<String>
+) : IBaseDiffModel<String>
 
-fun Profile.toProfileUI()= ProfileUI(
+fun Profile.toProfileUI() = ProfileUI(
     id, fullname, phone_number, birthday, gender
 )

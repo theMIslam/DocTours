@@ -14,9 +14,9 @@ import dagger.hilt.components.SingletonComponent
 abstract class RepositoryModule {
     @Binds
     abstract fun bindDoctorRepository(doctourRepositoryImpl: DoctourRepositoryImpl)
-    :DoctourRepository
+            : DoctourRepository
 
     @Binds
     abstract fun bindAuthenticationRepository(authenticationRepositoryImpl: AuthenticationRepositoryImpl)
-            :AuthenticationRepository
+            : AuthenticationRepository
 }
