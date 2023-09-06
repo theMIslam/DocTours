@@ -237,12 +237,12 @@
         tools:layout="@layout/fragment_notification" />
     <fragment
         android:id="@+id/categoryClinicFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.category.clinicCategory.CategoryClinicFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.category.categoryClinic.CategoryClinicFragment"
         android:label="fragment_category_clinic"
         tools:layout="@layout/fragment_category_clinic" />
     <fragment
         android:id="@+id/categoryCityFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.category.cityCategory.CategoryCityFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.category.categoryCity.CategoryCityFragment"
         android:label="fragment_category_city"
         tools:layout="@layout/fragment_category_city" />
     <fragment
@@ -262,7 +262,7 @@
 
     <fragment
         android:id="@+id/categoryDoctorsFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.category.doctorCategory.CategoryDoctorsFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.category.categoryDoctor.CategoryDoctorsFragment"
         android:label="fragment_category_doctors"
         tools:layout="@layout/fragment_category_doctors" />
 

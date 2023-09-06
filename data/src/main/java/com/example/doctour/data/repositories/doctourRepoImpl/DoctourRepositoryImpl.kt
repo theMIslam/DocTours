@@ -11,9 +11,9 @@ import com.example.doctour.data.remote.pagingsources.favorite.FavoriteDoctorsPag
 import com.example.doctour.data.remote.pagingsources.review.ReviewsPagingSource
 import com.example.doctour.data.remote.pagingsources.search.SearchPagingSource
 import com.example.doctour.data.remote.pagingsources.subService.SubServicePagingSource
-import com.example.doctour.data.remote.pagingsources.сategory.CategoryClinicsPaging
-import com.example.doctour.data.remote.pagingsources.сategory.CategoryDoctorsPagingSource
-import com.example.doctour.data.remote.pagingsources.сategory.CategoryServicesOfDoctorsPagingSource
+import com.example.doctour.data.remote.pagingsources.сategory.categoryClinics.CategoryClinicsPaging
+import com.example.doctour.data.remote.pagingsources.сategory.categoryDoctors.CategoryDoctorsPagingSource
+import com.example.doctour.data.remote.pagingsources.сategory.categoryServices.CategoryServicesOfDoctorsPagingSource
 import com.example.doctour.domain.model.clinics.Clinic
 import com.example.doctour.domain.model.doctorDetail.Doctor
 import com.example.doctour.domain.model.doctorDetail.DoctorDetail
@@ -62,8 +62,10 @@ class DoctourRepositoryImpl @Inject constructor(
         subServiceClinic: String,
         city: String
     ): Flow<PagingData<Clinic>>
-    =doPagingRequest(CategoryClinicsPaging(
-        doctourApiService,10,search,subServiceClinic,city))
+    =doPagingRequest(
+        CategoryClinicsPaging(
+        doctourApiService,10,search,subServiceClinic,city)
+    )
 
     override fun getFavoriteClinics(): Flow<PagingData<FavoriteClinic>>
     = doPagingRequest(FavoriteClinicsPagingSource(doctourApiService))

@@ -1,4 +1,4 @@
-package com.example.doctour.presentation.ui.fragments.main.category.doctorCategory
+package com.example.doctour.presentation.ui.fragments.main.category.categoryDoctor
 
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels

@@ -1,4 +1,4 @@
-package com.example.doctour.presentation.ui.fragments.main.category.cityCategory
+package com.example.doctour.presentation.ui.fragments.main.category.categoryCity
 
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController

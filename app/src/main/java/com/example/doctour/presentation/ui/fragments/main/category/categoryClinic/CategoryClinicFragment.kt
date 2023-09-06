@@ -1,4 +1,4 @@
-package com.example.doctour.presentation.ui.fragments.main.category.clinicCategory
+package com.example.doctour.presentation.ui.fragments.main.category.categoryClinic
 
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
@@ -9,7 +9,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentCategoryClinicBinding
-import com.example.doctour.presentation.ui.fragments.main.category.clinicCategory.adapter.CategoryClinicAdapter
+import com.example.doctour.presentation.ui.fragments.main.category.categoryClinic.adapter.CategoryClinicAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

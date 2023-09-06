@@ -1,4 +1,4 @@
-package com.example.doctour.presentation.ui.fragments.main.category.clinicCategory
+package com.example.doctour.presentation.ui.fragments.main.category.categoryClinic
 
 import com.example.doctour.base.BaseViewModel
 import com.example.doctour.domain.usecases.clinics.GetClinicUseCase
