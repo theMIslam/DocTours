@@ -31,7 +31,7 @@ class SignInViewModel @Inject constructor(
         phone_number,
         password
     )).collectNetworkRequest(_signIn){
-        it.toUserLoginUI()
+        it.toU serLoginUI()
     }
 
 //
