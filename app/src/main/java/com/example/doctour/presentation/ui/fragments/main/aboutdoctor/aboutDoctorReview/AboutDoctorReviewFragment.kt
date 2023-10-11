@@ -10,7 +10,7 @@ import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentAboutDoctorReviewBinding
 import com.example.doctour.presentation.ui.fragments.main.review.reviewViewmodel.ReviewViewModel
-import com.example.doctour.presentation.ui.adapter.aboutdoctor.AboutDoctorReviewAdapter
+import com.example.doctour.presentation.ui.adapters.aboutdoctor.AboutDoctorReviewAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

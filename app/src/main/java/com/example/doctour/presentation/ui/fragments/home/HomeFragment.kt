@@ -17,9 +17,9 @@ import com.example.doctour.databinding.FragmentHomeBinding
 import com.example.doctour.presentation.module.showToast
 import com.example.doctour.presentation.model.doctour.DoctorUI
 import com.example.doctour.presentation.ui.fragments.authAndReg.auth.TokenViewModel
-import com.example.doctour.presentation.ui.adapter.home.homeClinic.HomeClinicAdapter
-import com.example.doctour.presentation.ui.adapter.home.homeDoctor.HomeDoctorSpecsAdapter
-import com.example.doctour.presentation.ui.adapter.home.homeInfo.HomeInfoDoctorAdapter
+import com.example.doctour.presentation.ui.adapters.home.homeClinic.HomeClinicAdapter
+import com.example.doctour.presentation.ui.adapters.home.homeDoctor.HomeDoctorSpecsAdapter
+import com.example.doctour.presentation.ui.adapters.home.homeInfo.HomeInfoDoctorAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

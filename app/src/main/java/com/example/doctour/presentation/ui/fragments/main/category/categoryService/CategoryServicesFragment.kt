@@ -11,7 +11,7 @@ import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentCategoryServicesBinding
 import com.example.doctour.presentation.model.service.ServiceUi
-import com.example.doctour.presentation.ui.adapter.category.categoryService.CategoryServicesAdapter
+import com.example.doctour.presentation.ui.adapters.category.categoryService.CategoryServicesAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

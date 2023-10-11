@@ -21,12 +21,12 @@ android {
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
-            buildConfigField("String", "BASE_URL", "\"bekbolsun.pythonanywhere.com/\"")
+            buildConfigField("String", "BASE_URL", "\"127.0.0.1:8000/\"")
             buildConfigField("String", "API_KEY", "\"\"")
         }
 
         getByName(AndroidConfig.debug) {
-            buildConfigField("String", "BASE_URL", "\"bekbolsun.pythonanywhere.com/\"")
+            buildConfigField("String", "BASE_URL", "\"127.0.0.1:8000/\"")
         }
     }
     compileOptions {
@@ -74,4 +74,5 @@ dependencies {
 
     //dataStore
     implementation("androidx.datastore:datastore-preferences:1.0.0")
+
 }

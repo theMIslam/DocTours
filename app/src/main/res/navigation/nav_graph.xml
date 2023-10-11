@@ -48,12 +48,12 @@
 
     <fragment
         android:id="@+id/fragment_booking_failed"
-        android:name="com.example.doctour.presentation.ui.fragments.main.booking.BookingFailedFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.booking.BookingToDoctorSecondFragment"
         android:label="fragment_failed"
         tools:layout="@layout/fragment_booking_failed" />
     <fragment
         android:id="@+id/fragment_booking_success"
-        android:name="com.example.doctour.presentation.ui.fragments.main.booking.BookingSuccessFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.booking.BookingToDoctorSecondFragment"
         android:label="fragment_success"
         tools:layout="@layout/fragment_booking_success" />
 
@@ -175,7 +175,7 @@
         tools:layout="@layout/fragment_new_password" />
     <fragment
         android:id="@+id/fillProfileFragment"
-        android:name="FillProfileFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.profile.fillProfile.FillProfileFragment"
         android:label="fragment_profile_fill"
         tools:layout="@layout/fragment_profile_fill"/>
 
@@ -318,7 +318,7 @@
         android:label="VerificationCodeFragment" />
     <fragment
         android:id="@+id/categoryServiceFragment"
-        android:name="com.example.doctour.presentation.ui.fragments.main.category.categoryService.CategoryServiceFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.main.category.categoryService.CategoryServicesFragment"
         android:label="fragment_category_service"
         tools:layout="@layout/fragment_category_service" />
 

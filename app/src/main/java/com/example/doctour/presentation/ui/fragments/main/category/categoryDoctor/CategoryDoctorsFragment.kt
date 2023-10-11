@@ -11,7 +11,7 @@ import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentCategoryDoctorsBinding
 import com.example.doctour.presentation.module.showToast
 import com.example.doctour.presentation.model.speciality.SpecialtyUI
-import com.example.doctour.presentation.ui.adapter.category.categoryDoctor.CategoryDoctorSpecAdapter
+import com.example.doctour.presentation.ui.adapters.category.categoryDoctor.CategoryDoctorSpecAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

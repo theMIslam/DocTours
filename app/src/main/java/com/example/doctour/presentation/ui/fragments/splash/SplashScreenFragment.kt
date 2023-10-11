@@ -23,12 +23,11 @@ class SplashScreenFragment :
     override fun initialize() {
         Handler().postDelayed({
 
-            if (!OnBoardingPreferences(requireContext()).isShowOnBoarding()){
+            if (!OnBoardingPreferences(requireContext()).isShowOnBoarding()) {
                 findNavController().navigate(R.id.onBoardingFragment)
-            }else if (!UserPreferences(requireContext()).isOtpCodeRight()){
+            } else if (!UserPreferences(requireContext()).isOtpCodeRight()) {
                 findNavController().navigate(R.id.SignInAndSignUpFragment)
-            }
-            else{
+            } else {
                 findNavController().navigate(R.id.homeFragment)
             }
         }, 2000)

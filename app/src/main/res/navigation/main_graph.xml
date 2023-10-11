@@ -57,4 +57,23 @@
         android:name="com.example.doctour.presentation.ui.fragments.main.aboutdoctor.aboutDoctorReview.AboutDoctorReviewFragment"
         android:label="fragment_add_review"
         tools:layout="@layout/fragment_about_doctor_review" />
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.authAndReg.signUp.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.doctour.presentation.ui.fragments.authAndReg.signIn.SignInFragment"
+        android:label="SignInFragment"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
 </navigation>

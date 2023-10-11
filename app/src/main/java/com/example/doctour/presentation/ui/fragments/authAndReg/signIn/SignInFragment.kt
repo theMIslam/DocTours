@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
+import com.example.doctour.data.model.tokenRefresh.TokenRefreshDt
 import com.example.doctour.databinding.FragmentSignInBinding
 import com.example.doctour.preferences.UserPreferences
 import com.example.doctour.presentation.module.showToast
@@ -22,6 +23,8 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
 ) {
     @Inject
     lateinit var userPreferences: UserPreferences
+
+    lateinit var refreshDt: TokenRefreshDt
 
     override val binding: FragmentSignInBinding by viewBinding(FragmentSignInBinding::bind)
     override val viewModel: SignInViewModel by viewModels()
@@ -117,32 +120,32 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
             onSuccess = {
                 tokenViewModel.saveToken(it.refresh)
                 showToast(getString(R.string.You_successfully_logged_in))
-//                userPreferences.accessToken = getAuthenticationToken(it.access!!, true)
-//                userPreferences.refreshToken = getAuthenticationToken(it.refresh!!, true)
-//                userPreferences.isAuthenticated = true
-//                userPreferences.accessToken = it.access
-//                 userPreferences.refreshToken = it.refresh
-                //    showToast(getString(R.string.You_successfully_logged_in))
-//                findNavController().navigate(R.id.homeFragment)
-//                initListeners()
+                userPreferences.accessToken = getAuthenticationToken(it.access!!, true)
+                userPreferences.refreshToken = getAuthenticationToken(it.refresh!!, true)
+                userPreferences.isAuthenticated = true
+                userPreferences.accessToken = it.access
+                userPreferences.refreshToken = it.refresh
+                showToast(getString(R.string.You_successfully_logged_in))
+                findNavController().navigate(R.id.homeFragment)
+                initListeners()
             },
             onError = {
                 showToast(it)
                 Log.e("TAG", it)
             })
 
-//        viewModel.signIn.spectateUiState (success = {
-//             userPreferences.accessToken = getAuthenticationToken(it.access!!, true)
-//            userPreferences.refreshToken = getAuthenticationToken(it.refresh!!, true)
-//            userPreferences.isAuthenticated = true
-//            userPreferences.accessToken= it.access
-//            userPreferences.refreshToken = it.refresh
-//            findNavController().navigate(R.id.homeFragment)
-//            showToast(getString(R.string.You_successfully_logged_in))
-//            initListeners()
-//        }, error = {
-//            showToast(getString(R.string.something_went_wrong))
-//        })
+        viewModel.signIn.spectateUiState (success = {
+             userPreferences.accessToken = getAuthenticationToken(it.tokens!!, true)
+            userPreferences.refreshToken = getAuthenticationToken(it.tokens!!, true)
+            userPreferences.isAuthenticated = true
+            userPreferences.accessToken= it.tokens!!
+            userPreferences.refreshToken = it.tokens!!
+            findNavController().navigate(R.id.homeFragment)
+            showToast(getString(R.string.You_successfully_logged_in))
+            initListeners()
+        }, error = {
+            showToast(getString(R.string.something_went_wrong))
+        })
     }
 
     private fun getAuthenticationToken(

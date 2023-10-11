@@ -10,7 +10,7 @@ import com.example.doctour.databinding.FragmentAboutDoctorBinding
 import com.example.doctour.presentation.module.loadImage
 import com.example.doctour.presentation.module.showToast
 import com.example.doctour.presentation.model.doctour.DoctorUI
-import com.example.doctour.presentation.ui.adapter.aboutdoctor.AboutFeedbacksAdapter
+import com.example.doctour.presentation.ui.adapters.aboutdoctor.AboutFeedbacksAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

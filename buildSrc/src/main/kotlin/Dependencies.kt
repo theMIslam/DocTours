@@ -34,6 +34,7 @@ object Versions {
     const val gsonconverter ="2.5.0"
     const val eventbus = "3.2.0"
     const val libphonenumber = "8.13.14"
+    const val datastore = "1.0.0"
 
 }
 

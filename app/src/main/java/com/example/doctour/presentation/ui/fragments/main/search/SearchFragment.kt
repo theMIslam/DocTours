@@ -13,7 +13,7 @@ import com.example.doctour.R
 import com.example.doctour.base.BaseFragment
 import com.example.doctour.databinding.FragmentSearchBinding
 import com.example.doctour.presentation.model.doctour.DoctorUI
-import com.example.doctour.presentation.ui.adapter.search.SearchAdapter
+import com.example.doctour.presentation.ui.adapters.search.SearchAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
